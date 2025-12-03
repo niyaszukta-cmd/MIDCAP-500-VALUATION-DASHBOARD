@@ -30,7 +30,7 @@ def check_password():
         
         users = {
             "demo": "demo123",
-            "premium": "premium123",
+            "premium": "nyztrade12345",
             "niyas": "nyztrade123"
         }
         
