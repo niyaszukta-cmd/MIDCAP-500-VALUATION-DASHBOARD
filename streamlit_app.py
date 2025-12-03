@@ -477,7 +477,7 @@ def create_pdf_report(company, ticker, sector, vals):
     buffer.seek(0)
     return buffer
 
-st.markdown('<div class="main-header"><h1>MIDCAP VALUATION</h1><p>800+ Stocks | Professional Analysis</p></div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header"><h1>NYZTRADE MIDCAP VALUATION DASHBOARD</h1><p>800+ Stocks | Professional Analysis</p></div>', unsafe_allow_html=True)
 
 if st.sidebar.button("Logout", use_container_width=True):
     for key in list(st.session_state.keys()):
