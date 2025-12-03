@@ -596,7 +596,5 @@ else:
 
 st.markdown("---")
 st.markdown("<div style='text-align: center; color: #666;'>NYZTrade Platform | Educational Tool</div>", unsafe_allow_html=True)
-```
 
----
 
