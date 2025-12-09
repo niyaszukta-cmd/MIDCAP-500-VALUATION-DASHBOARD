@@ -102,7 +102,7 @@ header {visibility: hidden;}
 .company-name {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #7e1cc9;
     margin: 0;
 }
 
