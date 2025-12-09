@@ -46,7 +46,7 @@ header {visibility: hidden;}
     padding: 2.5rem 3rem;
     border-radius: 20px;
     text-align: center;
-    color: white;
+    color: purple;
     margin-bottom: 2rem;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     position: relative;
