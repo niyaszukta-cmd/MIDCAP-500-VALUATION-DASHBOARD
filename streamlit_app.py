@@ -46,7 +46,7 @@ header {visibility: hidden;}
     padding: 2.5rem 3rem;
     border-radius: 20px;
     text-align: center;
-    color: purple;
+    color: white;
     margin-bottom: 2rem;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     position: relative;
@@ -91,7 +91,7 @@ header {visibility: hidden;}
 
 /* Company Header Card */
 .company-header {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background: linear-gradient(135deg, #ffffff 100%, #f8fafc 100%);
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 1.5rem 2rem;
