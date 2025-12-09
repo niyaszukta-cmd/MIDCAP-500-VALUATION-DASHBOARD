@@ -57,280 +57,789 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-MIDCAP_STOCKS = {
-    "Banking Finance 1": {
-        "ANGELONE.NS":"Angel One","ANANDRATHI.NS":"Anand Rathi","AAVAS.NS":"Aavas Financiers","BAJAJFINSV.NS":"Bajaj Finserv",
-        "CDSL.NS":"CDSL","CHOLAFIN.NS":"Cholamandalam Investment","CREDITACC.NS":"CreditAccess Grameen","CRISIL.NS":"CRISIL",
-        "CSB.NS":"CSB Bank","EQUITAS.NS":"Equitas Holdings","FEDERALBNK.NS":"Federal Bank","FINOPB.NS":"Fino Payments",
-        "HDFCAMC.NS":"HDFC AMC","IIFL.NS":"IIFL Finance","IIFLSEC.NS":"IIFL Securities","IRFC.NS":"IRFC",
-        "ISEC.NS":"ICICI Securities","JMFINANCIL.NS":"JM Financial","KALYANKJIL.NS":"Kalyan Jewellers","KFINTECH.NS":"KFin Technologies"
+# ============================================================================
+# COMPREHENSIVE INDIAN STOCKS DATABASE
+# Combined: NIFTY 500 + MIDCAP + SMALLCAP
+# Total Categories: 50+ sector-wise classifications
+# ============================================================================
+
+INDIAN_STOCKS = {
+    # ========================================================================
+    # NIFTY 50 - LARGE CAP BLUE CHIPS
+    # ========================================================================
+    "💎 NIFTY 50": {
+        "ADANIENT.NS": "Adani Enterprises", "ADANIPORTS.NS": "Adani Ports", "APOLLOHOSP.NS": "Apollo Hospitals",
+        "ASIANPAINT.NS": "Asian Paints", "AXISBANK.NS": "Axis Bank", "BAJAJ-AUTO.NS": "Bajaj Auto",
+        "BAJFINANCE.NS": "Bajaj Finance", "BAJAJFINSV.NS": "Bajaj Finserv", "BHARTIARTL.NS": "Bharti Airtel",
+        "BPCL.NS": "BPCL", "BRITANNIA.NS": "Britannia", "CIPLA.NS": "Cipla",
+        "COALINDIA.NS": "Coal India", "DIVISLAB.NS": "Divi's Labs", "DRREDDY.NS": "Dr Reddy's",
+        "EICHERMOT.NS": "Eicher Motors", "GRASIM.NS": "Grasim", "HCLTECH.NS": "HCL Tech",
+        "HDFCBANK.NS": "HDFC Bank", "HDFCLIFE.NS": "HDFC Life", "HEROMOTOCO.NS": "Hero MotoCorp",
+        "HINDALCO.NS": "Hindalco", "HINDUNILVR.NS": "Hindustan Unilever", "ICICIBANK.NS": "ICICI Bank",
+        "INDUSINDBK.NS": "IndusInd Bank", "INFY.NS": "Infosys", "ITC.NS": "ITC",
+        "JSWSTEEL.NS": "JSW Steel", "KOTAKBANK.NS": "Kotak Bank", "LT.NS": "L&T",
+        "M&M.NS": "M&M", "MARUTI.NS": "Maruti Suzuki", "NESTLEIND.NS": "Nestle India",
+        "NTPC.NS": "NTPC", "ONGC.NS": "ONGC", "POWERGRID.NS": "Power Grid",
+        "RELIANCE.NS": "Reliance", "SBILIFE.NS": "SBI Life", "SBIN.NS": "SBI",
+        "SUNPHARMA.NS": "Sun Pharma", "TATAMOTORS.NS": "Tata Motors", "TATASTEEL.NS": "Tata Steel",
+        "TCS.NS": "TCS", "TECHM.NS": "Tech Mahindra", "TITAN.NS": "Titan",
+        "ULTRACEMCO.NS": "UltraTech Cement", "UPL.NS": "UPL", "WIPRO.NS": "Wipro"
     },
-    "Banking Finance 2": {
-        "LICHSGFIN.NS":"LIC Housing","MASFIN.NS":"MAS Financial","MOTILALOFS.NS":"Motilal Oswal","MUTHOOTFIN.NS":"Muthoot Finance",
-        "PNBHOUSING.NS":"PNB Housing","RBL.NS":"RBL Bank","SBFC.NS":"SBFC Finance","STARHEALTH.NS":"Star Health",
-        "UJJIVAN.NS":"Ujjivan Small Finance","UTIAMC.NS":"UTI AMC","AUBANK.NS":"AU Small Finance","BANDHANBNK.NS":"Bandhan Bank",
-        "IDFCFIRSTB.NS":"IDFC First Bank","INDUSINDBK.NS":"IndusInd Bank","BANKBARODA.NS":"Bank of Baroda","CANBK.NS":"Canara Bank",
-        "UNIONBANK.NS":"Union Bank","CENTRALBK.NS":"Central Bank","INDIANB.NS":"Indian Bank","IOB.NS":"Indian Overseas Bank"
+
+    # ========================================================================
+    # BANKING & FINANCE
+    # ========================================================================
+    "🏦 Banking Finance - Large Cap": {
+        "AUBANK.NS": "AU Small Finance", "BANDHANBNK.NS": "Bandhan Bank", "BANKBARODA.NS": "Bank of Baroda",
+        "CANBK.NS": "Canara Bank", "CHOLAFIN.NS": "Cholamandalam", "FEDERALBNK.NS": "Federal Bank",
+        "HDFCAMC.NS": "HDFC AMC", "ICICIGI.NS": "ICICI Lombard", "ICICIPRULI.NS": "ICICI Prudential",
+        "IDFCFIRSTB.NS": "IDFC First Bank", "MUTHOOTFIN.NS": "Muthoot Finance", "PFC.NS": "Power Finance",
+        "PNB.NS": "Punjab National Bank", "RECLTD.NS": "REC Limited", "SBICARD.NS": "SBI Card",
+        "SHRIRAMFIN.NS": "Shriram Finance", "UNIONBANK.NS": "Union Bank"
     },
-    "Banking Finance 3": {
-        "BANKINDIA.NS":"Bank of India","MAHABANK.NS":"Bank of Maharashtra","J&KBANK.NS":"Jammu Kashmir Bank","KARNATBNK.NS":"Karnataka Bank",
-        "DCBBANK.NS":"DCB Bank","ICICIGI.NS":"ICICI Lombard","ICICIPRULI.NS":"ICICI Prudential Life","SBILIFE.NS":"SBI Life",
-        "HDFCLIFE.NS":"HDFC Life","MAXHEALTH.NS":"Max Healthcare","POLICYBZR.NS":"PB Fintech","NUVOCO.NS":"Nuvoco Vistas",
-        "SPANDANA.NS":"Spandana Sphoorty","SWANENERGY.NS":"Swan Energy","BAJAJHLDNG.NS":"Bajaj Holdings","MAHLIFE.NS":"Mahindra Lifespace",
-        "TATAINVEST.NS":"Tata Investment","SUNDARMFIN.NS":"Sundaram Finance","SHRIRAMFIN.NS":"Shriram Finance","MANAPPURAM.NS":"Manappuram Finance"
+    
+    "🏦 Banking Finance - Midcap 1": {
+        "ANGELONE.NS": "Angel One", "ANANDRATHI.NS": "Anand Rathi", "AAVAS.NS": "Aavas Financiers",
+        "CDSL.NS": "CDSL", "CREDITACC.NS": "CreditAccess Grameen", "CRISIL.NS": "CRISIL",
+        "CSB.NS": "CSB Bank", "EQUITAS.NS": "Equitas Holdings", "FINOPB.NS": "Fino Payments",
+        "IIFL.NS": "IIFL Finance", "IIFLSEC.NS": "IIFL Securities", "IRFC.NS": "IRFC",
+        "ISEC.NS": "ICICI Securities", "JMFINANCIL.NS": "JM Financial", "KALYANKJIL.NS": "Kalyan Jewellers",
+        "KFINTECH.NS": "KFin Technologies"
     },
-    "Banking Finance 4": {
-        "PNBGILTS.NS":"PNB Gilts","APTUS.NS":"Aptus Value Housing","HOMEFIRST.NS":"Home First Finance","AADHARHFC.NS":"Aadhar Housing",
-        "CAPLIPOINT.NS":"Caplin Point","CHOLA.NS":"Cholamandalam Financial","CIEINDIA.NS":"CIE Automotive","JSWHL.NS":"JSW Holdings",
-        "MUTHOOTCAP.NS":"Muthoot Capital","ABSLAMC.NS":"Aditya Birla Sun Life AMC","L&TFH.NS":"L&T Finance Holdings","CHOLAHLDNG.NS":"Cholamandalam Holdings",
-        "IIFLWAM.NS":"IIFL Wealth","BAJFINANCE.NS":"Bajaj Finance","HDFCBANK.NS":"HDFC Bank","KOTAKBANK.NS":"Kotak Mahindra",
-        "AXISBANK.NS":"Axis Bank","ICICIBANK.NS":"ICICI Bank","SBIN.NS":"State Bank","INDUSIND.NS":"IndusInd Bank"
+    
+    "🏦 Banking Finance - Midcap 2": {
+        "LICHSGFIN.NS": "LIC Housing", "MASFIN.NS": "MAS Financial", "MOTILALOFS.NS": "Motilal Oswal",
+        "PNBHOUSING.NS": "PNB Housing", "RBL.NS": "RBL Bank", "SBFC.NS": "SBFC Finance",
+        "STARHEALTH.NS": "Star Health", "UJJIVAN.NS": "Ujjivan Small Finance", "UTIAMC.NS": "UTI AMC",
+        "CENTRALBK.NS": "Central Bank", "INDIANB.NS": "Indian Bank", "IOB.NS": "Indian Overseas Bank"
     },
-    "IT Technology 1": {
-        "COFORGE.NS":"Coforge","CYIENT.NS":"Cyient","ECLERX.NS":"eClerx Services","HAPPSTMNDS.NS":"Happiest Minds",
-        "INTELLECT.NS":"Intellect Design","KPITTECH.NS":"KPIT Technologies","LTIM.NS":"LTIMindtree","MASTEK.NS":"Mastek",
-        "MPHASIS.NS":"Mphasis","NEWGEN.NS":"Newgen Software","NIITLTD.NS":"NIIT Ltd","OFSS.NS":"Oracle Financial",
-        "PERSISTENT.NS":"Persistent Systems","ZENSAR.NS":"Zensar Technologies","ROUTE.NS":"Route Mobile","DATAMATICS.NS":"Datamatics Global",
-        "SONATSOFTW.NS":"Sonata Software","SASKEN.NS":"Sasken Technologies","TATAELXSI.NS":"Tata Elxsi","TECHM.NS":"Tech Mahindra"
+    
+    "🏦 Banking Finance - Midcap 3": {
+        "BANKINDIA.NS": "Bank of India", "MAHABANK.NS": "Bank of Maharashtra", "J&KBANK.NS": "Jammu Kashmir Bank",
+        "KARNATBNK.NS": "Karnataka Bank", "DCBBANK.NS": "DCB Bank", "POLICYBZR.NS": "PB Fintech",
+        "NUVOCO.NS": "Nuvoco Vistas", "SPANDANA.NS": "Spandana Sphoorty", "SWANENERGY.NS": "Swan Energy",
+        "BAJAJHLDNG.NS": "Bajaj Holdings", "MAHLIFE.NS": "Mahindra Lifespace", "TATAINVEST.NS": "Tata Investment",
+        "SUNDARMFIN.NS": "Sundaram Finance", "MANAPPURAM.NS": "Manappuram Finance"
     },
-    "IT Technology 2": {
-        "3MINDIA.NS":"3M India","AFFLE.NS":"Affle India","EASEMYTRIP.NS":"EaseMyTrip","ZOMATO.NS":"Zomato",
-        "NYKAA.NS":"Nykaa","PAYTM.NS":"Paytm","POLICYBZR.NS":"PB Fintech","BLUESTARCO.NS":"Blue Star",
-        "CAMPUS.NS":"Campus Activewear","DIXON.NS":"Dixon Technologies","HLEGLAS.NS":"HLE Glascoat","HONAUT.NS":"Honeywell Automation",
-        "LXCHEM.NS":"Laxmi Organic","RPTECH.NS":"RP Tech India","AMBER.NS":"Amber Enterprises","SYMPHONY.NS":"Symphony",
-        "VOLTAS.NS":"Voltas","WHIRLPOOL.NS":"Whirlpool India","VGUARD.NS":"V-Guard Industries","CROMPTON.NS":"Crompton Greaves"
+    
+    "🏦 Banking Finance - Midcap 4": {
+        "PNBGILTS.NS": "PNB Gilts", "APTUS.NS": "Aptus Value Housing", "HOMEFIRST.NS": "Home First Finance",
+        "AADHARHFC.NS": "Aadhar Housing", "CAPLIPOINT.NS": "Caplin Point", "CHOLA.NS": "Cholamandalam Financial",
+        "CIEINDIA.NS": "CIE Automotive", "JSWHL.NS": "JSW Holdings", "MUTHOOTCAP.NS": "Muthoot Capital",
+        "ABSLAMC.NS": "Aditya Birla Sun Life AMC", "L&TFH.NS": "L&T Finance Holdings", "CHOLAHLDNG.NS": "Cholamandalam Holdings",
+        "IIFLWAM.NS": "IIFL Wealth", "INDUSIND.NS": "IndusInd Bank"
     },
-    "IT Technology 3": {
-        "HAVELLS.NS":"Havells India","ORIENTELEC.NS":"Orient Electric","INDIAMART.NS":"IndiaMART","JUSTDIAL.NS":"Just Dial",
-        "MATRIMONY.NS":"Matrimony.com","NAZARA.NS":"Nazara Technologies","SHOPERSTOP.NS":"Shoppers Stop","TATACOMM.NS":"Tata Communications",
-        "TATATECH.NS":"Tata Technologies","TEAMLEASE.NS":"TeamLease Services","CARTRADE.NS":"CarTrade Tech","LATENTVIEW.NS":"LatentView Analytics",
-        "MPSLTD.NS":"MPS Limited","RAINBOW.NS":"Rainbow Children","REDINGTON.NS":"Redington","STLTECH.NS":"Sterlite Technologies",
-        "SUBROS.NS":"Subros","SUPRAJIT.NS":"Suprajit Engineering","SWARAJENG.NS":"Swaraj Engines","TANLA.NS":"Tanla Platforms"
+
+    # ========================================================================
+    # IT & TECHNOLOGY
+    # ========================================================================
+    "💻 IT Technology - Large Cap": {
+        "COFORGE.NS": "Coforge", "LTTS.NS": "L&T Technology", "MPHASIS.NS": "Mphasis",
+        "PERSISTENT.NS": "Persistent Systems", "SONATSOFTW.NS": "Sonata Software", "TATAELXSI.NS": "Tata Elxsi"
     },
-    "IT Technology 4": {
-        "TCNSBRANDS.NS":"TCNS Clothing","TIMKEN.NS":"Timken India","TRIVENI.NS":"Triveni Turbine","TTKHLTCARE.NS":"TTK Healthcare",
-        "TTKPRESTIG.NS":"TTK Prestige","VIPIND.NS":"VIP Industries","VSTIND.NS":"VST Industries","WELSPUNIND.NS":"Welspun India",
-        "WESTLIFE.NS":"Westlife Development","WIPRO.NS":"Wipro","INFY.NS":"Infosys","TCS.NS":"TCS",
-        "HCLTECH.NS":"HCL Technologies","LTI.NS":"LTI","MINDTREE.NS":"Mindtree","TECHM.NS":"Tech Mahindra",
-        "HEXAWARE.NS":"Hexaware Technologies","CYIENT.NS":"Cyient","L&TTS.NS":"L&T Technology","POLYCAB.NS":"Polycab India"
+    
+    "💻 IT Technology - Midcap 1": {
+        "CYIENT.NS": "Cyient", "ECLERX.NS": "eClerx Services", "HAPPSTMNDS.NS": "Happiest Minds",
+        "INTELLECT.NS": "Intellect Design", "KPITTECH.NS": "KPIT Technologies", "LTIM.NS": "LTIMindtree",
+        "MASTEK.NS": "Mastek", "NEWGEN.NS": "Newgen Software", "NIITLTD.NS": "NIIT Ltd",
+        "OFSS.NS": "Oracle Financial", "ZENSAR.NS": "Zensar Technologies", "ROUTE.NS": "Route Mobile",
+        "DATAMATICS.NS": "Datamatics Global", "SASKEN.NS": "Sasken Technologies"
     },
-    "Pharma Healthcare 1": {
-        "AARTIDRUGS.NS":"Aarti Drugs","ABBOTINDIA.NS":"Abbott India","AJANTPHARM.NS":"Ajanta Pharma","ALEMBICLTD.NS":"Alembic Pharma",
-        "ALKEM.NS":"Alkem Laboratories","ASTRAZEN.NS":"AstraZeneca Pharma","AUROBINDO.NS":"Aurobindo Pharma","BIOCON.NS":"Biocon",
-        "CADILAHC.NS":"Cadila Healthcare","CAPLIPOINT.NS":"Caplin Point","CIPLA.NS":"Cipla","DIVISLAB.NS":"Divi's Laboratories",
-        "DRREDDY.NS":"Dr Reddy's Labs","ERIS.NS":"Eris Lifesciences","FINEORG.NS":"Fine Organic","GLENMARK.NS":"Glenmark Pharma",
-        "GLAXO.NS":"GlaxoSmithKline","GRANULES.NS":"Granules India","HETERO.NS":"Hetero Drugs","IPCALAB.NS":"IPCA Laboratories"
+    
+    "💻 IT Technology - Midcap 2": {
+        "3MINDIA.NS": "3M India", "AFFLE.NS": "Affle India", "EASEMYTRIP.NS": "EaseMyTrip",
+        "ZOMATO.NS": "Zomato", "NYKAA.NS": "Nykaa", "PAYTM.NS": "Paytm",
+        "BLUESTARCO.NS": "Blue Star", "CAMPUS.NS": "Campus Activewear", "DIXON.NS": "Dixon Technologies",
+        "HLEGLAS.NS": "HLE Glascoat", "HONAUT.NS": "Honeywell Automation", "LXCHEM.NS": "Laxmi Organic",
+        "RPTECH.NS": "RP Tech India", "AMBER.NS": "Amber Enterprises", "SYMPHONY.NS": "Symphony",
+        "VOLTAS.NS": "Voltas", "WHIRLPOOL.NS": "Whirlpool India", "VGUARD.NS": "V-Guard Industries",
+        "CROMPTON.NS": "Crompton Greaves"
     },
-    "Pharma Healthcare 2": {
-        "JBCHEPHARM.NS":"JB Chemicals","LUPIN.NS":"Lupin","MANKIND.NS":"Mankind Pharma","METROPOLIS.NS":"Metropolis Healthcare",
-        "NATCOPHARM.NS":"Natco Pharma","PFIZER.NS":"Pfizer","SANOFI.NS":"Sanofi India","SOLARA.NS":"Solara Active",
-        "SUNPHARMA.NS":"Sun Pharma","SYNGENE.NS":"Syngene International","TORNTPHARM.NS":"Torrent Pharma","VIMTA.NS":"Vimta Labs",
-        "WOCKPHARMA.NS":"Wockhardt","ZYDUSLIFE.NS":"Zydus Lifesciences","ZYDUSWELL.NS":"Zydus Wellness","APOLLOHOSP.NS":"Apollo Hospitals",
-        "FORTIS.NS":"Fortis Healthcare","MAXHEALTH.NS":"Max Healthcare","LALPATHLAB.NS":"Dr Lal PathLabs","THYROCARE.NS":"Thyrocare"
+    
+    "💻 IT Technology - Midcap 3": {
+        "HAVELLS.NS": "Havells India", "ORIENTELEC.NS": "Orient Electric", "INDIAMART.NS": "IndiaMART",
+        "JUSTDIAL.NS": "Just Dial", "MATRIMONY.NS": "Matrimony.com", "NAZARA.NS": "Nazara Technologies",
+        "SHOPERSTOP.NS": "Shoppers Stop", "TATACOMM.NS": "Tata Communications", "TATATECH.NS": "Tata Technologies",
+        "TEAMLEASE.NS": "TeamLease Services", "CARTRADE.NS": "CarTrade Tech", "LATENTVIEW.NS": "LatentView Analytics",
+        "MPSLTD.NS": "MPS Limited", "RAINBOW.NS": "Rainbow Children", "REDINGTON.NS": "Redington",
+        "STLTECH.NS": "Sterlite Technologies", "SUBROS.NS": "Subros", "SUPRAJIT.NS": "Suprajit Engineering",
+        "TANLA.NS": "Tanla Platforms", "POLYCAB.NS": "Polycab India"
     },
-    "Pharma Healthcare 3": {
-        "KRSNAA.NS":"Krsnaa Diagnostics","RAINBOW.NS":"Rainbow Children","KIMS.NS":"KIMS Hospitals","MEDANTA.NS":"Global Health Medanta",
-        "POLYMED.NS":"Poly Medicure","STAR.NS":"Strides Pharma","SUVEN.NS":"Suven Pharma","SUVENPHAR.NS":"Suven Pharmaceuticals",
-        "SEQUENT.NS":"Sequent Scientific","SHILPAMED.NS":"Shilpa Medicare","BLISSGVS.NS":"Bliss GVS Pharma","INDOCO.NS":"Indoco Remedies",
-        "JUBLPHARMA.NS":"Jubilant Pharma","LAURUS.NS":"Laurus Labs","MARKSANS.NS":"Marksans Pharma","NEULANDLAB.NS":"Neuland Laboratories",
-        "AADHARHFC.NS":"Aadhar Housing","ALEMBIC.NS":"Alembic Pharmaceuticals","ASIANPAINT.NS":"Asian Paints","BERGER.NS":"Berger Paints"
+    
+    "💻 IT Technology - Midcap 4": {
+        "TCNSBRANDS.NS": "TCNS Clothing", "TIMKEN.NS": "Timken India", "TRIVENI.NS": "Triveni Turbine",
+        "TTKHLTCARE.NS": "TTK Healthcare", "TTKPRESTIG.NS": "TTK Prestige", "VIPIND.NS": "VIP Industries",
+        "VSTIND.NS": "VST Industries", "WELSPUNIND.NS": "Welspun India", "WESTLIFE.NS": "Westlife Development",
+        "LTI.NS": "LTI", "MINDTREE.NS": "Mindtree", "HEXAWARE.NS": "Hexaware Technologies",
+        "L&TTS.NS": "L&T Technology"
     },
-    "Auto Components 1": {
-        "ASHOKLEY.NS":"Ashok Leyland","BAJAJ-AUTO.NS":"Bajaj Auto","BALKRISIND.NS":"Balkrishna Industries","BHARATFORG.NS":"Bharat Forge",
-        "BOSCHLTD.NS":"Bosch","EICHERMOT.NS":"Eicher Motors","ESCORTS.NS":"Escorts Kubota","EXIDEIND.NS":"Exide Industries",
-        "FORCEMOT.NS":"Force Motors","HEROMOTOCO.NS":"Hero MotoCorp","M&M.NS":"Mahindra & Mahindra","MARUTI.NS":"Maruti Suzuki",
-        "MRF.NS":"MRF","TATAMOTORS.NS":"Tata Motors","TVSMOTOR.NS":"TVS Motor","AMARAJABAT.NS":"Amara Raja",
-        "APOLLOTYRE.NS":"Apollo Tyres","CRAFTSMAN.NS":"Craftsman Automation","ENDURANCE.NS":"Endurance Technologies","FINCABLES.NS":"Finolex Cables"
+
+    # ========================================================================
+    # PHARMA & HEALTHCARE
+    # ========================================================================
+    "💊 Pharma Healthcare - Large Cap": {
+        "AUROPHARMA.NS": "Aurobindo Pharma", "BIOCON.NS": "Biocon", "ALKEM.NS": "Alkem Labs",
+        "FORTIS.NS": "Fortis Healthcare", "GLENMARK.NS": "Glenmark", "IPCALAB.NS": "IPCA Labs",
+        "LAURUSLABS.NS": "Laurus Labs", "LUPIN.NS": "Lupin", "MAXHEALTH.NS": "Max Healthcare",
+        "TORNTPHARM.NS": "Torrent Pharma"
     },
-    "Auto Components 2": {
-        "JKTYRE.NS":"JK Tyre","MAHINDCIE.NS":"Mahindra CIE","MOTHERSON.NS":"Motherson Sumi","SANDHAR.NS":"Sandhar Technologies",
-        "SANSERA.NS":"Sansera Engineering","SCHAEFFLER.NS":"Schaeffler India","SKFINDIA.NS":"SKF India","SWARAJENG.NS":"Swaraj Engines",
-        "TIMKEN.NS":"Timken India","TUBE.NS":"Tube Investments","WHEELS.NS":"Wheels India","ABB.NS":"ABB India",
-        "AIAENG.NS":"AIA Engineering","ALICON.NS":"Alicon Castalloy","AMBER.NS":"Amber Enterprises","APOLLOPIPE.NS":"Apollo Pipes",
-        "ASAHIINDIA.NS":"Asahi India Glass","CEATLTD.NS":"CEAT","CUMMINSIND.NS":"Cummins India","ELGIRUBCO.NS":"Elgi Rubber"
+    
+    "💊 Pharma Healthcare - Midcap 1": {
+        "AARTIDRUGS.NS": "Aarti Drugs", "ABBOTINDIA.NS": "Abbott India", "AJANTPHARM.NS": "Ajanta Pharma",
+        "ALEMBICLTD.NS": "Alembic Pharma", "ASTRAZEN.NS": "AstraZeneca Pharma", "AUROBINDO.NS": "Aurobindo Pharma",
+        "CADILAHC.NS": "Cadila Healthcare", "ERIS.NS": "Eris Lifesciences", "FINEORG.NS": "Fine Organic",
+        "GLAXO.NS": "GlaxoSmithKline", "GRANULES.NS": "Granules India", "HETERO.NS": "Hetero Drugs"
     },
-    "Auto Components 3": {
-        "GABRIEL.NS":"Gabriel India","GREAVESCOT.NS":"Greaves Cotton","JAMNAAUTO.NS":"Jamna Auto","KALYANI.NS":"Kalyani Forge",
-        "MAHSEAMLES.NS":"Maharashtra Seamless","MAJESAUTO.NS":"Munjal Auto","MFSL.NS":"Max Financial","MHRIL.NS":"Mahindra Holidays",
-        "RAMCOCEM.NS":"Ramco Cements","RATNAMANI.NS":"Ratnamani Metals","SHARDACROP.NS":"Sharda Cropchem","SUPRAJIT.NS":"Suprajit Engineering",
-        "TIINDIA.NS":"Tube Investments","WHEELS.NS":"Wheels India","MUTHOOTFIN.NS":"Muthoot Finance","BAJAJHLDNG.NS":"Bajaj Holdings",
-        "CHOLAHLDNG.NS":"Cholamandalam Holdings","SUNDARMFIN.NS":"Sundaram Finance","SHRIRAMFIN.NS":"Shriram Finance","MANAPPURAM.NS":"Manappuram Finance"
+    
+    "💊 Pharma Healthcare - Midcap 2": {
+        "JBCHEPHARM.NS": "JB Chemicals", "MANKIND.NS": "Mankind Pharma", "METROPOLIS.NS": "Metropolis Healthcare",
+        "NATCOPHARM.NS": "Natco Pharma", "PFIZER.NS": "Pfizer", "SANOFI.NS": "Sanofi India",
+        "SOLARA.NS": "Solara Active", "SYNGENE.NS": "Syngene International", "VIMTA.NS": "Vimta Labs",
+        "WOCKPHARMA.NS": "Wockhardt", "ZYDUSLIFE.NS": "Zydus Lifesciences", "ZYDUSWELL.NS": "Zydus Wellness",
+        "LALPATHLAB.NS": "Dr Lal PathLabs", "THYROCARE.NS": "Thyrocare"
     },
-    "FMCG Consumer 1": {
-        "ABFRL.NS":"Aditya Birla Fashion","AKZOINDIA.NS":"Akzo Nobel","AVANTIFEED.NS":"Avanti Feeds","BAJAJELEC.NS":"Bajaj Electricals",
-        "BAJAJHLDNG.NS":"Bajaj Holdings","BATAINDIA.NS":"Bata India","BIKAJI.NS":"Bikaji Foods","BRITANNIA.NS":"Britannia Industries",
-        "CCL.NS":"CCL Products","COLPAL.NS":"Colgate Palmolive","DABUR.NS":"Dabur India","EMAMILTD.NS":"Emami",
-        "GILLETTE.NS":"Gillette India","GODREJCP.NS":"Godrej Consumer","GODFRYPHLP.NS":"Godfrey Phillips","GUJALKALI.NS":"Gujarat Alkalies",
-        "HAVELLS.NS":"Havells India","HBLPOWER.NS":"HBL Power","HINDUNILVR.NS":"Hindustan Unilever","ITC.NS":"ITC"
+    
+    "💊 Pharma Healthcare - Midcap 3": {
+        "KRSNAA.NS": "Krsnaa Diagnostics", "KIMS.NS": "KIMS Hospitals", "MEDANTA.NS": "Global Health Medanta",
+        "POLYMED.NS": "Poly Medicure", "STAR.NS": "Strides Pharma", "SUVEN.NS": "Suven Pharma",
+        "SUVENPHAR.NS": "Suven Pharmaceuticals", "SEQUENT.NS": "Sequent Scientific", "SHILPAMED.NS": "Shilpa Medicare",
+        "BLISSGVS.NS": "Bliss GVS Pharma", "INDOCO.NS": "Indoco Remedies", "JUBLPHARMA.NS": "Jubilant Pharma",
+        "LAURUS.NS": "Laurus Labs", "MARKSANS.NS": "Marksans Pharma", "NEULANDLAB.NS": "Neuland Laboratories",
+        "ALEMBIC.NS": "Alembic Pharmaceuticals", "BERGER.NS": "Berger Paints"
     },
-    "FMCG Consumer 2": {
-        "JKLAKSHMI.NS":"JK Lakshmi Cement","JKPAPER.NS":"JK Paper","JUBLFOOD.NS":"Jubilant FoodWorks","KAJARIACER.NS":"Kajaria Ceramics",
-        "KPRMILL.NS":"KPR Mill","MARICO.NS":"Marico","MRPL.NS":"MRPL","NAVINFLUOR.NS":"Navin Fluorine",
-        "NESTLEIND.NS":"Nestle India","ORIENTELEC.NS":"Orient Electric","PAGEIND.NS":"Page Industries","PCBL.NS":"PCBL",
-        "PIIND.NS":"PI Industries","POLYMED.NS":"Poly Medicure","RADICO.NS":"Radico Khaitan","RAJESHEXPO.NS":"Rajesh Exports",
-        "RELAXO.NS":"Relaxo Footwears","SOLARINDS.NS":"Solar Industries","SYMPHONY.NS":"Symphony","TATACHEM.NS":"Tata Chemicals"
+
+    # ========================================================================
+    # AUTO & COMPONENTS
+    # ========================================================================
+    "🚗 Auto Components - Large Cap": {
+        "APOLLOTYRE.NS": "Apollo Tyres", "ASHOKLEY.NS": "Ashok Leyland", "BALKRISIND.NS": "Balkrishna Industries",
+        "BHARATFORG.NS": "Bharat Forge", "BOSCHLTD.NS": "Bosch", "CEAT.NS": "CEAT",
+        "ESCORTS.NS": "Escorts", "EXIDEIND.NS": "Exide Industries", "MOTHERSUMI.NS": "Motherson Sumi",
+        "MRF.NS": "MRF", "TVSMOTOR.NS": "TVS Motor"
     },
-    "FMCG Consumer 3": {
-        "TATACONSUM.NS":"Tata Consumer","TATAMETALI.NS":"Tata Metaliks","TTKPRESTIG.NS":"TTK Prestige","UBL.NS":"United Breweries",
-        "VENKEYS.NS":"Venky's","VSTIND.NS":"VST Industries","WHIRLPOOL.NS":"Whirlpool India","ZYDUSLIFE.NS":"Zydus Lifesciences",
-        "ZYDUSWELL.NS":"Zydus Wellness","ARVINDFASN.NS":"Arvind Fashions","CANTABIL.NS":"Cantabil Retail","CENTURY.NS":"Century Textiles",
-        "DOLLAR.NS":"Dollar Industries","GOCOLORS.NS":"Go Colors","INDIAMART.NS":"IndiaMART","KEWAL.NS":"Kewal Kiran",
-        "KPR.NS":"KPR Mill","MANYAVAR.NS":"Vedant Fashions","NYKAA.NS":"Nykaa","PGEL.NS":"PG Electroplast"
+    
+    "🚗 Auto Components - Midcap 1": {
+        "FORCEMOT.NS": "Force Motors", "AMARAJABAT.NS": "Amara Raja", "CRAFTSMAN.NS": "Craftsman Automation",
+        "ENDURANCE.NS": "Endurance Technologies", "FINCABLES.NS": "Finolex Cables"
     },
-    "FMCG Consumer 4": {
-        "PRAJIND.NS":"Praj Industries","RAYMOND.NS":"Raymond","SAPPHIRE.NS":"Sapphire Foods","SHOPERSTOP.NS":"Shoppers Stop",
-        "SPENCERS.NS":"Spencer's Retail","TCNSBRANDS.NS":"TCNS Clothing","TRENT.NS":"Trent","VGUARD.NS":"V-Guard",
-        "VIPIND.NS":"VIP Industries","VMART.NS":"V-Mart Retail","WESTLIFE.NS":"Westlife Development","WONDERLA.NS":"Wonderla Holidays",
-        "BARBEQUE.NS":"Barbeque Nation","BIKAJI.NS":"Bikaji Foods","BRITANNIA.NS":"Britannia","CCL.NS":"CCL Products",
-        "DEVYANI.NS":"Devyani International","HATSUN.NS":"Hatsun Agro","ITC.NS":"ITC","JUBLFOOD.NS":"Jubilant FoodWorks"
+    
+    "🚗 Auto Components - Midcap 2": {
+        "JKTYRE.NS": "JK Tyre", "MAHINDCIE.NS": "Mahindra CIE", "MOTHERSON.NS": "Motherson Sumi",
+        "SANDHAR.NS": "Sandhar Technologies", "SANSERA.NS": "Sansera Engineering", "SCHAEFFLER.NS": "Schaeffler India",
+        "SKFINDIA.NS": "SKF India", "SWARAJENG.NS": "Swaraj Engines", "TUBE.NS": "Tube Investments",
+        "WHEELS.NS": "Wheels India", "ABB.NS": "ABB India", "AIAENG.NS": "AIA Engineering",
+        "ALICON.NS": "Alicon Castalloy", "APOLLOPIPE.NS": "Apollo Pipes", "ASAHIINDIA.NS": "Asahi India Glass",
+        "CEATLTD.NS": "CEAT", "CUMMINSIND.NS": "Cummins India", "ELGIRUBCO.NS": "Elgi Rubber"
     },
-    "Industrial 1": {
-        "APLAPOLLO.NS":"APL Apollo","ASTRAL.NS":"Astral Poly","CARYSIL.NS":"Carysil","CASTROLIND.NS":"Castrol India",
-        "CENTURYPLY.NS":"Century Plyboards","CERA.NS":"Cera Sanitaryware","DEEPAKNTR.NS":"Deepak Nitrite","ELECON.NS":"Elecon Engineering",
-        "FILATEX.NS":"Filatex India","FLUOROCHEM.NS":"Gujarat Fluorochemicals","GARFIBRES.NS":"Garware Technical","GREAVESCOT.NS":"Greaves Cotton",
-        "GRINDWELL.NS":"Grindwell Norton","GSPL.NS":"Gujarat State Petronet","HIL.NS":"HIL Limited","INOXWIND.NS":"Inox Wind",
-        "JINDALSAW.NS":"Jindal Saw","JKCEMENT.NS":"JK Cement","KALPATPOWR.NS":"Kalpataru Power","KANSAINER.NS":"Kansai Nerolac"
+    
+    "🚗 Auto Components - Midcap 3": {
+        "GABRIEL.NS": "Gabriel India", "GREAVESCOT.NS": "Greaves Cotton", "JAMNAAUTO.NS": "Jamna Auto",
+        "KALYANI.NS": "Kalyani Forge", "MAHSEAMLES.NS": "Maharashtra Seamless", "MAJESAUTO.NS": "Munjal Auto",
+        "MFSL.NS": "Max Financial", "MHRIL.NS": "Mahindra Holidays", "RAMCOCEM.NS": "Ramco Cements",
+        "RATNAMANI.NS": "Ratnamani Metals", "SHARDACROP.NS": "Sharda Cropchem", "TIINDIA.NS": "Tube Investments"
     },
-    "Industrial 2": {
-        "KCP.NS":"KCP Limited","KEC.NS":"KEC International","KEI.NS":"KEI Industries","KIRLOSENG.NS":"Kirloskar Oil",
-        "LINDEINDIA.NS":"Linde India","MOIL.NS":"MOIL","NESCO.NS":"NESCO","NLCINDIA.NS":"NLC India",
-        "PHILIPCARB.NS":"Phillips Carbon","PRINCEPIPE.NS":"Prince Pipes","PRSMJOHNSN.NS":"Prism Johnson","RAIN.NS":"Rain Industries",
-        "RATNAMANI.NS":"Ratnamani Metals","RCF.NS":"Rashtriya Chemicals","RITES.NS":"RITES","RVNL.NS":"Rail Vikas Nigam",
-        "SAIL.NS":"SAIL","SHREECEM.NS":"Shree Cement","SJVN.NS":"SJVN","SOBHA.NS":"Sobha"
+
+    # ========================================================================
+    # FMCG & CONSUMER
+    # ========================================================================
+    "🍔 FMCG Consumer - Large Cap": {
+        "BATAINDIA.NS": "Bata India", "BERGEPAINT.NS": "Berger Paints", "COLPAL.NS": "Colgate",
+        "DABUR.NS": "Dabur", "EMAMILTD.NS": "Emami", "GODREJCP.NS": "Godrej Consumer",
+        "JYOTHYLAB.NS": "Jyothy Labs", "MARICO.NS": "Marico", "TATACONSUM.NS": "Tata Consumer",
+        "UBL.NS": "United Breweries", "VBL.NS": "Varun Beverages"
     },
-    "Industrial 3": {
-        "SOLARINDS.NS":"Solar Industries","SRF.NS":"SRF","STARCEMENT.NS":"Star Cement","SUMICHEM.NS":"Sumitomo Chemical",
-        "SUPRAJIT.NS":"Suprajit Engineering","SUPREMEIND.NS":"Supreme Industries","SWARAJENG.NS":"Swaraj Engines","TATAINVEST.NS":"Tata Investment",
-        "TATATECH.NS":"Tata Technologies","TECHNOE.NS":"Techno Electric","TIINDIA.NS":"Tube Investments","TIMETECHNO.NS":"Time Technoplast",
-        "TRITURBINE.NS":"Triveni Turbine","UCOBANK.NS":"UCO Bank","UPL.NS":"UPL","VINATIORGA.NS":"Vinati Organics",
-        "WELCORP.NS":"Welspun Corp","WELSPUNIND.NS":"Welspun India","WESTLIFE.NS":"Westlife Development","ABB.NS":"ABB India"
+    
+    "🍔 FMCG Consumer - Midcap 1": {
+        "ABFRL.NS": "Aditya Birla Fashion", "AKZOINDIA.NS": "Akzo Nobel", "AVANTIFEED.NS": "Avanti Feeds",
+        "BAJAJELEC.NS": "Bajaj Electricals", "BIKAJI.NS": "Bikaji Foods", "CCL.NS": "CCL Products",
+        "GILLETTE.NS": "Gillette India", "GODFRYPHLP.NS": "Godfrey Phillips", "GUJALKALI.NS": "Gujarat Alkalies",
+        "HBLPOWER.NS": "HBL Power"
     },
-    "Industrial 4": {
-        "BEML.NS":"BEML","BDL.NS":"Bharat Dynamics","BHARATFORG.NS":"Bharat Forge","BOSCHLTD.NS":"Bosch",
-        "CARBORUNIV.NS":"Carborundum Universal","CUMMINSIND.NS":"Cummins India","HAL.NS":"Hindustan Aeronautics","KALYANI.NS":"Kalyani Forge",
-        "KIRLOSKAR.NS":"Kirloskar Brothers","SIEMENS.NS":"Siemens","THERMAX.NS":"Thermax","TIMKEN.NS":"Timken India",
-        "TRIVENI.NS":"Triveni Turbine","VOLTAS.NS":"Voltas","AARTI.NS":"Aarti Industries","ALKYLAMINE.NS":"Alkyl Amines",
-        "ATUL.NS":"Atul Ltd","BASF.NS":"BASF India","FINEORG.NS":"Fine Organic","GNFC.NS":"GNFC"
+    
+    "🍔 FMCG Consumer - Midcap 2": {
+        "JKLAKSHMI.NS": "JK Lakshmi Cement", "JKPAPER.NS": "JK Paper", "JUBLFOOD.NS": "Jubilant FoodWorks",
+        "KAJARIACER.NS": "Kajaria Ceramics", "KPRMILL.NS": "KPR Mill", "MRPL.NS": "MRPL",
+        "NAVINFLUOR.NS": "Navin Fluorine", "PAGEIND.NS": "Page Industries", "PCBL.NS": "PCBL",
+        "PIIND.NS": "PI Industries", "RADICO.NS": "Radico Khaitan", "RAJESHEXPO.NS": "Rajesh Exports",
+        "RELAXO.NS": "Relaxo Footwears", "SOLARINDS.NS": "Solar Industries", "TATACHEM.NS": "Tata Chemicals"
     },
-    "Energy Power 1": {
-        "ADANIENSOL.NS":"Adani Energy","ADANIGAS.NS":"Adani Total Gas","ADANIGREEN.NS":"Adani Green","AEGISCHEM.NS":"Aegis Logistics",
-        "BPCL.NS":"BPCL","GAIL.NS":"GAIL","GMRINFRA.NS":"GMR Infrastructure","GNFC.NS":"GNFC",
-        "GSFC.NS":"GSFC","GUJGASLTD.NS":"Gujarat Gas","HINDPETRO.NS":"Hindustan Petroleum","IOC.NS":"Indian Oil",
-        "IGL.NS":"Indraprastha Gas","MGL.NS":"Mahanagar Gas","ONGC.NS":"ONGC","OIL.NS":"Oil India",
-        "PETRONET.NS":"Petronet LNG","RELIANCE.NS":"Reliance Industries","ADANIPOWER.NS":"Adani Power","ADANITRANS.NS":"Adani Transmission"
+    
+    "🍔 FMCG Consumer - Midcap 3": {
+        "TATAMETALI.NS": "Tata Metaliks", "VENKEYS.NS": "Venky's", "ARVINDFASN.NS": "Arvind Fashions",
+        "CANTABIL.NS": "Cantabil Retail", "CENTURY.NS": "Century Textiles", "DOLLAR.NS": "Dollar Industries",
+        "GOCOLORS.NS": "Go Colors", "KEWAL.NS": "Kewal Kiran", "KPR.NS": "KPR Mill",
+        "MANYAVAR.NS": "Vedant Fashions", "PGEL.NS": "PG Electroplast"
     },
-    "Energy Power 2": {
-        "CESC.NS":"CESC","JSWENERGY.NS":"JSW Energy","NHPC.NS":"NHPC","NLCINDIA.NS":"NLC India",
-        "NTPC.NS":"NTPC","PFC.NS":"Power Finance Corp","POWERGRID.NS":"Power Grid","RECLTD.NS":"REC Limited",
-        "SJVN.NS":"SJVN","TATAPOWER.NS":"Tata Power","TORNTPOWER.NS":"Torrent Power","INOXWIND.NS":"Inox Wind",
-        "SUZLON.NS":"Suzlon Energy","COALINDIA.NS":"Coal India","HINDALCO.NS":"Hindalco","MOIL.NS":"MOIL",
-        "NMDC.NS":"NMDC","SAIL.NS":"SAIL","VEDL.NS":"Vedanta","CHAMBLFERT.NS":"Chambal Fertilizers"
+    
+    "🍔 FMCG Consumer - Midcap 4": {
+        "PRAJIND.NS": "Praj Industries", "RAYMOND.NS": "Raymond", "SAPPHIRE.NS": "Sapphire Foods",
+        "SPENCERS.NS": "Spencer's Retail", "TRENT.NS": "Trent", "VMART.NS": "V-Mart Retail",
+        "WONDERLA.NS": "Wonderla Holidays", "BARBEQUE.NS": "Barbeque Nation", "DEVYANI.NS": "Devyani International",
+        "HATSUN.NS": "Hatsun Agro"
     },
-    "Energy Power 3": {
-        "COROMANDEL.NS":"Coromandel International","DEEPAKFERT.NS":"Deepak Fertilizers","FACT.NS":"FACT","NFL.NS":"National Fertilizers",
-        "RCF.NS":"Rashtriya Chemicals","ADANIPORTS.NS":"Adani Ports","CONCOR.NS":"Container Corporation","IRCTC.NS":"IRCTC",
-        "AEGISCHEM.NS":"Aegis Logistics","ALLCARGO.NS":"Allcargo Logistics","BLUEDART.NS":"Blue Dart Express","GATI.NS":"Gati",
-        "MAHLOG.NS":"Mahindra Logistics","TCI.NS":"Transport Corporation","TCIEXP.NS":"TCI Express","VRL.NS":"VRL Logistics",
-        "BPCL.NS":"Bharat Petroleum","HINDPETRO.NS":"Hindustan Petroleum","IOC.NS":"Indian Oil Corp","MRPL.NS":"MRPL"
+
+    # ========================================================================
+    # INDUSTRIAL & CEMENT
+    # ========================================================================
+    "🏭 Industrial Cement - Large Cap": {
+        "AMBUJACEM.NS": "Ambuja Cements", "BEL.NS": "Bharat Electronics",
+        "JKCEMENT.NS": "JK Cement", "SHREECEM.NS": "Shree Cement", "SIEMENS.NS": "Siemens",
+        "THERMAX.NS": "Thermax"
     },
-    "Retail Ecommerce 1": {
-        "AFFLE.NS":"Affle India","CARTRADE.NS":"CarTrade Tech","EASEMYTRIP.NS":"EaseMyTrip","INDIAMART.NS":"IndiaMART",
-        "JUSTDIAL.NS":"Just Dial","MATRIMONY.NS":"Matrimony.com","NAZARA.NS":"Nazara Technologies","NYKAA.NS":"Nykaa",
-        "PAYTM.NS":"Paytm","POLICYBZR.NS":"PB Fintech","ROUTE.NS":"Route Mobile","ZOMATO.NS":"Zomato",
-        "BARBEQUE.NS":"Barbeque Nation","CAMPUS.NS":"Campus Activewear","DEVYANI.NS":"Devyani International","DMART.NS":"Avenue Supermarts",
-        "FIVESTAR.NS":"Five Star Business","JUBLFOOD.NS":"Jubilant FoodWorks","KIMS.NS":"KIMS Hospitals","RELAXO.NS":"Relaxo Footwears"
+    
+    "🏭 Industrial - Midcap 1": {
+        "APLAPOLLO.NS": "APL Apollo", "ASTRAL.NS": "Astral Poly", "CARYSIL.NS": "Carysil",
+        "CASTROLIND.NS": "Castrol India", "CENTURYPLY.NS": "Century Plyboards", "CERA.NS": "Cera Sanitaryware",
+        "DEEPAKNTR.NS": "Deepak Nitrite", "ELECON.NS": "Elecon Engineering", "FILATEX.NS": "Filatex India",
+        "FLUOROCHEM.NS": "Gujarat Fluorochemicals", "GARFIBRES.NS": "Garware Technical", "GRINDWELL.NS": "Grindwell Norton",
+        "GSPL.NS": "Gujarat State Petronet", "HIL.NS": "HIL Limited", "INOXWIND.NS": "Inox Wind",
+        "JINDALSAW.NS": "Jindal Saw", "KALPATPOWR.NS": "Kalpataru Power", "KANSAINER.NS": "Kansai Nerolac"
     },
-    "Retail Ecommerce 2": {
-        "SAPPHIRE.NS":"Sapphire Foods","SHOPERSTOP.NS":"Shoppers Stop","SPENCERS.NS":"Spencer's Retail","TATACOMM.NS":"Tata Communications",
-        "TEAMLEASE.NS":"TeamLease Services","TRENT.NS":"Trent","VMART.NS":"V-Mart Retail","WESTLIFE.NS":"Westlife Development",
-        "WONDERLA.NS":"Wonderla Holidays","ABFRL.NS":"Aditya Birla Fashion","ARVINDFASN.NS":"Arvind Fashions","BATAINDIA.NS":"Bata India",
-        "CANTABIL.NS":"Cantabil Retail","DOLLAR.NS":"Dollar Industries","GOCOLORS.NS":"Go Colors","MANYAVAR.NS":"Vedant Fashions",
-        "RAYMOND.NS":"Raymond","TCNSBRANDS.NS":"TCNS Clothing","VIPIND.NS":"VIP Industries","WONDERLA.NS":"Wonderla Holidays"
+    
+    "🏭 Industrial - Midcap 2": {
+        "KCP.NS": "KCP Limited", "KEC.NS": "KEC International", "KEI.NS": "KEI Industries",
+        "KIRLOSENG.NS": "Kirloskar Oil", "LINDEINDIA.NS": "Linde India", "MOIL.NS": "MOIL",
+        "NESCO.NS": "NESCO", "NLCINDIA.NS": "NLC India", "PHILIPCARB.NS": "Phillips Carbon",
+        "PRINCEPIPE.NS": "Prince Pipes", "PRSMJOHNSN.NS": "Prism Johnson", "RAIN.NS": "Rain Industries",
+        "RCF.NS": "Rashtriya Chemicals", "RITES.NS": "RITES", "RVNL.NS": "Rail Vikas Nigam",
+        "SAIL.NS": "SAIL", "SJVN.NS": "SJVN", "SOBHA.NS": "Sobha"
     },
-    "Real Estate 1": {
-        "BRIGADE.NS":"Brigade Enterprises","DLF.NS":"DLF","GODREJPROP.NS":"Godrej Properties","IBREALEST.NS":"Indiabulls Real Estate",
-        "KOLTEPATIL.NS":"Kolte-Patil","LODHA.NS":"Macrotech Developers","MACROTECH.NS":"Macrotech Developers","MAHLIFE.NS":"Mahindra Lifespace",
-        "OBEROIRLTY.NS":"Oberoi Realty","PHOENIXLTD.NS":"Phoenix Mills","PRESTIGE.NS":"Prestige Estates","RAYMOND.NS":"Raymond",
-        "SIGNATURE.NS":"Signature Global","SOBHA.NS":"Sobha","AHLUCONT.NS":"Ahluwalia Contracts","ASHOKA.NS":"Ashoka Buildcon",
-        "HCC.NS":"Hindustan Construction","IRB.NS":"IRB Infrastructure","IRCON.NS":"IRCON International","KEC.NS":"KEC International"
+    
+    "🏭 Industrial - Midcap 3": {
+        "SRF.NS": "SRF", "STARCEMENT.NS": "Star Cement", "SUMICHEM.NS": "Sumitomo Chemical",
+        "SUPREMEIND.NS": "Supreme Industries", "TECHNOE.NS": "Techno Electric", "TIMETECHNO.NS": "Time Technoplast",
+        "TRITURBINE.NS": "Triveni Turbine", "UCOBANK.NS": "UCO Bank", "VINATIORGA.NS": "Vinati Organics",
+        "WELCORP.NS": "Welspun Corp"
     },
-    "Real Estate 2": {
-        "NBCC.NS":"NBCC India","NCCLTD.NS":"NCC Limited","PNCINFRA.NS":"PNC Infratech","RITES.NS":"RITES",
-        "RVNL.NS":"Rail Vikas Nigam","ACC.NS":"ACC Cement","AMBUJACEM.NS":"Ambuja Cements","APLAPOLLO.NS":"APL Apollo Tubes",
-        "ASTRAL.NS":"Astral Poly","CENTURYPLY.NS":"Century Plyboards","CERA.NS":"Cera Sanitaryware","DALMIACEM.NS":"Dalmia Bharat",
-        "GREENPLY.NS":"Greenply Industries","JKCEMENT.NS":"JK Cement","JKLAKSHMI.NS":"JK Lakshmi Cement","KAJARIACER.NS":"Kajaria Ceramics",
-        "ORIENTCEM.NS":"Orient Cement","RAMCOCEM.NS":"Ramco Cements","SHREECEM.NS":"Shree Cement","STARCEMENT.NS":"Star Cement"
+    
+    "🏭 Industrial - Midcap 4": {
+        "BEML.NS": "BEML", "BDL.NS": "Bharat Dynamics", "CARBORUNIV.NS": "Carborundum Universal",
+        "HAL.NS": "Hindustan Aeronautics", "KIRLOSKAR.NS": "Kirloskar Brothers", "AARTI.NS": "Aarti Industries",
+        "ALKYLAMINE.NS": "Alkyl Amines", "ATUL.NS": "Atul Ltd", "BASF.NS": "BASF India", "GNFC.NS": "GNFC"
     },
-    "Real Estate 3": {
-        "SUPREMEIND.NS":"Supreme Industries","ULTRACEMCO.NS":"UltraTech Cement","FINCABLES.NS":"Finolex Cables","HUDCO.NS":"HUDCO",
-        "LINDEINDIA.NS":"Linde India","SALASAR.NS":"Salasar Techno","SUNFLAG.NS":"Sunflag Iron","CENTURYTEX.NS":"Century Textiles",
-        "CMSINFO.NS":"CMS Info Systems","DCBBANK.NS":"DCB Bank","ESABINDIA.NS":"ESAB India","GUJGASLTD.NS":"Gujarat Gas",
-        "JWL.NS":"Jupiter Wagons","KOLTEPATIL.NS":"Kolte-Patil","MAHLIFE.NS":"Mahindra Lifespace","PHOENIXLTD.NS":"Phoenix Mills",
-        "PRESTIGE.NS":"Prestige Estates","BRIGADE.NS":"Brigade Enterprises","SOBHA.NS":"Sobha Limited","RAYMOND.NS":"Raymond Limited"
+
+    # ========================================================================
+    # ENERGY & POWER
+    # ========================================================================
+    "⚡ Energy Power - Large Cap": {
+        "ADANIGREEN.NS": "Adani Green", "ADANIPOWER.NS": "Adani Power", "GAIL.NS": "GAIL",
+        "HINDPETRO.NS": "HPCL", "IOC.NS": "Indian Oil", "IGL.NS": "Indraprastha Gas",
+        "PETRONET.NS": "Petronet LNG", "TATAPOWER.NS": "Tata Power", "TORNTPOWER.NS": "Torrent Power"
     },
-    "Media Entertainment": {
-        "DB.NS":"DB Corp","HATHWAY.NS":"Hathway Cable","INOXLEISUR.NS":"Inox Leisure","JAGRAN.NS":"Jagran Prakashan",
-        "NAZARA.NS":"Nazara Technologies","NETWORK18.NS":"Network18 Media","PVR.NS":"PVR Inox","PVRINOX.NS":"PVR Inox",
-        "SAREGAMA.NS":"Saregama India","SUNTV.NS":"Sun TV Network","TIPS.NS":"Tips Industries","TV18BRDCST.NS":"TV18 Broadcast",
-        "TVTODAY.NS":"TV Today","ZEEL.NS":"Zee Entertainment","HT.NS":"HT Media","NAVNETEDUL.NS":"Navneet Education",
-        "TREEHOUSE.NS":"Tree House Education","DELTACORP.NS":"Delta Corp","ONMOBILE.NS":"OnMobile Global","WONDERLA.NS":"Wonderla Holidays"
+    
+    "⚡ Energy Power - Midcap 1": {
+        "ADANIENSOL.NS": "Adani Energy", "ADANIGAS.NS": "Adani Total Gas", "AEGISCHEM.NS": "Aegis Logistics",
+        "GMRINFRA.NS": "GMR Infrastructure", "GSFC.NS": "GSFC", "GUJGASLTD.NS": "Gujarat Gas",
+        "MGL.NS": "Mahanagar Gas", "OIL.NS": "Oil India", "ADANITRANS.NS": "Adani Transmission"
     },
-    "Agriculture Chemicals 1": {
-        "AARTIIND.NS":"Aarti Industries","AARTIDRUGS.NS":"Aarti Drugs","ATUL.NS":"Atul Ltd","BASF.NS":"BASF India",
-        "BHAGERIA.NS":"Bhageria Industries","COROMANDEL.NS":"Coromandel International","DEEPAKNTR.NS":"Deepak Nitrite","EXCEL.NS":"Excel Crop Care",
-        "FINEORG.NS":"Fine Organic","FLUOROCHEM.NS":"Gujarat Fluorochemicals","GNFC.NS":"GNFC","GSFC.NS":"GSFC",
-        "HERANBA.NS":"Heranba Industries","INDOFIL.NS":"Indofil Industries","INSECTICIDES.NS":"Insecticides India","NAVINFLUOR.NS":"Navin Fluorine",
-        "NOCIL.NS":"NOCIL","PIIND.NS":"PI Industries","RALLIS.NS":"Rallis India","SHARDACROP.NS":"Sharda Cropchem"
+    
+    "⚡ Energy Power - Midcap 2": {
+        "CESC.NS": "CESC", "JSWENERGY.NS": "JSW Energy", "NHPC.NS": "NHPC",
+        "SUZLON.NS": "Suzlon Energy", "VEDL.NS": "Vedanta", "CHAMBLFERT.NS": "Chambal Fertilizers"
     },
-    "Agriculture Chemicals 2": {
-        "SRF.NS":"SRF","SUMICHEM.NS":"Sumitomo Chemical","TATACHEM.NS":"Tata Chemicals","UPL.NS":"UPL",
-        "VINATIORGA.NS":"Vinati Organics","ZUARI.NS":"Zuari Agro Chemicals","CHAMBLFERT.NS":"Chambal Fertilizers","DEEPAKFERT.NS":"Deepak Fertilizers",
-        "FACT.NS":"FACT","NFL.NS":"National Fertilizers","RCF.NS":"Rashtriya Chemicals","AVANTIFEED.NS":"Avanti Feeds",
-        "BBTC.NS":"Bombay Burmah","CENTURYTEXT.NS":"Century Textiles","HINDOILEXP.NS":"Hindustan Oil","JUBLCHEM.NS":"Jubilant Ingrevia",
-        "KRBL.NS":"KRBL","TATACOFFEE.NS":"Tata Coffee","VENKEYS.NS":"Venky's","ALKYLAMINE.NS":"Alkyl Amines"
+    
+    "⚡ Energy Power - Midcap 3": {
+        "COROMANDEL.NS": "Coromandel International", "DEEPAKFERT.NS": "Deepak Fertilizers", "FACT.NS": "FACT",
+        "NFL.NS": "National Fertilizers", "ADANIPORTS.NS": "Adani Ports", "CONCOR.NS": "Container Corporation",
+        "IRCTC.NS": "IRCTC", "ALLCARGO.NS": "Allcargo Logistics", "BLUEDART.NS": "Blue Dart Express",
+        "GATI.NS": "Gati", "MAHLOG.NS": "Mahindra Logistics", "TCI.NS": "Transport Corporation",
+        "TCIEXP.NS": "TCI Express", "VRL.NS": "VRL Logistics"
     },
-    "Specialty Emerging 1": {
-        "AEGISCHEM.NS":"Aegis Logistics","ALLCARGO.NS":"Allcargo Logistics","BLUEDART.NS":"Blue Dart Express","CONCOR.NS":"Container Corporation",
-        "GATI.NS":"Gati","MAHLOG.NS":"Mahindra Logistics","TCI.NS":"Transport Corporation","TCIEXP.NS":"TCI Express",
-        "VRL.NS":"VRL Logistics","APTECH.NS":"Aptech","CAREEREDGE.NS":"Career Point","NAVNETEDUL.NS":"Navneet Education",
-        "TREEHOUSE.NS":"Tree House Education","ZEE.NS":"Zee Learn","CHALET.NS":"Chalet Hotels","EIH.NS":"EIH",
-        "INDHOTEL.NS":"Indian Hotels","LEMONTREE.NS":"Lemon Tree Hotels","MAHINDCIE.NS":"Mahindra Holidays","TAJGVK.NS":"Taj GVK Hotels"
+
+    # ========================================================================
+    # RETAIL & ECOMMERCE
+    # ========================================================================
+    "🛒 Retail Ecommerce - Large Cap": {
+        "DMART.NS": "Avenue Supermarts"
     },
-    "Specialty Emerging 2": {
-        "COX&KINGS.NS":"Cox & Kings","EASEMYTRIP.NS":"EaseMyTrip","IRCTC.NS":"IRCTC","SPICEJET.NS":"SpiceJet",
-        "TBO.NS":"TBO Tek","THOMASCOOK.NS":"Thomas Cook","CMSINFO.NS":"CMS Info Systems","SIS.NS":"SIS Limited",
-        "UNOMINDA.NS":"Uno Minda","EMAMIPAP.NS":"Emami Paper","JKPAPER.NS":"JK Paper","SESAGOA.NS":"Sesa Goa",
-        "TNIDETF.NS":"TNPL","WESTPAPER.NS":"West Coast Paper","BDL.NS":"Bharat Dynamics","BEL.NS":"Bharat Electronics",
-        "GRSE.NS":"Garden Reach Shipbuilders","HAL.NS":"Hindustan Aeronautics","MAZDOCK.NS":"Mazagon Dock","MIDHANI.NS":"Mishra Dhatu Nigam"
+    
+    "🛒 Retail Ecommerce - Midcap 1": {
+        "FIVESTAR.NS": "Five Star Business"
     },
-    "Textiles Apparels": {
-        "AARVEEDEN.NS":"Aarvee Denims","ALOKTEXT.NS":"Alok Textile","ARSS.NS":"ARSS Infrastructure","BANSWRAS.NS":"Banswara Syntex",
-        "CENTURYTEX.NS":"Century Textiles","DOLLAR.NS":"Dollar Industries","GOKEX.NS":"Gokaldas Exports","KPR.NS":"KPR Mill",
-        "NAHARINDUS.NS":"Nahar Industrial","NITIN.NS":"Nitin Spinners","RAYMOND.NS":"Raymond","RSWM.NS":"RSWM",
-        "SPENTEX.NS":"Spentex Industries","SUTLEJTEX.NS":"Sutlej Textiles","TRIDENT.NS":"Trident","VARDHACRLC.NS":"Vardhman Textiles",
-        "WELSPUNIND.NS":"Welspun India","ABFRL.NS":"Aditya Birla Fashion","ARVINDFASN.NS":"Arvind Fashions","CANTABIL.NS":"Cantabil Retail"
+    
+    "🛒 Retail Ecommerce - Midcap 2": {
+        "ARVINDFASN.NS": "Arvind Fashions"
     },
-    "Diversified 1": {
-        "ASAHIINDIA.NS":"Asahi India Glass","CERA.NS":"Cera Sanitaryware","HGINFRA.NS":"HG Infra","HLEGLAS.NS":"HLE Glascoat",
-        "KAJARIACER.NS":"Kajaria Ceramics","ORIENT.NS":"Orient Cement","PRISM.NS":"Prism Johnson","SOMANY.NS":"Somany Ceramics",
-        "APLAPOLLO.NS":"APL Apollo Tubes","APOLLOPIPE.NS":"Apollo Pipes","ASTRAL.NS":"Astral Poly","FINOLEX.NS":"Finolex Industries",
-        "NAGREEKEXP.NS":"Nagreeka Exports","PRINCEPIPE.NS":"Prince Pipes","SUPREME.NS":"Supreme Industries","VALIANTORG.NS":"Valiant Organics",
-        "FAG.NS":"Schaeffler India","NBC.NS":"National Bearings","NRB.NS":"NRB Bearings","SCHAEFFLER.NS":"Schaeffler India"
+
+    # ========================================================================
+    # REAL ESTATE
+    # ========================================================================
+    "🏗️ Real Estate - Large Cap": {
+        "DLF.NS": "DLF", "GODREJPROP.NS": "Godrej Properties", "OBEROIRLTY.NS": "Oberoi Realty",
+        "PRESTIGE.NS": "Prestige Estates"
     },
-    "Diversified 2": {
-        "SKFINDIA.NS":"SKF India","TIMKEN.NS":"Timken India","FINCABLES.NS":"Finolex Cables","GALAXYSURF.NS":"Galaxy Surfactants",
-        "KEI.NS":"KEI Industries","ORIENTELEC.NS":"Orient Electric","POLYCAB.NS":"Polycab India","VGUARD.NS":"V-Guard Industries",
-        "CESC.NS":"CESC","CROMPTON.NS":"Crompton Greaves","HAVELLS.NS":"Havells India","KIRLOSENG.NS":"Kirloskar Oil",
-        "KIRLFER.NS":"Kirloskar Ferrous","KSB.NS":"KSB Pumps","ORIENTELEC.NS":"Orient Electric","SHAKTICP.NS":"Shakti Corporation",
-        "3MINDIA.NS":"3M India","AARTIDRUGS.NS":"Aarti Drugs","ACCELYA.NS":"Accelya Kale","ACI.NS":"Archean Chemical"
+    
+    "🏗️ Real Estate - Midcap 1": {
+        "BRIGADE.NS": "Brigade Enterprises", "IBREALEST.NS": "Indiabulls Real Estate", "KOLTEPATIL.NS": "Kolte-Patil",
+        "LODHA.NS": "Macrotech Developers", "MACROTECH.NS": "Macrotech Developers", "PHOENIXLTD.NS": "Phoenix Mills",
+        "SIGNATURE.NS": "Signature Global", "AHLUCONT.NS": "Ahluwalia Contracts", "ASHOKA.NS": "Ashoka Buildcon",
+        "HCC.NS": "Hindustan Construction", "IRB.NS": "IRB Infrastructure", "IRCON.NS": "IRCON International"
+    },
+    
+    "🏗️ Real Estate - Midcap 2": {
+        "NBCC.NS": "NBCC India", "NCCLTD.NS": "NCC Limited", "PNCINFRA.NS": "PNC Infratech",
+        "ACC.NS": "ACC Cement", "DALMIACEM.NS": "Dalmia Bharat", "GREENPLY.NS": "Greenply Industries",
+        "ORIENTCEM.NS": "Orient Cement"
+    },
+    
+    "🏗️ Real Estate - Midcap 3": {
+        "HUDCO.NS": "HUDCO", "SALASAR.NS": "Salasar Techno", "SUNFLAG.NS": "Sunflag Iron",
+        "CENTURYTEX.NS": "Century Textiles", "CMSINFO.NS": "CMS Info Systems", "ESABINDIA.NS": "ESAB India",
+        "JWL.NS": "Jupiter Wagons"
+    },
+
+    # ========================================================================
+    # MEDIA & ENTERTAINMENT
+    # ========================================================================
+    "📺 Media Entertainment": {
+        "DB.NS": "DB Corp", "HATHWAY.NS": "Hathway Cable", "INOXLEISUR.NS": "Inox Leisure",
+        "JAGRAN.NS": "Jagran Prakashan", "NETWORK18.NS": "Network18 Media", "PVR.NS": "PVR Inox",
+        "PVRINOX.NS": "PVR Inox", "SAREGAMA.NS": "Saregama India", "SUNTV.NS": "Sun TV Network",
+        "TIPS.NS": "Tips Industries", "TV18BRDCST.NS": "TV18 Broadcast", "TVTODAY.NS": "TV Today",
+        "ZEEL.NS": "Zee Entertainment", "HT.NS": "HT Media", "NAVNETEDUL.NS": "Navneet Education",
+        "TREEHOUSE.NS": "Tree House Education", "DELTACORP.NS": "Delta Corp", "ONMOBILE.NS": "OnMobile Global"
+    },
+
+    # ========================================================================
+    # AGRICULTURE & CHEMICALS
+    # ========================================================================
+    "🌾 Agriculture Chemicals 1": {
+        "AARTIIND.NS": "Aarti Industries", "BHAGERIA.NS": "Bhageria Industries",
+        "EXCEL.NS": "Excel Crop Care", "HERANBA.NS": "Heranba Industries", "INDOFIL.NS": "Indofil Industries",
+        "INSECTICIDES.NS": "Insecticides India", "NOCIL.NS": "NOCIL", "RALLIS.NS": "Rallis India"
+    },
+    
+    "🌾 Agriculture Chemicals 2": {
+        "ZUARI.NS": "Zuari Agro Chemicals", "BBTC.NS": "Bombay Burmah", "CENTURYTEXT.NS": "Century Textiles",
+        "HINDOILEXP.NS": "Hindustan Oil", "JUBLCHEM.NS": "Jubilant Ingrevia", "KRBL.NS": "KRBL",
+        "TATACOFFEE.NS": "Tata Coffee"
+    },
+
+    # ========================================================================
+    # SPECIALTY & EMERGING
+    # ========================================================================
+    "🎯 Specialty Emerging 1": {
+        "APTECH.NS": "Aptech", "CAREEREDGE.NS": "Career Point", "ZEE.NS": "Zee Learn",
+        "CHALET.NS": "Chalet Hotels", "EIH.NS": "EIH", "INDHOTEL.NS": "Indian Hotels",
+        "LEMONTREE.NS": "Lemon Tree Hotels", "TAJGVK.NS": "Taj GVK Hotels"
+    },
+    
+    "🎯 Specialty Emerging 2": {
+        "COX&KINGS.NS": "Cox & Kings", "SPICEJET.NS": "SpiceJet", "TBO.NS": "TBO Tek",
+        "THOMASCOOK.NS": "Thomas Cook", "SIS.NS": "SIS Limited", "UNOMINDA.NS": "Uno Minda",
+        "EMAMIPAP.NS": "Emami Paper", "SESAGOA.NS": "Sesa Goa", "TNIDETF.NS": "TNPL",
+        "WESTPAPER.NS": "West Coast Paper", "GRSE.NS": "Garden Reach Shipbuilders",
+        "MAZDOCK.NS": "Mazagon Dock", "MIDHANI.NS": "Mishra Dhatu Nigam"
+    },
+
+    # ========================================================================
+    # TEXTILES & APPARELS
+    # ========================================================================
+    "👔 Textiles Apparels": {
+        "AARVEEDEN.NS": "Aarvee Denims", "ALOKTEXT.NS": "Alok Textile", "ARSS.NS": "ARSS Infrastructure",
+        "BANSWRAS.NS": "Banswara Syntex", "GOKEX.NS": "Gokaldas Exports", "NAHARINDUS.NS": "Nahar Industrial",
+        "NITIN.NS": "Nitin Spinners", "RSWM.NS": "RSWM", "SPENTEX.NS": "Spentex Industries",
+        "SUTLEJTEX.NS": "Sutlej Textiles", "TRIDENT.NS": "Trident", "VARDHACRLC.NS": "Vardhman Textiles"
+    },
+
+    # ========================================================================
+    # DIVERSIFIED
+    # ========================================================================
+    "🔄 Diversified 1": {
+        "HGINFRA.NS": "HG Infra", "ORIENT.NS": "Orient Cement", "PRISM.NS": "Prism Johnson",
+        "SOMANY.NS": "Somany Ceramics", "FINOLEX.NS": "Finolex Industries", "NAGREEKEXP.NS": "Nagreeka Exports",
+        "SUPREME.NS": "Supreme Industries", "VALIANTORG.NS": "Valiant Organics", "FAG.NS": "Schaeffler India",
+        "NBC.NS": "National Bearings", "NRB.NS": "NRB Bearings"
+    },
+    
+    "🔄 Diversified 2": {
+        "GALAXYSURF.NS": "Galaxy Surfactants", "KIRLFER.NS": "Kirloskar Ferrous", "KSB.NS": "KSB Pumps",
+        "SHAKTICP.NS": "Shakti Corporation", "ACCELYA.NS": "Accelya Kale", "ACI.NS": "Archean Chemical"
+    },
+
+    # ========================================================================
+    # SMALLCAP - ENGINEERING & MANUFACTURING
+    # ========================================================================
+    "🔧 Smallcap Engineering 1": {
+        "AARTISURF.NS": "Aarti Surfactants", "ABSORB.NS": "Absorb Plus", "ACCURACY.NS": "Accuracy Shipping",
+        "ACRYSIL.NS": "Acrysil", "ADVENZYMES.NS": "Advanced Enzymes", "AEROFLEX.NS": "Aeroflex Industries",
+        "AETHER.NS": "Aether Industries", "AGCNET.NS": "AGC Networks", "AHLEAST.NS": "Asian Hotels East",
+        "AIIL.NS": "Ashapura Intimates", "AIRAN.NS": "Airan Ltd", "AKASH.NS": "Akash Infra-Projects",
+        "AKSHARCHEM.NS": "Akshar Chem", "ALPA.NS": "Alpa Laboratories", "ALPHAGEO.NS": "Alphageo India",
+        "ALPSINDUS.NS": "Alps Industries"
+    },
+    
+    "🔧 Smallcap Engineering 2": {
+        "AMIABLE.NS": "Amiable Logistics", "AMJLAND.NS": "AMJ Land Holdings", "AMRUTANJAN.NS": "Amrutanjan Health",
+        "ANANTRAJ.NS": "Anant Raj", "ANDHRSUGAR.NS": "Andhra Sugars", "ANMOL.NS": "Anmol Industries",
+        "ANUP.NS": "Anupam Rasayan", "APARINDS.NS": "Apar Industries", "APCL.NS": "Anjani Portland",
+        "APCOTEXIND.NS": "Apcotex Industries", "APEX.NS": "Apex Frozen Foods", "APOLLO.NS": "Apollo Micro Systems",
+        "APTECHT.NS": "Aptech", "ARASU.NS": "Arasu Cable", "ARCHIDPLY.NS": "Archidply Industries",
+        "ARCHIES.NS": "Archies Ltd", "ARL.NS": "Apar Industries", "ARMANFIN.NS": "Arman Financial",
+        "ARROWGREEN.NS": "Arrow Greentech"
+    },
+    
+    "🔧 Smallcap Engineering 3": {
+        "ARSHIYA.NS": "Arshiya", "ARTNIRMAN.NS": "Art Nirman", "ASAHISONG.NS": "Asahi Songwon",
+        "ASAL.NS": "Automotive Stampings", "ASALCBR.NS": "Associated Alcohols", "ASHIANA.NS": "Ashiana Housing",
+        "ASHIMASYN.NS": "Ashima Ltd", "ASIANENE.NS": "Asian Energy Services", "ASIANHOTNR.NS": "Asian Hotels North",
+        "ASPINWALL.NS": "Aspinwall", "ASTEC.NS": "Astec LifeSciences", "ASTERDM.NS": "Aster DM Healthcare",
+        "ASTRAMICRO.NS": "Astra Microwave", "ATAM.NS": "Atam Valves", "ATNINTER.NS": "ATN International",
+        "ATULAUTO.NS": "Atul Auto"
+    },
+    
+    "🔧 Smallcap Engineering 4": {
+        "AURIONPRO.NS": "Aurionpro Solutions", "AUSOMENT.NS": "Ausom Enterprise", "AUSTRAL.NS": "Austral Coke",
+        "AUTOAXLES.NS": "Automotive Axles", "AUTOIND.NS": "Autoline Industries", "AVALON.NS": "Avalon Technologies",
+        "AVTNPL.NS": "AVT Natural Products", "AWL.NS": "Adani Wilmar", "AXISCADES.NS": "Axiscades Engineering",
+        "AXISGOLD.NS": "Axis Gold", "AYMSYNTEX.NS": "AYM Syntex", "AZAD.NS": "Azad Engineering",
+        "BAGFILMS.NS": "BAG Films", "BAJAJHIND.NS": "Bajaj Hindusthan Sugar", "BALAJITELE.NS": "Balaji Telefilms",
+        "BALAXI.NS": "Balaxi Ventures", "BALKRISHNA.NS": "Balkrishna Paper", "BALMLAWRIE.NS": "Balmer Lawrie",
+        "BALPHARMA.NS": "Bal Pharma", "BANCOINDIA.NS": "Banco Products", "BANG.NS": "Bang Overseas"
+    },
+
+    # ========================================================================
+    # SMALLCAP - CHEMICALS & PHARMACEUTICALS
+    # ========================================================================
+    "🧪 Smallcap Chemicals 1": {
+        "BBOX.NS": "Black Box", "BBL.NS": "Bharat Bijlee", "BCG.NS": "Brightcom Group",
+        "BCP.NS": "Banco Products", "BEEKAY.NS": "Beekay Steel", "BELSTAR.NS": "Belstar Microfinance",
+        "BEPL.NS": "Bhansali Engineering", "BFINVEST.NS": "BF Investment", "BGRENERGY.NS": "BGR Energy Systems",
+        "BHAGYANGR.NS": "Bhagiradha Chemicals", "BHANDARI.NS": "Bhandari Hosiery", "BHARATGEAR.NS": "Bharat Gears"
+    },
+    
+    "🧪 Smallcap Chemicals 2": {
+        "BHARATWIRE.NS": "Bharat Wire Ropes", "BHEL.NS": "BHEL", "BILENERGY.NS": "Bil Energy Systems",
+        "BIRLACABLE.NS": "Birla Cable", "BIRLAMONEY.NS": "Aditya Birla Money", "BIRLACORPN.NS": "Birla Corporation",
+        "BIRLATYRE.NS": "Birla Tyres", "BKM.NS": "Bkmindspace", "BLACKROSE.NS": "Blackrose Industries",
+        "BLAL.NS": "BEML Land Assets", "BLKASHYAP.NS": "B L Kashyap", "BLUEBLENDS.NS": "Blue Blends",
+        "BLUECOAST.NS": "Blue Coast Hotels", "BLUEJET.NS": "Blue Jet Healthcare", "BODALCHEM.NS": "Bodal Chemicals",
+        "BOMDYEING.NS": "Bombay Dyeing", "BOROLTD.NS": "Borosil Ltd"
+    },
+    
+    "🧪 Smallcap Chemicals 3": {
+        "BRFL.NS": "Bombay Rayon", "BRO.NS": "Brigade Road", "BSE.NS": "BSE Ltd",
+        "BSHSL.NS": "Bombay Super Hybrid", "BSL.NS": "BSL Ltd", "BSOFT.NS": "Birlasoft",
+        "BTML.NS": "Bodal Trading", "BURNPUR.NS": "Burnpur Cement", "BUTTERFLY.NS": "Butterfly Gandhimathi",
+        "CADSYS.NS": "Cadsys India", "CALSOFT.NS": "California Software", "CAMLINFINE.NS": "Camlin Fine Sciences",
+        "CANFINHOME.NS": "Can Fin Homes", "CAPF.NS": "Capital First", "CAPTRUST.NS": "Capital Trust",
+        "CARERATING.NS": "CARE Ratings"
+    },
+    
+    "🧪 Smallcap Chemicals 4": {
+        "CARGEN.NS": "Cargen Drugs", "CCCL.NS": "Consolidated Construction", "CELEBRITY.NS": "Celebrity Fashions",
+        "CELLO.NS": "Cello World", "CENTENKA.NS": "Century Enka", "CENTUM.NS": "Centum Electronics",
+        "CEREBRAINT.NS": "Cerebra Integrated", "CGCL.NS": "Capri Global", "CGPOWER.NS": "CG Power",
+        "CHEMBOND.NS": "Chembond Chemicals", "CHEMCON.NS": "Chemcon Speciality", "CHEMFAB.NS": "Chemfab Alkalis",
+        "CHEMPLASTS.NS": "Chemplast Sanmar", "CHENNPETRO.NS": "Chennai Petroleum"
+    },
+
+    # ========================================================================
+    # SMALLCAP - TEXTILES & CONSUMER GOODS
+    # ========================================================================
+    "👕 Smallcap Textiles 1": {
+        "CIGNITITEC.NS": "Cigniti Technologies", "CINELINE.NS": "Cineline India", "CINEVISTA.NS": "Cinevista",
+        "CLNINDIA.NS": "Clariant Chemicals", "CLSEL.NS": "Chaman Lal Setia", "CMICABLES.NS": "CMI Ltd",
+        "COASTCORP.NS": "Coastal Corporation", "COFFEEDAY.NS": "Coffee Day Enterprises", "COMPINFO.NS": "Compuage Infocom",
+        "COMPUSOFT.NS": "Compucom Software", "CONFIPET.NS": "Confidence Petroleum", "CONSOFINVT.NS": "Consolidated Finvest",
+        "CONTROLS.NS": "Control Print", "COOKCAST.NS": "Cookcast"
+    },
+    
+    "👕 Smallcap Textiles 2": {
+        "CORALFINAC.NS": "Coral India Finance", "CORDSCABLE.NS": "Cords Cable", "COROENGG.NS": "Coromandel Engineering",
+        "CORPBANK.NS": "Corporation Bank", "COSMOFILMS.NS": "Cosmo Films", "COUNCODOS.NS": "Country Condo's",
+        "CPSEETEC.NS": "CPS EeeTech", "CREATIVE.NS": "Creative Newtech", "CREATIVEYE.NS": "Creative Eye",
+        "CREST.NS": "Crest Ventures", "CRIMSONLOG.NS": "Crimson Logistics", "CROSSING.NS": "Crossing Republic",
+        "CRSBWARDR.NS": "CRISIL Board", "CUBEXTUB.NS": "Cubex Tubings", "CUREXAUTO.NS": "Curex Pharmaceuticals",
+        "CURATECH.NS": "Cura Technologies", "CUB.NS": "City Union Bank", "CYBERTECH.NS": "Cybertech Systems"
+    },
+    
+    "👕 Smallcap Textiles 3": {
+        "CYBERMEDIA.NS": "Cybermedia India", "DAICHISANK.NS": "Daiichi Sankyo", "DALMIASUG.NS": "Dalmia Bharat Sugar",
+        "DANGEE.NS": "Dangee Dums", "DATAPATTNS.NS": "Data Patterns", "DBOL.NS": "Dhampur Bio Organics",
+        "DBL.NS": "Dilip Buildcon", "DBREALTY.NS": "DB Realty", "DBSTOCKBRO.NS": "DB Stock Brokers",
+        "DCAST.NS": "Diecast", "DCB.NS": "DCB Bank", "DCHL.NS": "Deccan Chronicle",
+        "DCM.NS": "DCM Ltd", "DCMSHRIRAM.NS": "DCM Shriram", "DCMSRL.NS": "DCM Shriram",
+        "DCW.NS": "DCW Ltd", "DCXINDIA.NS": "DCX Systems", "DDL.NS": "Dhunseri Ventures",
+        "DEBOCK.NS": "De Nora India"
+    },
+    
+    "👕 Smallcap Textiles 4": {
+        "DEEPIND.NS": "Deepak Spinners", "DENDRO.NS": "Dendro Technologies", "DENORA.NS": "De Nora India",
+        "DENZYME.NS": "Dezyne E-Commerce", "DHANBANK.NS": "Dhanalakshmi Bank", "DHANUKA.NS": "Dhanuka Agritech",
+        "DHARAMSI.NS": "Dharamsi Morarji", "DHAMPURSUG.NS": "Dhampur Sugar", "DHANVARSHA.NS": "Dhanvarsha Finvest",
+        "DHUNINV.NS": "Dhunseri Investments", "DIACABS.NS": "Diamond Cables", "DIAMINESQ.NS": "Diamines Chemicals",
+        "DIGJAM.NS": "Digjamlimited", "DIGISPICE.NS": "DiGiSPICE Technologies", "DIGJAMLMTD.NS": "Digjamlimited",
+        "DION.NS": "Dion Global Solutions", "DISHMAN.NS": "Dishman Carbogen", "DIVGIITTS.NS": "Divgi TorqTransfer",
+        "DISHTV.NS": "Dish TV India"
+    },
+
+    # ========================================================================
+    # SMALLCAP - IT & SOFTWARE SERVICES
+    # ========================================================================
+    "💾 Smallcap IT 1": {
+        "DLINKINDIA.NS": "D-Link India", "DMCC.NS": "DMCC Speciality", "DOLAT.NS": "Dolat Investments",
+        "DONEAR.NS": "Donear Industries", "DOUBLECON.NS": "Double Con", "DREDGECORP.NS": "Dredging Corporation",
+        "DUCON.NS": "Ducon Infratechnologies", "DUCOL.NS": "Ducol Organics", "DUMMETT.NS": "Dummett Coote",
+        "DWARKESH.NS": "Dwarkesh Sugar", "DYNAMATECH.NS": "Dynamatic Technologies", "DYNAMIND.NS": "Dynamatic Technologies",
+        "EASTSILK.NS": "Eastern Silk", "EASUNREYRL.NS": "Easun Reyrolle", "EBBCO.NS": "EbbCo Ventures",
+        "ECLFINANCE.NS": "Edelweiss Capital", "ECOBOARD.NS": "Eco Board", "EDELWEISS.NS": "Edelweiss Financial",
+        "EDUCOMP.NS": "Educomp Solutions"
+    },
+    
+    "💾 Smallcap IT 2": {
+        "EIDPARRY.NS": "EID Parry", "EIFFL.NS": "Euro India Fresh Foods", "EIHAHOTELS.NS": "EIH Associated Hotels",
+        "EIHOTEL.NS": "EIH Ltd", "EIMCOELECO.NS": "Eimco Elecon", "EKENNIS.NS": "Ekennis Software",
+        "ELECTROCAST.NS": "Electrocast Sales", "ELECTHERM.NS": "Electrotherm India", "ELGIEQUIP.NS": "Elgi Equipments",
+        "ELIN.NS": "Elin Electronics", "EMAMIPAP.NS": "Emami Paper", "EMAMIREAL.NS": "Emami Realty",
+        "EMIRATE.NS": "Emirate Securities", "EMMBI.NS": "Emmbi Industries", "EMSLIMITED.NS": "EMS Ltd",
+        "ENIL.NS": "Entertainment Network", "EPACK.NS": "Epack Durables", "EQUIPPP.NS": "Equippp Social"
+    },
+    
+    "💾 Smallcap IT 3": {
+        "EROSMEDIA.NS": "Eros International", "ESSARSHPNG.NS": "Essar Shipping", "ESTER.NS": "Ester Industries",
+        "ETECHNO.NS": "Electrotherm Technologies", "EUROCERA.NS": "Euro Ceramics", "EUROTEXIND.NS": "Eurotex Industries",
+        "EVEREADY.NS": "Eveready Industries", "EVERESTIND.NS": "Everest Industries", "EXCELINDUS.NS": "Excel Industries",
+        "EXPLEOSOL.NS": "Expleo Solutions", "FAGBEARING.NS": "Schaeffler India", "FAIRCHEM.NS": "Fairchem Speciality",
+        "FAZE3.NS": "Faze Three", "FCL.NS": "Fineotex Chemical", "FEL.NS": "Future Enterprises",
+        "FELDVR.NS": "Future Enterprises DVR", "FENTURA.NS": "Fentura Financial", "FCSSOFT.NS": "FCS Software"
+    },
+    
+    "💾 Smallcap IT 4": {
+        "FIBERWEB.NS": "Fiberweb India", "FIEMIND.NS": "Fiem Industries", "FINPIPE.NS": "Finolex Industries",
+        "FINKURVE.NS": "Finkurve Financial", "FINOL.NS": "Finolex Industries", "FIRSTCRY.NS": "FirstCry Baby",
+        "FIRSTSOUR.NS": "Firstsource Solutions", "FLFL.NS": "Future Lifestyle", "FLIP.NS": "Flip Media",
+        "FOCUSLIGHT.NS": "Focus Lighting", "FOMENTO.NS": "Fomento Resorts", "FOODSIN.NS": "Foods & Inns",
+        "FORCE.NS": "Force Motors", "FOSECOIND.NS": "Foseco India", "FRETAIL.NS": "Future Retail",
+        "FRIEDBERG.NS": "Friedberg Direct"
+    },
+
+    # ========================================================================
+    # SMALLCAP - INFRASTRUCTURE & REAL ESTATE
+    # ========================================================================
+    "🏢 Smallcap Infra 1": {
+        "FSC.NS": "Future Supply Chain", "FSL.NS": "Firstsource Solutions", "GAEL.NS": "Gujarat Ambuja Exports",
+        "GALLANTT.NS": "Gallantt Ispat", "GANDHAR.NS": "Gandhar Oil Refinery", "GANDHITUBE.NS": "Gandhi Special Tubes",
+        "GANESHHOUC.NS": "Ganesh Housing", "GANECOS.NS": "Ganesha Ecosphere", "GANESHBE.NS": "Ganesh Benzoplast",
+        "GATECABLE.NS": "Gate Way Distriparks", "GATEWAY.NS": "Gateway Distriparks", "GAYAHWS.NS": "Gayatri Highways",
+        "GDL.NS": "Gateway Distriparks", "GENCON.NS": "Generic Pharma", "GENSOL.NS": "Gensol Engineering",
+        "GEOJITFSL.NS": "Geojit Financial", "GEPIL.NS": "GE Power India", "GESHIP.NS": "Great Eastern Shipping",
+        "GHCL.NS": "GHCL Ltd"
+    },
+    
+    "🏢 Smallcap Infra 2": {
+        "GHCLTEXTIL.NS": "GHCL Textiles", "GICHSGFIN.NS": "GIC Housing Finance", "GICRE.NS": "GIC Re",
+        "GILLANDERS.NS": "Gillanders Arbuthnot", "GINNIFILA.NS": "Ginni Filaments", "GIPCL.NS": "Gujarat Industries",
+        "GISOLUTION.NS": "GI Engineering Solutions", "GITANJALI.NS": "Gitanjali Gems", "GKWLIMITED.NS": "GKW Ltd",
+        "GLAND.NS": "Gland Pharma", "GLFL.NS": "Gujarat Lease Financing", "GLOBALPET.NS": "Global Pet Industries",
+        "GLOBOFFS.NS": "Global Offshore", "GLOBALVECT.NS": "Global Vectra", "GLOBUSSPR.NS": "Globus Spirits",
+        "GLORY.NS": "Glory Polyfilms", "GMBREW.NS": "GM Breweries", "GMDCLTD.NS": "Gujarat Mineral",
+        "GMMPFAUDLR.NS": "GMM Pfaudler", "GNA.NS": "GNA Axles"
+    },
+    
+    "🏢 Smallcap Infra 3": {
+        "GOACARBON.NS": "Goa Carbon", "GODREJAGRO.NS": "Godrej Agrovet", "GODREJIND.NS": "Godrej Industries",
+        "GOENKA.NS": "Goenka Business", "GOKUL.NS": "Gokul Refoils", "GOKULMECH.NS": "Gokul Agro",
+        "GOLDBEES.NS": "Gold BeES", "GOLDTECH.NS": "Goldstone Technologies", "GOODLUCK.NS": "Goodluck India",
+        "GOODYEAR.NS": "Goodyear India", "GPIL.NS": "Godawari Power", "GPTINFRA.NS": "GPT Infraprojects",
+        "GPPL.NS": "Gujarat Pipavav", "GRABALALK.NS": "Grasim Industries", "GRAUWEIL.NS": "Grauer Weil India",
+        "GRAVITA.NS": "Gravita India", "GREENLAM.NS": "Greenlam Industries"
+    },
+    
+    "🏢 Smallcap Infra 4": {
+        "GREENPOWER.NS": "Greenpower Motor", "GRMOVER.NS": "GRM Overseas", "GRPLTD.NS": "GRP Ltd",
+        "GRUH.NS": "Gruh Finance", "GTL.NS": "GTL Ltd", "GTLINFRA.NS": "GTL Infrastructure",
+        "GTMLIMITED.NS": "GTM Ltd", "GTPL.NS": "GTPL Hathway", "GUFICBIO.NS": "Gufic Biosciences",
+        "GUJAPOLLO.NS": "Gujarat Apollo", "GUJNREDVR.NS": "Gujarat NRE Coke", "GUJRAFFIA.NS": "Gujarat Raffia",
+        "GULFOILLUB.NS": "Gulf Oil Lubricants", "GULFPETRO.NS": "GP Petroleums", "GVKPIL.NS": "GVK Power",
+        "GVPTECH.NS": "GVP Infotech", "HALONIX.NS": "Halonix Technologies"
+    },
+
+    # ========================================================================
+    # SMALLCAP - ENERGY & UTILITIES
+    # ========================================================================
+    "⚡ Smallcap Energy 1": {
+        "HAMSUNDAR.NS": "Hamsund Enterprise", "HARDWYN.NS": "Hardwyn India", "HARRMALAYA.NS": "Harrisons Malayalam",
+        "HARSHA.NS": "Harsha Engineers", "HBSL.NS": "HB Stockholdings", "HEG.NS": "HEG Ltd",
+        "HEIDELBERG.NS": "HeidelbergCement India", "HELIOS.NS": "Helios Matheson", "HERCULES.NS": "Hercules Hoists",
+        "HERITGFOOD.NS": "Heritage Foods", "HESTERBIO.NS": "Hester Biosciences", "HEUBACHIND.NS": "Heubach Colorants",
+        "HEXATRADEX.NS": "Hexa Tradex", "HFCL.NS": "HFCL Ltd"
+    },
+    
+    "⚡ Smallcap Energy 2": {
+        "HGS.NS": "Hinduja Global", "HIKAL.NS": "Hikal Ltd", "HILTON.NS": "Hilton Metal",
+        "HIMATSEIDE.NS": "Himatsingka Seide", "HINDCOMPOS.NS": "Hindustan Composites", "HINDCOPPER.NS": "Hindustan Copper",
+        "HINDDORROL.NS": "Hinddorrol", "HINDMOTORS.NS": "Hindustan Motors", "HINDNATGLS.NS": "Hindon Natural",
+        "HINDWAREAP.NS": "Hindware Appliances", "HINDZINC.NS": "Hindustan Zinc", "HIRECT.NS": "Hind Rectifiers",
+        "HITECH.NS": "Hitech Corporation", "HITECHCORP.NS": "Hitech Corporation", "HITECHGEAR.NS": "Hitachi Energy",
+        "HMT.NS": "HMT Ltd", "HMVL.NS": "Hindustan Media", "HNDFDS.NS": "Hindustan Foods"
+    },
+    
+    "⚡ Smallcap Energy 3": {
+        "HONDAPOWER.NS": "Honda Power", "HOTELRUGBY.NS": "Hotel Rugby", "HOVS.NS": "HOV Services",
+        "HPAL.NS": "HP Adhesives", "HPL.NS": "HPL Electric", "HSCL.NS": "Himadri Speciality",
+        "HTMEDIA.NS": "HT Media", "HUHTAMAKI.NS": "Huhtamaki India", "ICIL.NS": "Indo Count",
+        "ICRA.NS": "ICRA Ltd", "IDBI.NS": "IDBI Bank", "IDEA.NS": "Vodafone Idea",
+        "IDFC.NS": "IDFC Ltd", "IEX.NS": "Indian Energy Exchange", "IFBAGRO.NS": "IFB Agro",
+        "IFBIND.NS": "IFB Industries", "IFCI.NS": "IFCI Ltd", "IFGLEXPOR.NS": "IFGL Refractories"
+    },
+    
+    "⚡ Smallcap Energy 4": {
+        "IGARASHI.NS": "Igarashi Motors", "IGPL.NS": "IG Petrochemicals", "IITL.NS": "Industrial Investment",
+        "IMAGICAA.NS": "Imagicaa World", "IMFA.NS": "Indian Metals", "IMPAL.NS": "India Cements",
+        "INANI.NS": "Inani Marbles", "INCA.NS": "India Nippon", "INDBANK.NS": "Indbank Merchant",
+        "INDIANCARD.NS": "Indian Card", "INDIANHUME.NS": "Indian Hume Pipe", "INDIASHLTR.NS": "India Shelter",
+        "INDIGO.NS": "InterGlobe Aviation", "INDIGOPNTS.NS": "Indigo Paints", "INDITNX.NS": "India Nivesh",
+        "INDNIPPON.NS": "India Nippon", "INDOAMIN.NS": "Indo Amines"
+    },
+
+    # ========================================================================
+    # SMALLCAP - BANKING & FINANCIAL SERVICES
+    # ========================================================================
+    "🏛️ Smallcap Finance 1": {
+        "INDOBORAX.NS": "Indo Borax", "INDOCOUNT.NS": "Indo Count", "INDOKEM.NS": "Indokem Ltd",
+        "INDOMETAL.NS": "Indo Metal", "INDORAMA.NS": "Indo Rama Synthetics", "INDOSOLAR.NS": "Indosolar",
+        "INDOSTAR.NS": "IndoStar Capital", "INDOTECH.NS": "Indo Tech", "INDOTHAI.NS": "Indo Thai Securities",
+        "INDOWIND.NS": "Indowind Energy", "INDRAMEDCO.NS": "Indraprastha Medical", "INDSWFTLAB.NS": "Ind-Swift Laboratories",
+        "INDSWFTLTD.NS": "Ind-Swift Ltd", "INDTERRAIN.NS": "Indian Terrain", "INDUSTOWER.NS": "Indus Towers",
+        "INEOSSTYRO.NS": "INEOS Styrolution", "INFOMEDIA.NS": "Infomedia Press", "INGERRAND.NS": "Ingersoll Rand",
+        "INNOVACAP.NS": "Innovatus Capital", "INOXGREEN.NS": "Inox Green"
+    },
+    
+    "🏛️ Smallcap Finance 2": {
+        "INSECTICID.NS": "Insecticides India", "INTENTECH.NS": "Intense Technologies", "INTLCONV.NS": "International Conveyors",
+        "IOLCP.NS": "IOL Chemicals", "IPAPPM.NS": "Intrasoft Technologies", "IPL.NS": "India Pesticides",
+        "IRISDOREME.NS": "Iris Clothings", "IRISENERGY.NS": "Iris Energy", "ISFT.NS": "Intrasoft Technologies",
+        "ISMTLTD.NS": "ISMT Ltd", "ITDCEM.NS": "ITD Cementation", "ITELGREEN.NS": "ITEL Greentech"
+    },
+    
+    "🏛️ Smallcap Finance 3": {
+        "ITI.NS": "ITI Ltd", "ITNL.NS": "IL&FS Transportation", "IVRCL.NS": "IVRCL Ltd",
+        "IVP.NS": "IVP Ltd", "IWEL.NS": "Innotech Solutions", "IZMO.NS": "IZMO Ltd",
+        "JAGSNPHARM.NS": "Jagsonpal Pharma", "JAIBALAJI.NS": "Jai Balaji Industries", "JAICORPLTD.NS": "Jaicorp Ltd",
+        "JAIHINDPRO.NS": "Jaihind Projects", "JAIPURKURT.NS": "Nandani Creation", "JAYSREETEA.NS": "Jayshree Tea",
+        "JBFIND.NS": "JBF Industries", "JBMA.NS": "JBM Auto", "JCHAC.NS": "Johnson Controls",
+        "JETAIRWAYS.NS": "Jet Airways", "JETFREIGHT.NS": "Jet Freight Logistics", "JETINFRA.NS": "Jet Infrastructure",
+        "JFLLIFE.NS": "JFL Life Sciences", "JIKIND.NS": "JIK Industries", "JINDALPHOT.NS": "Jindal Photo"
+    },
+    
+    "🏛️ Smallcap Finance 4": {
+        "JINDALPOLY.NS": "Jindal Poly Films", "JINDALSAWNS": "Jindal Saw", "JINDALSTEL.NS": "Jindal Steel",
+        "JINDWORLD.NS": "Jindal Worldwide", "JISLDVREQS.NS": "Jainam Share", "JISLJALEQS.NS": "Jainam Jalaram",
+        "JITFINFRA.NS": "JITF Infralogistics", "JMA.NS": "Jullundur Motor", "JMTAUTOLTD.NS": "JMT Auto",
+        "JOCIL.NS": "Jocil Ltd", "JONENG.NS": "Jones Engineering", "JPOLYINVST.NS": "Jindal Poly Investment",
+        "JSL.NS": "Jindal Stainless", "JSLHISAR.NS": "Jindal Stainless Hisar", "JSWISPL.NS": "JSW Ispat",
+        "JTEKTINDIA.NS": "JTEKT India"
+    },
+
+    # ========================================================================
+    # SMALLCAP - FOOD, BEVERAGES & AGRICULTURE
+    # ========================================================================
+    "🍎 Smallcap Food 1": {
+        "JTLIND.NS": "JTL Industries", "JUBLINDS.NS": "Jubilant Industries", "JUGGILAL.NS": "Juggilal Kamlapat",
+        "JUMBOAG.NS": "Jumbo Bag", "JUMPNET.NS": "Jumpnet Technologies", "JVLAGRO.NS": "JVL Agro",
+        "JYOTISTRUC.NS": "Jyoti Structures", "KABRAEXTRU.NS": "Kabra Extrusion", "KAKATCEM.NS": "Kakatiya Cement",
+        "KAMDHENU.NS": "Kamdhenu Ltd", "KAMOPAINTS.NS": "Kamdhenu Paints", "KANANIIND.NS": "Kanani Industries",
+        "KANORICHEM.NS": "Kanoria Chemicals", "KANPRPLA.NS": "Kanchenjunga Tea", "KARDA.NS": "Karda Constructions"
+    },
+    
+    "🍎 Smallcap Food 2": {
+        "KARMAENG.NS": "Karma Energy", "KARNIMATA.NS": "Karni Industries", "KARNINVEST.NS": "Karni Investment",
+        "KARURVYSYA.NS": "Karur Vysya Bank", "KAUSHALYA.NS": "Kausalya Infrastructure", "KAVVERITEL.NS": "Kavveri Telecom",
+        "KAYPITFIN.NS": "Kaypee Financing", "KAYCEEI.NS": "Kayceei Industries", "KCPSUGIND.NS": "KCP Sugar",
+        "KDIL.NS": "Karnimata Data", "KELLTONTEC.NS": "Kellton Tech", "KERNEX.NS": "Kernex Microsystems",
+        "KESARWIRES.NS": "Kesar Wires", "KEWAUNEE.NS": "Kewaunee Scientific", "KEYFINSERV.NS": "Keynote Financial",
+        "KEYTONE.NS": "Keytone Leasing", "KHANDSE.NS": "Khandwala Securities", "KHAIPULSE.NS": "Khaitanpulse",
+        "KICL.NS": "Kalyani Investment", "KILITCH.NS": "Kilitch Drugs", "KIMBERLY.NS": "Kimberly Clark"
+    },
+    
+    "🍎 Smallcap Food 3": {
+        "KINGFA.NS": "Kingfa Science", "KIRIINDUS.NS": "Kiri Industries", "KIRLOSBROS.NS": "Kirloskar Brothers",
+        "KIRLOSIND.NS": "Kirloskar Industries", "KITEX.NS": "Kitex Garments", "KKCL.NS": "Kewal Kiran Clothing",
+        "KKC.NS": "KKR & Co", "KMSUGAR.NS": "KM Sugar Mills", "KNAGRI.NS": "KN Agri Resources",
+        "KNRCON.NS": "KNR Constructions", "KODYTECH.NS": "Kody Technolab", "KOKUYOCMLN.NS": "Kokuyo Camlin",
+        "KOPRAN.NS": "Kopran Ltd", "KOSMOTEC.NS": "Kosmo e-Technology", "KOTARISUG.NS": "Kothari Sugars",
+        "KPIGREEN.NS": "KPI Green Energy", "KREBSBIO.NS": "Krebs Biochemicals", "KRIINFRA.NS": "K Raheja"
+    },
+    
+    "🍎 Smallcap Food 4": {
+        "KRIDHANINF.NS": "Kridhan Infra", "KRISHANA.NS": "Krishana Phoschem", "KRITI.NS": "Kriti Industries",
+        "KRITIKA.NS": "Kritika Wires", "KRITINUT.NS": "Kriti Nutrients", "KRONS.NS": "Kronox Lab Sciences",
+        "KUMARASWA.NS": "Kumar Swamy Construction", "KUMARKS.NS": "Kumar Swamy", "KUMBHAT.NS": "Kumbhat Financial",
+        "KUNDANCARE.NS": "Kundan Care", "KUPRIYA.NS": "Kupriya Industries", "KUSTODIAN.NS": "Kustodian Securities",
+        "KWALITY.NS": "Kwality Ltd", "KWALIT.NS": "Kwalitex Industries", "L&TFHIN.NS": "L&T Finance",
+        "LA.NS": "Laurus Labs"
+    },
+
+    # ========================================================================
+    # SMALLCAP - RETAIL & MEDIA
+    # ========================================================================
+    "🛍️ Smallcap Retail 1": {
+        "LAKPRE.NS": "Lakshmi Precision", "LAKSHMIEFL.NS": "Lakshmi Energy", "LAMBODHARA.NS": "Lambodhara Textiles",
+        "LANCER.NS": "Lancer Container", "LANDMARK.NS": "Landmark Property", "LAOPALA.NS": "La Opala RG",
+        "LASA.NS": "Lasa Supergenerics", "LAXMIMACH.NS": "Lakshmi Machine", "LCCINFOTEC.NS": "LCC Infotech",
+        "LCC.NS": "LCC Infotech", "LEXUS.NS": "Lexus Granito", "LFIC.NS": "Lakshmi Finance",
+        "LG.NS": "LG Balakrishnan", "LGBBROSLTD.NS": "LG Balakrishnan", "LGBFORGE.NS": "LG Balakrishnan Forge",
+        "LGHL.NS": "LG Balakrishnan", "LIBAS.NS": "Libas Designs", "LIBERTSHOE.NS": "Liberty Shoes",
+        "LICNETFN50.NS": "LIC MF Nifty 50"
+    },
+    
+    "🛍️ Smallcap Retail 2": {
+        "LINCPEN.NS": "Lincoln Pharmaceuticals", "LINKINTIME.NS": "Link Intime", "LKINVESTING.NS": "LKP Finance",
+        "LLOYDSME.NS": "Lloyds Metals", "LLOYDS.NS": "Lloyds Enterprises", "LOKESHMACH.NS": "Lokesh Machines",
+        "LOTUSEYE.NS": "Lotus Eye Care", "LPDC.NS": "Landmark Property", "LTFOODS.NS": "LT Foods",
+        "LUMAXIND.NS": "Lumax Industries", "LUMAXTECH.NS": "Lumax Auto Tech"
     }
 }
 
+# ============================================================================
+# INDUSTRY BENCHMARKS - CONSOLIDATED
+# ============================================================================
+
 INDUSTRY_BENCHMARKS = {
-    'Technology': {'pe': 28, 'ev_ebitda': 16},'Financial Services': {'pe': 20, 'ev_ebitda': 14},'Consumer Cyclical': {'pe': 32, 'ev_ebitda': 16},
-    'Consumer Defensive': {'pe': 38, 'ev_ebitda': 18},'Healthcare': {'pe': 30, 'ev_ebitda': 16},'Industrials': {'pe': 25, 'ev_ebitda': 14},
-    'Energy': {'pe': 18, 'ev_ebitda': 10},'Basic Materials': {'pe': 20, 'ev_ebitda': 12},'Real Estate': {'pe': 28, 'ev_ebitda': 20},'Default': {'pe': 22, 'ev_ebitda': 14}
+    # Large Cap Benchmarks
+    'Technology': {'pe': 25, 'ev_ebitda': 15},
+    'Financial Services': {'pe': 18, 'ev_ebitda': 12},
+    'Consumer Cyclical': {'pe': 30, 'ev_ebitda': 14},
+    'Consumer Defensive': {'pe': 35, 'ev_ebitda': 16},
+    'Healthcare': {'pe': 28, 'ev_ebitda': 14},
+    'Industrials': {'pe': 22, 'ev_ebitda': 12},
+    'Energy': {'pe': 15, 'ev_ebitda': 8},
+    'Basic Materials': {'pe': 18, 'ev_ebitda': 10},
+    'Communication Services': {'pe': 20, 'ev_ebitda': 12},
+    'Real Estate': {'pe': 25, 'ev_ebitda': 18},
+    'Utilities': {'pe': 16, 'ev_ebitda': 10},
+    'Default': {'pe': 20, 'ev_ebitda': 12}
 }
+
+# Midcap specific benchmarks (slightly higher multiples)
+MIDCAP_BENCHMARKS = {
+    'Technology': {'pe': 28, 'ev_ebitda': 16},
+    'Financial Services': {'pe': 20, 'ev_ebitda': 14},
+    'Consumer Cyclical': {'pe': 32, 'ev_ebitda': 16},
+    'Consumer Defensive': {'pe': 38, 'ev_ebitda': 18},
+    'Healthcare': {'pe': 30, 'ev_ebitda': 16},
+    'Industrials': {'pe': 25, 'ev_ebitda': 14},
+    'Energy': {'pe': 18, 'ev_ebitda': 10},
+    'Basic Materials': {'pe': 20, 'ev_ebitda': 12},
+    'Real Estate': {'pe': 28, 'ev_ebitda': 20},
+    'Default': {'pe': 22, 'ev_ebitda': 14}
+}
+
+# Smallcap specific benchmarks (higher growth expectations)
+SMALLCAP_BENCHMARKS = {
+    'Technology': {'pe': 30, 'ev_ebitda': 18},
+    'Financial Services': {'pe': 18, 'ev_ebitda': 12},
+    'Consumer Cyclical': {'pe': 35, 'ev_ebitda': 18},
+    'Consumer Defensive': {'pe': 40, 'ev_ebitda': 20},
+    'Healthcare': {'pe': 32, 'ev_ebitda': 18},
+    'Industrials': {'pe': 28, 'ev_ebitda': 16},
+    'Energy': {'pe': 20, 'ev_ebitda': 12},
+    'Basic Materials': {'pe': 22, 'ev_ebitda': 14},
+    'Real Estate': {'pe': 30, 'ev_ebitda': 22},
+    'Default': {'pe': 24, 'ev_ebitda': 16}
+}
+
 
 def retry_with_backoff(retries=5, backoff_in_seconds=3):
     def decorator(func):
