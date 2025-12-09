@@ -46,7 +46,7 @@ header {visibility: hidden;}
     padding: 2.5rem 3rem;
     border-radius: 20px;
     text-align: center;
-    color: purple;
+    color: white;
     margin-bottom: 2rem;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     position: relative;
@@ -60,7 +60,7 @@ header {visibility: hidden;}
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(160, 32, 240, 0.1) 0%, transparent 60%);
     animation: pulse 4s ease-in-out infinite;
 }
 
