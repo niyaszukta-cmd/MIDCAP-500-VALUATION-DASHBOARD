@@ -60,7 +60,7 @@ header {visibility: hidden;}
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(160, 32, 240, 0.1) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(160, 32, 240, 0.1) 50%, transparent 60%);
     animation: pulse 4s ease-in-out infinite;
 }
 
