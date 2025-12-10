@@ -23,7 +23,7 @@ st.set_page_config(
 )
 
 # ============================================================================
-# PROFESSIONAL CSS STYLING
+# PROFESSIONAL CSS STYLING - DARK/LIGHT MODE COMPATIBLE
 # ============================================================================
 st.markdown("""
 <style>
@@ -60,7 +60,7 @@ header {visibility: hidden;}
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(160, 32, 240, 0.1) 50%, transparent 60%);
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
     animation: pulse 4s ease-in-out infinite;
 }
 
@@ -87,39 +87,43 @@ header {visibility: hidden;}
     margin-top: 0.5rem;
     position: relative;
     z-index: 1;
+    color: #e2e8f0;
 }
 
-/* Company Header Card */
+/* Company Header Card - FIXED FOR DARK/LIGHT MODE */
 .company-header {
-    background: linear-gradient(135deg, #ffffff 100%, #f8fafc 100%);
-    border: 1px solid #e2e8f0;
+    background: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #8b5cf6 100%);
+    border: none;
     border-radius: 16px;
     padding: 1.5rem 2rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
 }
 
 .company-name {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #7e1cc9;
+    color: #ffffff !important;
     margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .company-meta {
     display: flex;
-    gap: 1.5rem;
-    margin-top: 0.5rem;
+    gap: 1rem;
+    margin-top: 0.8rem;
     flex-wrap: wrap;
 }
 
 .meta-badge {
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    color: #475569;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: #ffffff !important;
     font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 /* Fair Value Box */
@@ -153,6 +157,7 @@ header {visibility: hidden;}
     letter-spacing: 2px;
     opacity: 0.9;
     margin-bottom: 0.5rem;
+    color: #ffffff;
 }
 
 .fair-value-amount {
@@ -160,11 +165,13 @@ header {visibility: hidden;}
     font-weight: 700;
     margin: 0.5rem 0;
     font-family: 'JetBrains Mono', monospace;
+    color: #ffffff;
 }
 
 .current-price {
     font-size: 1rem;
     opacity: 0.85;
+    color: #ffffff;
 }
 
 .upside-badge {
@@ -176,6 +183,7 @@ header {visibility: hidden;}
     font-weight: 600;
     font-size: 1.2rem;
     backdrop-filter: blur(10px);
+    color: #ffffff;
 }
 
 /* Recommendation Boxes */
@@ -185,7 +193,7 @@ header {visibility: hidden;}
 
 .rec-strong-buy {
     background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
-    color: white;
+    color: white !important;
     padding: 1.5rem 2rem;
     border-radius: 16px;
     text-align: center;
@@ -198,7 +206,7 @@ header {visibility: hidden;}
 
 .rec-buy {
     background: linear-gradient(135deg, #0d9488 0%, #14b8a6 50%, #2dd4bf 100%);
-    color: white;
+    color: white !important;
     padding: 1.5rem 2rem;
     border-radius: 16px;
     text-align: center;
@@ -209,7 +217,7 @@ header {visibility: hidden;}
 
 .rec-hold {
     background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
-    color: white;
+    color: white !important;
     padding: 1.5rem 2rem;
     border-radius: 16px;
     text-align: center;
@@ -220,7 +228,7 @@ header {visibility: hidden;}
 
 .rec-avoid {
     background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
-    color: white;
+    color: white !important;
     padding: 1.5rem 2rem;
     border-radius: 16px;
     text-align: center;
@@ -234,22 +242,23 @@ header {visibility: hidden;}
     font-weight: 500;
     opacity: 0.9;
     margin-top: 0.3rem;
+    color: white !important;
 }
 
-/* Metric Cards */
+/* Metric Cards - DARK/LIGHT MODE COMPATIBLE */
 .metric-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border: 1px solid #e2e8f0;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border: none;
     border-radius: 16px;
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
     transition: all 0.3s ease;
 }
 
 .metric-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
 }
 
 .metric-icon {
@@ -258,37 +267,29 @@ header {visibility: hidden;}
 }
 
 .metric-value {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #ffffff !important;
     font-family: 'JetBrains Mono', monospace;
 }
 
 .metric-label {
-    font-size: 0.85rem;
-    color: #64748b;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.85) !important;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.3rem;
 }
 
-/* Section Headers */
+/* Section Headers - DARK/LIGHT MODE */
 .section-header {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #1e293b;
+    color: #a78bfa;
     margin: 2rem 0 1rem 0;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid #7c3aed;
     display: inline-block;
-}
-
-/* Data Table Styling */
-.styled-table {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 /* Sidebar Styling */
@@ -307,7 +308,7 @@ section[data-testid="stSidebar"] h3 {
 /* Stock Count Badge */
 .stock-count {
     background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-    color: white;
+    color: white !important;
     padding: 0.8rem 1.2rem;
     border-radius: 12px;
     text-align: center;
@@ -315,36 +316,19 @@ section[data-testid="stSidebar"] h3 {
     font-weight: 600;
 }
 
-/* Download Button */
-.download-btn {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
-}
-
-/* Valuation Method Cards */
+/* Valuation Method Cards - DARK/LIGHT MODE */
 .valuation-method {
-    background: white;
+    background: linear-gradient(135deg, #312e81 0%, #3730a3 100%);
     border-radius: 16px;
     padding: 1.5rem;
     margin: 1rem 0;
-    border-left: 4px solid #7c3aed;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid #a78bfa;
+    box-shadow: 0 8px 25px rgba(55, 48, 163, 0.3);
 }
 
 .method-title {
     font-weight: 600;
-    color: #1e293b;
+    color: #ffffff !important;
     font-size: 1.1rem;
     margin-bottom: 1rem;
 }
@@ -353,16 +337,16 @@ section[data-testid="stSidebar"] h3 {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .method-label {
-    color: #64748b;
+    color: rgba(255,255,255,0.7) !important;
 }
 
 .method-value {
     font-weight: 600;
-    color: #1e293b;
+    color: #ffffff !important;
     font-family: 'JetBrains Mono', monospace;
 }
 
@@ -370,10 +354,10 @@ section[data-testid="stSidebar"] h3 {
 .footer {
     text-align: center;
     padding: 2rem;
-    color: #64748b;
+    color: #a78bfa;
     font-size: 0.9rem;
     margin-top: 3rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid rgba(167, 139, 250, 0.3);
 }
 
 /* Animations */
@@ -386,24 +370,87 @@ section[data-testid="stSidebar"] h3 {
     animation: fadeIn 0.6s ease forwards;
 }
 
-/* Info Box */
+/* Info Box - DARK MODE */
 .info-box {
-    background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
-    border: 1px solid #93c5fd;
+    background: linear-gradient(135deg, #312e81 0%, #3730a3 100%);
+    border: 1px solid #6366f1;
     border-radius: 12px;
-    padding: 1rem 1.5rem;
-    color: #1e40af;
+    padding: 1.5rem 2rem;
+    color: #ffffff !important;
     margin: 1rem 0;
+}
+
+.info-box h3 {
+    color: #a78bfa !important;
+    margin-bottom: 0.5rem;
+}
+
+.info-box p, .info-box li {
+    color: rgba(255,255,255,0.9) !important;
 }
 
 /* Warning Box */
 .warning-box {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border: 1px solid #fbbf24;
+    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+    border: 1px solid #f59e0b;
     border-radius: 12px;
     padding: 1rem 1.5rem;
-    color: #92400e;
+    color: #fef3c7 !important;
     margin: 1rem 0;
+}
+
+/* 52 Week Range Card */
+.range-card {
+    background: linear-gradient(135deg, #312e81 0%, #3730a3 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 8px 25px rgba(55, 48, 163, 0.3);
+}
+
+.range-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.range-low {
+    color: #34d399;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.range-high {
+    color: #f87171;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.range-bar-container {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.range-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #34d399, #fbbf24, #f87171);
+}
+
+.range-current {
+    text-align: center;
+    margin-top: 1rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.range-current span {
+    color: #a78bfa;
+    font-family: 'JetBrains Mono', monospace;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -1299,6 +1346,7 @@ if __name__ == "__main__":
         count = len(INDIAN_STOCKS[cat])
         print(f"  {cat}: {count} stocks")
     print("=" * 60)
+
 # ============================================================================
 # UTILITY FUNCTIONS
 # ============================================================================
@@ -1414,23 +1462,23 @@ def create_gauge_chart(upside_pe, upside_ev):
     fig.add_trace(go.Indicator(
         mode="gauge+number+delta",
         value=upside_pe if upside_pe else 0,
-        number={'suffix': "%", 'font': {'size': 36, 'color': '#1e293b', 'family': 'Inter'}},
-        delta={'reference': 0, 'increasing': {'color': "#10b981"}, 'decreasing': {'color': "#ef4444"}},
-        title={'text': "PE Multiple", 'font': {'size': 18, 'color': '#64748b', 'family': 'Inter'}},
+        number={'suffix': "%", 'font': {'size': 36, 'color': '#e2e8f0', 'family': 'Inter'}},
+        delta={'reference': 0, 'increasing': {'color': "#34d399"}, 'decreasing': {'color': "#f87171"}},
+        title={'text': "PE Multiple", 'font': {'size': 16, 'color': '#a78bfa', 'family': 'Inter'}},
         gauge={
-            'axis': {'range': [-50, 50], 'tickwidth': 2, 'tickcolor': "#64748b"},
+            'axis': {'range': [-50, 50], 'tickwidth': 2, 'tickcolor': "#64748b", 'tickfont': {'color': '#94a3b8'}},
             'bar': {'color': "#7c3aed", 'thickness': 0.75},
-            'bgcolor': "white",
+            'bgcolor': "#1e1b4b",
             'borderwidth': 2,
-            'bordercolor': "#e2e8f0",
+            'bordercolor': "#4c1d95",
             'steps': [
-                {'range': [-50, -20], 'color': '#fee2e2'},
-                {'range': [-20, 0], 'color': '#fef3c7'},
-                {'range': [0, 20], 'color': '#d1fae5'},
-                {'range': [20, 50], 'color': '#a7f3d0'}
+                {'range': [-50, -20], 'color': '#7f1d1d'},
+                {'range': [-20, 0], 'color': '#78350f'},
+                {'range': [0, 20], 'color': '#14532d'},
+                {'range': [20, 50], 'color': '#065f46'}
             ],
             'threshold': {
-                'line': {'color': "#1e293b", 'width': 4},
+                'line': {'color': "#f472b6", 'width': 4},
                 'thickness': 0.8,
                 'value': 0
             }
@@ -1441,23 +1489,23 @@ def create_gauge_chart(upside_pe, upside_ev):
     fig.add_trace(go.Indicator(
         mode="gauge+number+delta",
         value=upside_ev if upside_ev else 0,
-        number={'suffix': "%", 'font': {'size': 36, 'color': '#1e293b', 'family': 'Inter'}},
-        delta={'reference': 0, 'increasing': {'color': "#10b981"}, 'decreasing': {'color': "#ef4444"}},
-        title={'text': "EV/EBITDA", 'font': {'size': 18, 'color': '#64748b', 'family': 'Inter'}},
+        number={'suffix': "%", 'font': {'size': 36, 'color': '#e2e8f0', 'family': 'Inter'}},
+        delta={'reference': 0, 'increasing': {'color': "#34d399"}, 'decreasing': {'color': "#f87171"}},
+        title={'text': "EV/EBITDA", 'font': {'size': 16, 'color': '#a78bfa', 'family': 'Inter'}},
         gauge={
-            'axis': {'range': [-50, 50], 'tickwidth': 2, 'tickcolor': "#64748b"},
+            'axis': {'range': [-50, 50], 'tickwidth': 2, 'tickcolor': "#64748b", 'tickfont': {'color': '#94a3b8'}},
             'bar': {'color': "#ec4899", 'thickness': 0.75},
-            'bgcolor': "white",
+            'bgcolor': "#1e1b4b",
             'borderwidth': 2,
-            'bordercolor': "#e2e8f0",
+            'bordercolor': "#4c1d95",
             'steps': [
-                {'range': [-50, -20], 'color': '#fee2e2'},
-                {'range': [-20, 0], 'color': '#fef3c7'},
-                {'range': [0, 20], 'color': '#d1fae5'},
-                {'range': [20, 50], 'color': '#a7f3d0'}
+                {'range': [-50, -20], 'color': '#7f1d1d'},
+                {'range': [-20, 0], 'color': '#78350f'},
+                {'range': [0, 20], 'color': '#14532d'},
+                {'range': [20, 50], 'color': '#065f46'}
             ],
             'threshold': {
-                'line': {'color': "#1e293b", 'width': 4},
+                'line': {'color': "#f472b6", 'width': 4},
                 'thickness': 0.8,
                 'value': 0
             }
@@ -1468,7 +1516,8 @@ def create_gauge_chart(upside_pe, upside_ev):
         height=350,
         margin=dict(l=30, r=30, t=60, b=30),
         paper_bgcolor='rgba(0,0,0,0)',
-        font={'family': 'Inter'}
+        plot_bgcolor='rgba(0,0,0,0)',
+        font={'family': 'Inter', 'color': '#e2e8f0'}
     )
     return fig
 
@@ -1499,29 +1548,27 @@ def create_valuation_comparison_chart(vals):
         x=categories,
         y=current_vals,
         marker=dict(
-            color='#3b82f6',
-            line=dict(color='#1d4ed8', width=2),
-            cornerradius=8
+            color='#6366f1',
+            line=dict(color='#818cf8', width=2),
         ),
         text=[f'₹{v:,.2f}' for v in current_vals],
         textposition='outside',
-        textfont=dict(size=14, color='#1e293b', family='JetBrains Mono')
+        textfont=dict(size=14, color='#e2e8f0', family='JetBrains Mono')
     ))
     
     # Fair Value bars
-    colors = ['#10b981' if fv > cv else '#ef4444' for fv, cv in zip(fair_vals, current_vals)]
+    colors = ['#34d399' if fv > cv else '#f87171' for fv, cv in zip(fair_vals, current_vals)]
     fig.add_trace(go.Bar(
         name='Fair Value',
         x=categories,
         y=fair_vals,
         marker=dict(
             color=colors,
-            line=dict(color=['#059669' if c == '#10b981' else '#dc2626' for c in colors], width=2),
-            cornerradius=8
+            line=dict(color=['#6ee7b7' if c == '#34d399' else '#fca5a5' for c in colors], width=2),
         ),
         text=[f'₹{v:,.2f}' for v in fair_vals],
         textposition='outside',
-        textfont=dict(size=14, color='#1e293b', family='JetBrains Mono')
+        textfont=dict(size=14, color='#e2e8f0', family='JetBrains Mono')
     ))
     
     fig.update_layout(
@@ -1529,87 +1576,61 @@ def create_valuation_comparison_chart(vals):
         height=400,
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font=dict(family='Inter', size=12),
+        font=dict(family='Inter', size=12, color='#e2e8f0'),
         legend=dict(
             orientation="h",
             yanchor="bottom",
             y=1.02,
             xanchor="center",
             x=0.5,
-            font=dict(size=14)
+            font=dict(size=14, color='#e2e8f0')
         ),
         xaxis=dict(
             showgrid=False,
             showline=True,
-            linecolor='#e2e8f0',
-            tickfont=dict(size=14, color='#1e293b')
+            linecolor='#4c1d95',
+            tickfont=dict(size=14, color='#e2e8f0')
         ),
         yaxis=dict(
             showgrid=True,
-            gridcolor='#f1f5f9',
+            gridcolor='rgba(167, 139, 250, 0.2)',
             showline=False,
             tickprefix='₹',
-            tickfont=dict(size=12, color='#64748b')
+            tickfont=dict(size=12, color='#a78bfa')
         ),
         margin=dict(l=60, r=40, t=60, b=40)
     )
     
     return fig
 
-def create_52week_range_chart(vals):
-    """Create 52-week price range indicator"""
-    low = vals['52w_low']
-    high = vals['52w_high']
-    current = vals['price']
+def create_52week_range_display(vals):
+    """Create 52-week price range display using HTML/CSS instead of Plotly"""
+    low = vals.get('52w_low', 0)
+    high = vals.get('52w_high', 0)
+    current = vals.get('price', 0)
     
     if not all([low, high, current]) or high <= low:
         return None
     
-    position = (current - low) / (high - low) * 100
+    # Calculate position percentage
+    position = ((current - low) / (high - low)) * 100
+    position = max(0, min(100, position))  # Clamp between 0-100
     
-    fig = go.Figure()
-    
-    # Background range bar
-    fig.add_trace(go.Bar(
-        x=[100],
-        y=['52W Range'],
-        orientation='h',
-        marker=dict(
-            color='#f1f5f9',
-            line=dict(color='#e2e8f0', width=1)
-        ),
-        showlegend=False,
-        hoverinfo='none'
-    ))
-    
-    # Position indicator
-    fig.add_trace(go.Bar(
-        x=[position],
-        y=['52W Range'],
-        orientation='h',
-        marker=dict(
-            color='linear-gradient(90deg, #10b981, #3b82f6, #ef4444)',
-        ),
-        showlegend=False,
-        hoverinfo='none'
-    ))
-    
-    # Add annotations
-    fig.add_annotation(x=0, y='52W Range', text=f"₹{low:,.0f}", showarrow=False, xanchor='right', xshift=-10, font=dict(size=12, color='#10b981'))
-    fig.add_annotation(x=100, y='52W Range', text=f"₹{high:,.0f}", showarrow=False, xanchor='left', xshift=10, font=dict(size=12, color='#ef4444'))
-    fig.add_annotation(x=position, y='52W Range', text=f"₹{current:,.0f}", showarrow=True, ay=-30, font=dict(size=14, color='#7c3aed', weight='bold'))
-    
-    fig.update_layout(
-        height=120,
-        paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)',
-        margin=dict(l=80, r=80, t=30, b=20),
-        xaxis=dict(showticklabels=False, showgrid=False, zeroline=False, range=[-5, 105]),
-        yaxis=dict(showticklabels=False, showgrid=False),
-        barmode='overlay'
-    )
-    
-    return fig
+    html = f'''
+    <div class="range-card">
+        <div class="range-header">
+            <div class="range-low">52W Low: ₹{low:,.2f}</div>
+            <div class="range-high">52W High: ₹{high:,.2f}</div>
+        </div>
+        <div class="range-bar-container">
+            <div class="range-bar-fill" style="width: {position}%;"></div>
+        </div>
+        <div class="range-current">
+            Current Price: <span>₹{current:,.2f}</span> ({position:.1f}% of range)
+        </div>
+    </div>
+    '''
+    return html
 
 def create_radar_chart(vals):
     """Create radar chart for key metrics comparison"""
@@ -1631,9 +1652,9 @@ def create_radar_chart(vals):
         r=values + [values[0]],  # Close the polygon
         theta=categories + [categories[0]],
         fill='toself',
-        fillcolor='rgba(124, 58, 237, 0.2)',
-        line=dict(color='#7c3aed', width=2),
-        marker=dict(size=8, color='#7c3aed')
+        fillcolor='rgba(124, 58, 237, 0.3)',
+        line=dict(color='#a78bfa', width=2),
+        marker=dict(size=8, color='#c4b5fd')
     ))
     
     # Add benchmark line
@@ -1641,7 +1662,7 @@ def create_radar_chart(vals):
         r=[50, 50, 50, 50, 50, 50],
         theta=categories + [categories[0]],
         fill='none',
-        line=dict(color='#94a3b8', width=1, dash='dash'),
+        line=dict(color='#6366f1', width=2, dash='dash'),
         name='Benchmark'
     ))
     
@@ -1651,17 +1672,21 @@ def create_radar_chart(vals):
                 visible=True,
                 range=[0, 100],
                 showticklabels=False,
-                gridcolor='#e2e8f0'
+                gridcolor='rgba(167, 139, 250, 0.2)',
+                linecolor='rgba(167, 139, 250, 0.3)'
             ),
             angularaxis=dict(
-                tickfont=dict(size=12, color='#64748b')
+                tickfont=dict(size=12, color='#a78bfa'),
+                linecolor='rgba(167, 139, 250, 0.3)',
+                gridcolor='rgba(167, 139, 250, 0.2)'
             ),
             bgcolor='rgba(0,0,0,0)'
         ),
         showlegend=False,
         height=350,
         margin=dict(l=60, r=60, t=40, b=40),
-        paper_bgcolor='rgba(0,0,0,0)'
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#e2e8f0')
     )
     
     return fig
@@ -1895,7 +1920,7 @@ if 'analyze' in st.session_state and st.session_state.analyze:
     sector = info.get('sector', 'N/A')
     industry = info.get('industry', 'N/A')
     
-    # Company Header
+    # Company Header - FIXED VISIBILITY
     st.markdown(f'''
     <div class="company-header">
         <h2 class="company-name">{company}</h2>
@@ -2052,9 +2077,9 @@ if 'analyze' in st.session_state and st.session_state.analyze:
     
     with chart_col3:
         st.markdown('<div class="section-header">📍 52-Week Range</div>', unsafe_allow_html=True)
-        fig_range = create_52week_range_chart(vals)
-        if fig_range:
-            st.plotly_chart(fig_range, use_container_width=True)
+        range_html = create_52week_range_display(vals)
+        if range_html:
+            st.markdown(range_html, unsafe_allow_html=True)
         else:
             st.info("52-week data not available")
     
@@ -2070,38 +2095,41 @@ if 'analyze' in st.session_state and st.session_state.analyze:
     val_col1, val_col2 = st.columns(2)
     
     with val_col1:
-        st.markdown(f'''
-        <div class="valuation-method">
-            <div class="method-title">📈 PE Multiple Method</div>
-            <div class="method-row">
-                <span class="method-label">Current PE</span>
-                <span class="method-value">{vals['trailing_pe']:.2f}x</span>
+        if vals['fair_value_pe'] and vals['trailing_pe']:
+            upside_color = '#34d399' if vals['upside_pe'] and vals['upside_pe'] > 0 else '#f87171'
+            fair_color = '#34d399' if vals['fair_value_pe'] > vals['price'] else '#f87171'
+            st.markdown(f'''
+            <div class="valuation-method">
+                <div class="method-title">📈 PE Multiple Method</div>
+                <div class="method-row">
+                    <span class="method-label">Current PE</span>
+                    <span class="method-value">{vals['trailing_pe']:.2f}x</span>
+                </div>
+                <div class="method-row">
+                    <span class="method-label">Industry PE</span>
+                    <span class="method-value">{vals['industry_pe']:.2f}x</span>
+                </div>
+                <div class="method-row">
+                    <span class="method-label">EPS (TTM)</span>
+                    <span class="method-value">₹{vals['trailing_eps']:.2f}</span>
+                </div>
+                <div class="method-row">
+                    <span class="method-label">Fair Value (PE)</span>
+                    <span class="method-value" style="color: {fair_color}">₹{vals['fair_value_pe']:,.2f}</span>
+                </div>
+                <div class="method-row">
+                    <span class="method-label">Upside (PE)</span>
+                    <span class="method-value" style="color: {upside_color}">{vals['upside_pe']:+.2f}%</span>
+                </div>
             </div>
-            <div class="method-row">
-                <span class="method-label">Industry PE</span>
-                <span class="method-value">{vals['industry_pe']:.2f}x</span>
-            </div>
-            <div class="method-row">
-                <span class="method-label">EPS (TTM)</span>
-                <span class="method-value">₹{vals['trailing_eps']:.2f}</span>
-            </div>
-            <div class="method-row">
-                <span class="method-label">Fair Value (PE)</span>
-                <span class="method-value" style="color: {'#10b981' if vals['fair_value_pe'] and vals['fair_value_pe'] > vals['price'] else '#ef4444'}">
-                    ₹{vals['fair_value_pe']:,.2f}
-                </span>
-            </div>
-            <div class="method-row">
-                <span class="method-label">Upside (PE)</span>
-                <span class="method-value" style="color: {'#10b981' if vals['upside_pe'] and vals['upside_pe'] > 0 else '#ef4444'}">
-                    {vals['upside_pe']:+.2f}%
-                </span>
-            </div>
-        </div>
-        ''', unsafe_allow_html=True) if vals['fair_value_pe'] else st.info("PE valuation not available")
+            ''', unsafe_allow_html=True)
+        else:
+            st.info("PE valuation not available")
     
     with val_col2:
-        if vals['fair_value_ev']:
+        if vals['fair_value_ev'] and vals['current_ev_ebitda']:
+            upside_color_ev = '#34d399' if vals['upside_ev'] and vals['upside_ev'] > 0 else '#f87171'
+            fair_color_ev = '#34d399' if vals['fair_value_ev'] > vals['price'] else '#f87171'
             st.markdown(f'''
             <div class="valuation-method">
                 <div class="method-title">💼 EV/EBITDA Method</div>
@@ -2119,15 +2147,11 @@ if 'analyze' in st.session_state and st.session_state.analyze:
                 </div>
                 <div class="method-row">
                     <span class="method-label">Fair Value (EV)</span>
-                    <span class="method-value" style="color: {'#10b981' if vals['fair_value_ev'] > vals['price'] else '#ef4444'}">
-                        ₹{vals['fair_value_ev']:,.2f}
-                    </span>
+                    <span class="method-value" style="color: {fair_color_ev}">₹{vals['fair_value_ev']:,.2f}</span>
                 </div>
                 <div class="method-row">
                     <span class="method-label">Upside (EV)</span>
-                    <span class="method-value" style="color: {'#10b981' if vals['upside_ev'] and vals['upside_ev'] > 0 else '#ef4444'}">
-                        {vals['upside_ev']:+.2f}%
-                    </span>
+                    <span class="method-value" style="color: {upside_color_ev}">{vals['upside_ev']:+.2f}%</span>
                 </div>
             </div>
             ''', unsafe_allow_html=True)
