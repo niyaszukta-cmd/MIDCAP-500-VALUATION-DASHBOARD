@@ -1955,15 +1955,15 @@ if 'analyze' in st.session_state and st.session_state.analyze:
     with col2:
         # Recommendation
         if avg_up > 25:
-            rec_class, rec_text, rec_icon = "rec-strong-buy", "STRONG BUY", "🚀"
+            rec_class, rec_text, rec_icon = "rec-strong-buy", "Highly Undervalued", "🚀"
         elif avg_up > 15:
-            rec_class, rec_text, rec_icon = "rec-buy", "BUY", "✅"
+            rec_class, rec_text, rec_icon = "rec-buy", "Undervalued", "✅"
         elif avg_up > 0:
-            rec_class, rec_text, rec_icon = "rec-buy", "ACCUMULATE", "📥"
+            rec_class, rec_text, rec_icon = "rec-buy", "Fairly Valued", "📥"
         elif avg_up > -10:
             rec_class, rec_text, rec_icon = "rec-hold", "HOLD", "⏸️"
         else:
-            rec_class, rec_text, rec_icon = "rec-avoid", "AVOID", "⚠️"
+            rec_class, rec_text, rec_icon = "rec-avoid", "Overvalued", "⚠️"
         
         st.markdown(f'''
         <div class="rec-container">
