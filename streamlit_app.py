@@ -2231,20 +2231,3 @@ st.markdown('''
     </p>
 </div>
 ''', unsafe_allow_html=True)
-
-from nyztrade_pdf_report import generate_valuation_pdf
-
-# In your download section:
-pdf_bytes = generate_valuation_pdf(
-    ticker=selected_ticker,
-    stock_info=info,  # from yfinance
-    valuation_results=valuation_dict,  # your calculated values
-    logo_path="/path/to/your/logo.png"  # optional
-)
-
-st.download_button(
-    label="📥 Download Professional Report",
-    data=pdf_bytes,
-    file_name=f"NYZTrade_{ticker}_{datetime.now().strftime('%Y%m%d')}.pdf",
-    mime="application/pdf"
-)
