@@ -462,7 +462,7 @@ def check_password():
     def password_entered():
         username = st.session_state["username"].strip().lower()
         password = st.session_state["password"]
-        users = {"demo": "value", "premium": "warren", "niyas": "buffet"}
+        users = {"demo": "value", "premium": "1nV3st!ng", "niyas": "buffet"}
         if username in users and password == users[username]:
             st.session_state["password_correct"] = True
             st.session_state["authenticated_user"] = username
