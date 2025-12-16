@@ -4,27 +4,77 @@
 # ============================================================================
 
 import streamlit as st
+import sys
+import importlib.util
+
+# ============================================================================
+# CHECK DEPENDENCIES
+# ============================================================================
+
+def check_dependencies():
+    """Check if all required packages are installed"""
+    required_packages = {
+        'pandas': 'pandas',
+        'numpy': 'numpy',
+        'plotly': 'plotly',
+        'scipy': 'scipy',
+        'requests': 'requests',
+        'sqlalchemy': 'sqlalchemy'
+    }
+    
+    missing_packages = []
+    for package_name, import_name in required_packages.items():
+        spec = importlib.util.find_spec(import_name)
+        if spec is None:
+            missing_packages.append(package_name)
+    
+    if missing_packages:
+        st.error(f"❌ Missing required packages: {', '.join(missing_packages)}")
+        st.code(f"pip install {' '.join(missing_packages)}", language="bash")
+        st.info("💡 Or install all at once:")
+        st.code("pip install streamlit pandas numpy plotly scipy requests sqlalchemy python-dateutil pytz", language="bash")
+        st.stop()
+
+# Run dependency check
+check_dependencies()
+
+# Now import everything else
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 import time
 from typing import Optional
 
-# Import custom modules
-from config import (
-    DhanConfig, SYMBOL_CONFIG, DHAN_SECURITY_IDS, PROFESSIONAL_CSS,
-    BACKTEST_CONFIG, HISTORICAL_CONFIG
-)
-from data_fetcher import HistoricalDataFetcher
-from backtest_engine import BacktestEngine
-from database import HistoricalDatabase
-from visualization import ChartGenerator
-from utils import (
-    split_date_range, format_currency, format_percentage,
-    generate_trade_summary, calculate_risk_metrics,
-    calculate_strategy_performance, create_backtest_report_text,
-    validate_date_range
-)
+# Import custom modules with error handling
+try:
+    from config import (
+        DhanConfig, SYMBOL_CONFIG, DHAN_SECURITY_IDS, PROFESSIONAL_CSS,
+        BACKTEST_CONFIG, HISTORICAL_CONFIG
+    )
+    from data_fetcher import HistoricalDataFetcher
+    from backtest_engine import BacktestEngine
+    from database import HistoricalDatabase
+    from visualization import ChartGenerator
+    from utils import (
+        split_date_range, format_currency, format_percentage,
+        generate_trade_summary, calculate_risk_metrics,
+        calculate_strategy_performance, create_backtest_report_text,
+        validate_date_range
+    )
+except ImportError as e:
+    st.error(f"❌ Error importing custom modules: {str(e)}")
+    st.info("💡 Make sure all files are in the same directory")
+    st.code("""
+Required files:
+- config.py
+- data_fetcher.py
+- backtest_engine.py
+- database.py
+- visualization.py
+- utils.py
+- greeks_calculator.py
+    """)
+    st.stop()
 
 # ============================================================================
 # PAGE CONFIG
@@ -61,33 +111,41 @@ if 'backtest_running' not in st.session_state:
 def fetch_historical_data_cached(symbol: str, start_date: str, end_date: str, 
                                 strike_range: list, interval: str):
     """Cached function to fetch historical data"""
-    fetcher = HistoricalDataFetcher()
-    return fetcher.fetch_multiple_strikes_historical(
-        symbol=symbol,
-        start_date=start_date,
-        end_date=end_date,
-        strike_range=strike_range,
-        interval=interval
-    )
+    try:
+        fetcher = HistoricalDataFetcher()
+        return fetcher.fetch_multiple_strikes_historical(
+            symbol=symbol,
+            start_date=start_date,
+            end_date=end_date,
+            strike_range=strike_range,
+            interval=interval
+        )
+    except Exception as e:
+        st.error(f"Error fetching data: {str(e)}")
+        return None
 
 def run_backtest_analysis(df: pd.DataFrame, symbol: str, config: dict) -> dict:
     """Run backtest with given configuration"""
-    # Aggregate data for backtesting
-    fetcher = HistoricalDataFetcher()
-    agg_df = fetcher.aggregate_gex_dex_by_timestamp(df)
-    
-    # Initialize backtest engine
-    engine = BacktestEngine(
-        initial_capital=config['initial_capital'],
-        max_position_size=config['max_position_size'],
-        commission_per_lot=config['commission_per_lot'],
-        slippage=config['slippage']
-    )
-    
-    # Run backtest
-    results = engine.run_backtest(agg_df, symbol)
-    
-    return results
+    try:
+        # Aggregate data for backtesting
+        fetcher = HistoricalDataFetcher()
+        agg_df = fetcher.aggregate_gex_dex_by_timestamp(df)
+        
+        # Initialize backtest engine
+        engine = BacktestEngine(
+            initial_capital=config['initial_capital'],
+            max_position_size=config['max_position_size'],
+            commission_per_lot=config['commission_per_lot'],
+            slippage=config['slippage']
+        )
+        
+        # Run backtest
+        results = engine.run_backtest(agg_df, symbol)
+        
+        return results
+    except Exception as e:
+        st.error(f"Error running backtest: {str(e)}")
+        raise
 
 # ============================================================================
 # MAIN HEADER
@@ -278,8 +336,11 @@ with tabs[0]:
                             st.dataframe(df.head(20), use_container_width=True)
                             
                             # Save to database
-                            db = HistoricalDatabase()
-                            db.save_historical_data(df, symbol)
+                            try:
+                                db = HistoricalDatabase()
+                                db.save_historical_data(df, symbol)
+                            except Exception as e:
+                                st.warning(f"Could not save to database: {str(e)}")
                             
                         else:
                             progress_bar.progress(100)
@@ -287,6 +348,9 @@ with tabs[0]:
                     
                     except Exception as e:
                         st.error(f"❌ Error fetching data: {str(e)}")
+                        import traceback
+                        with st.expander("Error Details"):
+                            st.code(traceback.format_exc())
     
     with col2:
         if st.button("🚀 Run Backtest", use_container_width=True, type="primary",
@@ -328,25 +392,32 @@ with tabs[0]:
                         st.session_state.backtest_results = results
                         
                         # Save to database
-                        db = HistoricalDatabase()
-                        backtest_id = db.save_backtest_result(results)
-                        
-                        if backtest_id:
-                            # Save trades
-                            for trade in results['trades']:
-                                db.save_trade(backtest_id, trade)
+                        try:
+                            db = HistoricalDatabase()
+                            backtest_id = db.save_backtest_result(results)
                             
-                            # Save daily metrics
-                            for metric in results['daily_metrics']:
-                                db.save_daily_metrics(backtest_id, metric)
+                            if backtest_id:
+                                # Save trades
+                                for trade in results['trades']:
+                                    db.save_trade(backtest_id, trade)
+                                
+                                # Save daily metrics
+                                for metric in results['daily_metrics']:
+                                    db.save_daily_metrics(backtest_id, metric)
+                        except Exception as e:
+                            st.warning(f"Could not save to database: {str(e)}")
                         
                         progress_bar.progress(100)
                         status_text.empty()
                         
                         st.success("✅ Backtest completed successfully!")
+                        st.balloons()
                         
                     except Exception as e:
                         st.error(f"❌ Error running backtest: {str(e)}")
+                        import traceback
+                        with st.expander("Error Details"):
+                            st.code(traceback.format_exc())
     
     with col3:
         if st.button("🗑️ Clear Data", use_container_width=True):
@@ -443,12 +514,15 @@ with tabs[1]:
         st.markdown("---")
         
         # Performance gauges
-        st.markdown("### 🎯 Performance Metrics")
-        chart_gen = ChartGenerator()
-        st.plotly_chart(
-            chart_gen.create_performance_metrics_gauge(results),
-            use_container_width=True
-        )
+        try:
+            st.markdown("### 🎯 Performance Metrics")
+            chart_gen = ChartGenerator()
+            st.plotly_chart(
+                chart_gen.create_performance_metrics_gauge(results),
+                use_container_width=True
+            )
+        except Exception as e:
+            st.warning(f"Could not create performance gauges: {str(e)}")
         
         st.markdown("---")
         
@@ -523,61 +597,69 @@ with tabs[2]:
         st.info("📈 Run a backtest to see charts here")
     else:
         results = st.session_state.backtest_results
-        chart_gen = ChartGenerator()
         
-        st.markdown("### 📈 Performance Charts")
-        
-        # Equity curve
-        st.plotly_chart(
-            chart_gen.create_equity_curve(results['daily_metrics']),
-            use_container_width=True
-        )
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            # Drawdown chart
+        try:
+            chart_gen = ChartGenerator()
+            
+            st.markdown("### 📈 Performance Charts")
+            
+            # Equity curve
             st.plotly_chart(
-                chart_gen.create_drawdown_chart(results['daily_metrics']),
+                chart_gen.create_equity_curve(results['daily_metrics']),
                 use_container_width=True
             )
-        
-        with col2:
-            # Cumulative P&L by strategy
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                # Drawdown chart
+                st.plotly_chart(
+                    chart_gen.create_drawdown_chart(results['daily_metrics']),
+                    use_container_width=True
+                )
+            
+            with col2:
+                # Cumulative P&L by strategy
+                if results['trades']:
+                    st.plotly_chart(
+                        chart_gen.create_cumulative_pnl_by_strategy(results['trades']),
+                        use_container_width=True
+                    )
+            
+            # GEX/DEX time series
+            st.plotly_chart(
+                chart_gen.create_gex_dex_time_series(results['daily_metrics']),
+                use_container_width=True
+            )
+            
+            # Trade analysis
             if results['trades']:
                 st.plotly_chart(
-                    chart_gen.create_cumulative_pnl_by_strategy(results['trades']),
+                    chart_gen.create_trade_analysis(results['trades']),
+                    use_container_width=True
+                )
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                # Monthly returns heatmap
+                st.plotly_chart(
+                    chart_gen.create_monthly_returns_heatmap(results['daily_metrics']),
+                    use_container_width=True
+                )
+            
+            with col2:
+                # PCR vs Returns
+                st.plotly_chart(
+                    chart_gen.create_pcr_vs_returns(results['daily_metrics']),
                     use_container_width=True
                 )
         
-        # GEX/DEX time series
-        st.plotly_chart(
-            chart_gen.create_gex_dex_time_series(results['daily_metrics']),
-            use_container_width=True
-        )
-        
-        # Trade analysis
-        if results['trades']:
-            st.plotly_chart(
-                chart_gen.create_trade_analysis(results['trades']),
-                use_container_width=True
-            )
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            # Monthly returns heatmap
-            st.plotly_chart(
-                chart_gen.create_monthly_returns_heatmap(results['daily_metrics']),
-                use_container_width=True
-            )
-        
-        with col2:
-            # PCR vs Returns
-            st.plotly_chart(
-                chart_gen.create_pcr_vs_returns(results['daily_metrics']),
-                use_container_width=True
-            )
+        except Exception as e:
+            st.error(f"Error creating charts: {str(e)}")
+            import traceback
+            with st.expander("Error Details"):
+                st.code(traceback.format_exc())
 
 # ============================================================================
 # TAB 4: TRADES
@@ -706,63 +788,67 @@ with tabs[4]:
 with tabs[5]:
     st.markdown("### 📚 Backtest History")
     
-    db = HistoricalDatabase()
-    history_df = db.get_backtest_results(limit=20)
-    
-    if history_df is not None and not history_df.empty:
-        # Display history
-        st.dataframe(
-            history_df[[
-                'id', 'backtest_name', 'symbol', 'start_date', 'end_date',
-                'total_return_pct', 'win_rate', 'max_drawdown', 'sharpe_ratio',
-                'total_trades', 'created_at'
-            ]],
-            use_container_width=True,
-            hide_index=True
-        )
+    try:
+        db = HistoricalDatabase()
+        history_df = db.get_backtest_results(limit=20)
         
-        # Load previous backtest
-        selected_id = st.selectbox(
-            "Select a backtest to view details",
-            options=history_df['id'].tolist(),
-            format_func=lambda x: history_df[history_df['id'] == x]['backtest_name'].iloc[0]
-        )
-        
-        if st.button("📂 Load Selected Backtest"):
-            # Load trades and metrics
-            trades_df = db.get_trades_for_backtest(selected_id)
-            daily_df = db.get_daily_metrics_for_backtest(selected_id)
+        if history_df is not None and not history_df.empty:
+            # Display history
+            st.dataframe(
+                history_df[[
+                    'id', 'backtest_name', 'symbol', 'start_date', 'end_date',
+                    'total_return_pct', 'win_rate', 'max_drawdown', 'sharpe_ratio',
+                    'total_trades', 'created_at'
+                ]],
+                use_container_width=True,
+                hide_index=True
+            )
             
-            if trades_df is not None:
-                st.success(f"✅ Loaded backtest with {len(trades_df)} trades")
+            # Load previous backtest
+            selected_id = st.selectbox(
+                "Select a backtest to view details",
+                options=history_df['id'].tolist(),
+                format_func=lambda x: history_df[history_df['id'] == x]['backtest_name'].iloc[0]
+            )
+            
+            if st.button("📂 Load Selected Backtest"):
+                # Load trades and metrics
+                trades_df = db.get_trades_for_backtest(selected_id)
+                daily_df = db.get_daily_metrics_for_backtest(selected_id)
                 
-                # Reconstruct results object
-                backtest_row = history_df[history_df['id'] == selected_id].iloc[0]
-                
-                loaded_results = {
-                    'backtest_name': backtest_row['backtest_name'],
-                    'symbol': backtest_row['symbol'],
-                    'start_date': backtest_row['start_date'],
-                    'end_date': backtest_row['end_date'],
-                    'strategy': backtest_row['strategy'],
-                    'initial_capital': backtest_row['initial_capital'],
-                    'final_capital': backtest_row['final_capital'],
-                    'total_return': backtest_row['total_return'],
-                    'total_return_pct': backtest_row['total_return_pct'],
-                    'total_trades': backtest_row['total_trades'],
-                    'winning_trades': backtest_row['winning_trades'],
-                    'losing_trades': backtest_row['losing_trades'],
-                    'win_rate': backtest_row['win_rate'],
-                    'max_drawdown': backtest_row['max_drawdown'],
-                    'sharpe_ratio': backtest_row['sharpe_ratio'],
-                    'trades': trades_df.to_dict('records') if trades_df is not None else [],
-                    'daily_metrics': daily_df.to_dict('records') if daily_df is not None else []
-                }
-                
-                st.session_state.backtest_results = loaded_results
-                st.rerun()
-    else:
-        st.info("No backtest history found. Run your first backtest!")
+                if trades_df is not None:
+                    st.success(f"✅ Loaded backtest with {len(trades_df)} trades")
+                    
+                    # Reconstruct results object
+                    backtest_row = history_df[history_df['id'] == selected_id].iloc[0]
+                    
+                    loaded_results = {
+                        'backtest_name': backtest_row['backtest_name'],
+                        'symbol': backtest_row['symbol'],
+                        'start_date': backtest_row['start_date'],
+                        'end_date': backtest_row['end_date'],
+                        'strategy': backtest_row['strategy'],
+                        'initial_capital': backtest_row['initial_capital'],
+                        'final_capital': backtest_row['final_capital'],
+                        'total_return': backtest_row['total_return'],
+                        'total_return_pct': backtest_row['total_return_pct'],
+                        'total_trades': backtest_row['total_trades'],
+                        'winning_trades': backtest_row['winning_trades'],
+                        'losing_trades': backtest_row['losing_trades'],
+                        'win_rate': backtest_row['win_rate'],
+                        'max_drawdown': backtest_row['max_drawdown'],
+                        'sharpe_ratio': backtest_row['sharpe_ratio'],
+                        'trades': trades_df.to_dict('records') if trades_df is not None else [],
+                        'daily_metrics': daily_df.to_dict('records') if daily_df is not None else []
+                    }
+                    
+                    st.session_state.backtest_results = loaded_results
+                    st.rerun()
+        else:
+            st.info("No backtest history found. Run your first backtest!")
+    
+    except Exception as e:
+        st.warning(f"Could not load history: {str(e)}")
 
 # ============================================================================
 # FOOTER
