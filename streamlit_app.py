@@ -1809,7 +1809,7 @@ def create_pdf_report(company, ticker, sector, vals):
 # Header
 st.markdown('''
 <div class="main-header">
-    <h1>STOCK VALUATION PRO</h1>
+    <h1>NYZTRADE STOCK VALUATION PRO</h1>
     <p>📊 1,143+ Stocks | Professional Multi-Factor Analysis | Real-Time Data</p>
 </div>
 ''', unsafe_allow_html=True)
