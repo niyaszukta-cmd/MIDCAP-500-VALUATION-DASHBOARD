@@ -6,6 +6,7 @@
 import streamlit as st
 import sys
 import importlib.util
+pip install streamlit pandas numpy plotly scipy requests sqlalchemy python-dateutil pytz
 
 # ============================================================================
 # CHECK DEPENDENCIES
