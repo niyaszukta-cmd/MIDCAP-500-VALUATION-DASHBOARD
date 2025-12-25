@@ -506,733 +506,1337 @@ if not check_password():
 # ============================================================================
 
 INDIAN_STOCKS = {
-    # ========================================================================
-    # NIFTY 50 - LARGE CAP BLUE CHIPS
-    # ========================================================================
-    "💎 NIFTY 50": {
-        "ADANIENT.NS": "Adani Enterprises", "ADANIPORTS.NS": "Adani Ports", "APOLLOHOSP.NS": "Apollo Hospitals",
-        "ASIANPAINT.NS": "Asian Paints", "AXISBANK.NS": "Axis Bank", "BAJAJ-AUTO.NS": "Bajaj Auto",
-        "BAJFINANCE.NS": "Bajaj Finance", "BAJAJFINSV.NS": "Bajaj Finserv", "BHARTIARTL.NS": "Bharti Airtel",
-        "BPCL.NS": "BPCL", "BRITANNIA.NS": "Britannia", "CIPLA.NS": "Cipla",
-        "COALINDIA.NS": "Coal India", "DIVISLAB.NS": "Divi's Labs", "DRREDDY.NS": "Dr Reddy's",
-        "EICHERMOT.NS": "Eicher Motors", "GRASIM.NS": "Grasim", "HCLTECH.NS": "HCL Tech",
-        "HDFCBANK.NS": "HDFC Bank", "HDFCLIFE.NS": "HDFC Life", "HEROMOTOCO.NS": "Hero MotoCorp",
-        "HINDALCO.NS": "Hindalco", "HINDUNILVR.NS": "Hindustan Unilever", "ICICIBANK.NS": "ICICI Bank",
-        "INDUSINDBK.NS": "IndusInd Bank", "INFY.NS": "Infosys", "ITC.NS": "ITC",
-        "JSWSTEEL.NS": "JSW Steel", "KOTAKBANK.NS": "Kotak Bank", "LT.NS": "L&T",
-        "M&M.NS": "M&M", "MARUTI.NS": "Maruti Suzuki", "NESTLEIND.NS": "Nestle India",
-        "NTPC.NS": "NTPC", "ONGC.NS": "ONGC", "POWERGRID.NS": "Power Grid",
-        "RELIANCE.NS": "Reliance", "SBILIFE.NS": "SBI Life", "SBIN.NS": "SBI",
-        "SUNPHARMA.NS": "Sun Pharma", "TATAMOTORS.NS": "Tata Motors", "TATASTEEL.NS": "Tata Steel",
-        "TCS.NS": "TCS", "TECHM.NS": "Tech Mahindra", "TITAN.NS": "Titan",
-        "ULTRACEMCO.NS": "UltraTech Cement", "UPL.NS": "UPL", "WIPRO.NS": "Wipro"
+    "Advertising Agencies": {
+        "PRESSMN.NS": "Pressman Advertising Limited"
     },
 
-    # ========================================================================
-    # BANKING & FINANCE
-    # ========================================================================
-    "🏦 Banking Finance - Large Cap": {
-        "AUBANK.NS": "AU Small Finance", "BANDHANBNK.NS": "Bandhan Bank", "BANKBARODA.NS": "Bank of Baroda",
-        "CANBK.NS": "Canara Bank", "CHOLAFIN.NS": "Cholamandalam", "FEDERALBNK.NS": "Federal Bank",
-        "HDFCAMC.NS": "HDFC AMC", "ICICIGI.NS": "ICICI Lombard", "ICICIPRULI.NS": "ICICI Prudential",
-        "IDFCFIRSTB.NS": "IDFC First Bank", "MUTHOOTFIN.NS": "Muthoot Finance", "PFC.NS": "Power Finance",
-        "PNB.NS": "Punjab National Bank", "RECLTD.NS": "REC Limited", "SBICARD.NS": "SBI Card",
-        "SHRIRAMFIN.NS": "Shriram Finance", "UNIONBANK.NS": "Union Bank"
-    },
-    
-    "🏦 Banking Finance - Midcap 1": {
-        "ANGELONE.NS": "Angel One", "ANANDRATHI.NS": "Anand Rathi", "AAVAS.NS": "Aavas Financiers",
-        "CDSL.NS": "CDSL", "CREDITACC.NS": "CreditAccess Grameen", "CRISIL.NS": "CRISIL",
-        "CSB.NS": "CSB Bank", "EQUITAS.NS": "Equitas Holdings", "FINOPB.NS": "Fino Payments",
-        "IIFL.NS": "IIFL Finance", "IIFLSEC.NS": "IIFL Securities", "IRFC.NS": "IRFC",
-        "ISEC.NS": "ICICI Securities", "JMFINANCIL.NS": "JM Financial", "KALYANKJIL.NS": "Kalyan Jewellers",
-        "KFINTECH.NS": "KFin Technologies"
-    },
-    
-    "🏦 Banking Finance - Midcap 2": {
-        "LICHSGFIN.NS": "LIC Housing", "MASFIN.NS": "MAS Financial", "MOTILALOFS.NS": "Motilal Oswal",
-        "PNBHOUSING.NS": "PNB Housing", "RBL.NS": "RBL Bank", "SBFC.NS": "SBFC Finance",
-        "STARHEALTH.NS": "Star Health", "UJJIVAN.NS": "Ujjivan Small Finance", "UTIAMC.NS": "UTI AMC",
-        "CENTRALBK.NS": "Central Bank", "INDIANB.NS": "Indian Bank", "IOB.NS": "Indian Overseas Bank"
-    },
-    
-    "🏦 Banking Finance - Midcap 3": {
-        "BANKINDIA.NS": "Bank of India", "MAHABANK.NS": "Bank of Maharashtra", "J&KBANK.NS": "Jammu Kashmir Bank",
-        "KARNATBNK.NS": "Karnataka Bank", "DCBBANK.NS": "DCB Bank", "POLICYBZR.NS": "PB Fintech",
-        "NUVOCO.NS": "Nuvoco Vistas", "SPANDANA.NS": "Spandana Sphoorty", "SWANENERGY.NS": "Swan Energy",
-        "BAJAJHLDNG.NS": "Bajaj Holdings", "MAHLIFE.NS": "Mahindra Lifespace", "TATAINVEST.NS": "Tata Investment",
-        "SUNDARMFIN.NS": "Sundaram Finance", "MANAPPURAM.NS": "Manappuram Finance"
-    },
-    
-    "🏦 Banking Finance - Midcap 4": {
-        "PNBGILTS.NS": "PNB Gilts", "APTUS.NS": "Aptus Value Housing", "HOMEFIRST.NS": "Home First Finance",
-        "AADHARHFC.NS": "Aadhar Housing", "CAPLIPOINT.NS": "Caplin Point", "CHOLA.NS": "Cholamandalam Financial",
-        "CIEINDIA.NS": "CIE Automotive", "JSWHL.NS": "JSW Holdings", "MUTHOOTCAP.NS": "Muthoot Capital",
-        "ABSLAMC.NS": "Aditya Birla Sun Life AMC", "L&TFH.NS": "L&T Finance Holdings", "CHOLAHLDNG.NS": "Cholamandalam Holdings",
-        "IIFLWAM.NS": "IIFL Wealth", "INDUSIND.NS": "IndusInd Bank"
+    "Aerospace/Defense - Major Diversified": {
+        "ABGSHIP.NS": "ABG Shipyard Limited", "BEL.NS": "Bharat Electronics Limited", "BHARATIDIL.NS": "Bharati Defence And Infrastructure Limited",
+        "RDEL.NS": "Reliance Defence and Engineering Limited"
     },
 
-    # ========================================================================
-    # IT & TECHNOLOGY
-    # ========================================================================
-    "💻 IT Technology - Large Cap": {
-        "COFORGE.NS": "Coforge", "LTTS.NS": "L&T Technology", "MPHASIS.NS": "Mphasis",
-        "PERSISTENT.NS": "Persistent Systems", "SONATSOFTW.NS": "Sonata Software", "TATAELXSI.NS": "Tata Elxsi"
-    },
-    
-    "💻 IT Technology - Midcap 1": {
-        "CYIENT.NS": "Cyient", "ECLERX.NS": "eClerx Services", "HAPPSTMNDS.NS": "Happiest Minds",
-        "INTELLECT.NS": "Intellect Design", "KPITTECH.NS": "KPIT Technologies", "LTIM.NS": "LTIMindtree",
-        "MASTEK.NS": "Mastek", "NEWGEN.NS": "Newgen Software", "NIITLTD.NS": "NIIT Ltd",
-        "OFSS.NS": "Oracle Financial", "ZENSAR.NS": "Zensar Technologies", "ROUTE.NS": "Route Mobile",
-        "DATAMATICS.NS": "Datamatics Global", "SASKEN.NS": "Sasken Technologies"
-    },
-    
-    "💻 IT Technology - Midcap 2": {
-        "3MINDIA.NS": "3M India", "AFFLE.NS": "Affle India", "EASEMYTRIP.NS": "EaseMyTrip",
-        "ZOMATO.NS": "Zomato", "NYKAA.NS": "Nykaa", "PAYTM.NS": "Paytm",
-        "BLUESTARCO.NS": "Blue Star", "CAMPUS.NS": "Campus Activewear", "DIXON.NS": "Dixon Technologies",
-        "HLEGLAS.NS": "HLE Glascoat", "HONAUT.NS": "Honeywell Automation", "LXCHEM.NS": "Laxmi Organic",
-        "RPTECH.NS": "RP Tech India", "AMBER.NS": "Amber Enterprises", "SYMPHONY.NS": "Symphony",
-        "VOLTAS.NS": "Voltas", "WHIRLPOOL.NS": "Whirlpool India", "VGUARD.NS": "V-Guard Industries",
-        "CROMPTON.NS": "Crompton Greaves"
-    },
-    
-    "💻 IT Technology - Midcap 3": {
-        "HAVELLS.NS": "Havells India", "ORIENTELEC.NS": "Orient Electric", "INDIAMART.NS": "IndiaMART",
-        "JUSTDIAL.NS": "Just Dial", "MATRIMONY.NS": "Matrimony.com", "NAZARA.NS": "Nazara Technologies",
-        "SHOPERSTOP.NS": "Shoppers Stop", "TATACOMM.NS": "Tata Communications", "TATATECH.NS": "Tata Technologies",
-        "TEAMLEASE.NS": "TeamLease Services", "CARTRADE.NS": "CarTrade Tech", "LATENTVIEW.NS": "LatentView Analytics",
-        "MPSLTD.NS": "MPS Limited", "RAINBOW.NS": "Rainbow Children", "REDINGTON.NS": "Redington",
-        "STLTECH.NS": "Sterlite Technologies", "SUBROS.NS": "Subros", "SUPRAJIT.NS": "Suprajit Engineering",
-        "TANLA.NS": "Tanla Platforms", "POLYCAB.NS": "Polycab India"
-    },
-    
-    "💻 IT Technology - Midcap 4": {
-        "TCNSBRANDS.NS": "TCNS Clothing", "TIMKEN.NS": "Timken India", "TRIVENI.NS": "Triveni Turbine",
-        "TTKHLTCARE.NS": "TTK Healthcare", "TTKPRESTIG.NS": "TTK Prestige", "VIPIND.NS": "VIP Industries",
-        "VSTIND.NS": "VST Industries", "WELSPUNIND.NS": "Welspun India", "WESTLIFE.NS": "Westlife Development",
-        "LTI.NS": "LTI", "MINDTREE.NS": "Mindtree", "HEXAWARE.NS": "Hexaware Technologies",
-        "L&TTS.NS": "L&T Technology"
+    "Agricultural Chemicals": {
+        "AGRITECH.NS": "Agri-Tech (India) Ltd", "ARIES.NS": "Aries Agro Limited", "BAYERCROP.NS": "Bayer CropScience Limited",
+        "BHARATRAS.NS": "Bharat Rasayan Limited", "CHAMBLFERT.NS": "Chambal Fertilisers and Chemicals Limited", "COROMANDEL.NS": "Coromandel International Limited",
+        "DEEPAKFERT.NS": "Deepak Fertilisers And Petrochemicals Corporation Limited", "DHANUKA.NS": "Dhanuka Agritech Limited", "EXCELCROP.NS": "Excel Crop Care Limited",
+        "FACT.NS": "The Fertilisers And Chemicals Travancore Limited", "GNFC.NS": "Gujarat Narmada Valley Fertilizers & Chemicals Limited", "GREENFIRE.NS": "Proseed India Limited",
+        "GSFC.NS": "Gujarat State Fertilizers & Chemicals Limited", "INSECTICID.NS": "Insecticides (India) Limited", "MADRASFERT.NS": "Madras Fertilizers Limited",
+        "MANGCHEFER.NS": "Mangalore Chemicals & Fertilizers Limited", "MEGH.NS": "Meghmani Organics Limited", "MONSANTO.NS": "Monsanto India Limited",
+        "NATHBIOGEN.NS": "Nath Bio-Genes (India) Limited", "NFL.NS": "National Fertilizers Limited", "PIIND.NS": "PI Industries Limited",
+        "RALLIS.NS": "Rallis India Limited", "RCF.NS": "Rashtriya Chemicals And Fertilizers Limited", "SHARDACROP.NS": "Sharda Cropchem Limited",
+        "SPIC.NS": "Southern Petrochemical Industries Corporation Limited", "UPL.NS": "UPL Limited", "ZUARI.NS": "Zuari Agro Chemicals Limited",
+        "ZUARIGLOB.NS": "Zuari Global Limited"
     },
 
-    # ========================================================================
-    # PHARMA & HEALTHCARE
-    # ========================================================================
-    "💊 Pharma Healthcare - Large Cap": {
-        "AUROPHARMA.NS": "Aurobindo Pharma", "BIOCON.NS": "Biocon", "ALKEM.NS": "Alkem Labs",
-        "FORTIS.NS": "Fortis Healthcare", "GLENMARK.NS": "Glenmark", "IPCALAB.NS": "IPCA Labs",
-        "LAURUSLABS.NS": "Laurus Labs", "LUPIN.NS": "Lupin", "MAXHEALTH.NS": "Max Healthcare",
-        "TORNTPHARM.NS": "Torrent Pharma"
-    },
-    
-    "💊 Pharma Healthcare - Midcap 1": {
-        "AARTIDRUGS.NS": "Aarti Drugs", "ABBOTINDIA.NS": "Abbott India", "AJANTPHARM.NS": "Ajanta Pharma",
-        "ALEMBICLTD.NS": "Alembic Pharma", "ASTRAZEN.NS": "AstraZeneca Pharma", "AUROBINDO.NS": "Aurobindo Pharma",
-        "CADILAHC.NS": "Cadila Healthcare", "ERIS.NS": "Eris Lifesciences", "FINEORG.NS": "Fine Organic",
-        "GLAXO.NS": "GlaxoSmithKline", "GRANULES.NS": "Granules India", "HETERO.NS": "Hetero Drugs"
-    },
-    
-    "💊 Pharma Healthcare - Midcap 2": {
-        "JBCHEPHARM.NS": "JB Chemicals", "MANKIND.NS": "Mankind Pharma", "METROPOLIS.NS": "Metropolis Healthcare",
-        "NATCOPHARM.NS": "Natco Pharma", "PFIZER.NS": "Pfizer", "SANOFI.NS": "Sanofi India",
-        "SOLARA.NS": "Solara Active", "SYNGENE.NS": "Syngene International", "VIMTA.NS": "Vimta Labs",
-        "WOCKPHARMA.NS": "Wockhardt", "ZYDUSLIFE.NS": "Zydus Lifesciences", "ZYDUSWELL.NS": "Zydus Wellness",
-        "LALPATHLAB.NS": "Dr Lal PathLabs", "THYROCARE.NS": "Thyrocare"
-    },
-    
-    "💊 Pharma Healthcare - Midcap 3": {
-        "KRSNAA.NS": "Krsnaa Diagnostics", "KIMS.NS": "KIMS Hospitals", "MEDANTA.NS": "Global Health Medanta",
-        "POLYMED.NS": "Poly Medicure", "STAR.NS": "Strides Pharma", "SUVEN.NS": "Suven Pharma",
-        "SUVENPHAR.NS": "Suven Pharmaceuticals", "SEQUENT.NS": "Sequent Scientific", "SHILPAMED.NS": "Shilpa Medicare",
-        "BLISSGVS.NS": "Bliss GVS Pharma", "INDOCO.NS": "Indoco Remedies", "JUBLPHARMA.NS": "Jubilant Pharma",
-        "LAURUS.NS": "Laurus Labs", "MARKSANS.NS": "Marksans Pharma", "NEULANDLAB.NS": "Neuland Laboratories",
-        "ALEMBIC.NS": "Alembic Pharmaceuticals", "BERGER.NS": "Berger Paints"
+    "Air Delivery & Freight Services": {
+        "ALLCARGO.NS": "Allcargo Logistics Limited", "ARSHIYA.NS": "Arshiya Limited", "BLUEDART.NS": "Blue Dart Express Limited",
+        "CONCOR.NS": "Container Corporation of India Limited", "GATI.NS": "Gati Limited", "GDL.NS": "Gateway Distriparks Limited",
+        "NAVKARCORP.NS": "Navkar Corporation Limited", "PATINTLOG.NS": "Patel Integrated Logistics Limited", "SICAL.NS": "Sical Logistics Limited",
+        "SNOWMAN.NS": "Snowman Logistics Limited", "TCI.NS": "Transport Corporation of India Limited"
     },
 
-    # ========================================================================
-    # AUTO & COMPONENTS
-    # ========================================================================
-    "🚗 Auto Components - Large Cap": {
-        "APOLLOTYRE.NS": "Apollo Tyres", "ASHOKLEY.NS": "Ashok Leyland", "BALKRISIND.NS": "Balkrishna Industries",
-        "BHARATFORG.NS": "Bharat Forge", "BOSCHLTD.NS": "Bosch", "CEAT.NS": "CEAT",
-        "ESCORTS.NS": "Escorts", "EXIDEIND.NS": "Exide Industries", "MOTHERSUMI.NS": "Motherson Sumi",
-        "MRF.NS": "MRF", "TVSMOTOR.NS": "TVS Motor"
-    },
-    
-    "🚗 Auto Components - Midcap 1": {
-        "FORCEMOT.NS": "Force Motors", "AMARAJABAT.NS": "Amara Raja", "CRAFTSMAN.NS": "Craftsman Automation",
-        "ENDURANCE.NS": "Endurance Technologies", "FINCABLES.NS": "Finolex Cables"
-    },
-    
-    "🚗 Auto Components - Midcap 2": {
-        "JKTYRE.NS": "JK Tyre", "MAHINDCIE.NS": "Mahindra CIE", "MOTHERSON.NS": "Motherson Sumi",
-        "SANDHAR.NS": "Sandhar Technologies", "SANSERA.NS": "Sansera Engineering", "SCHAEFFLER.NS": "Schaeffler India",
-        "SKFINDIA.NS": "SKF India", "SWARAJENG.NS": "Swaraj Engines", "TUBE.NS": "Tube Investments",
-        "WHEELS.NS": "Wheels India", "ABB.NS": "ABB India", "AIAENG.NS": "AIA Engineering",
-        "ALICON.NS": "Alicon Castalloy", "APOLLOPIPE.NS": "Apollo Pipes", "ASAHIINDIA.NS": "Asahi India Glass",
-        "CEATLTD.NS": "CEAT", "CUMMINSIND.NS": "Cummins India", "ELGIRUBCO.NS": "Elgi Rubber"
-    },
-    
-    "🚗 Auto Components - Midcap 3": {
-        "GABRIEL.NS": "Gabriel India", "GREAVESCOT.NS": "Greaves Cotton", "JAMNAAUTO.NS": "Jamna Auto",
-        "KALYANI.NS": "Kalyani Forge", "MAHSEAMLES.NS": "Maharashtra Seamless", "MAJESAUTO.NS": "Munjal Auto",
-        "MFSL.NS": "Max Financial", "MHRIL.NS": "Mahindra Holidays", "RAMCOCEM.NS": "Ramco Cements",
-        "RATNAMANI.NS": "Ratnamani Metals", "SHARDACROP.NS": "Sharda Cropchem", "TIINDIA.NS": "Tube Investments"
+    "Air Services, Other": {
+        "GLOBALVECT.NS": "Global Vectra Helicorp Limited", "GVKPIL.NS": "GVK Power & Infrastructure Limited"
     },
 
-    # ========================================================================
-    # FMCG & CONSUMER
-    # ========================================================================
-    "🍔 FMCG Consumer - Large Cap": {
-        "BATAINDIA.NS": "Bata India", "BERGEPAINT.NS": "Berger Paints", "COLPAL.NS": "Colgate",
-        "DABUR.NS": "Dabur", "EMAMILTD.NS": "Emami", "GODREJCP.NS": "Godrej Consumer",
-        "JYOTHYLAB.NS": "Jyothy Labs", "MARICO.NS": "Marico", "TATACONSUM.NS": "Tata Consumer",
-        "UBL.NS": "United Breweries", "VBL.NS": "Varun Beverages"
-    },
-    
-    "🍔 FMCG Consumer - Midcap 1": {
-        "ABFRL.NS": "Aditya Birla Fashion", "AKZOINDIA.NS": "Akzo Nobel", "AVANTIFEED.NS": "Avanti Feeds",
-        "BAJAJELEC.NS": "Bajaj Electricals", "BIKAJI.NS": "Bikaji Foods", "CCL.NS": "CCL Products",
-        "GILLETTE.NS": "Gillette India", "GODFRYPHLP.NS": "Godfrey Phillips", "GUJALKALI.NS": "Gujarat Alkalies",
-        "HBLPOWER.NS": "HBL Power"
-    },
-    
-    "🍔 FMCG Consumer - Midcap 2": {
-        "JKLAKSHMI.NS": "JK Lakshmi Cement", "JKPAPER.NS": "JK Paper", "JUBLFOOD.NS": "Jubilant FoodWorks",
-        "KAJARIACER.NS": "Kajaria Ceramics", "KPRMILL.NS": "KPR Mill", "MRPL.NS": "MRPL",
-        "NAVINFLUOR.NS": "Navin Fluorine", "PAGEIND.NS": "Page Industries", "PCBL.NS": "PCBL",
-        "PIIND.NS": "PI Industries", "RADICO.NS": "Radico Khaitan", "RAJESHEXPO.NS": "Rajesh Exports",
-        "RELAXO.NS": "Relaxo Footwears", "SOLARINDS.NS": "Solar Industries", "TATACHEM.NS": "Tata Chemicals"
-    },
-    
-    "🍔 FMCG Consumer - Midcap 3": {
-        "TATAMETALI.NS": "Tata Metaliks", "VENKEYS.NS": "Venky's", "ARVINDFASN.NS": "Arvind Fashions",
-        "CANTABIL.NS": "Cantabil Retail", "CENTURY.NS": "Century Textiles", "DOLLAR.NS": "Dollar Industries",
-        "GOCOLORS.NS": "Go Colors", "KEWAL.NS": "Kewal Kiran", "KPR.NS": "KPR Mill",
-        "MANYAVAR.NS": "Vedant Fashions", "PGEL.NS": "PG Electroplast"
-    },
-    
-    "🍔 FMCG Consumer - Midcap 4": {
-        "PRAJIND.NS": "Praj Industries", "RAYMOND.NS": "Raymond", "SAPPHIRE.NS": "Sapphire Foods",
-        "SPENCERS.NS": "Spencer's Retail", "TRENT.NS": "Trent", "VMART.NS": "V-Mart Retail",
-        "WONDERLA.NS": "Wonderla Holidays", "BARBEQUE.NS": "Barbeque Nation", "DEVYANI.NS": "Devyani International",
-        "HATSUN.NS": "Hatsun Agro"
+    "Aluminum": {
+        "CENTEXT.NS": "Century Extrusions Limited", "HINDALCO.NS": "Hindalco Industries Limited", "MAANALU.NS": "Maan Aluminium Limited",
+        "NATIONALUM.NS": "National Aluminium Company Limited"
     },
 
-    # ========================================================================
-    # INDUSTRIAL & CEMENT
-    # ========================================================================
-    "🏭 Industrial Cement - Large Cap": {
-        "AMBUJACEM.NS": "Ambuja Cements", "BEL.NS": "Bharat Electronics",
-        "JKCEMENT.NS": "JK Cement", "SHREECEM.NS": "Shree Cement", "SIEMENS.NS": "Siemens",
-        "THERMAX.NS": "Thermax"
-    },
-    
-    "🏭 Industrial - Midcap 1": {
-        "APLAPOLLO.NS": "APL Apollo", "ASTRAL.NS": "Astral Poly", "CARYSIL.NS": "Carysil",
-        "CASTROLIND.NS": "Castrol India", "CENTURYPLY.NS": "Century Plyboards", "CERA.NS": "Cera Sanitaryware",
-        "DEEPAKNTR.NS": "Deepak Nitrite", "ELECON.NS": "Elecon Engineering", "FILATEX.NS": "Filatex India",
-        "FLUOROCHEM.NS": "Gujarat Fluorochemicals", "GARFIBRES.NS": "Garware Technical", "GRINDWELL.NS": "Grindwell Norton",
-        "GSPL.NS": "Gujarat State Petronet", "HIL.NS": "HIL Limited", "INOXWIND.NS": "Inox Wind",
-        "JINDALSAW.NS": "Jindal Saw", "KALPATPOWR.NS": "Kalpataru Power", "KANSAINER.NS": "Kansai Nerolac"
-    },
-    
-    "🏭 Industrial - Midcap 2": {
-        "KCP.NS": "KCP Limited", "KEC.NS": "KEC International", "KEI.NS": "KEI Industries",
-        "KIRLOSENG.NS": "Kirloskar Oil", "LINDEINDIA.NS": "Linde India", "MOIL.NS": "MOIL",
-        "NESCO.NS": "NESCO", "NLCINDIA.NS": "NLC India", "PHILIPCARB.NS": "Phillips Carbon",
-        "PRINCEPIPE.NS": "Prince Pipes", "PRSMJOHNSN.NS": "Prism Johnson", "RAIN.NS": "Rain Industries",
-        "RCF.NS": "Rashtriya Chemicals", "RITES.NS": "RITES", "RVNL.NS": "Rail Vikas Nigam",
-        "SAIL.NS": "SAIL", "SJVN.NS": "SJVN", "SOBHA.NS": "Sobha"
-    },
-    
-    "🏭 Industrial - Midcap 3": {
-        "SRF.NS": "SRF", "STARCEMENT.NS": "Star Cement", "SUMICHEM.NS": "Sumitomo Chemical",
-        "SUPREMEIND.NS": "Supreme Industries", "TECHNOE.NS": "Techno Electric", "TIMETECHNO.NS": "Time Technoplast",
-        "TRITURBINE.NS": "Triveni Turbine", "UCOBANK.NS": "UCO Bank", "VINATIORGA.NS": "Vinati Organics",
-        "WELCORP.NS": "Welspun Corp"
-    },
-    
-    "🏭 Industrial - Midcap 4": {
-        "BEML.NS": "BEML", "BDL.NS": "Bharat Dynamics", "CARBORUNIV.NS": "Carborundum Universal",
-        "HAL.NS": "Hindustan Aeronautics", "KIRLOSKAR.NS": "Kirloskar Brothers", "AARTI.NS": "Aarti Industries",
-        "ALKYLAMINE.NS": "Alkyl Amines", "ATUL.NS": "Atul Ltd", "BASF.NS": "BASF India", "GNFC.NS": "GNFC"
+    "Apparel Stores": {
+        "FLFL.NS": "Future Lifestyle Fashions Limited", "TRENT.NS": "Trent Limited"
     },
 
-    # ========================================================================
-    # ENERGY & POWER
-    # ========================================================================
-    "⚡ Energy Power - Large Cap": {
-        "ADANIGREEN.NS": "Adani Green", "ADANIPOWER.NS": "Adani Power", "GAIL.NS": "GAIL",
-        "HINDPETRO.NS": "HPCL", "IOC.NS": "Indian Oil", "IGL.NS": "Indraprastha Gas",
-        "PETRONET.NS": "Petronet LNG", "TATAPOWER.NS": "Tata Power", "TORNTPOWER.NS": "Torrent Power"
-    },
-    
-    "⚡ Energy Power - Midcap 1": {
-        "ADANIENSOL.NS": "Adani Energy", "ADANIGAS.NS": "Adani Total Gas", "AEGISCHEM.NS": "Aegis Logistics",
-        "GMRINFRA.NS": "GMR Infrastructure", "GSFC.NS": "GSFC", "GUJGASLTD.NS": "Gujarat Gas",
-        "MGL.NS": "Mahanagar Gas", "OIL.NS": "Oil India", "ADANITRANS.NS": "Adani Transmission"
-    },
-    
-    "⚡ Energy Power - Midcap 2": {
-        "CESC.NS": "CESC", "JSWENERGY.NS": "JSW Energy", "NHPC.NS": "NHPC",
-        "SUZLON.NS": "Suzlon Energy", "VEDL.NS": "Vedanta", "CHAMBLFERT.NS": "Chambal Fertilizers"
-    },
-    
-    "⚡ Energy Power - Midcap 3": {
-        "COROMANDEL.NS": "Coromandel International", "DEEPAKFERT.NS": "Deepak Fertilizers", "FACT.NS": "FACT",
-        "NFL.NS": "National Fertilizers", "ADANIPORTS.NS": "Adani Ports", "CONCOR.NS": "Container Corporation",
-        "IRCTC.NS": "IRCTC", "ALLCARGO.NS": "Allcargo Logistics", "BLUEDART.NS": "Blue Dart Express",
-        "GATI.NS": "Gati", "MAHLOG.NS": "Mahindra Logistics", "TCI.NS": "Transport Corporation",
-        "TCIEXP.NS": "TCI Express", "VRL.NS": "VRL Logistics"
+    "Asset Management": {
+        "ATNINTER.NS": "ATN International Ltd.", "BAJAJHLDNG.NS": "Bajaj Holdings & Investment Limited", "BFINVEST.NS": "BF Investment Limited",
+        "BINDALAGRO.NS": "Oswal Greentech Limited", "CREST.NS": "Crest Ventures Limited", "INDBANK.NS": "Indbank Merchant Banking Services Limited",
+        "IVC.NS": "IL&FS Investment Managers Limited", "JPOLYINVST.NS": "Jindal Poly Investment and Finance Company Limited", "JSWHL.NS": "JSW Holdings Limited",
+        "KICL.NS": "Kalyani Investment Company Limited", "KIRLOSIND.NS": "Kirloskar Industries Limited", "LFIC.NS": "Lakshmi Finance & Industrial Corporation Limited",
+        "MCX.NS": "Multi Commodity Exchange of India Limited", "MOTILALOFS.NS": "Motilal Oswal Financial Services Limited", "NAHARCAP.NS": "Nahar Capital and Financial Services Limited",
+        "NSIL.NS": "Nalwa Sons Investments Limited", "PILANIINVS.NS": "Pilani Investment and Industries Corporation Limited", "PNBGILTS.NS": "PNB Gilts Ltd.",
+        "RELCAPITAL.NS": "Reliance Capital Limited", "SILINV.NS": "SIL Investments Ltd.", "TIMESGTY.NS": "Times Guaranty Ltd.",
+        "WILLAMAGOR.NS": "Williamson Magor & Co. Limited"
     },
 
-    # ========================================================================
-    # RETAIL & ECOMMERCE
-    # ========================================================================
-    "🛒 Retail Ecommerce - Large Cap": {
-        "DMART.NS": "Avenue Supermarts"
-    },
-    
-    "🛒 Retail Ecommerce - Midcap 1": {
-        "FIVESTAR.NS": "Five Star Business"
-    },
-    
-    "🛒 Retail Ecommerce - Midcap 2": {
-        "ARVINDFASN.NS": "Arvind Fashions"
+    "Auto Manufacturers - Major": {
+        "ASHOKLEY.NS": "Ashok Leyland Limited", "ATULAUTO.NS": "Atul Auto Limited", "BAJAJ-AUTO.NS": "Bajaj Auto Limited",
+        "EICHERMOT.NS": "Eicher Motors Limited", "HEROMOTOCO.NS": "Hero MotoCorp Limited", "HINDMOTORS.NS": "Hindustan Motors Limited",
+        "LML.NS": "LML Limited", "M&M.NS": "Mahindra & Mahindra Limited", "MARUTI.NS": "Maruti Suzuki India Limited",
+        "SMLISUZU.NS": "SML Isuzu Limited", "TATAMOTORS.NS": "Tata Motors Limited", "TATAMTRDVR.NS": "Tata Motors Limited",
+        "TVSMOTOR.NS": "TVS Motor Company Limited"
     },
 
-    # ========================================================================
-    # REAL ESTATE
-    # ========================================================================
-    "🏗️ Real Estate - Large Cap": {
-        "DLF.NS": "DLF", "GODREJPROP.NS": "Godrej Properties", "OBEROIRLTY.NS": "Oberoi Realty",
-        "PRESTIGE.NS": "Prestige Estates"
-    },
-    
-    "🏗️ Real Estate - Midcap 1": {
-        "BRIGADE.NS": "Brigade Enterprises", "IBREALEST.NS": "Indiabulls Real Estate", "KOLTEPATIL.NS": "Kolte-Patil",
-        "LODHA.NS": "Macrotech Developers", "MACROTECH.NS": "Macrotech Developers", "PHOENIXLTD.NS": "Phoenix Mills",
-        "SIGNATURE.NS": "Signature Global", "AHLUCONT.NS": "Ahluwalia Contracts", "ASHOKA.NS": "Ashoka Buildcon",
-        "HCC.NS": "Hindustan Construction", "IRB.NS": "IRB Infrastructure", "IRCON.NS": "IRCON International"
-    },
-    
-    "🏗️ Real Estate - Midcap 2": {
-        "NBCC.NS": "NBCC India", "NCCLTD.NS": "NCC Limited", "PNCINFRA.NS": "PNC Infratech",
-        "ACC.NS": "ACC Cement", "DALMIACEM.NS": "Dalmia Bharat", "GREENPLY.NS": "Greenply Industries",
-        "ORIENTCEM.NS": "Orient Cement"
-    },
-    
-    "🏗️ Real Estate - Midcap 3": {
-        "HUDCO.NS": "HUDCO", "SALASAR.NS": "Salasar Techno", "SUNFLAG.NS": "Sunflag Iron",
-        "CENTURYTEX.NS": "Century Textiles", "CMSINFO.NS": "CMS Info Systems", "ESABINDIA.NS": "ESAB India",
-        "JWL.NS": "Jupiter Wagons"
+    "Auto Parts": {
+        "AMTEKAUTO.NS": "Amtek Auto Limited", "ANGIND.NS": "ANG Industries Limited", "ASAHIINDIA.NS": "Asahi India Glass Limited",
+        "ASAL.NS": "Automotive Stampings and Assemblies Limited", "AUTOAXLES.NS": "Automotive Axles Limited", "AUTOIND.NS": "Autoline Industries Limited",
+        "AUTOLITIND.NS": "Autolite (India) Limited", "BANCOINDIA.NS": "Banco Products (India) Limited", "BHARATFORG.NS": "Bharat Forge Limited",
+        "BHARATGEAR.NS": "Bharat Gears Limited", "BOSCHLTD.NS": "Bosch Limited", "CASTEXTECH.NS": "Castex Technologies Limited",
+        "DYNAMATECH.NS": "Dynamatic Technologies Limited", "EXIDEIND.NS": "Exide Industries Limited", "FIEMIND.NS": "Fiem Industries Limited",
+        "FMGOETZE.NS": "Federal-Mogul Goetze (India) Limited", "GABRIEL.NS": "Gabriel India Limited", "HARITASEAT.NS": "Harita Seating Systems Limited",
+        "HINDCOMPOS.NS": "Hindustan Composites Limited", "HINDUJAFO.NS": "Hinduja Foundries Limited", "HITECHGEAR.NS": "The Hi-Tech Gears Limited",
+        "IGARASHI.NS": "Igarashi Motors India Limited", "IMPAL.NS": "India Motor Parts and Accessories Limited", "INDNIPPON.NS": "India Nippon Electricals Limited",
+        "JAMNAAUTO.NS": "Jamna Auto Industries Limited", "JAYBARMARU.NS": "Jay Bharat Maruti Limited", "JBMA.NS": "JBM Auto Limited",
+        "JMA.NS": "Jullundur Motor Agency (Delhi) Limited", "JMTAUTOLTD.NS": "JMT Auto Limited", "KALYANIFRG.NS": "Kalyani Forge Limited",
+        "LGBBROSLTD.NS": "L.G. Balakrishnan & Bros Limited", "LUMAXAUTO.NS": "Lumax Automotive Systems Limited", "LUMAXIND.NS": "Lumax Industries Limited",
+        "LUMAXTECH.NS": "Lumax Auto Technologies Limited", "MAHSCOOTER.NS": "Maharashtra Scooters Limited", "MENONBE.NS": "Menon Bearings Limited",
+        "MINDACORP.NS": "Minda Corporation Limited", "MOTHERSUMI.NS": "Motherson Sumi Systems Limited", "MUNJALAU.NS": "Munjal Auto Industries Limited",
+        "MUNJALSHOW.NS": "Munjal Showa Limited", "NRBBEARING.NS": "NRB Bearings Limited", "OMAXAUTO.NS": "Omax Autos Limited",
+        "PPAP.NS": "PPAP Automotive Limited", "PRECAM.NS": "Precision Camshafts Limited", "RANEENGINE.NS": "Rane Engine Valve Limited",
+        "RANEHOLDIN.NS": "Rane Holdings Limited", "RBL.NS": "Rane Brake Lining Limited", "REMSONSIND.NS": "Remsons Industries Limited",
+        "RICOAUTO.NS": "Rico Auto Industries Limited", "RML.NS": "Rane (Madras) Limited", "SHIVAMAUTO.NS": "Shivam Autotech Limited",
+        "SONASTEER.NS": "Sona Koyo Steering Systems Limited", "SSWL.NS": "Steel Strips Wheels Limited", "SUBROS.NS": "Subros",
+        "SUNCLAYLTD.NS": "Sundaram-Clayton Limited", "SUNDRMBRAK.NS": "Sundaram Brake Linings Limited", "SUNDRMFAST.NS": "Sundram Fasteners Limited",
+        "SUPRAJIT.NS": "Suprajit Engineering Limited", "SWARAJENG.NS": "Swaraj Engines Limited", "TALBROAUTO.NS": "Talbros Automotive Components Limited",
+        "TUBEINVEST.NS": "TI Financial Holdings Limited", "UCALFUEL.NS": "Ucal Fuel Systems Limited", "WABCOINDIA.NS": "Wabco India Limited",
+        "WHEELS.NS": "Wheels India Limited"
     },
 
-    # ========================================================================
-    # MEDIA & ENTERTAINMENT
-    # ========================================================================
-    "📺 Media Entertainment": {
-        "DB.NS": "DB Corp", "HATHWAY.NS": "Hathway Cable", "INOXLEISUR.NS": "Inox Leisure",
-        "JAGRAN.NS": "Jagran Prakashan", "NETWORK18.NS": "Network18 Media", "PVR.NS": "PVR Inox",
-        "PVRINOX.NS": "PVR Inox", "SAREGAMA.NS": "Saregama India", "SUNTV.NS": "Sun TV Network",
-        "TIPS.NS": "Tips Industries", "TV18BRDCST.NS": "TV18 Broadcast", "TVTODAY.NS": "TV Today",
-        "ZEEL.NS": "Zee Entertainment", "HT.NS": "HT Media", "NAVNETEDUL.NS": "Navneet Education",
-        "TREEHOUSE.NS": "Tree House Education", "DELTACORP.NS": "Delta Corp", "ONMOBILE.NS": "OnMobile Global"
+    # ======================================================================
+
+    "Beverages - Brewers": {
+        "EDL.NS": "Empee Distilleries Limited", "SDBL.NS": "Som Distilleries & Breweries Limited", "UBHOLDINGS.NS": "United Breweries (Holdings) Limited",
+        "UBL.NS": "United Breweries Limited"
     },
 
-    # ========================================================================
-    # AGRICULTURE & CHEMICALS
-    # ========================================================================
-    "🌾 Agriculture Chemicals 1": {
-        "AARTIIND.NS": "Aarti Industries", "BHAGERIA.NS": "Bhageria Industries",
-        "EXCEL.NS": "Excel Crop Care", "HERANBA.NS": "Heranba Industries", "INDOFIL.NS": "Indofil Industries",
-        "INSECTICIDES.NS": "Insecticides India", "NOCIL.NS": "NOCIL", "RALLIS.NS": "Rallis India"
-    },
-    
-    "🌾 Agriculture Chemicals 2": {
-        "ZUARI.NS": "Zuari Agro Chemicals", "BBTC.NS": "Bombay Burmah", "CENTURYTEXT.NS": "Century Textiles",
-        "HINDOILEXP.NS": "Hindustan Oil", "JUBLCHEM.NS": "Jubilant Ingrevia", "KRBL.NS": "KRBL",
-        "TATACOFFEE.NS": "Tata Coffee"
+    "Beverages - Soft Drinks": {
+        "MANPASAND.NS": "Manpasand Beverages Limited", "UNITEDTEA.NS": "The United Nilgiri Tea Estates Company Limited"
     },
 
-    # ========================================================================
-    # SPECIALTY & EMERGING
-    # ========================================================================
-    "🎯 Specialty Emerging 1": {
-        "APTECH.NS": "Aptech", "CAREEREDGE.NS": "Career Point", "ZEE.NS": "Zee Learn",
-        "CHALET.NS": "Chalet Hotels", "EIH.NS": "EIH", "INDHOTEL.NS": "Indian Hotels",
-        "LEMONTREE.NS": "Lemon Tree Hotels", "TAJGVK.NS": "Taj GVK Hotels"
-    },
-    
-    "🎯 Specialty Emerging 2": {
-        "COX&KINGS.NS": "Cox & Kings", "SPICEJET.NS": "SpiceJet", "TBO.NS": "TBO Tek",
-        "THOMASCOOK.NS": "Thomas Cook", "SIS.NS": "SIS Limited", "UNOMINDA.NS": "Uno Minda",
-        "EMAMIPAP.NS": "Emami Paper", "SESAGOA.NS": "Sesa Goa", "TNIDETF.NS": "TNPL",
-        "WESTPAPER.NS": "West Coast Paper", "GRSE.NS": "Garden Reach Shipbuilders",
-        "MAZDOCK.NS": "Mazagon Dock", "MIDHANI.NS": "Mishra Dhatu Nigam"
+    "Beverages - Wineries & Distillers": {
+        "GLOBUSSPR.NS": "Globus Spirits Limited", "GMBREW.NS": "G.M.Breweries Limited", "IFBAGRO.NS": "IFB Agro Industries Limited",
+        "PIONDIST.NS": "Pioneer Distilleries Limited", "RKDL.NS": "Ravi Kumar Distilleries Limited", "TI.NS": "Tilaknagar Industries Ltd."
     },
 
-    # ========================================================================
-    # TEXTILES & APPARELS
-    # ========================================================================
-    "👔 Textiles Apparels": {
-        "AARVEEDEN.NS": "Aarvee Denims", "ALOKTEXT.NS": "Alok Textile", "ARSS.NS": "ARSS Infrastructure",
-        "BANSWRAS.NS": "Banswara Syntex", "GOKEX.NS": "Gokaldas Exports", "NAHARINDUS.NS": "Nahar Industrial",
-        "NITIN.NS": "Nitin Spinners", "RSWM.NS": "RSWM", "SPENTEX.NS": "Spentex Industries",
-        "SUTLEJTEX.NS": "Sutlej Textiles", "TRIDENT.NS": "Trident", "VARDHACRLC.NS": "Vardhman Textiles"
+    "Biotechnology": {
+        "CELESTIAL.NS": "Celestial Biolabs Limited", "DISHMAN.NS": "Dishman Pharmaceuticals and Chemicals Limited", "LYKALABS.NS": "Lyka Labs Limited",
+        "PANACEABIO.NS": "Panacea Biotec Limited", "SEQUENT.NS": "Sequent Scientific Limited", "STERLINBIO.NS": "Sterling Biotech Limited"
     },
 
-    # ========================================================================
-    # DIVERSIFIED
-    # ========================================================================
-    "🔄 Diversified 1": {
-        "HGINFRA.NS": "HG Infra", "ORIENT.NS": "Orient Cement", "PRISM.NS": "Prism Johnson",
-        "SOMANY.NS": "Somany Ceramics", "FINOLEX.NS": "Finolex Industries", "NAGREEKEXP.NS": "Nagreeka Exports",
-        "SUPREME.NS": "Supreme Industries", "VALIANTORG.NS": "Valiant Organics", "FAG.NS": "Schaeffler India",
-        "NBC.NS": "National Bearings", "NRB.NS": "NRB Bearings"
-    },
-    
-    "🔄 Diversified 2": {
-        "GALAXYSURF.NS": "Galaxy Surfactants", "KIRLFER.NS": "Kirloskar Ferrous", "KSB.NS": "KSB Pumps",
-        "SHAKTICP.NS": "Shakti Corporation", "ACCELYA.NS": "Accelya Kale", "ACI.NS": "Archean Chemical"
+    "Broadcasting - Radio": {
+        "ENIL.NS": "Entertainment Network (India) Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - ENGINEERING & MANUFACTURING
-    # ========================================================================
-    "🔧 Smallcap Engineering 1": {
-        "AARTISURF.NS": "Aarti Surfactants", "ABSORB.NS": "Absorb Plus", "ACCURACY.NS": "Accuracy Shipping",
-        "ACRYSIL.NS": "Acrysil", "ADVENZYMES.NS": "Advanced Enzymes", "AEROFLEX.NS": "Aeroflex Industries",
-        "AETHER.NS": "Aether Industries", "AGCNET.NS": "AGC Networks", "AHLEAST.NS": "Asian Hotels East",
-        "AIIL.NS": "Ashapura Intimates", "AIRAN.NS": "Airan Ltd", "AKASH.NS": "Akash Infra-Projects",
-        "AKSHARCHEM.NS": "Akshar Chem", "ALPA.NS": "Alpa Laboratories", "ALPHAGEO.NS": "Alphageo India",
-        "ALPSINDUS.NS": "Alps Industries"
-    },
-    
-    "🔧 Smallcap Engineering 2": {
-        "AMIABLE.NS": "Amiable Logistics", "AMJLAND.NS": "AMJ Land Holdings", "AMRUTANJAN.NS": "Amrutanjan Health",
-        "ANANTRAJ.NS": "Anant Raj", "ANDHRSUGAR.NS": "Andhra Sugars", "ANMOL.NS": "Anmol Industries",
-        "ANUP.NS": "Anupam Rasayan", "APARINDS.NS": "Apar Industries", "APCL.NS": "Anjani Portland",
-        "APCOTEXIND.NS": "Apcotex Industries", "APEX.NS": "Apex Frozen Foods", "APOLLO.NS": "Apollo Micro Systems",
-        "APTECHT.NS": "Aptech", "ARASU.NS": "Arasu Cable", "ARCHIDPLY.NS": "Archidply Industries",
-        "ARCHIES.NS": "Archies Ltd", "ARL.NS": "Apar Industries", "ARMANFIN.NS": "Arman Financial",
-        "ARROWGREEN.NS": "Arrow Greentech"
-    },
-    
-    "🔧 Smallcap Engineering 3": {
-        "ARSHIYA.NS": "Arshiya", "ARTNIRMAN.NS": "Art Nirman", "ASAHISONG.NS": "Asahi Songwon",
-        "ASAL.NS": "Automotive Stampings", "ASALCBR.NS": "Associated Alcohols", "ASHIANA.NS": "Ashiana Housing",
-        "ASHIMASYN.NS": "Ashima Ltd", "ASIANENE.NS": "Asian Energy Services", "ASIANHOTNR.NS": "Asian Hotels North",
-        "ASPINWALL.NS": "Aspinwall", "ASTEC.NS": "Astec LifeSciences", "ASTERDM.NS": "Aster DM Healthcare",
-        "ASTRAMICRO.NS": "Astra Microwave", "ATAM.NS": "Atam Valves", "ATNINTER.NS": "ATN International",
-        "ATULAUTO.NS": "Atul Auto"
-    },
-    
-    "🔧 Smallcap Engineering 4": {
-        "AURIONPRO.NS": "Aurionpro Solutions", "AUSOMENT.NS": "Ausom Enterprise", "AUSTRAL.NS": "Austral Coke",
-        "AUTOAXLES.NS": "Automotive Axles", "AUTOIND.NS": "Autoline Industries", "AVALON.NS": "Avalon Technologies",
-        "AVTNPL.NS": "AVT Natural Products", "AWL.NS": "Adani Wilmar", "AXISCADES.NS": "Axiscades Engineering",
-        "AXISGOLD.NS": "Axis Gold", "AYMSYNTEX.NS": "AYM Syntex", "AZAD.NS": "Azad Engineering",
-        "BAGFILMS.NS": "BAG Films", "BAJAJHIND.NS": "Bajaj Hindusthan Sugar", "BALAJITELE.NS": "Balaji Telefilms",
-        "BALAXI.NS": "Balaxi Ventures", "BALKRISHNA.NS": "Balkrishna Paper", "BALMLAWRIE.NS": "Balmer Lawrie",
-        "BALPHARMA.NS": "Bal Pharma", "BANCOINDIA.NS": "Banco Products", "BANG.NS": "Bang Overseas"
+    "Broadcasting - TV": {
+        "DEN.NS": "DEN Networks Limited", "JAINSTUDIO.NS": "Jain Studios Limited", "NDTV.NS": "New Delhi Television Limited",
+        "NETWORK18.NS": "Network18 Media & Investments Limited", "RAJTV.NS": "Raj Television Network Limited", "SABTN.NS": "Sri Adhikari Brothers Television Network Limited",
+        "SUNTV.NS": "Sun TV Network Limited", "TV18BRDCST.NS": "TV18 Broadcast Limited", "TVTODAY.NS": "T.V. Today Network Limited",
+        "ZEEL.NS": "Zee Entertainment Enterprises Limited", "ZEEMEDIA.NS": "Zee Media Corporation Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - CHEMICALS & PHARMACEUTICALS
-    # ========================================================================
-    "🧪 Smallcap Chemicals 1": {
-        "BBOX.NS": "Black Box", "BBL.NS": "Bharat Bijlee", "BCG.NS": "Brightcom Group",
-        "BCP.NS": "Banco Products", "BEEKAY.NS": "Beekay Steel", "BELSTAR.NS": "Belstar Microfinance",
-        "BEPL.NS": "Bhansali Engineering", "BFINVEST.NS": "BF Investment", "BGRENERGY.NS": "BGR Energy Systems",
-        "BHAGYANGR.NS": "Bhagiradha Chemicals", "BHANDARI.NS": "Bhandari Hosiery", "BHARATGEAR.NS": "Bharat Gears"
-    },
-    
-    "🧪 Smallcap Chemicals 2": {
-        "BHARATWIRE.NS": "Bharat Wire Ropes", "BHEL.NS": "BHEL", "BILENERGY.NS": "Bil Energy Systems",
-        "BIRLACABLE.NS": "Birla Cable", "BIRLAMONEY.NS": "Aditya Birla Money", "BIRLACORPN.NS": "Birla Corporation",
-        "BIRLATYRE.NS": "Birla Tyres", "BKM.NS": "Bkmindspace", "BLACKROSE.NS": "Blackrose Industries",
-        "BLAL.NS": "BEML Land Assets", "BLKASHYAP.NS": "B L Kashyap", "BLUEBLENDS.NS": "Blue Blends",
-        "BLUECOAST.NS": "Blue Coast Hotels", "BLUEJET.NS": "Blue Jet Healthcare", "BODALCHEM.NS": "Bodal Chemicals",
-        "BOMDYEING.NS": "Bombay Dyeing", "BOROLTD.NS": "Borosil Ltd"
-    },
-    
-    "🧪 Smallcap Chemicals 3": {
-        "BRFL.NS": "Bombay Rayon", "BRO.NS": "Brigade Road", "BSE.NS": "BSE Ltd",
-        "BSHSL.NS": "Bombay Super Hybrid", "BSL.NS": "BSL Ltd", "BSOFT.NS": "Birlasoft",
-        "BTML.NS": "Bodal Trading", "BURNPUR.NS": "Burnpur Cement", "BUTTERFLY.NS": "Butterfly Gandhimathi",
-        "CADSYS.NS": "Cadsys India", "CALSOFT.NS": "California Software", "CAMLINFINE.NS": "Camlin Fine Sciences",
-        "CANFINHOME.NS": "Can Fin Homes", "CAPF.NS": "Capital First", "CAPTRUST.NS": "Capital Trust",
-        "CARERATING.NS": "CARE Ratings"
-    },
-    
-    "🧪 Smallcap Chemicals 4": {
-        "CARGEN.NS": "Cargen Drugs", "CCCL.NS": "Consolidated Construction", "CELEBRITY.NS": "Celebrity Fashions",
-        "CELLO.NS": "Cello World", "CENTENKA.NS": "Century Enka", "CENTUM.NS": "Centum Electronics",
-        "CEREBRAINT.NS": "Cerebra Integrated", "CGCL.NS": "Capri Global", "CGPOWER.NS": "CG Power",
-        "CHEMBOND.NS": "Chembond Chemicals", "CHEMCON.NS": "Chemcon Speciality", "CHEMFAB.NS": "Chemfab Alkalis",
-        "CHEMPLASTS.NS": "Chemplast Sanmar", "CHENNPETRO.NS": "Chennai Petroleum"
+    "Business Equipment": {
+        "KOKUYOCMLN.NS": "Kokuyo Camlin Limited", "TODAYS.NS": "Todays Writing Instruments Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - TEXTILES & CONSUMER GOODS
-    # ========================================================================
-    "👕 Smallcap Textiles 1": {
-        "CIGNITITEC.NS": "Cigniti Technologies", "CINELINE.NS": "Cineline India", "CINEVISTA.NS": "Cinevista",
-        "CLNINDIA.NS": "Clariant Chemicals", "CLSEL.NS": "Chaman Lal Setia", "CMICABLES.NS": "CMI Ltd",
-        "COASTCORP.NS": "Coastal Corporation", "COFFEEDAY.NS": "Coffee Day Enterprises", "COMPINFO.NS": "Compuage Infocom",
-        "COMPUSOFT.NS": "Compucom Software", "CONFIPET.NS": "Confidence Petroleum", "CONSOFINVT.NS": "Consolidated Finvest",
-        "CONTROLS.NS": "Control Print", "COOKCAST.NS": "Cookcast"
-    },
-    
-    "👕 Smallcap Textiles 2": {
-        "CORALFINAC.NS": "Coral India Finance", "CORDSCABLE.NS": "Cords Cable", "COROENGG.NS": "Coromandel Engineering",
-        "CORPBANK.NS": "Corporation Bank", "COSMOFILMS.NS": "Cosmo Films", "COUNCODOS.NS": "Country Condo's",
-        "CPSEETEC.NS": "CPS EeeTech", "CREATIVE.NS": "Creative Newtech", "CREATIVEYE.NS": "Creative Eye",
-        "CREST.NS": "Crest Ventures", "CRIMSONLOG.NS": "Crimson Logistics", "CROSSING.NS": "Crossing Republic",
-        "CRSBWARDR.NS": "CRISIL Board", "CUBEXTUB.NS": "Cubex Tubings", "CUREXAUTO.NS": "Curex Pharmaceuticals",
-        "CURATECH.NS": "Cura Technologies", "CUB.NS": "City Union Bank", "CYBERTECH.NS": "Cybertech Systems"
-    },
-    
-    "👕 Smallcap Textiles 3": {
-        "CYBERMEDIA.NS": "Cybermedia India", "DAICHISANK.NS": "Daiichi Sankyo", "DALMIASUG.NS": "Dalmia Bharat Sugar",
-        "DANGEE.NS": "Dangee Dums", "DATAPATTNS.NS": "Data Patterns", "DBOL.NS": "Dhampur Bio Organics",
-        "DBL.NS": "Dilip Buildcon", "DBREALTY.NS": "DB Realty", "DBSTOCKBRO.NS": "DB Stock Brokers",
-        "DCAST.NS": "Diecast", "DCB.NS": "DCB Bank", "DCHL.NS": "Deccan Chronicle",
-        "DCM.NS": "DCM Ltd", "DCMSHRIRAM.NS": "DCM Shriram", "DCMSRL.NS": "DCM Shriram",
-        "DCW.NS": "DCW Ltd", "DCXINDIA.NS": "DCX Systems", "DDL.NS": "Dhunseri Ventures",
-        "DEBOCK.NS": "De Nora India"
-    },
-    
-    "👕 Smallcap Textiles 4": {
-        "DEEPIND.NS": "Deepak Spinners", "DENDRO.NS": "Dendro Technologies", "DENORA.NS": "De Nora India",
-        "DENZYME.NS": "Dezyne E-Commerce", "DHANBANK.NS": "Dhanalakshmi Bank", "DHANUKA.NS": "Dhanuka Agritech",
-        "DHARAMSI.NS": "Dharamsi Morarji", "DHAMPURSUG.NS": "Dhampur Sugar", "DHANVARSHA.NS": "Dhanvarsha Finvest",
-        "DHUNINV.NS": "Dhunseri Investments", "DIACABS.NS": "Diamond Cables", "DIAMINESQ.NS": "Diamines Chemicals",
-        "DIGJAM.NS": "Digjamlimited", "DIGISPICE.NS": "DiGiSPICE Technologies", "DIGJAMLMTD.NS": "Digjamlimited",
-        "DION.NS": "Dion Global Solutions", "DISHMAN.NS": "Dishman Carbogen", "DIVGIITTS.NS": "Divgi TorqTransfer",
-        "DISHTV.NS": "Dish TV India"
+    "Business Services": {
+        "ALANKIT.NS": "Alankit Limited", "ALLSEC.NS": "Allsec Technologies Limited", "CURATECH.NS": "CURA Technologies Limited",
+        "DATAMATICS.NS": "Datamatics Global Services Limited", "ECLERX.NS": "eClerx Services Limited", "FSL.NS": "Firstsource Solutions Limited",
+        "GKWLIMITED.NS": "GKW Limited", "HEXATRADEX.NS": "Hexa Tradex Limited", "KTIL.NS": "Kesar Terminals & Infrastructure Limited",
+        "NESCO.NS": "Nesco Limited", "REPRO.NS": "Repro India Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - IT & SOFTWARE SERVICES
-    # ========================================================================
-    "💾 Smallcap IT 1": {
-        "DLINKINDIA.NS": "D-Link India", "DMCC.NS": "DMCC Speciality", "DOLAT.NS": "Dolat Investments",
-        "DONEAR.NS": "Donear Industries", "DOUBLECON.NS": "Double Con", "DREDGECORP.NS": "Dredging Corporation",
-        "DUCON.NS": "Ducon Infratechnologies", "DUCOL.NS": "Ducol Organics", "DUMMETT.NS": "Dummett Coote",
-        "DWARKESH.NS": "Dwarkesh Sugar", "DYNAMATECH.NS": "Dynamatic Technologies", "DYNAMIND.NS": "Dynamatic Technologies",
-        "EASTSILK.NS": "Eastern Silk", "EASUNREYRL.NS": "Easun Reyrolle", "EBBCO.NS": "EbbCo Ventures",
-        "ECLFINANCE.NS": "Edelweiss Capital", "ECOBOARD.NS": "Eco Board", "EDELWEISS.NS": "Edelweiss Financial",
-        "EDUCOMP.NS": "Educomp Solutions"
-    },
-    
-    "💾 Smallcap IT 2": {
-        "EIDPARRY.NS": "EID Parry", "EIFFL.NS": "Euro India Fresh Foods", "EIHAHOTELS.NS": "EIH Associated Hotels",
-        "EIHOTEL.NS": "EIH Ltd", "EIMCOELECO.NS": "Eimco Elecon", "EKENNIS.NS": "Ekennis Software",
-        "ELECTROCAST.NS": "Electrocast Sales", "ELECTHERM.NS": "Electrotherm India", "ELGIEQUIP.NS": "Elgi Equipments",
-        "ELIN.NS": "Elin Electronics", "EMAMIPAP.NS": "Emami Paper", "EMAMIREAL.NS": "Emami Realty",
-        "EMIRATE.NS": "Emirate Securities", "EMMBI.NS": "Emmbi Industries", "EMSLIMITED.NS": "EMS Ltd",
-        "ENIL.NS": "Entertainment Network", "EPACK.NS": "Epack Durables", "EQUIPPP.NS": "Equippp Social"
-    },
-    
-    "💾 Smallcap IT 3": {
-        "EROSMEDIA.NS": "Eros International", "ESSARSHPNG.NS": "Essar Shipping", "ESTER.NS": "Ester Industries",
-        "ETECHNO.NS": "Electrotherm Technologies", "EUROCERA.NS": "Euro Ceramics", "EUROTEXIND.NS": "Eurotex Industries",
-        "EVEREADY.NS": "Eveready Industries", "EVERESTIND.NS": "Everest Industries", "EXCELINDUS.NS": "Excel Industries",
-        "EXPLEOSOL.NS": "Expleo Solutions", "FAGBEARING.NS": "Schaeffler India", "FAIRCHEM.NS": "Fairchem Speciality",
-        "FAZE3.NS": "Faze Three", "FCL.NS": "Fineotex Chemical", "FEL.NS": "Future Enterprises",
-        "FELDVR.NS": "Future Enterprises DVR", "FENTURA.NS": "Fentura Financial", "FCSSOFT.NS": "FCS Software"
-    },
-    
-    "💾 Smallcap IT 4": {
-        "FIBERWEB.NS": "Fiberweb India", "FIEMIND.NS": "Fiem Industries", "FINPIPE.NS": "Finolex Industries",
-        "FINKURVE.NS": "Finkurve Financial", "FINOL.NS": "Finolex Industries", "FIRSTCRY.NS": "FirstCry Baby",
-        "FIRSTSOUR.NS": "Firstsource Solutions", "FLFL.NS": "Future Lifestyle", "FLIP.NS": "Flip Media",
-        "FOCUSLIGHT.NS": "Focus Lighting", "FOMENTO.NS": "Fomento Resorts", "FOODSIN.NS": "Foods & Inns",
-        "FORCE.NS": "Force Motors", "FOSECOIND.NS": "Foseco India", "FRETAIL.NS": "Future Retail",
-        "FRIEDBERG.NS": "Friedberg Direct"
+    "Business Software & Services": {
+        "AGCNET.NS": "AGC Networks Limited", "AURIONPRO.NS": "aurionPro Solutions Limited", "KELLTONTEC.NS": "Kellton Tech Solutions Limited",
+        "MELSTAR.NS": "Melstar Information Technologies Limited", "OFSS.NS": "Oracle Financial Services Software Limited", "PERSISTENT.NS": "Persistent Systems Limited",
+        "POLARIS.NS": "Polaris Consulting & Services Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - INFRASTRUCTURE & REAL ESTATE
-    # ========================================================================
-    "🏢 Smallcap Infra 1": {
-        "FSC.NS": "Future Supply Chain", "FSL.NS": "Firstsource Solutions", "GAEL.NS": "Gujarat Ambuja Exports",
-        "GALLANTT.NS": "Gallantt Ispat", "GANDHAR.NS": "Gandhar Oil Refinery", "GANDHITUBE.NS": "Gandhi Special Tubes",
-        "GANESHHOUC.NS": "Ganesh Housing", "GANECOS.NS": "Ganesha Ecosphere", "GANESHBE.NS": "Ganesh Benzoplast",
-        "GATECABLE.NS": "Gate Way Distriparks", "GATEWAY.NS": "Gateway Distriparks", "GAYAHWS.NS": "Gayatri Highways",
-        "GDL.NS": "Gateway Distriparks", "GENCON.NS": "Generic Pharma", "GENSOL.NS": "Gensol Engineering",
-        "GEOJITFSL.NS": "Geojit Financial", "GEPIL.NS": "GE Power India", "GESHIP.NS": "Great Eastern Shipping",
-        "GHCL.NS": "GHCL Ltd"
-    },
-    
-    "🏢 Smallcap Infra 2": {
-        "GHCLTEXTIL.NS": "GHCL Textiles", "GICHSGFIN.NS": "GIC Housing Finance", "GICRE.NS": "GIC Re",
-        "GILLANDERS.NS": "Gillanders Arbuthnot", "GINNIFILA.NS": "Ginni Filaments", "GIPCL.NS": "Gujarat Industries",
-        "GISOLUTION.NS": "GI Engineering Solutions", "GITANJALI.NS": "Gitanjali Gems", "GKWLIMITED.NS": "GKW Ltd",
-        "GLAND.NS": "Gland Pharma", "GLFL.NS": "Gujarat Lease Financing", "GLOBALPET.NS": "Global Pet Industries",
-        "GLOBOFFS.NS": "Global Offshore", "GLOBALVECT.NS": "Global Vectra", "GLOBUSSPR.NS": "Globus Spirits",
-        "GLORY.NS": "Glory Polyfilms", "GMBREW.NS": "GM Breweries", "GMDCLTD.NS": "Gujarat Mineral",
-        "GMMPFAUDLR.NS": "GMM Pfaudler", "GNA.NS": "GNA Axles"
-    },
-    
-    "🏢 Smallcap Infra 3": {
-        "GOACARBON.NS": "Goa Carbon", "GODREJAGRO.NS": "Godrej Agrovet", "GODREJIND.NS": "Godrej Industries",
-        "GOENKA.NS": "Goenka Business", "GOKUL.NS": "Gokul Refoils", "GOKULMECH.NS": "Gokul Agro",
-        "GOLDBEES.NS": "Gold BeES", "GOLDTECH.NS": "Goldstone Technologies", "GOODLUCK.NS": "Goodluck India",
-        "GOODYEAR.NS": "Goodyear India", "GPIL.NS": "Godawari Power", "GPTINFRA.NS": "GPT Infraprojects",
-        "GPPL.NS": "Gujarat Pipavav", "GRABALALK.NS": "Grasim Industries", "GRAUWEIL.NS": "Grauer Weil India",
-        "GRAVITA.NS": "Gravita India", "GREENLAM.NS": "Greenlam Industries"
-    },
-    
-    "🏢 Smallcap Infra 4": {
-        "GREENPOWER.NS": "Greenpower Motor", "GRMOVER.NS": "GRM Overseas", "GRPLTD.NS": "GRP Ltd",
-        "GRUH.NS": "Gruh Finance", "GTL.NS": "GTL Ltd", "GTLINFRA.NS": "GTL Infrastructure",
-        "GTMLIMITED.NS": "GTM Ltd", "GTPL.NS": "GTPL Hathway", "GUFICBIO.NS": "Gufic Biosciences",
-        "GUJAPOLLO.NS": "Gujarat Apollo", "GUJNREDVR.NS": "Gujarat NRE Coke", "GUJRAFFIA.NS": "Gujarat Raffia",
-        "GULFOILLUB.NS": "Gulf Oil Lubricants", "GULFPETRO.NS": "GP Petroleums", "GVKPIL.NS": "GVK Power",
-        "GVPTECH.NS": "GVP Infotech", "HALONIX.NS": "Halonix Technologies"
+    "CATV Systems": {
+        "DISHTV.NS": "Dish TV India Limited", "HATHWAY.NS": "Hathway Cable & Datacom Limited", "HINDUJAVEN.NS": "Hinduja Ventures Limited",
+        "ORTEL.NS": "Ortel Communications Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - ENERGY & UTILITIES
-    # ========================================================================
-    "⚡ Smallcap Energy 1": {
-        "HAMSUNDAR.NS": "Hamsund Enterprise", "HARDWYN.NS": "Hardwyn India", "HARRMALAYA.NS": "Harrisons Malayalam",
-        "HARSHA.NS": "Harsha Engineers", "HBSL.NS": "HB Stockholdings", "HEG.NS": "HEG Ltd",
-        "HEIDELBERG.NS": "HeidelbergCement India", "HELIOS.NS": "Helios Matheson", "HERCULES.NS": "Hercules Hoists",
-        "HERITGFOOD.NS": "Heritage Foods", "HESTERBIO.NS": "Hester Biosciences", "HEUBACHIND.NS": "Heubach Colorants",
-        "HEXATRADEX.NS": "Hexa Tradex", "HFCL.NS": "HFCL Ltd"
-    },
-    
-    "⚡ Smallcap Energy 2": {
-        "HGS.NS": "Hinduja Global", "HIKAL.NS": "Hikal Ltd", "HILTON.NS": "Hilton Metal",
-        "HIMATSEIDE.NS": "Himatsingka Seide", "HINDCOMPOS.NS": "Hindustan Composites", "HINDCOPPER.NS": "Hindustan Copper",
-        "HINDDORROL.NS": "Hinddorrol", "HINDMOTORS.NS": "Hindustan Motors", "HINDNATGLS.NS": "Hindon Natural",
-        "HINDWAREAP.NS": "Hindware Appliances", "HINDZINC.NS": "Hindustan Zinc", "HIRECT.NS": "Hind Rectifiers",
-        "HITECH.NS": "Hitech Corporation", "HITECHCORP.NS": "Hitech Corporation", "HITECHGEAR.NS": "Hitachi Energy",
-        "HMT.NS": "HMT Ltd", "HMVL.NS": "Hindustan Media", "HNDFDS.NS": "Hindustan Foods"
-    },
-    
-    "⚡ Smallcap Energy 3": {
-        "HONDAPOWER.NS": "Honda Power", "HOTELRUGBY.NS": "Hotel Rugby", "HOVS.NS": "HOV Services",
-        "HPAL.NS": "HP Adhesives", "HPL.NS": "HPL Electric", "HSCL.NS": "Himadri Speciality",
-        "HTMEDIA.NS": "HT Media", "HUHTAMAKI.NS": "Huhtamaki India", "ICIL.NS": "Indo Count",
-        "ICRA.NS": "ICRA Ltd", "IDBI.NS": "IDBI Bank", "IDEA.NS": "Vodafone Idea",
-        "IDFC.NS": "IDFC Ltd", "IEX.NS": "Indian Energy Exchange", "IFBAGRO.NS": "IFB Agro",
-        "IFBIND.NS": "IFB Industries", "IFCI.NS": "IFCI Ltd", "IFGLEXPOR.NS": "IFGL Refractories"
-    },
-    
-    "⚡ Smallcap Energy 4": {
-        "IGARASHI.NS": "Igarashi Motors", "IGPL.NS": "IG Petrochemicals", "IITL.NS": "Industrial Investment",
-        "IMAGICAA.NS": "Imagicaa World", "IMFA.NS": "Indian Metals", "IMPAL.NS": "India Cements",
-        "INANI.NS": "Inani Marbles", "INCA.NS": "India Nippon", "INDBANK.NS": "Indbank Merchant",
-        "INDIANCARD.NS": "Indian Card", "INDIANHUME.NS": "Indian Hume Pipe", "INDIASHLTR.NS": "India Shelter",
-        "INDIGO.NS": "InterGlobe Aviation", "INDIGOPNTS.NS": "Indigo Paints", "INDITNX.NS": "India Nivesh",
-        "INDNIPPON.NS": "India Nippon", "INDOAMIN.NS": "Indo Amines"
+    # ======================================================================
+
+    "Chemicals - Major Diversified": {
+        "ANDHRSUGAR.NS": "The Andhra Sugars Limited", "ASAHISONG.NS": "Asahi Songwon Colors Limited", "ASTEC.NS": "Astec LifeSciences Limited",
+        "ATUL.NS": "Atul Ltd", "BASF.NS": "BASF India Limited", "BEPL.NS": "Bhansali Engineering Polymers Limited",
+        "DCW.NS": "DCW Limited", "DICIND.NS": "DIC India Limited", "FOSECOIND.NS": "Foseco India Limited",
+        "GHCL.NS": "GHCL Limited", "GUJALKALI.NS": "Gujarat Alkalies and Chemicals Limited", "GUJFLUORO.NS": "Gujarat Fluorochemicals Limited",
+        "GULPOLY.NS": "Gulshan Polyols Limited", "HIKAL.NS": "Hikal Limited", "HOCL.NS": "Hindustan Organic Chemicals Limited",
+        "INDIAGLYCO.NS": "India Glycols Limited", "JOCIL.NS": "Jocil Limited", "KANORICHEM.NS": "Kanoria Chemicals & Industries Limited",
+        "KOTHARIPET.NS": "Kothari Petrochemicals Limited", "MANALIPETC.NS": "Manali Petrochemicals Limited", "NAVINFLUOR.NS": "Navin Fluorine International Limited",
+        "NOCIL.NS": "NOCIL Limited", "PHILIPCARB.NS": "Phillips Carbon Black Limited", "PUNJABCHEM.NS": "Punjab Chemicals and Crop Protection Limited",
+        "RAIN.NS": "Rain Industries Limited", "REFEX.NS": "Refex Industries Limited", "SHALPAINTS.NS": "Shalimar Paints Limited",
+        "SHREEPUSHK.NS": "Shree Pushkar Chemicals & Fertilisers Limited", "SRHHYPOLTD.NS": "Sree Rayalaseema Hi-Strength Hypo Limited", "SUPPETRO.NS": "Supreme Petrochem Limited",
+        "TATACHEM.NS": "Tata Chemicals Limited", "TNPETRO.NS": "Tamilnadu Petroproducts Limited", "VINATIORGA.NS": "Vinati Organics Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - BANKING & FINANCIAL SERVICES
-    # ========================================================================
-    "🏛️ Smallcap Finance 1": {
-        "INDOBORAX.NS": "Indo Borax", "INDOCOUNT.NS": "Indo Count", "INDOKEM.NS": "Indokem Ltd",
-        "INDOMETAL.NS": "Indo Metal", "INDORAMA.NS": "Indo Rama Synthetics", "INDOSOLAR.NS": "Indosolar",
-        "INDOSTAR.NS": "IndoStar Capital", "INDOTECH.NS": "Indo Tech", "INDOTHAI.NS": "Indo Thai Securities",
-        "INDOWIND.NS": "Indowind Energy", "INDRAMEDCO.NS": "Indraprastha Medical", "INDSWFTLAB.NS": "Ind-Swift Laboratories",
-        "INDSWFTLTD.NS": "Ind-Swift Ltd", "INDTERRAIN.NS": "Indian Terrain", "INDUSTOWER.NS": "Indus Towers",
-        "INEOSSTYRO.NS": "INEOS Styrolution", "INFOMEDIA.NS": "Infomedia Press", "INGERRAND.NS": "Ingersoll Rand",
-        "INNOVACAP.NS": "Innovatus Capital", "INOXGREEN.NS": "Inox Green"
-    },
-    
-    "🏛️ Smallcap Finance 2": {
-        "INSECTICID.NS": "Insecticides India", "INTENTECH.NS": "Intense Technologies", "INTLCONV.NS": "International Conveyors",
-        "IOLCP.NS": "IOL Chemicals", "IPAPPM.NS": "Intrasoft Technologies", "IPL.NS": "India Pesticides",
-        "IRISDOREME.NS": "Iris Clothings", "IRISENERGY.NS": "Iris Energy", "ISFT.NS": "Intrasoft Technologies",
-        "ISMTLTD.NS": "ISMT Ltd", "ITDCEM.NS": "ITD Cementation", "ITELGREEN.NS": "ITEL Greentech"
-    },
-    
-    "🏛️ Smallcap Finance 3": {
-        "ITI.NS": "ITI Ltd", "ITNL.NS": "IL&FS Transportation", "IVRCL.NS": "IVRCL Ltd",
-        "IVP.NS": "IVP Ltd", "IWEL.NS": "Innotech Solutions", "IZMO.NS": "IZMO Ltd",
-        "JAGSNPHARM.NS": "Jagsonpal Pharma", "JAIBALAJI.NS": "Jai Balaji Industries", "JAICORPLTD.NS": "Jaicorp Ltd",
-        "JAIHINDPRO.NS": "Jaihind Projects", "JAIPURKURT.NS": "Nandani Creation", "JAYSREETEA.NS": "Jayshree Tea",
-        "JBFIND.NS": "JBF Industries", "JBMA.NS": "JBM Auto", "JCHAC.NS": "Johnson Controls",
-        "JETAIRWAYS.NS": "Jet Airways", "JETFREIGHT.NS": "Jet Freight Logistics", "JETINFRA.NS": "Jet Infrastructure",
-        "JFLLIFE.NS": "JFL Life Sciences", "JIKIND.NS": "JIK Industries", "JINDALPHOT.NS": "Jindal Photo"
-    },
-    
-    "🏛️ Smallcap Finance 4": {
-        "JINDALPOLY.NS": "Jindal Poly Films", "JINDALSAWNS": "Jindal Saw", "JINDALSTEL.NS": "Jindal Steel",
-        "JINDWORLD.NS": "Jindal Worldwide", "JISLDVREQS.NS": "Jainam Share", "JISLJALEQS.NS": "Jainam Jalaram",
-        "JITFINFRA.NS": "JITF Infralogistics", "JMA.NS": "Jullundur Motor", "JMTAUTOLTD.NS": "JMT Auto",
-        "JOCIL.NS": "Jocil Ltd", "JONENG.NS": "Jones Engineering", "JPOLYINVST.NS": "Jindal Poly Investment",
-        "JSL.NS": "Jindal Stainless", "JSLHISAR.NS": "Jindal Stainless Hisar", "JSWISPL.NS": "JSW Ispat",
-        "JTEKTINDIA.NS": "JTEKT India"
+    "Communication Equipment": {
+        "AKSHOPTFBR.NS": "Aksh Optifibre Limited", "ASTRAMICRO.NS": "Astra Microwave Products Limited", "DLINKINDIA.NS": "D-Link (India) Limited",
+        "GEMINI.NS": "Gemini Communication Limited", "GTLINFRA.NS": "GTL Infrastructure Limited", "HFCL.NS": "Himachal Futuristic Communications Limited",
+        "ITI.NS": "ITI Limited", "KAVVERITEL.NS": "Kavveri Telecom Products Limited", "MRO-TEK.NS": "MRO-TEK Realty Limited",
+        "NELCO.NS": "Nelco Limited", "PARACABLES.NS": "Paramount Communications Limited", "SHYAMTEL.NS": "Shyam Telecom Limited",
+        "SMARTLINK.NS": "Smartlink Network Systems Limited", "SPICEMOBI.NS": "Spice Mobility Limited", "STRTECH.NS": "Sterlite Technologies Limited",
+        "TNTELE.NS": "Tamilnadu Telecommunications Limited", "VINDHYATEL.NS": "Vindhya Telelinks Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - FOOD, BEVERAGES & AGRICULTURE
-    # ========================================================================
-    "🍎 Smallcap Food 1": {
-        "JTLIND.NS": "JTL Industries", "JUBLINDS.NS": "Jubilant Industries", "JUGGILAL.NS": "Juggilal Kamlapat",
-        "JUMBOAG.NS": "Jumbo Bag", "JUMPNET.NS": "Jumpnet Technologies", "JVLAGRO.NS": "JVL Agro",
-        "JYOTISTRUC.NS": "Jyoti Structures", "KABRAEXTRU.NS": "Kabra Extrusion", "KAKATCEM.NS": "Kakatiya Cement",
-        "KAMDHENU.NS": "Kamdhenu Ltd", "KAMOPAINTS.NS": "Kamdhenu Paints", "KANANIIND.NS": "Kanani Industries",
-        "KANORICHEM.NS": "Kanoria Chemicals", "KANPRPLA.NS": "Kanchenjunga Tea", "KARDA.NS": "Karda Constructions"
-    },
-    
-    "🍎 Smallcap Food 2": {
-        "KARMAENG.NS": "Karma Energy", "KARNIMATA.NS": "Karni Industries", "KARNINVEST.NS": "Karni Investment",
-        "KARURVYSYA.NS": "Karur Vysya Bank", "KAUSHALYA.NS": "Kausalya Infrastructure", "KAVVERITEL.NS": "Kavveri Telecom",
-        "KAYPITFIN.NS": "Kaypee Financing", "KAYCEEI.NS": "Kayceei Industries", "KCPSUGIND.NS": "KCP Sugar",
-        "KDIL.NS": "Karnimata Data", "KELLTONTEC.NS": "Kellton Tech", "KERNEX.NS": "Kernex Microsystems",
-        "KESARWIRES.NS": "Kesar Wires", "KEWAUNEE.NS": "Kewaunee Scientific", "KEYFINSERV.NS": "Keynote Financial",
-        "KEYTONE.NS": "Keytone Leasing", "KHANDSE.NS": "Khandwala Securities", "KHAIPULSE.NS": "Khaitanpulse",
-        "KICL.NS": "Kalyani Investment", "KILITCH.NS": "Kilitch Drugs", "KIMBERLY.NS": "Kimberly Clark"
-    },
-    
-    "🍎 Smallcap Food 3": {
-        "KINGFA.NS": "Kingfa Science", "KIRIINDUS.NS": "Kiri Industries", "KIRLOSBROS.NS": "Kirloskar Brothers",
-        "KIRLOSIND.NS": "Kirloskar Industries", "KITEX.NS": "Kitex Garments", "KKCL.NS": "Kewal Kiran Clothing",
-        "KKC.NS": "KKR & Co", "KMSUGAR.NS": "KM Sugar Mills", "KNAGRI.NS": "KN Agri Resources",
-        "KNRCON.NS": "KNR Constructions", "KODYTECH.NS": "Kody Technolab", "KOKUYOCMLN.NS": "Kokuyo Camlin",
-        "KOPRAN.NS": "Kopran Ltd", "KOSMOTEC.NS": "Kosmo e-Technology", "KOTARISUG.NS": "Kothari Sugars",
-        "KPIGREEN.NS": "KPI Green Energy", "KREBSBIO.NS": "Krebs Biochemicals", "KRIINFRA.NS": "K Raheja"
-    },
-    
-    "🍎 Smallcap Food 4": {
-        "KRIDHANINF.NS": "Kridhan Infra", "KRISHANA.NS": "Krishana Phoschem", "KRITI.NS": "Kriti Industries",
-        "KRITIKA.NS": "Kritika Wires", "KRITINUT.NS": "Kriti Nutrients", "KRONS.NS": "Kronox Lab Sciences",
-        "KUMARASWA.NS": "Kumar Swamy Construction", "KUMARKS.NS": "Kumar Swamy", "KUMBHAT.NS": "Kumbhat Financial",
-        "KUNDANCARE.NS": "Kundan Care", "KUPRIYA.NS": "Kupriya Industries", "KUSTODIAN.NS": "Kustodian Securities",
-        "KWALITY.NS": "Kwality Ltd", "KWALIT.NS": "Kwalitex Industries", "L&TFHIN.NS": "L&T Finance",
-        "LA.NS": "Laurus Labs"
+    "Computer Based Systems": {
+        "CEREBRAINT.NS": "Cerebra Integrated Technologies Limited", "HCL-INSYS.NS": "HCL Infosystems Limited", "TVSELECT.NS": "TVS Electronics Limited"
     },
 
-    # ========================================================================
-    # SMALLCAP - RETAIL & MEDIA
-    # ========================================================================
-    "🛍️ Smallcap Retail 1": {
-        "LAKPRE.NS": "Lakshmi Precision", "LAKSHMIEFL.NS": "Lakshmi Energy", "LAMBODHARA.NS": "Lambodhara Textiles",
-        "LANCER.NS": "Lancer Container", "LANDMARK.NS": "Landmark Property", "LAOPALA.NS": "La Opala RG",
-        "LASA.NS": "Lasa Supergenerics", "LAXMIMACH.NS": "Lakshmi Machine", "LCCINFOTEC.NS": "LCC Infotech",
-        "LCC.NS": "LCC Infotech", "LEXUS.NS": "Lexus Granito", "LFIC.NS": "Lakshmi Finance",
-        "LG.NS": "LG Balakrishnan", "LGBBROSLTD.NS": "LG Balakrishnan", "LGBFORGE.NS": "LG Balakrishnan Forge",
-        "LGHL.NS": "LG Balakrishnan", "LIBAS.NS": "Libas Designs", "LIBERTSHOE.NS": "Liberty Shoes",
-        "LICNETFN50.NS": "LIC MF Nifty 50"
+    "Confectioners": {
+        "BAJAJHIND.NS": "Bajaj Hindusthan Sugar Limited", "BALRAMCHIN.NS": "Balrampur Chini Mills Limited", "BANARISUG.NS": "Bannari Amman Sugars Limited",
+        "DALMIASUG.NS": "Dalmia Bharat Sugar and Industries Limited", "DWARKESH.NS": "Dwarikesh Sugar Industries Limited", "EIDPARRY.NS": "E.I.D.-Parry (India) Limited",
+        "KCPSUGIND.NS": "K.C.P. Sugar and Industries Corporation Limited", "KHAITANLTD.NS": "Khaitan (India) Limited", "KMSUGAR.NS": "K M Sugar Mills Limited",
+        "KOTARISUG.NS": "Kothari Sugars and Chemicals Limited", "MAWANASUG.NS": "Mawana Sugars Limited", "OUDHSUG.NS": "The Oudh Sugar Mills Limited",
+        "PARRYSUGAR.NS": "Parrys Sugar Industries Limited", "PONNIERODE.NS": "Ponni Sugars (Erode) Limited", "RAJSREESUG.NS": "Rajshree Sugars and Chemicals Limited",
+        "RANASUG.NS": "Rana Sugars Limited", "RENUKA.NS": "Shree Renuka Sugars Limited", "SAKHTISUG.NS": "Sakthi Sugars Limited",
+        "SIMBHALS.NS": "Simbhaoli Sugars Limited", "SKMEGGPROD.NS": "SKM Egg Products Export (India) Limited", "THIRUSUGAR.NS": "Thiru Arooran Sugars Limited",
+        "TRIVENI.NS": "Triveni Engineering & Industries Limited", "UGARSUGAR.NS": "The Ugar Sugar Works Limited", "UPERGANGES.NS": "Upper Ganges Sugar & Industries Limited"
     },
-    
-    "🛍️ Smallcap Retail 2": {
-        "LINCPEN.NS": "Lincoln Pharmaceuticals", "LINKINTIME.NS": "Link Intime", "LKINVESTING.NS": "LKP Finance",
-        "LLOYDSME.NS": "Lloyds Metals", "LLOYDS.NS": "Lloyds Enterprises", "LOKESHMACH.NS": "Lokesh Machines",
-        "LOTUSEYE.NS": "Lotus Eye Care", "LPDC.NS": "Landmark Property", "LTFOODS.NS": "LT Foods",
-        "LUMAXIND.NS": "Lumax Industries", "LUMAXTECH.NS": "Lumax Auto Tech"
+
+    "Conglomerates": {
+        "3MINDIA.NS": "3M India Limited", "ABIRLANUVO.NS": "Aditya Birla Nuvo Limited", "ALCHEM.NS": "Alchemist Limited",
+        "BALMLAWRIE.NS": "Balmer Lawrie & Co. Limited", "DCMSHRIRAM.NS": "DCM Shriram Limited", "HOTELRUGBY.NS": "Hotel Rugby Limited",
+        "MANAKSIA.NS": "Manaksia Limited", "SHK.NS": "S H Kelkar and Company Limited", "WELENT.NS": "Welspun Enterprises Limited"
+    },
+
+    "Copper": {
+        "CUBEXTUB.NS": "Cubex Tubings Limited", "HINDCOPPER.NS": "Hindustan Copper Limited", "PRECWIRE.NS": "Precision Wires India Ltd."
+    },
+
+    "Credit Services": {
+        "BAJFINANCE.NS": "Bajaj Finance Limited", "CAPF.NS": "Capital First Limited", "CGCL.NS": "Capri Global Capital Limited",
+        "CHOLAFIN.NS": "Cholamandalam Investment and Finance Company Limited", "GLFL.NS": "Gujarat Lease Financing Limited", "IDFC.NS": "IDFC Limited",
+        "IFCI.NS": "IFCI Limited", "IITL.NS": "Industrial Investment Trust Limited", "L&TFH.NS": "L&T Finance Holdings Limited",
+        "M&MFIN.NS": "Mahindra & Mahindra Financial Services Limited", "MAGMA.NS": "Magma Fincorp Limited", "MANAPPURAM.NS": "Manappuram Finance Limited",
+        "MUTHOOTFIN.NS": "Muthoot Finance Limited", "PFC.NS": "Power Finance Corporation Limited", "RECLTD.NS": "Rural Electrification Corporation Limited",
+        "SATIN.NS": "Satin Creditcare Network Limited", "SEINV.NS": "S.E. Investments Limited", "SHRIRAMCIT.NS": "Shriram City Union Finance Limited",
+        "SRTRANSFIN.NS": "Shriram Transport Finance Company Limited", "SUNDARMFIN.NS": "Sundaram Finance Limited", "TCIFINANCE.NS": "TCI Finance Limited",
+        "TFCILTD.NS": "Tourism Finance Corporation of India Limited", "VHL.NS": "Vardhman Holdings Limited"
+    },
+
+    "Data Storage Devices": {
+        "EUROMULTI.NS": "Euro Multivision Limited", "MOSERBAER.NS": "Moser Baer India Limited"
+    },
+
+    "Department Stores": {
+        "SHOPERSTOP.NS": "Shoppers Stop Limited", "V2RETAIL.NS": "V2 Retail Limited", "VMART.NS": "V-Mart Retail Limited"
+    },
+
+    "Diversified Electronics": {
+        "APARINDS.NS": "Apar Industries Limited", "BHAGYNAGAR.NS": "Bhagyanagar India Limited", "CENTUM.NS": "Centum Electronics Limited",
+        "CORDSCABLE.NS": "Cords Cable Industries Limited", "DENORA.NS": "De Nora India Limited", "EVEREADY.NS": "Eveready Industries India Limited",
+        "FINCABLES.NS": "Finolex Cables Limited", "GENUSPOWER.NS": "Genus Power Infrastructures Limited", "HBLPOWER.NS": "HBL Power Systems Limited",
+        "HEG.NS": "HEG Limited", "HIRECT.NS": "Hind Rectifiers Limited", "INDOTECH.NS": "Indo Tech Transformers Limited",
+        "KEI.NS": "KEI Industries Limited", "MIC.NS": "MIC Electronics Limited", "NIPPOBATRY.NS": "Indo National Limited",
+        "SAMTEL.NS": "Samtel Color Limited", "VETO.NS": "Veto Switchgears and Cables Limited"
+    },
+
+    # ======================================================================
+
+    "Diversified Machinery": {
+        "ABB.NS": "ABB India Limited", "ADORWELD.NS": "Ador Welding Limited", "AIAENG.NS": "AIA Engineering Limited",
+        "AMARAJABAT.NS": "Amara Raja Batteries Limited", "BBL.NS": "Bharat Bijlee Limited", "BEML.NS": "BEML Limited",
+        "BHEL.NS": "Bharat Heavy Electricals Limited", "BILPOWER.NS": "Bilpower Limited", "CUMMINSIND.NS": "Cummins India Limited",
+        "DELTAMAGNT.NS": "Delta Magnets Limited", "DIAPOWER.NS": "Diamond Power Infrastructure Limited", "EASUNREYRL.NS": "Easun Reyrolle Limited",
+        "ECEIND.NS": "ECE Industries Limited", "EIMCOELECO.NS": "Eimco Elecon (India) Limited", "EKC.NS": "Everest Kanto Cylinder Limited",
+        "ELECON.NS": "Elecon Engineering Company Limited", "ELGIEQUIP.NS": "ELGI Equipments Limited", "EMCO.NS": "EMCO Limited",
+        "EON.NS": "Eon Electric Limited", "GEINDSYS.NS": "GEI Industrial Systems Limited", "GOLDINFRA.NS": "Goldstone Infratech Limited",
+        "GRAPHITE.NS": "Graphite India Limited", "GREAVESCOT.NS": "Greaves Cotton Limited", "HAVELLS.NS": "Havells India Limited",
+        "HERCULES.NS": "Hercules Hoists Limited", "HONAUT.NS": "Honeywell Automation India Limited", "HONDAPOWER.NS": "Honda Siel Power Products Limited",
+        "IFBIND.NS": "IFB Industries Limited", "INDLMETER.NS": "IMP Powers Limited", "INGERRAND.NS": "Ingersoll-Rand (India) Limited",
+        "INOXWIND.NS": "Inox Wind Limited", "KABRAEXTRU.NS": "Kabra Extrusiontechnik Limited", "KCP.NS": "The KCP Limited",
+        "KECL.NS": "Kirloskar Electric Company Limited", "KIRLOSBROS.NS": "Kirloskar Brothers Limited", "KIRLOSENG.NS": "Kirloskar Oil Engines Limited",
+        "KSBPUMPS.NS": "KSB Pumps Limited", "LAXMIMACH.NS": "Lakshmi Machine Works Limited", "LOKESHMACH.NS": "Lokesh Machines Limited",
+        "MANUGRAPH.NS": "Manugraph India Limited", "NEPCMICON.NS": "NEPC India Limited", "NICCO.NS": "Nicco Corporation Limited",
+        "PAEL.NS": "PAE Limited", "PREMIER.NS": "Premier Limited", "SANGHVIFOR.NS": "Sanghvi Forging & Engineering Limited",
+        "SCHNEIDER.NS": "Schneider Electric Infrastructure Limited", "SHAKTIPUMP.NS": "Shakti Pumps (India) Limited", "SHANTIGEAR.NS": "Shanthi Gears Limited",
+        "SIEMENS.NS": "Siemens Limited", "SKFINDIA.NS": "SKF India Limited", "SUZLON.NS": "Suzlon Energy Limited",
+        "TARAPUR.NS": "Tarapur Transformers Limited", "TDPOWERSYS.NS": "TD Power Systems Limited", "TEXRAIL.NS": "Texmaco Rail & Engineering Limited",
+        "THERMAX.NS": "Thermax Limited", "TIL.NS": "TIL Limited", "TIMKEN.NS": "Timken India Limited",
+        "TRF.NS": "TRF Limited", "TRIL.NS": "Transformers & Rectifiers (India) Limited", "TRITURBINE.NS": "Triveni Turbine Limited",
+        "VESUVIUS.NS": "Vesuvius India Limited", "VOLTAMP.NS": "Voltamp Transformers Limited", "WINDMACHIN.NS": "Windsor Machines Limited"
+    },
+
+    "Diversified Utilities": {
+        "ADANIPOWER.NS": "Adani Power Limited", "CESC.NS": "CESC Limited", "INDOSOLAR.NS": "Indosolar Limited",
+        "JPPOWER.NS": "Jaiprakash Power Ventures Limited", "JSWENERGY.NS": "JSW Energy Limited", "KEC.NS": "KEC International Limited",
+        "LITL.NS": "Lanco Infratech Limited", "NTPC.NS": "NTPC Limited", "PTC.NS": "PTC India Limited",
+        "RPOWER.NS": "Reliance Power Limited", "RTNINFRA.NS": "RattanIndia Infrastructure Limited", "SURANASOL.NS": "Surana Solar Limited",
+        "SURANAT&P.NS": "Surana Telecom and Power Limited", "SWELECTES.NS": "Swelect Energy Systems Limited", "TATAPOWER.NS": "The Tata Power Company Limited",
+        "UJAAS.NS": "Ujaas Energy Ltd.", "WEBELSOLAR.NS": "Websol Energy System Limited", "XLENERGY.NS": "XL Energy Limited"
+    },
+
+    "Drug Manufacturers - Major": {
+        "AARTIDRUGS.NS": "Aarti Drugs Limited", "ABBOTINDIA.NS": "Abbott India Limited", "AJANTPHARM.NS": "Ajanta Pharma Limited",
+        "ASTRAZEN.NS": "AstraZeneca Pharma India Limited", "BAFNAPHARM.NS": "Bafna Pharmaceuticals Limited", "BLISSGVS.NS": "Bliss Gvs Pharma Limited",
+        "BROOKS.NS": "Brooks Laboratories Limited", "CIPLA.NS": "Cipla Limited", "FDC.NS": "FDC Limited",
+        "GLAXO.NS": "GlaxoSmithkline Pharmaceuticals Limited", "GRANULES.NS": "Granules India Limited", "HESTERBIO.NS": "Hester Biosciences Limited",
+        "INDSWFTLAB.NS": "Ind-Swift Laboratories Limited", "JAGSNPHARM.NS": "Jagsonpal Pharmaceuticals Limited", "JBCHEPHARM.NS": "J. B. Chemicals & Pharmaceuticals Limited",
+        "JUBILANT.NS": "Jubilant Life Sciences Limited", "KILITCH.NS": "Kilitch Drugs (India) Limited", "KOPRAN.NS": "Kopran Limited",
+        "MOREPENLAB.NS": "Morepen Laboratories Limited", "NATCOPHARM.NS": "Natco Pharma Limited", "NECLIFE.NS": "Nectar Lifesciences Limited",
+        "ORCHIDPHAR.NS": "Orchid Pharma Limited", "PEL.NS": "Piramal Enterprises Limited", "PFIZER.NS": "Pfizer Limited",
+        "SHARONBIO.NS": "Sharon Bio-Medicine Ltd.", "SMSPHARMA.NS": "SMS Pharmaceuticals Limited", "TORNTPHARM.NS": "Torrent Pharmaceuticals Limited",
+        "UNICHEMLAB.NS": "Unichem Laboratories Limited", "VENUSREM.NS": "Venus Remedies Limited", "WANBURY.NS": "Wanbury Limited",
+        "WOCKPHARMA.NS": "Wockhardt Limited"
+    },
+
+    "Drugs - Generic": {
+        "ALEMBICLTD.NS": "Alembic Limited", "ALKEM.NS": "Alkem Laboratories Limited", "ALPA.NS": "Alpa Laboratories Limited",
+        "AMRUTANJAN.NS": "Amrutanjan Health Care Limited", "APLLTD.NS": "Alembic Pharmaceuticals Limited", "AUROPHARMA.NS": "Aurobindo Pharma Limited",
+        "BALPHARMA.NS": "Bal Pharma Limited", "CADILAHC.NS": "Cadila Healthcare Limited", "DIVISLAB.NS": "Divi's Laboratories Limited",
+        "DRREDDY.NS": "Dr. Reddy's Laboratories Limited", "GLENMARK.NS": "Glenmark Pharmaceuticals Limited", "GUFICBIO.NS": "Gufic Biosciences Limited",
+        "INDOCO.NS": "Indoco Remedies Limited", "INDSWFTLTD.NS": "Ind-Swift Limited", "IOLCP.NS": "IOL Chemicals and Pharmaceuticals Limited",
+        "IPCALAB.NS": "Ipca Laboratories Limited", "LUPIN.NS": "Lupin Limited", "MANGALAM.NS": "Mangalam Drugs & Organics Limited",
+        "MERCK.NS": "Merck Limited", "NEULANDLAB.NS": "Neuland Laboratories Limited", "PARABDRUGS.NS": "Parabolic Drugs Limited",
+        "PIRPHYTO.NS": "Piramal Phytocare Limited", "RPGLIFE.NS": "RPG Life Sciences Limited", "SHILPAMED.NS": "Shilpa Medicare Limited",
+        "SPARC.NS": "Sun Pharma Advanced Research Company Limited", "STAR.NS": "Strides Shasun Limited", "SUNPHARMA.NS": "Sun Pharmaceutical Industries Limited",
+        "SUVEN.NS": "Suven Life Sciences Limited", "SYNCOM.NS": "Syncom Healthcare Limited", "THEMISMED.NS": "Themis Medicare Limited"
+    },
+
+    "Education & Training Services": {
+        "APTECHT.NS": "Aptech Limited", "CAREERP.NS": "Career Point Limited", "COMPUSOFT.NS": "Compucom Software Limited",
+        "EDUCOMP.NS": "Educomp Solutions Limited", "LCCINFOTEC.NS": "LCC Infotech Limited", "MTEDUCARE.NS": "MT Educare Limited",
+        "TREEHOUSE.NS": "Tree House Education & Accessories Limited", "UMESLTD.NS": "Usha Martin Education & Solutions Limited", "VISUINTL.NS": "Ed & Tech international Limited",
+        "ZEELEARN.NS": "Zee Learn Limited", "ZENTEC.NS": "Zen Technologies Limited"
+    },
+
+    "Electric Utilities": {
+        "ADANITRANS.NS": "Adani Transmissions Limited", "AMTL.NS": "Advance Metering Technology Limited", "DPSCLTD.NS": "India Power Corporation Limited",
+        "ENERGYDEV.NS": "Energy Development Company Limited", "GIPCL.NS": "Gujarat Industries Power Company Limited", "GREENPOWER.NS": "Orient Green Power Company Limited",
+        "INDOWIND.NS": "Indowind Energy Limited", "JYOTISTRUC.NS": "Jyoti Structures Limited", "KALPATPOWR.NS": "Kalpataru Power Transmission Limited",
+        "KARMAENG.NS": "Karma Energy Limited", "KSK.NS": "KSK Energy Ventures Limited", "NBVENTURES.NS": "Nava Bharat Ventures Limited",
+        "NHPC.NS": "NHPC Limited", "POWERGRID.NS": "Power Grid Corporation of India Limited", "RELINFRA.NS": "Reliance Infrastructure Limited",
+        "RTNPOWER.NS": "RattanIndia Power Limited", "SEPOWER.NS": "S. E. Power Limited", "SJVN.NS": "SJVN Limited",
+        "TORNTPOWER.NS": "Torrent Power Limited"
+    },
+
+    "Electronic Equipment": {
+        "BAJAJELEC.NS": "Bajaj Electricals Limited", "BPL.NS": "BPL Limited", "BUTTERFLY.NS": "Butterfly Gandhimathi Appliances Limited",
+        "KHAITANELE.NS": "Khaitan Electricals Limited", "MIRCELECTR.NS": "MIRC Electronics Limited", "NOESISIND.NS": "Noesis Industries Limited",
+        "PGEL.NS": "PG Electroplast Limited", "PHOENIXLL.NS": "Phoenix Lamps Limited", "SALORAINTL.NS": "Salora International Limited",
+        "SYMPHONY.NS": "Symphony Limited", "VALUEIND.NS": "Value Industries Limited", "VGUARD.NS": "V-Guard Industries Limited",
+        "VIDEOIND.NS": "Videocon Industries Limited", "WHIRLPOOL.NS": "Whirlpool of India Limited"
+    },
+
+    "Electronics Wholesale": {
+        "SHILPI.NS": "Shilpi Cable Technologies Limited"
+    },
+
+    "Entertainment - Diversified": {
+        "ADLABS.NS": "Adlabs Entertainment Limited", "BAGFILMS.NS": "B.A.G. Films and Media Limited", "BALAJITELE.NS": "Balaji Telefilms Limited",
+        "CINEVISTA.NS": "Cinevista Limited", "CREATIVEYE.NS": "Creative Eye Limited", "EROSMEDIA.NS": "Eros International Media Limited",
+        "INOXLEISUR.NS": "Inox Leisure Limited", "KSERASERA.NS": "KSS Limited", "MUKTAARTS.NS": "Mukta Arts Limited",
+        "PFOCUS.NS": "Prime Focus Limited", "PNC.NS": "Pritish Nandy Communications Ltd", "PVR.NS": "PVR Limited",
+        "RADAAN.NS": "Radaan Mediaworks India Limited", "SAREGAMA.NS": "Saregama India Limited", "SHEMAROO.NS": "Shemaroo Entertainment Limited",
+        "TIPSINDLTD.NS": "Tips Industries Limited", "UFO.NS": "UFO Moviez India Limited"
+    },
+
+    "Farm & Construction Machinery": {
+        "ACE.NS": "Action Construction Equipment Limited", "ESCORTS.NS": "Escorts Limited", "GUJAPOLLO.NS": "Gujarat Apollo Industries Limited",
+        "HMT.NS": "HMT Limited", "JISLDVREQS.NS": "Jain Irrigation Systems Limited", "JISLJALEQS.NS": "Jain Irrigation Systems Limited",
+        "REVATHI.NS": "Revathi Equipment Limited", "SANGHVIMOV.NS": "Sanghvi Movers Limited", "VSTTILLERS.NS": "V.S.T. Tillers Tractors Limited"
+    },
+
+    # ======================================================================
+
+    "Farm Products": {
+        "AGRODUTCH.NS": "Agro Dutch Industries Limited", "ANANDAMRUB.NS": "The Anandam Rubber Company Limited", "ASSAMCO.NS": "Assam Company India Limited",
+        "BBTC.NS": "The Bombay Burmah Trading Corporation, Limited", "DHAMPURSUG.NS": "Dhampur Sugar Mills Limited", "DHARSUGAR.NS": "Dharani Sugars and Chemicals Limited",
+        "HARRMALAYA.NS": "Harrisons Malayalam Limited", "KGL.NS": "Karuturi Global Limited", "KSCL.NS": "Kaveri Seed Company Limited",
+        "NKIND.NS": "N.K Industries Limited", "NORBTEAEXP.NS": "Norben Tea & Exports Ltd", "PKTEA.NS": "The Peria Karamalai Tea and Produce Company Limited",
+        "POCHIRAJU.NS": "Pochiraju Industries Limited", "RUCHINFRA.NS": "Ruchi Infrastructure Limited", "SAKUMA.NS": "Sakuma Exports Limited",
+        "SANWARIA.NS": "Sanwaria Agro Oils Limited", "SITASHREE.NS": "Sita Shree Food Products Limited", "STEL.NS": "STEL Holdings Limited",
+        "USHERAGRO.NS": "Usher Agro Limited"
+    },
+
+    "Food - Major Diversified": {
+        "ADFFOODS.NS": "ADF Foods Limited", "ATFL.NS": "Agro Tech Foods Limited", "BRITANNIA.NS": "Britannia Industries Limited",
+        "CCL.NS": "CCL Products (India) Limited", "DAAWAT.NS": "LT Foods Limited", "FARMAXIND.NS": "Farmax India Limited",
+        "GAEL.NS": "Gujarat Ambuja Exports Limited", "GOKUL.NS": "Gokul Refoils & Solvent Ltd", "GOKULAGRO.NS": "Gokul Agro Resources Limited",
+        "GSKCONS.NS": "GlaxoSmithKline Consumer Healthcare Limited", "HATSUN.NS": "Hatsun Agro Product Limited", "JVLAGRO.NS": "JVL Agro Industries Limited",
+        "KOHINOOR.NS": "Kohinoor Foods Limited", "KRBL.NS": "KRBL Limited", "KWALITY.NS": "Kwality Limited",
+        "MCLEODRUSS.NS": "McLeod Russel India Limited", "NESTLEIND.NS": "Nestlé India Limited", "PRABHAT.NS": "Prabhat Dairy Limited",
+        "RAJOIL.NS": "Raj Oil Mills Limited", "RASOYPR.NS": "Rasoya Proteins Limited", "REIAGROLTD.NS": "REI Agro Limited",
+        "ROSSELLIND.NS": "Rossell India Limited", "RUCHISOYA.NS": "Ruchi Soya Industries Limited", "TATACOFFEE.NS": "Tata Coffee Limited",
+        "TATAGLOBAL.NS": "Tata Global Beverages Limited", "VADILALIND.NS": "Vadilal Industries Limited", "VIMALOIL.NS": "Vimal Oil & Foods Limited"
+    },
+
+    "Food Wholesale": {
+        "ANIKINDS.NS": "Anik Industries Limited", "HERITGFOOD.NS": "Heritage Foods Limited"
+    },
+
+    "Gas Utilities": {
+        "GAIL.NS": "GAIL (India) Limited", "GSPL.NS": "Gujarat State Petronet Limited", "IGL.NS": "Indraprastha Gas Limited"
+    },
+
+    "General Building Materials": {
+        "ACC.NS": "ACC Limited", "AMBUJACEM.NS": "Ambuja Cements Limited", "ANDHRACEMT.NS": "Andhra Cements Limited",
+        "AROGRANITE.NS": "Aro Granite Industries Limited", "ASIANTILES.NS": "Asian Granito India Limited", "BEARDSELL.NS": "Beardsell Limited",
+        "BINANIIND.NS": "Edayar Zinc Limited", "BIRLACORPN.NS": "Birla Corporation Limited", "BURNPUR.NS": "Burnpur Cement Limited",
+        "BVCL.NS": "Barak Valley Cements Limited", "CARBORUNIV.NS": "Carborundum Universal Limited", "CENTURYTEX.NS": "Century Textiles and Industries Limited",
+        "CERA.NS": "Cera Sanitaryware Limited", "DALMIABHA.NS": "Dalmia Bharat Limited", "DECCANCE.NS": "Deccan Cements Limited",
+        "ELECTCAST.NS": "Electrosteel Castings Limited", "EUROCERA.NS": "Euro Ceramics Limited", "EVERESTIND.NS": "Everest Industries Limited",
+        "GRASIM.NS": "Grasim Industries Limited", "GREENPLY.NS": "Greenply Industries Limited", "GRINDWELL.NS": "Grindwell Norton Limited",
+        "GSCLCEMENT.NS": "Gujarat Sidhee Cement Limited", "HEIDELBERG.NS": "HeidelbergCement India Limited", "HIL.NS": "HIL Limited",
+        "HSIL.NS": "HSIL Limited", "IFGLREFRAC.NS": "IFGL Refractories Limited", "INDIACEM.NS": "The India Cements Limited",
+        "JENSONICOL.NS": "Jenson & Nicholson (India) Limited", "JKCEMENT.NS": "J.K. Cement Limited", "JKLAKSHMI.NS": "JK Lakshmi Cement Limited",
+        "KAJARIACER.NS": "Kajaria Ceramics Limited", "KAKATCEM.NS": "Kakatiya Cement Sugar and Industries Limited", "MADHAV.NS": "Madhav Marbles and Granites Limited",
+        "MANGLMCEM.NS": "Mangalam Cement Limited", "MURUDCERA.NS": "Murudeshwar Ceramics Limited", "NCLIND.NS": "NCL Industries Limited",
+        "NITCO.NS": "Nitco Limited", "OCL.NS": "OCL India Limited", "ORIENTALTL.NS": "Oriental Trimex Limited",
+        "ORIENTBELL.NS": "Orient Bell Limited", "ORIENTCEM.NS": "Orient Cement Limited", "PRISMCEM.NS": "Prism Cement Limited",
+        "RAMCOIND.NS": "Ramco Industries Limited", "REGENCERAM.NS": "Regency Ceramics Limited", "SANGHIIND.NS": "Sanghi Industries Limited",
+        "SEZAL.NS": "Sejal Glass Limited", "SFCL.NS": "Star Ferro and Cement Limited", "SHREECEM.NS": "Shree Cement Limited",
+        "SICAGEN.NS": "Sicagen India Limited", "SINTEX.NS": "Sintex Industries Limited", "SOMANYCERA.NS": "Somany Ceramics Limited",
+        "ULTRACEMCO.NS": "UltraTech Cement Limited", "VISAKAIND.NS": "Visaka Industries Limited"
+    },
+
+    "General Contractors": {
+        "A2ZINFRA.NS": "A2Z Infra Engineering Limited", "AHLUCONT.NS": "Ahluwalia Contracts (India) Limited", "ASHOKA.NS": "Ashoka Buildcon Limited",
+        "AXISCADES.NS": "AXISCADES Engineering Technologies Limited", "BFUTILITIE.NS": "BF Utilities Limited", "BGRENERGY.NS": "BGR Energy Systems Limited",
+        "BLKASHYAP.NS": "B.L. Kashyap and Sons Limited", "BSLIMITED.NS": "BS Limited", "CANDC.NS": "C & C Constructions Limited",
+        "CCCL.NS": "Consolidated Construction Consortium Limited", "ENGINERSIN.NS": "Engineers India Limited", "EXCEL.NS": "Excel Realty N Infra Limited",
+        "GAMMONIND.NS": "Gammon India Limited", "GAYAPROJ.NS": "Gayatri Projects Limited", "GISOLUTION.NS": "GI Engineering Solutions Limited",
+        "HCC.NS": "Hindustan Construction Company Limited", "HINDDORROL.NS": "Hindustan Dorr-Oliver Limited", "IL&FSENGG.NS": "IL&FS Engineering and Construction Company Limited",
+        "INDIANHUME.NS": "The Indian Hume Pipe Company Limited", "ITDCEM.NS": "ITD Cementation India Limited", "IVRCLINFRA.NS": "IVRCL Limited",
+        "JAIHINDPRO.NS": "Jaihind Projects Limited", "JKIL.NS": "J. Kumar Infraprojects Limited", "JMCPROJECT.NS": "JMC Projects (India) Limited",
+        "JPASSOCIAT.NS": "Jaiprakash Associates Limited", "KAUSHALYA.NS": "Kaushalya Infrastructure Development Corporation Limited", "KNRCON.NS": "KNR Constructions Limited",
+        "LT.NS": "Larsen & Toubro Limited", "MADHUCON.NS": "Madhucon Projects Limited", "MANINFRA.NS": "Man Infraconstruction Limited",
+        "MBECL.NS": "McNally Bharat Engineering Company Limited", "MBLINFRA.NS": "MBL Infrastructures Limited", "MUKANDENGG.NS": "Mukand Engineers Limited",
+        "NBCC.NS": "NBCC (India) Limited", "NCC.NS": "NCC Limited", "NOIDATOLL.NS": "Noida Toll Bridge Company Limited",
+        "OMMETALS.NS": "Om Metals Infraprojects Limited", "PATELENG.NS": "Patel Engineering Limited", "PBAINFRA.NS": "PBA Infrastructure Limited",
+        "PETRONENGG.NS": "Petron Engineering Construction Limited", "POWERMECH.NS": "Power Mech Projects Limited", "PRAJIND.NS": "Praj Industries Limited",
+        "PRAKASHCON.NS": "Prakash Constrowell Limited", "PRATIBHA.NS": "Pratibha Industries Limited", "PUNJLLOYD.NS": "Punj Lloyd Limited",
+        "PURVA.NS": "Puravankara Limited", "RAMKY.NS": "Ramky Infrastructure Limited", "RIIL.NS": "Reliance Industrial Infrastructure Limited",
+        "RPPINFRA.NS": "RPP Infra Projects Limited", "SADBHAV.NS": "Sadbhav Engineering Limited", "SADBHIN.NS": "Sadbhav Infrastructure Project Limited",
+        "SHRIRAMEPC.NS": "Shriram EPC Limited", "SIMPLEX.NS": "Simplex Projects Limited", "SIMPLEXINF.NS": "Simplex Infrastructures Limited",
+        "SKIL.NS": "SKIL Infrastructure Limited", "SKIPPER.NS": "Skipper Limited", "SPMLINFRA.NS": "SPML Infra Limited",
+        "SUNILHITEC.NS": "Sunil Hitech Engineers Limited", "SUPREMEINF.NS": "Supreme Infrastructure India Limited", "TANTIACONS.NS": "Tantia Constructions Limited",
+        "TARMAT.NS": "Tarmat Limited", "TECHNO.NS": "Techno Electric & Engineering Company Limited", "TECHNOFAB.NS": "Technofab Engineering Limited",
+        "UNITY.NS": "Unity Infraprojects Limited", "VALECHAENG.NS": "Valecha Engineering Limited", "VKSPL.NS": "VKS Projects Limited",
+        "VOLTAS.NS": "Voltas Limited", "WALCHANNAG.NS": "Walchandnagar Industries Limited"
+    },
+
+    "Gold": {
+        "SHIRPUR-G.NS": "Shirpur Gold Refinery Limited"
+    },
+
+    "Grocery Stores": {
+        "REISIXTEN.NS": "REI Six Ten Retail Limited"
+    },
+
+    "Heavy Construction": {
+        "ARSSINFRA.NS": "ARSS Infrastructure Projects Limited", "ATLANTA.NS": "Atlanta Limited", "GAMMNINFRA.NS": "Gammon Infrastructure Projects Limited",
+        "GMRINFRA.NS": "GMR Infrastructure Limited", "IL&FSTRANS.NS": "IL&FS Transportation Networks Limited", "IRB.NS": "IRB Infrastructure Developers Limited",
+        "JPINFRATEC.NS": "Jaypee Infratech Limited", "MEP.NS": "MEP Infrastructure Developers Limited", "PNCINFRA.NS": "PNC Infratech Limited"
+    },
+
+    "Home Furnishings & Fixtures": {
+        "BLUESTARCO.NS": "Blue Star Limited", "JIKIND.NS": "JIK Industries Limited", "LAOPALA.NS": "La Opala RG Limited",
+        "ORIENTPPR.NS": "Orient Paper & Industries Limited", "PILITA.NS": "PIL ITALICA LIFESTYLE LIMITED", "RUSHIL.NS": "Rushil Décor Limited",
+        "TTKPRESTIG.NS": "TTK Prestige Limited"
+    },
+
+    # ======================================================================
+
+    "Hospitals": {
+        "APOLLOHOSP.NS": "Apollo Hospitals Enterprise Limited", "FORTIS.NS": "Fortis Healthcare Limited", "HCG.NS": "HealthCare Global Enterprises Limited",
+        "INDRAMEDCO.NS": "Indraprastha Medical Corporation Limited", "NH.NS": "Narayana Hrudayalaya Limited", "PTL.NS": "PTL Enterprises Limited"
+    },
+
+    "Independent Oil & Gas": {
+        "HINDOILEXP.NS": "Hindustan Oil Exploration Company Limited", "OIL.NS": "Oil India Limited", "SELAN.NS": "Selan Exploration Technology Limited",
+        "SVOGL.NS": "SVOGL Oil Gas and Energy Limited"
+    },
+
+    "Industrial Equipment Wholesale": {
+        "LGBFORGE.NS": "LGB Forge Limited", "RKFORGE.NS": "Ramkrishna Forgings Limited", "UNIVCABLES.NS": "Universal Cables Limited"
+    },
+
+    "Industrial Metals & Minerals": {
+        "20MICRONS.NS": "20 Microns Limited", "ADANIENT.NS": "Adani Enterprises Limited", "ASHAPURMIN.NS": "Ashapura Minechem Limited",
+        "AUSTRAL.NS": "Greenearth Resources & Projects Limited", "COALINDIA.NS": "Coal India Limited", "GMDCLTD.NS": "Gujarat Mineral Development Corporation Limited",
+        "GUJNRECOKE.NS": "Gujarat NRE Coke Ltd.", "HINDZINC.NS": "Hindustan Zinc Limited", "IMPEXFERRO.NS": "Impex Ferro Tech Limited",
+        "KOTHARIPRO.NS": "Kothari Products Limited", "MERCATOR.NS": "Mercator Limited", "METKORE.NS": "Metkore Alloys & Industries Limited",
+        "MMTC.NS": "MMTC Limited", "MOIL.NS": "MOIL Limited", "ORISSAMINE.NS": "The Orissa Minerals Development Company Limited",
+        "RMMIL.NS": "Resurgere Mines & Minerals India Limited", "STCINDIA.NS": "The State Trading Corporation of India Limited", "VEDL.NS": "Vedanta Limited"
+    },
+
+    "Information Technology Services": {
+        "3IINFOTECH.NS": "3i Infotech Limited", "ACCELYA.NS": "Accelya Kale Solutions Limited", "ACROPETAL.NS": "Acropetal Technologies Limited",
+        "ADSL.NS": "Allied Digital Services Ltd", "AFL.NS": "Accel Frontline Limited", "CTE.NS": "Cambridge Technology Enterprises Limited",
+        "CYBERTECH.NS": "CyberTech Systems and Software Limited", "CYIENT.NS": "Cyient Limited", "DSSL.NS": "Dynacons Systems & Solutions Limited",
+        "FCSSOFT.NS": "FCS Software Solutions Limited", "GENESYS.NS": "Genesys International Corporation Limited", "GOLDTECH.NS": "Goldstone Technologies Limited",
+        "GSS.NS": "GSS Infotech Limited", "GTL.NS": "GTL Limited", "HCLTECH.NS": "HCL Technologies Limited",
+        "HEXAWARE.NS": "Hexaware Technologies Limited", "HOVS.NS": "HOV Services Limited", "INFINITE.NS": "Infinite Computer Solutions (India) Limited",
+        "INFY.NS": "Infosys Limited", "INTELLECT.NS": "Intellect Design Arena Limited", "IZMO.NS": "IZMO Limited",
+        "KPIT.NS": "KPIT Technologies Limited", "MASTEK.NS": "Mastek Limited", "MINDTREE.NS": "Mindtree Limited",
+        "MPHASIS.NS": "MphasiS Limited", "NIITLTD.NS": "NIIT Limited", "NIITTECH.NS": "NIIT Technologies Limited",
+        "NUCLEUS.NS": "Nucleus Software Exports Limited", "OMNITECH.NS": "Omnitech Infosolutions Ltd", "ONWARDTEC.NS": "Onward Technologies Limited",
+        "PALRED.NS": "Palred Technologies Limited", "PANORAMUNI.NS": "Panoramic Universal Limited", "QUINTEGRA.NS": "Quintegra Solutions Limited",
+        "RAMCOSYS.NS": "Ramco Systems Limited", "REDINGTON.NS": "Redington (India) Limited", "ROLTA.NS": "Rolta India Limited",
+        "SAKSOFT.NS": "Saksoft Limited", "SOFTTECHGR.NS": "STG Lifecare Limited", "SPHEREGSL.NS": "Sphere Global Services Limited",
+        "TAKE.NS": "TAKE Solutions Limited", "TCS.NS": "Tata Consultancy Services Limited", "TECHM.NS": "Tech Mahindra Limited",
+        "TRICOM.NS": "Tricom India Limited", "VISESHINFO.NS": "MPS Infotecnics Limited", "WIPRO.NS": "Wipro Limited",
+        "XCHANGING.NS": "Xchanging Solutions Limited", "ZENSARTECH.NS": "Zensar Technologies Limited"
+    },
+
+    "Internet Information Providers": {
+        "ISFT.NS": "IntraSoft Technologies Limited", "LYCOS.NS": "Lycos Internet Limited", "NAUKRI.NS": "Info Edge (India) Limited",
+        "NET4.NS": "Net 4 India Limited"
+    },
+
+    "Investment Brokerage - National": {
+        "ALMONDZ.NS": "Almondz Global Securities Limited", "AUSOMENT.NS": "Ausom Enterprise Limited", "BIRLAMONEY.NS": "Aditya Birla Money Limited",
+        "BLBLIMITED.NS": "BLB Limited", "BLUECHIP.NS": "Blue Chip India Limited", "CARERATING.NS": "CARE Ratings Limited",
+        "CONSOFINVT.NS": "Consolidated Finvest & Holdings Limited", "CRISIL.NS": "CRISIL Limited", "DBSTOCKBRO.NS": "DB (International) Stock Brokers Ltd",
+        "DHUNINV.NS": "Dhunseri Investments Limited", "DPL.NS": "Dhunseri Petrochem Limited", "EDELWEISS.NS": "Edelweiss Financial Services Limited",
+        "EMKAY.NS": "Emkay Global Financial Services Limited", "HBSTOCK.NS": "HB Stockholdings Limited", "IBVENTURES.NS": "Indiabulls Ventures Limited",
+        "ICRA.NS": "ICRA Limited", "IIFL.NS": "IIFL Holdings Limited", "INDOTHAI.NS": "Indo Thai Securities Limited",
+        "INVENTURE.NS": "Inventure Growth & Securities Limited", "JMFINANCIL.NS": "JM Financial Limited", "KEYCORPSER.NS": "Keynote Corporate Services Limited",
+        "KHANDSE.NS": "Khandwala Securities Limited", "MCDHOLDING.NS": "McDowell Holdings Limited", "ONELIFECAP.NS": "Onelife Capital Advisors Limited",
+        "PRIMESECU.NS": "Prime Securities Limited", "RELIGARE.NS": "Religare Enterprises Limited", "SUMMITSEC.NS": "Summit Securities Limited",
+        "TATAINVEST.NS": "Tata Investment Corporation Limited", "VLSFINANCE.NS": "VLS Finance Limited", "WEIZFOREX.NS": "Weizmann Forex Limited"
+    },
+
+    "Jewelry Stores": {
+        "GITANJALI.NS": "Gitanjali Gems Limited", "GOENKA.NS": "Goenka Diamond and Jewels Limited", "GOLDIAM.NS": "Goldiam International Limited",
+        "KDDL.NS": "KDDL Limited", "LYPSAGEMS.NS": "Lypsa Gems & Jewellery Limited", "PCJEWELLER.NS": "PC Jeweller Limited",
+        "RAJESHEXPO.NS": "Rajesh Exports Limited", "RJL.NS": "Renaissance Jewellery Limited", "SGJHL.NS": "Shree Ganesh Jewellery House (I) Limited",
+        "SHRENUJ.NS": "Shrenuj & Company Limited", "SRSLTD.NS": "SRS Limited", "SURANACORP.NS": "Surana Corporation Limited",
+        "TARAJEWELS.NS": "Tara Jewels Limited", "TBZ.NS": "Tribhovandas Bhimji Zaveri Limited", "THANGAMAYL.NS": "Thangamayil Jewellery Limited",
+        "TITAN.NS": "Titan Company Limited", "VAIBHAVGBL.NS": "Vaibhav Global Limited", "ZODJRDMKJ.NS": "Zodiac-JRD-MKJ Limited"
+    },
+
+    "Life Insurance": {
+        "MFSL.NS": "Max Financial Services Limited"
+    },
+
+    "Lodging": {
+        "ADVANIHOTR.NS": "Advani Hotels & Resorts (India) Limited", "AHLEAST.NS": "Asian Hotels (East) Limited", "AHLWEST.NS": "Asian Hotels (West) Limited",
+        "APOLSINHOT.NS": "Apollo Sindoori Hotels Limited", "ASIANHOTNR.NS": "Asian Hotels (North) Limited", "BLUECOAST.NS": "Blue Coast Hotels Limited",
+        "EIHAHOTELS.NS": "EIH Associated Hotels Limited", "EIHOTEL.NS": "EIH Limited", "HOTELEELA.NS": "Hotel Leelaventure Limited",
+        "INDHOTEL.NS": "The Indian Hotels Company Limited", "KAMATHOTEL.NS": "Kamat Hotels (India) Limited", "ORIENTHOT.NS": "Oriental Hotels Limited",
+        "ROHLTD.NS": "Royal Orchid Hotels Limited", "TAJGVK.NS": "TAJGVK Hotels & Resorts Limited", "TGBHOTELS.NS": "TGB Banquets And Hotels Limited",
+        "THEBYKE.NS": "The Byke Hospitality Limited", "VICEROY.NS": "Viceroy Hotels Limited"
+    },
+
+    # ======================================================================
+
+    "Lumber, Wood Production": {
+        "ARCHIDPLY.NS": "Archidply Industries Limited", "CENTURYPLY.NS": "Century Plyboards (India) Limited", "MANGTIMBER.NS": "Mangalam Timber Products Limited",
+        "UNIPLY.NS": "Uniply Industries Limited"
+    },
+
+    "Machine Tools & Accessories": {
+        "ESABINDIA.NS": "ESAB India Limited", "LAKPRE.NS": "Lakshmi Precision Screws Limited", "NIBL.NS": "NRB Industrial Bearings Limited",
+        "STERTOOLS.NS": "Sterling Tools Limited", "TIIL.NS": "Technocraft Industries (India) Limited", "WENDT.NS": "Wendt (India) Limited"
+    },
+
+    "Major Airlines": {
+        "INDIGO.NS": "InterGlobe Aviation Limited", "JETAIRWAYS.NS": "Jet Airways (India) Limited"
+    },
+
+    "Major Integrated Oil & Gas": {
+        "CAIRN.NS": "Cairn India Limited", "ONGC.NS": "Oil and Natural Gas Corporation Limited"
+    },
+
+    "Medical Appliances & Equipment": {
+        "OPTOCIRCUI.NS": "Opto Circuits (India) Ltd"
+    },
+
+    "Medical Instruments & Supplies": {
+        "POLYMED.NS": "Poly Medicure Limited"
+    },
+
+    "Medical Laboratories & Research": {
+        "LALPATHLAB.NS": "Dr. Lal PathLabs Limited", "VIMTALABS.NS": "Vimta Labs Limited"
+    },
+
+    "Metal Fabrication": {
+        "ALICON.NS": "Alicon Castalloy Limited", "ARCOTECH.NS": "Arcotech Limited", "BILENERGY.NS": "Bil Energy Systems Limited",
+        "ELECTHERM.NS": "Electrotherm (India) Limited", "GANDHITUBE.NS": "Gandhi Special Tubes Limited", "GOODLUCK.NS": "Goodluck India Limited",
+        "GRAVITA.NS": "Gravita India Limited", "HILTON.NS": "Hilton Metal Forging Limited", "MAHINDCIE.NS": "Mahindra CIE Automotive Limited",
+        "METALFORGE.NS": "Metalyst Forgings Limited", "MMFL.NS": "MM Forgings Limited", "NELCAST.NS": "Nelcast Limited",
+        "ORIENTREF.NS": "Orient Refractories Limited", "PENPEBS.NS": "Pennar Engineered Building Systems Limited", "PSL.NS": "PSL Limited",
+        "ROHITFERRO.NS": "Rohit Ferro-Tech Limited", "SGFL.NS": "Shree Ganesh Forgings Limited", "SRIPIPES.NS": "Srikalahasthi Pipes Limited",
+        "ZENITHBIR.NS": "Zenith Birla (India) Limited"
+    },
+
+    "Money Center Banks": {
+        "ALBK.NS": "Allahabad Bank", "ANDHRABANK.NS": "Andhra Bank", "AXISBANK.NS": "Axis Bank Limited",
+        "BANKBARODA.NS": "Bank of Baroda", "BANKINDIA.NS": "Bank of India Limited", "CANBK.NS": "Canara Bank",
+        "CENTRALBK.NS": "Central Bank of India", "CORPBANK.NS": "Corporation Bank", "CUB.NS": "City Union Bank Limited",
+        "DCBBANK.NS": "DCB Bank Limited", "DENABANK.NS": "Dena Bank", "DHANBANK.NS": "Dhanlaxmi Bank Limited",
+        "FEDERALBNK.NS": "The Federal Bank Limited", "HDFCBANK.NS": "HDFC Bank Limited", "ICICIBANK.NS": "ICICI Bank Limited",
+        "IDBI.NS": "IDBI Bank Limited", "IDFCBANK.NS": "IDFC Bank Limited", "INDIANB.NS": "Indian Bank",
+        "INDUSINDBK.NS": "IndusInd Bank Limited", "IOB.NS": "Indian Overseas Bank", "J&KBANK.NS": "The Jammu and Kashmir Bank Limited",
+        "KARURVYSYA.NS": "The Karur Vysya Bank Limited", "KOTAKBANK.NS": "Kotak Mahindra Bank Limited", "KTKBANK.NS": "The Karnataka Bank Limited",
+        "LAKSHVILAS.NS": "The Lakshmi Vilas Bank Limited", "MAHABANK.NS": "Bank of Maharashtra", "ORIENTBANK.NS": "Oriental Bank of Commerce",
+        "PNB.NS": "Punjab National Bank", "PSB.NS": "Punjab & Sind Bank", "SBIN.NS": "State Bank of India",
+        "SOUTHBANK.NS": "The South Indian Bank Limited", "SYNDIBANK.NS": "Syndicate Bank", "UCOBANK.NS": "UCO Bank",
+        "UNIONBANK.NS": "Union Bank of India", "UNITEDBNK.NS": "United Bank of India", "VIJAYABANK.NS": "Vijaya Bank",
+        "YESBANK.NS": "Yes Bank Limited"
+    },
+
+    "Mortgage Investment": {
+        "CANFINHOME.NS": "Can Fin Homes Limited", "DHFL.NS": "Dewan Housing Finance Corporation Limited", "GICHSGFIN.NS": "GIC Housing Finance Limited",
+        "GRUH.NS": "GRUH Finance Limited", "HDFC.NS": "Housing Development Finance Corporation Limited", "IBULHSGFIN.NS": "Indiabulls Housing Finance Limited",
+        "LICHSGFIN.NS": "LIC Housing Finance Limited", "PFS.NS": "PTC India Financial Services Limited", "REPCOHOME.NS": "Repco Home Finance Limited",
+        "SREINFRA.NS": "SREI Infrastructure Finance Limited", "TFL.NS": "Transwarranty Finance Limited"
+    },
+
+    # ======================================================================
+
+    "Multimedia & Graphics Software": {
+        "DQE.NS": "DQ Entertainment (International) Limited"
+    },
+
+    "Oil & Gas Drilling & Exploration": {
+        "ABAN.NS": "Aban Offshore Limited", "JINDRILL.NS": "Jindal Drilling & Industries Limited"
+    },
+
+    "Oil & Gas Equipment & Services": {
+        "ALPHAGEO.NS": "Alphageo (India) Limited", "DEEPIND.NS": "Deep Industries Limited", "DOLPHINOFF.NS": "Dolphin Offshore Enterprises (India) Limited",
+        "GTOFFSHORE.NS": "GOL Offshore Limited", "OILCOUNTUB.NS": "Oil Country Tubular Limited"
+    },
+
+    "Oil & Gas Refining & Marketing": {
+        "BPCL.NS": "Bharat Petroleum Corporation Limited", "CHENNPETRO.NS": "Chennai Petroleum Corporation Limited", "GULFOILLUB.NS": "Gulf Oil Lubricants India Limited",
+        "GULFPETRO.NS": "GP Petroleums Limited", "IOC.NS": "Indian Oil Corporation Limited", "MRPL.NS": "Mangalore Refinery and Petrochemicals Limited",
+        "NAGAROIL.NS": "Nagarjuna Oil Refinery Limited", "PANAMAPET.NS": "Panama Petrochem Limited", "PETRONET.NS": "Petronet LNG Limited",
+        "RELIANCE.NS": "Reliance Industries Limited", "TIDEWATER.NS": "Tide Water Oil Co. (India), Ltd."
+    },
+
+    "Packaging & Containers": {
+        "AMDIND.NS": "AMD Industries Limited", "ANTGRAPHIC.NS": "Antarctica Limited", "COSMOFILMS.NS": "Cosmo Films Limited",
+        "EMMBI.NS": "Emmbi Industries Limited", "ESSDEE.NS": "Ess Dee Aluminium Limited", "HINDNATGLS.NS": "Hindusthan National Glass & Industries Limited",
+        "NAHARPOLY.NS": "Nahar Poly Films Limited", "ORIENTLTD.NS": "Orient Press Limited", "PAPERPROD.NS": "Huhtamaki PPL Limited",
+        "PARAPRINT.NS": "Paramount Printpackaging Limited", "PDMJEPAPER.NS": "Pudumjee Paper Products Limited", "PEARLPOLY.NS": "Pearl Polymers Limited",
+        "POLYPLEX.NS": "Polyplex Corporation Limited", "RMCL.NS": "Radha Madhav Corporation Limited", "SHREERAMA.NS": "Shree Rama Multi-Tech Limited",
+        "TIMETECHNO.NS": "Time Technoplast Limited", "UFLEX.NS": "Uflex Limited"
+    },
+
+    "Paper & Paper Products": {
+        "BALLARPUR.NS": "Ballarpur Industries Limited", "GENUSPAPER.NS": "Genus Paper & Boards Limited", "IPAPPM.NS": "International Paper APPM Limited",
+        "JKPAPER.NS": "JK Paper Limited", "MAGNUM.NS": "Magnum Ventures Limited", "MALUPAPER.NS": "Malu Paper Mills Limited",
+        "PDUMJEPULP.NS": "Pudumjee Pulp & Paper Mills Limited", "RAINBOWPAP.NS": "Rainbow Papers Limited", "RAMANEWS.NS": "Shree Rama Newsprint Limited",
+        "RUCHIRA.NS": "Ruchira Papers Limited", "SERVALL.NS": "Servalakshmi Paper Limited", "SESHAPAPER.NS": "Seshasayee Paper and Boards Limited",
+        "SHREYANIND.NS": "Shreyans Industries Limited", "STARPAPER.NS": "Star Paper Mills Limited", "SUNDARAM.NS": "Sundaram Multi Pap Limited",
+        "TNPL.NS": "Tamil Nadu Newsprint and Papers Limited", "WSTCSTPAPR.NS": "West Coast Paper Mills Limited"
+    },
+
+    "Personal Products": {
+        "BAJAJCORP.NS": "Bajaj Corp Limited", "COLPAL.NS": "Colgate-Palmolive (India) Limited", "DABUR.NS": "Dabur India Limited",
+        "EMAMILTD.NS": "Emami Limited", "GILLETTE.NS": "Gillette India Limited", "HINDUNILVR.NS": "Hindustan Unilever Limited",
+        "JHS.NS": "JHS Svendgaard Laboratories Limited", "JYOTHYLAB.NS": "Jyothy Laboratories Limited", "KAYA.NS": "Kaya Limited",
+        "MARICO.NS": "Marico Limited", "PGHH.NS": "Procter & Gamble Hygiene and Health Care Limited", "ZYDUSWELL.NS": "Zydus Wellness Limited"
+    },
+
+    "Property & Casualty Insurance": {
+        "BAJAJFINSV.NS": "Bajaj Finserv Limited"
+    },
+
+    "Property Management": {
+        "AJMERA.NS": "Ajmera Realty & Infra India Limited", "ANANTRAJ.NS": "Anant Raj Limited", "ANSALHSG.NS": "Ansal Housing & Construction Limited",
+        "BRIGADE.NS": "Brigade Enterprises Limited", "CINELINE.NS": "Cineline India Limited", "EMAMIINFRA.NS": "Emami Infrastructure Limited",
+        "FMNL.NS": "Future Market Networks Limited", "IBREALEST.NS": "Indiabulls Real Estate Limited", "MOTOGENFIN.NS": "The Motor & General Finance Limited",
+        "OBEROIRLTY.NS": "Oberoi Realty Limited", "PDUMJEIND.NS": "Pudumjee Industries Limited", "TEXINFRA.NS": "Texmaco Infrastructure & Holdings Limited"
+    },
+
+    "Publishing - Newspapers": {
+        "CYBERMEDIA.NS": "Cyber Media (India) Limited", "DBCORP.NS": "D. B. Corp Limited", "HMVL.NS": "Hindustan Media Ventures Limited",
+        "HTMEDIA.NS": "HT Media Limited", "INFOMEDIA.NS": "Infomedia Press Limited", "JAGRAN.NS": "Jagran Prakashan Limited",
+        "MPSLTD.NS": "MPS Limited", "NAVNETEDUL.NS": "Navneet Education Limited", "NEXTMEDIA.NS": "Next Mediaworks Limited",
+        "SAMBHAAV.NS": "Sambhaav Media Limited", "SANDESH.NS": "The Sandesh Limited"
+    },
+
+    # ======================================================================
+
+    "Railroads": {
+        "CEBBCO.NS": "Commercial Engineers & Body Builders Co Limited", "NECCLTD.NS": "North Eastern Carrying Corporation Limited", "TWL.NS": "Titagarh Wagons Limited"
+    },
+
+    "Real Estate Development": {
+        "ANSALAPI.NS": "Ansal Properties & Infrastructure Limited", "ARIHANT.NS": "Arihant Foundations & Housing Limited", "ASHIANA.NS": "Ashiana Housing Limited",
+        "BSELINFRA.NS": "BSEL Infrastructure Realty Limited", "COUNCODOS.NS": "Country Condo'S Limited", "DBREALTY.NS": "DB Realty Ltd",
+        "DLF.NS": "DLF Limited", "DSKULKARNI.NS": "D.S. Kulkarni Developers Limited", "GANESHHOUC.NS": "Ganesh Housing Corporation Limited",
+        "GEECEE.NS": "GeeCee Ventures Limited", "GODREJPROP.NS": "Godrej Properties Limited", "HDIL.NS": "Housing Development and Infrastructure Limited",
+        "HUBTOWN.NS": "Hubtown Limited", "KOLTEPATIL.NS": "Kolte-Patil Developers Limited", "LPDC.NS": "Landmark Property Development Company Limited",
+        "MAHLIFE.NS": "Mahindra Lifespace Developers Limited", "MVL.NS": "MVL Limited", "NITESHEST.NS": "Nitesh Estates Limited",
+        "OMAXE.NS": "Omaxe Limited", "ORBITCORP.NS": "Orbit Corporation Limited", "PENINLAND.NS": "Peninsula Land Limited",
+        "PHOENIXLTD.NS": "The Phoenix Mills Limited", "PRAENG.NS": "Prajay Engineers Syndicate Limited", "PRESTIGE.NS": "Prestige Estates Projects Limited",
+        "PROZONINTU.NS": "Prozone Intu Properties Limited", "PVP.NS": "PVP Ventures Limited", "SOBHA.NS": "Sobha Limited",
+        "SUNTECK.NS": "Sunteck Realty Limited", "TCIDEVELOP.NS": "TCI Developers Limited", "TECHIN.NS": "Techindia Nirman Limited",
+        "UNITECH.NS": "Unitech Limited", "VIPUL.NS": "Vipul Limited", "ZANDUREALT.NS": "Zandu Realty Limited"
+    },
+
+    "Recreational Goods, Other": {
+        "ATLASCYCLE.NS": "Atlas Cycles (Haryana) Limited", "COX&KINGS.NS": "Cox & Kings Limited", "JINDALPHOT.NS": "Jindal Photo Limited",
+        "KANANIIND.NS": "Kanani Industries Limited", "TALWALKARS.NS": "Talwalkars Better Value Fitness Limited", "THOMASCOOK.NS": "Thomas Cook (India) Limited",
+        "WONDERLA.NS": "Wonderla Holidays Limited"
+    },
+
+    "Residential Construction": {
+        "BDR.NS": "BDR Buildcon Limited", "VIJSHAN.NS": "Vijay Shanthi Builders Limited"
+    },
+
+    "Resorts & Casinos": {
+        "CCHHL.NS": "Country Club Hospitality & Holidays Limited", "DELTACORP.NS": "Delta Corp Limited", "GIRRESORTS.NS": "GIR Natureview Resorts Limited",
+        "MHRIL.NS": "Mahindra Holidays & Resorts India Limited"
+    },
+
+    "Restaurants": {
+        "COFFEEDAY.NS": "Coffee Day Enterprises Limited", "JUBLFOOD.NS": "Jubilant FoodWorks Limited", "SPECIALITY.NS": "Speciality Restaurants Limited"
+    },
+
+    "Rubber & Plastics": {
+        "APCOTEXIND.NS": "Apcotex Industries Limited", "APOLLOTYRE.NS": "Apollo Tyres Limited", "ASTRAL.NS": "Astral Poly Technik Limited",
+        "BALKRISIND.NS": "Balkrishna Industries Limited", "CEATLTD.NS": "CEAT Limited", "ELGIRUBCO.NS": "Elgi Rubber Company Limited",
+        "ESTER.NS": "Ester Industries Limited", "FLEXITUFF.NS": "Flexituff International Limited", "GRPLTD.NS": "GRP Limited",
+        "JAICORPLTD.NS": "Jai Corp Limited", "JUBLINDS.NS": "Jubilant Industries Limited", "KEMROCK.NS": "Kemrock Industries and Exports Limited",
+        "KESORAMIND.NS": "Kesoram Industries Limited", "MRF.NS": "MRF Limited", "NILKAMAL.NS": "Nilkamal Limited",
+        "PITTILAM.NS": "Pitti Laminations Limited", "PREMIERPOL.NS": "Premier Polyfilm Ltd.", "RESPONIND.NS": "Responsive Industries Limited",
+        "SIGNETIND.NS": "Signet Industries Limited", "SUPREMEIND.NS": "The Supreme Industries Limited", "TAINWALCHM.NS": "Tainwala Chemicals and Plastics (India) Limited",
+        "TEXMOPIPES.NS": "Texmo Pipes and Products Limited", "TIJARIA.NS": "Tijaria Polypipes Limited", "TOKYOPLAST.NS": "Tokyo Plast International Limited",
+        "TULSI.NS": "Tulsi Extrusions Limited", "TVSSRICHAK.NS": "TVS Srichakra"
+    },
+
+    "Scientific & Technical Instruments": {
+        "BARTRONICS.NS": "Bartronics India Limited"
+    },
+
+    "Security & Protection Services": {
+        "NITINFIRE.NS": "Nitin Fire Protection Industries Limited", "ZICOM.NS": "Zicom Electronic Security Systems Limited"
+    },
+
+    "Shipping": {
+        "ADANIPORTS.NS": "Adani Ports and Special Economic Zone Limited", "DREDGECORP.NS": "Dredging Corporation of India Limited", "ESSARSHPNG.NS": "Essar Shipping Limited",
+        "GESHIP.NS": "The Great Eastern Shipping Company Limited", "GLOBOFFS.NS": "Global Offshore Services Limited", "GPPL.NS": "Gujarat Pipavav Port Limited",
+        "SCI.NS": "The Shipping Corporation of India Limited", "SEAMECLTD.NS": "Seamec Limited", "SHREYAS.NS": "Shreyas Shipping and Logistics Limited"
+    },
+
+    # ======================================================================
+
+    "Specialty Chemicals": {
+        "AARTIIND.NS": "Aarti Industries Limited", "AGARIND.NS": "Agarwal Industrial Corporation Ltd.", "AKZOINDIA.NS": "Akzo Nobel India Limited",
+        "ALKALI.NS": "Alkali Metals Limited", "ALKYLAMINE.NS": "Alkyl Amines Chemicals Limited", "ASIANPAINT.NS": "Asian Paints Limited",
+        "AVTNPL.NS": "AVT Natural Products Limited", "BALAMINES.NS": "Balaji Amines Limited", "BERGEPAINT.NS": "Berger Paints India Limited",
+        "BODALCHEM.NS": "Bodal Chemicals Limited", "CASTROLIND.NS": "Castrol India Limited", "CHEMFALKAL.NS": "Chemfab Alkalis Limited",
+        "CHROMATIC.NS": "Chromatic India Limited", "CLNINDIA.NS": "Clariant Chemicals (India) Limited", "EXCELINDUS.NS": "Excel Industries Limited",
+        "GOACARBON.NS": "Goa Carbon Limited", "IGPL.NS": "I G Petrochemicals Limited", "IVP.NS": "IVP Limited",
+        "JAYAGROGN.NS": "Jayant Agro-Organics Limited", "JINDALPOLY.NS": "Jindal Poly Films Limited", "KANSAINER.NS": "Kansai Nerolac Paints Limited",
+        "KIRIINDUS.NS": "Kiri Industries Limited", "LINDEINDIA.NS": "Linde India Limited", "OMKARCHEM.NS": "Omkar Speciality Chemicals Limited",
+        "ORIENTABRA.NS": "Orient Abrasives Limited", "PIDILITIND.NS": "Pidilite Industries Limited", "PLASTIBLEN.NS": "Plastiblends India Ltd.",
+        "SHRIASTER.NS": "Shri Aster Silicates Limited", "SOTL.NS": "Savita Oil Technologies Limited", "SUDARSCHEM.NS": "Sudarshan Chemical Industries Limited",
+        "TIRUMALCHM.NS": "Thirumalai Chemicals Limited", "VIKASECO.NS": "Vikas EcoTech Limited", "VINYLINDIA.NS": "Vinyl Chemicals India Ltd.",
+        "VISHNU.NS": "Vishnu Chemicals Limited", "VIVIMEDLAB.NS": "Vivimed Labs Limited", "XPROINDIA.NS": "Xpro India Limited"
+    },
+
+    "Specialty Retail, Other": {
+        "ARCHIES.NS": "Archies Limited"
+    },
+
+    "Staffing & Outsourcing Services": {
+        "HGS.NS": "Hinduja Global Solutions Limited", "TEAMLEASE.NS": "TeamLease Services Limited"
+    },
+
+    "Steel & Iron": {
+        "ADHUNIK.NS": "Adhunik Metaliks Limited", "ANKITMETAL.NS": "Ankit Metal & Power Limited", "APLAPOLLO.NS": "APL Apollo Tubes Limited",
+        "BEDMUTHA.NS": "Bedmutha Industries Limited", "BHARATWIRE.NS": "Bharat Wire Ropes Limited", "BHUSANSTL.NS": "Bhushan Steel Limited",
+        "ESL.NS": "Electrosteel Steels Limited", "GAL.NS": "Gyscoal Alloys Limited", "GALLANTT.NS": "Gallantt Metal Limited",
+        "GALLISPAT.NS": "Gallantt Ispat Limited", "GPIL.NS": "Godawari Power & Ispat Limited", "IMFA.NS": "Indian Metals and Ferro Alloys Limited",
+        "ISMTLTD.NS": "ISMT Limited", "JAIBALAJI.NS": "Jai Balaji Industries Limited", "JAYNECOIND.NS": "Jayaswal Neco Industries Limited",
+        "JINDALSAW.NS": "Jindal Saw Limited", "JINDALSTEL.NS": "Jindal Steel & Power Limited", "JSL.NS": "Jindal Stainless Limited",
+        "JSLHISAR.NS": "Jindal Stainless (Hisar) Limited", "KAMDHENU.NS": "Kamdhenu Limited", "KSL.NS": "Kalyani Steels Limited",
+        "MAHSEAMLES.NS": "Maharashtra Seamless Limited", "MAITHANALL.NS": "Maithan Alloys Limited", "MANINDS.NS": "Man Industries (India) Limited",
+        "MONNETISPA.NS": "Monnet Ispat and Energy Limited", "MSPL.NS": "MSP Steel & Power Limited", "MUKANDLTD.NS": "Mukand Limited",
+        "NATNLSTEEL.NS": "National Steel and Agro Industries Limited", "NMDC.NS": "NMDC Limited", "OISL.NS": "OCL Iron & Steel Limited",
+        "PENIND.NS": "Pennar Industries Limited", "PRAKASH.NS": "Prakash Industries Limited", "PRAKASHSTL.NS": "Prakash Steelage Limited",
+        "RAMASTEEL.NS": "Rama Steel Tubes Limited", "RAMSARUP.NS": "Ramsarup Industries Limited", "RATNAMANI.NS": "Ratnamani Metals & Tubes Limited",
+        "SAIL.NS": "Steel Authority of India Limited", "SALSTEEL.NS": "S.A.L. Steel Limited", "SARDAEN.NS": "Sarda Energy & Minerals Limited",
+        "SATHAISPAT.NS": "Sathavahana Ispat Limited", "SHAHALLOYS.NS": "Shah Alloys Limited", "SMPL.NS": "Splendid Metal Products Limited",
+        "SUJANAUNI.NS": "Sujana Universal Industries Limited", "SUNFLAG.NS": "Sunflag Iron And Steel Company Limited", "SURANAIND.NS": "Surana Industries Limited",
+        "SURYAROSNI.NS": "Surya Roshni Limited", "TATAMETALI.NS": "Tata Metaliks Limited", "TATASPONGE.NS": "Tata Sponge Iron Limited",
+        "TATASTEEL.NS": "Tata Steel Limited", "TINPLATE.NS": "The Tinplate Company Of India Limited", "USHAMART.NS": "Usha Martin Limited",
+        "UTTAMSTL.NS": "Uttam Galva Steels Limited", "UTTAMVALUE.NS": "Uttam Value Steels Limited", "VASWANI.NS": "Vaswani Industries Limited",
+        "VISASTEEL.NS": "VISA Steel Limited", "VSSL.NS": "Vardhman Special Steels Limited", "WELCORP.NS": "Welspun Corp Limited"
+    },
+
+    "Technical & System Software": {
+        "8KMILES.NS": "8K Miles Software Services Limited", "BGLOBAL.NS": "Bharatiya Global Infomedia Limited", "CALSOFT.NS": "California Software Company Limited",
+        "FINANTECH.NS": "63 Moons Technologies Limited", "ICSA.NS": "ICSA (India) Limited", "KERNEX.NS": "Kernex Microsystems (India) Limited",
+        "MEGASOFT.NS": "Megasoft Limited", "RSSOFTWARE.NS": "R. S. Software (India) Limited", "SASKEN.NS": "Sasken Technologies Limited",
+        "SQSBFSI.NS": "SQS India BFSI Limited", "SUBEX.NS": "Subex Limited", "TANLA.NS": "Tanla Solutions Limited",
+        "TATAELXSI.NS": "Tata Elxsi Limited", "TRIGYN.NS": "Trigyn Technologies Limited", "VAKRANGEE.NS": "Vakrangee Limited",
+        "ZYLOG.NS": "Zylog Systems Limited"
+    },
+
+    "Textile - Apparel Clothing": {
+        "ABFRL.NS": "Aditya Birla Fashion and Retail Limited", "AIFL.NS": "Ashapura Intimates Fashion Limited", "BANG.NS": "Bang Overseas Limited",
+        "CANTABIL.NS": "Cantabil Retail India Limited", "CELEBRITY.NS": "Celebrity Fashions Limited", "GOKEX.NS": "Gokaldas Exports Limited",
+        "INDTERRAIN.NS": "Indian Terrain Fashions Limited", "INTEGRA.NS": "Integra Garments and Textiles Limited", "KITEX.NS": "Kitex Garments Limited",
+        "KKCL.NS": "Kewal Kiran Clothing Limited", "KPRMILL.NS": "K.P.R. Mill Limited", "LOVABLE.NS": "Lovable Lingerie Limited",
+        "LUXIND.NS": "Lux Industries Limited", "MANDHANA.NS": "Mandhana Industries Limited", "MONTECARLO.NS": "Monte Carlo Fashions Limited",
+        "PAGEIND.NS": "Page Industries Limited", "PDSMFL.NS": "PDS Multinational Fashions Limited", "PGIL.NS": "Pearl Global Industries Limited",
+        "PROVOGE.NS": "Provogue (India) Limited", "RUPA.NS": "Rupa & Company Limited", "SELMCL.NS": "SEL Manufacturing Company Limited",
+        "SPLIL.NS": "SPL Industries Limited", "SUDAR.NS": "Sudar Industries Limited", "THOMASCOTT.NS": "Thomas Scott (India) Limited",
+        "ZODIACLOTH.NS": "Zodiac Clothing Company Limited"
+    },
+
+    "Textile - Apparel Footwear & Accessories": {
+        "BANARBEADS.NS": "Banaras Beads Limited", "BATAINDIA.NS": "Bata India Limited", "BIL.NS": "Bhartiya International Limited",
+        "LIBERTSHOE.NS": "Liberty Shoes Limited", "MIRZAINT.NS": "Mirza International Limited", "RELAXO.NS": "Relaxo Footwears Limited",
+        "SREEL.NS": "Sreeleathers Limited", "SUPERHOUSE.NS": "Superhouse Limited", "VIPIND.NS": "VIP Industries Limited"
+    },
+
+    "Textile Industrial": {
+        "AARVEEDEN.NS": "Aarvee Denims and Exports Limited", "AICHAMP.NS": "AI Champdany Industries Limited", "ALOKTEXT.NS": "Alok Industries Limited",
+        "ALPSINDUS.NS": "Alps Industries Limited", "AMBIKCO.NS": "Ambika Cotton Mills Limited", "ARROWTEX.NS": "Arrow Textiles Limited",
+        "ARVIND.NS": "Arvind Limited", "ASHIMASYN.NS": "Ashima Limited", "ASIL.NS": "Amit Spinning Industries Limited",
+        "AYMSYNTEX.NS": "AYM Syntex Limited", "BANSWRAS.NS": "Banswara Syntex Limited", "BASML.NS": "Bannari Amman Spinning Mills Limited",
+        "BIRLACOT.NS": "Birla Cotsyn (India) Limited", "BOMDYEING.NS": "The Bombay Dyeing and Manufacturing Company Limited", "BSL.NS": "BSL Limited",
+        "CENTENKA.NS": "Century Enka Limited", "CNOVAPETRO.NS": "CIL Nova Petrochemicals Limited", "DCM.NS": "DCM Limited",
+        "DONEAR.NS": "Donear Industries Limited", "EASTSILK.NS": "Eastern Silk Industries Limited", "ELAND.NS": "E-Land Apparel Limited",
+        "EUROTEXIND.NS": "Eurotex Industries and Exports Limited", "FILATEX.NS": "Filatex India Limited", "FIRSTWIN.NS": "First Winner Industries Limited",
+        "GANGOTRI.NS": "Gangotri Textiles Limited", "GARDENSILK.NS": "Garden Silk Mills Limited", "GARWALLROP.NS": "Garware-Wall Ropes Limited",
+        "GILLANDERS.NS": "Gillanders Arbuthnot and Company Limited", "GINNIFILA.NS": "Ginni Filaments Limited", "GTNTEX.NS": "GTN Textiles Limited",
+        "HANUNG.NS": "Hanung Toys and Textiles Limited", "HIMATSEIDE.NS": "Himatsingka Seide Limited", "HINDSYNTEX.NS": "Hind Syntex Limited",
+        "ICIL.NS": "Indo Count Industries Limited", "INDIANCARD.NS": "The Indian Card Clothing Company Limited", "INDORAMA.NS": "Indo Rama Synthetics (India) Limited",
+        "JBFIND.NS": "JBF Industries Limited", "JINDCOT.NS": "Jindal Cotex Limited", "JINDWORLD.NS": "Jindal Worldwide Limited",
+        "LAMBODHARA.NS": "Lambodhara Textiles Limited", "MALWACOTT.NS": "Malwa Cotton Spinning Mills Limited", "MARALOVER.NS": "Maral Overseas Limited",
+        "MAYURUNIQ.NS": "Mayur Uniquoters Limited", "MOHITIND.NS": "Mohit Industries Limited", "MORARJEE.NS": "Morarjee Textiles Limited",
+        "NAGREEKEXP.NS": "Nagreeka Exports Limited", "NAHARINDUS.NS": "Nahar Industrial Enterprises Limited", "NAHARSPING.NS": "Nahar Spinning Mills Ltd",
+        "NAKODA.NS": "Nakoda Limited", "NDL.NS": "Nandan Denim Limited", "NITINSPIN.NS": "Nitin Spinners Ltd.",
+        "ORBTEXP.NS": "Orbit Exports Limited", "PARASPETRO.NS": "Paras Petrofils Ltd", "PATSPINLTD.NS": "Patspin India Limited",
+        "PIONEEREMB.NS": "Pioneer Embroideries Limited", "PRADIP.NS": "Pradip Overseas Limited", "PRECOT.NS": "Precot Meridian Limited",
+        "RAIREKMOH.NS": "The Rai Saheb Rekhchand Mohota Spinning & Weaving Mills Ltd.", "RAJRAYON.NS": "Raj Rayon Industries Limited", "RAJVIR.NS": "Rajvir Industries Limited",
+        "RAYMOND.NS": "Raymond Limited", "RSWM.NS": "RSWM Limited", "RUBYMILLS.NS": "The Ruby Mills Limited",
+        "SALONACOT.NS": "Salona Cotspin Limited", "SANGAMIND.NS": "Sangam (India) Limited", "SARLAPOLY.NS": "Sarla Performance Fibers Limited",
+        "SGL.NS": "STL Global Limited", "SHIVTEX.NS": "Shiva Texyarn Limited", "SIL.NS": "Standard Industries Limited",
+        "SIYSIL.NS": "Siyaram Silk Mills Limited", "SOMATEX.NS": "Soma Textiles & Industries Limited", "SPENTEX.NS": "Spentex Industries Limited",
+        "SPYL.NS": "Shekhawati Poly-Yarn Limited", "SRF.NS": "SRF Limited", "STINDIA.NS": "STI India Limited",
+        "SUMEETINDS.NS": "Sumeet Industries Limited.", "SUPERSPIN.NS": "Super Spinning Mills Limited", "SUPREMETEX.NS": "Supreme Tex Mart Limited",
+        "SURYAJYOTI.NS": "Suryajyoti Spinning Mills Limited", "SURYALAXMI.NS": "Suryalakshmi Cotton Mills Limited", "SUTLEJTEX.NS": "Sutlej Textiles and Industries Limited",
+        "SWANENERGY.NS": "Swan Energy Limited", "TRIDENT.NS": "Trident Limited", "TTL.NS": "T.T. Limited",
+        "VARDHACRLC.NS": "Vardhman Acrylics Limited", "VARDMNPOLY.NS": "Vardhman Polytex Limited", "VIVIDHA.NS": "Visagar Polytex Limited",
+        "VTL.NS": "Vardhman Textiles Limited", "WEIZMANIND.NS": "Weizmann Limited", "WELINV.NS": "Welspun Investments and Commercials Limited",
+        "WELSPUNIND.NS": "Welspun India Limited", "WINSOME.NS": "Winsome Yarns Limited", "ZENITHEXPO.NS": "Zenith Exports Limited"
+    },
+
+    "Tobacco Products, Other": {
+        "GODFRYPHLP.NS": "Godfrey Phillips India Limited", "GOLDENTOBC.NS": "Golden Tobacco Limited", "ITC.NS": "ITC Limited",
+        "VSTIND.NS": "VST Industries Limited"
+    },
+
+    "Trucking": {
+        "VRLLOG.NS": "VRL Logistics Limited"
+    },
+
+    # ======================================================================
+
+    "Uncategorized": {
+        "3IINFOTECH-BE.NS": "3I INFOTECH LTD.", "3IINFOTECH-EQ.NS": "3I INFOTECH LTD INR10", "3RDROCK-EQ.NS": "3RD ROCK MULTIMEDI INR10",
+        "3RDROCK-IT.NS": "3rd Rock Multimedia Ltd", "3RDROCK.NS": "3rd Rock Multimedia Limited", "549-MF.NS": "SUNDARAM ASSET MAN TOP 100 III(",
+        "8KMILES-EQ.NS": "8K MILES SOFTWARE INR5 (DEMAT)", "A2ZINFRA-EQ.NS": "A2Z INFRA ENGINEER INR10", "AARTIDRUGS-EQ.NS": "AARTI DRUGS LTD INR10",
+        "AARTIIND-EQ.NS": "AARTI INDUSTRIES LIMITED", "ABCIL-EQ.NS": "ADITYA BIRLA CHEMICALS (INDIA)", "ABCIL.NS": "Aditya Birla Chemicals (India) Limited",
+        "ABHISHEK.NS": "Abhishek Corporation Ltd", "ABIRLANUVO-EQ.NS": "ADITYA BIRLA NUVO LIMITED", "ACCELYA-EQ.NS": "ACCELYA KALE SOLUT INR10",
+        "ACROPETAL-BE.NS": "ACROPETAL TECHNOLO INR10", "ACROPETAL-EQ.NS": "ACROPETAL TECHNOLOGIES LIMITED", "ADANITRANS-BE.NS": "Adani Transmission Ltd",
+        "ADANITRANS-EQ.NS": "ADANI TRANSMISS.IN INR1", "ADFFOODS-EQ.NS": "ADF FOODS LIMITED", "ADHUNIK-EQ.NS": "ADHUNIK METALIKS LIMITED",
+        "ADI-EQ.NS": "ADI FINECHEM LTD INR10", "ADI.NS": "ADI FINECHEM LTD INR10", "ADLABS-EQ.NS": "ADLABS ENTERTAINME INR10",
+        "ADSL-EQ.NS": "ALLIED DIGITAL SER INR5", "ADVANIHOTR-EQ.NS": "ADVANI HOTELS & RE INR2.00", "ADVANTA.NS": "Advanta Limited",
+        "AEGISCHEM.NS": "Aegis Logistics Limited", "AFL-EQ.NS": "ACCEL FRONTLINE LIMITED", "AFTEK-BE.NS": "AFTEK-BE.NS",
+        "AFTEK-BZ.NS": "AFTEK LIMITED", "AFTEK.NS": "Aftek Limited", "AGARIND-EQ.NS": "AGARWAL INDUSTRIAL INR10",
+        "AGRITECH-BE.NS": "Agri-Tech (India) Limited", "AGRITECH-EQ.NS": "AGRI-TECH (INDIA) INR10", "AGRODUTCH-BE.NS": "AGRO DUTCH INDUSTRIES LTD",
+        "AHIMSA-SI.NS": "AHIMSA INDUSTRIES INR10", "AHIMSA-SL.NS": "AHIMSA INDUSTRIES INR10", "AHIMSA-SM.NS": "AHIMSA INDUSTRIES INR10",
+        "AHIMSA-SO.NS": "AHIMSA INDUSTRIES INR10", "AHIMSA-SP.NS": "AHIMSA INDUSTRIES INR10", "AHIMSA-SQ.NS": "AHIMSA INDUSTRIES INR10",
+        "AHIMSA-ST.NS": "AHIMSA INDUSTRIES INR10", "AHMEDFORG.NS": "Metalyst Forgings Limited", "AICHAMP-EQ.NS": "AI CHAMPDANY INDUS INR5",
+        "AIFL-EQ.NS": "ASHAPURA INTIMATES INR10", "AIL.NS": "GE Power India Limited", "AKZOINDIA-EQ.NS": "AKZO NOBEL INDIA LIMITED",
+        "ALANKIT-EQ.NS": "ALANKIT LIMITED INR1", "ALKALI-EQ.NS": "ALKALI METALS LIMITED", "ALKEM-EQ.NS": "ALKEM LAB LTD INR2",
+        "ALLSEC-EQ.NS": "ALLSEC TECHNOLOGIE INR10", "ALMONDZ-EQ.NS": "ALMONDZ GLOBAL SEC INR6", "ALOKTEXT-EQ.NS": "ALOK INDUSTRIES LIMITED",
+        "ALPA-BE.NS": "ALPA LABORATORIES INR10", "ALPA-EQ.NS": "ALPA LABORATORIES INR10", "ALPHAGEO-EQ.NS": "ALPHAGEO (INDIA) LIMITED",
+        "ALPINEHOU-BE.NS": "ALPINEHOU-BE.NS", "ALPSINDUS-EQ.NS": "ALPS INDUSTRIES LIMITED", "ALSTOMT&D.NS": "GE T&D India Limited",
+        "AMARAJABAT-EQ.NS": "AMARA RAJA BATTERI INR1", "AMLSTEEL-BE.NS": "AMLSTEEL-BE.NS", "AMRUTANJAN-BE.NS": "AMRUTANJAN HEALTH INR2",
+        "AMRUTANJAN-EQ.NS": "AMRUTANJAN HEALTH CARE LIMITED", "AMTEKINDI.NS": "Castex Technologies Limited", "AMTEKINDIA-BE.NS": "AMTEK INDIA LIMITED",
+        "AMTL-EQ.NS": "ADVANCE METERING T INR5", "ANANDAMRUB-EQ.NS": "THE ANANDAM RUBBER INR10", "ANDHRACEMT-EQ.NS": "ANDHRA CEMENTS INR10",
+        "ANDHRSUGAR-EQ.NS": "THE ANDHRA SUGARS LIMITED", "ANGIND-EQ.NS": "ANG INDUSTRIES LTD INR10", "ANIKINDS-BE.NS": "ANIK INDUSTRIES INR10",
+        "ANSALAPI-EQ.NS": "ANSAL PROPERTIES & INFRASTRUCTU", "ANTGRAPHIC-BE.NS": "ANTARCTICA LIMITED", "ANTGRAPHIC-EQ.NS": "ANTARCTICA LIMITED INR1",
+        "APCOTEXIND-EQ.NS": "APCOTEX INDUSTRIES LIMITED", "APLAB-BE.NS": "APLAB-BE.NS", "APOLLOHOSP-EQ.NS": "APOLLO HOSPITALS INR5",
+        "APOLLOTYRE-EQ.NS": "APOLLO TYRES INR1.00", "APOLSINHOT-BE.NS": "Apollo Sindoori Hotels Li", "APOLSINHOT-EQ.NS": "APOLLO SINDOORI HO INR10",
+        "ARCHIES-EQ.NS": "ARCHIES LIMITED", "ARCOTECH-EQ.NS": "ARCOTECH LTD INR10", "ARIES-EQ.NS": "ARIES AGRO LIMITED",
+        "ARIHANT-EQ.NS": "ARIHANT FOUNDATION INR10(DEMAT)", "AROGRANITE-EQ.NS": "ARO GRANITE INDUS INR10", "ARROWCOAT-EQ.NS": "ARROW GREENTECH LI INR10",
+        "ARROWCOAT.NS": "ARROW GREENTECH LI INR10", "ARROWTEX-EQ.NS": "ARROW TEXTILES LTD INR10", "ARVINDREM-BZ.NS": "ARVIND REMEDIES LIMITED",
+        "ARVINDREM-EQ.NS": "ARVIND REMEDIES LIMITED", "ARVINDREM.NS": "Arvind Remedies Limited", "ARVINFRA-BE.NS": "ARVIND INFRASTRUCT INR10",
+        "ARVINFRA-EQ.NS": "ARVIND INFRASTRUCT INR10", "ARVINFRA.NS": "Arvind SmartSpaces Limited", "ASAHIINDIA-EQ.NS": "ASAHI INDIA GLASS INR1",
+        "ASAHISONG-BE.NS": "ASAHI SONGWON COLO INR10", "ASAL-EQ.NS": "AUTOMOTIVE STAMPINGS AND ASSEMB", "ASHAPURMIN-EQ.NS": "ASHAPURA MINE CHEM INR2",
+        "ASHIMASYN-EQ.NS": "ASHIMA INR10", "ASIANELEC-BZ.NS": "ASIAN ELECTRONIC LTD", "ASIANHOTNR-EQ.NS": "ASIAN HOTELS(NORTH INR10",
+        "ASIL-BE.NS": "ASIL-BE.NS", "ASIL-EQ.NS": "AMIT SPINNING IND INR5.00", "ASTEC-EQ.NS": "ASTEC LIFESCIENCES LIMITED",
+        "ATFL-EQ.NS": "AGRO TECH FOODS LIMITED", "ATNINTER-BE.NS": "ATNINTER-BE.NS", "ATNINTER-EQ.NS": "ATN INTERNATIONAL INR4.00",
+        "ATULAUTO-EQ.NS": "ATUL AUTO LTD INR5", "AURIONPRO-EQ.NS": "AURIONPRO SOLUTIONS LIMITED", "AUSOMENT-BE.NS": "AUSOM ENTERPRISE INR10",
+        "AUTOLITIND-EQ.NS": "AUTOLITE (INDIA) LIMITED", "AVANTIFEED-EQ.NS": "AVANTI FEEDS INR2", "AVANTIFEED.NS": "AVANTI FEEDS INR2",
+        "AVTNPL-EQ.NS": "AVT NATURAL PRODUCTS LIMITED", "AXISBANK-IL.NS": "AXIS BANK INR2", "AXISCADES-EQ.NS": "AXISCADES ENGINEER INR10",
+        "AXISGOLD.NS": "Axis Gold ETF", "BAJAJ-AUTO-EQ.NS": "BAJAJ AUTO LTD INR10", "BAJAJFINS.NS": "BAJAJ FINSERV LIMITED",
+        "BALKRISIND-BE.NS": "BALKRISHNA INDUSTRIES LTD", "BALKRISIND-EQ.NS": "BALKRISHNA INDUSTRIES LIMITED", "BALRAMCHIN-EQ.NS": "BALRAMPUR CHINI MI INR1",
+        "BANARBEADS-EQ.NS": "BANARAS BEADS LTD INR10", "BANG-BE.NS": "BANG OVERSEAS LTD INR10", "BANKBARODA-IL.NS": "BK OF BARODA INR2",
+        "BANKBEES-EQ.NS": "BENCHMARK BANKBEES", "BANKBEES.NS": "Goldman Sachs Bank BeES ETF", "BARTRONICS-EQ.NS": "BARTRONICS INDIA L INR10",
+        "BASML-EQ.NS": "BANNARI AMMAN SPIN INR10", "BBL-EQ.NS": "BHARAT BIJLEE LIMITED", "BBTC-EQ.NS": "BOMBAY BURMAH TRADING CORPORATI",
+        "BDR-EQ.NS": "BDR BUILDCON LTD INR10", "BDR-IT.NS": "BDR Buildcon Limited", "BEARDSELL-BE.NS": "BEARDSELL LTD INR10",
+        "BEARDSELL-BL.NS": "BEARDSELL LTD INR10", "BEARDSELL-BT.NS": "BEARDSELL LTD INR10", "BEARDSELL-EQ.NS": "BEARDSELL LTD INR2",
+        "BEARDSELL-IL.NS": "BEARDSELL LTD INR10", "BEARDSELL-RL.NS": "BEARDSELL LTD INR10", "BEDMUTHA-EQ.NS": "BEDMUTHA INDUSTRIES LIMITED",
+        "BEML-EQ.NS": "BEML LIMITED", "BEPL-EQ.NS": "BHANSALI ENGINEERING POLYMERS L", "BERGEPAINT-EQ.NS": "BERGER PAINTS (I) LIMITED",
+        "BGLOBAL-BE.NS": "BHARATIYA GLOBAL I INR10", "BGLOBAL-EQ.NS": "BHARATIYA GLOBAL INFOMEDIA LIMI", "BGRENERGY-EQ.NS": "BGR ENERGY SYSTEMS LIMITED",
+        "BHAGERIA.NS": "BHAGERIA INDUSTRIE INR5", "BHAGYNAGAR-EQ.NS": "BHAGYANAGAR INDIA INR2", "BHARTISHIP-BZ.NS": "BHARATI SHIPYARD LTD.",
+        "BHARTISHIP.NS": "BHARATI SHIPYARD LTD.", "BHUSANSTL-EQ.NS": "BHUSHAN STEEL LIMITED", "BIL-EQ.NS": "BHARTIYA INTERNATIONAL LIMITED",
+        "BILENERGY-EQ.NS": "BIL ENERGY SYSTEMS INR1", "BILPOWER-BE.NS": "BILPOWER LTD INR10(DEMAT)", "BILPOWER-EQ.NS": "BILPOWER LIMITED",
+        "BINDALAGRO-BE.NS": "OSWAL CHEM & FERT-DEP SET", "BINDALAGRO-EQ.NS": "OSWAL GREENTECH LI INR10", "BIOCON-EQ.NS": "BIOCON LIMITED",
+        "BIOCON.NS": "Biocon Limited", "BIRLACOT-BE.NS": "BIRLA COTSYN (INDI INR1", "BIRLAERIC-BE.NS": "BIRLA ERICSON LTD.",
+        "BIRLAERIC.NS": "Birla Cable Limited", "BIRLAMONEY-EQ.NS": "ADITYA BIRLA MONEY INR1", "BIRLAPOWER-BZ.NS": "BIRLA POWER SOL. LTD",
+        "BLBLIMITED-EQ.NS": "BLB INR1", "BLUEBLENDS-BE.NS": "BLUE BLENDS (I) LTD", "BLUEBLENDS-EQ.NS": "BLUE BLENDS (INDIA INR10",
+        "BLUEBLENDS.NS": "BLUE BLENDS (INDIA INR10", "BLUECHIP-BE.NS": "BLUE CHIP INDIA LTD.", "BLUECOAST-BE.NS": "BLUE COAST HOTELS INR10",
+        "BLUECOAST-EQ.NS": "BLUE COAST HOTELS INR10", "BLUESTINFO-EQ.NS": "BLUE STAR INFOTECH LIMITED", "BLUESTINFO.NS": "Blue Star Infotech Ltd.",
+        "BNPCPGII-MF.NS": "BNP PARIBAS MF CAPITAL PRT ORIE", "BODALCHEM-EQ.NS": "BODAL CHEMICALS INR2.00", "BODHTREE-BE.NS": "BODHTREE-BE.NS",
+        "BOMDYEING-EQ.NS": "BOMBAY DYEING & MFG COMPANY LIM", "BOSCHLTD-EQ.NS": "BOSCH LIMITED", "BPL-EQ.NS": "BPL LIMITED",
+        "BRANDHOUSE-BZ.NS": "BRANDHOUSE RETAILS LTD", "BRANDHOUSE-EQ.NS": "BRANDHOUSE RETAILS INR10", "BRANDHOUSE.NS": "BRANDHOUSE RETAILS INR10",
+        "BRFL.NS": "Bombay Rayon Fashions Limited", "BROADCAST-EQ.NS": "BROADCAST INITIATI INR10", "BROADCAST.NS": "Broadcast Initiatives Limited",
+        "BSL-EQ.NS": "BSL LIMITED", "BSLCAP19RG-MF.NS": "BIRLA SUN LIFE ASS CAPITAL PRT", "BSLCAP21RG-MF.NS": "BIRLA SUN LIFE MUT CAPITAL PR O",
+        "BSLELFS5RG-MF.NS": "BIRLA SUN LIFE MUT EMERGING LEA", "BSLFEFS2RG-MF.NS": "BIRLA SUN LIFE MUT FOCUSED EQ 2", "BSLFTPLLRG-MF.NS": "BIRLA SUN LIFE ASS FIXED TERM P",
+        "BSLFTPLVDG-MF.NS": "BIRLA SUN LIFE MUT FTP LV 1099D", "BSLGOLDETF.NS": "Birla Sun Life Gold ETF", "BSLNIFTY-EQ.NS": "BIRLA SUN LIFE ASS NIFTY GROWTH",
+        "BSLNIFTY.NS": "Birla Sun Life Nifty ETF", "BSLRGES1RD-MF.NS": "BIRLA SUN LIFE ASS SERIES 1-REG", "BSLRGES1RG-MF.NS": "BIRLA SUN LIFE ASS SERIES 1-REG",
+        "BURNPUR-EQ.NS": "BURNPUR CEMENT LTD INR10", "BVCL-EQ.NS": "BARAK VALLEY CEMEN INR10", "BYKE-EQ.NS": "THE BYKE HOSPITALI INR10",
+        "BYKE.NS": "THE BYKE HOSPITALI INR10", "CAIRN-EQ.NS": "CAIRN INDIA LIMITED", "CALSOFT-BE.NS": "CALIFORNIA SOFTWARE CO LT",
+        "CAMLINFINE-EQ.NS": "CAMLIN FINE SCIENC INR1", "CAMLINFINE.NS": "CAMLIN FINE SCIENC INR1", "CANDC-EQ.NS": "C & C CONSTRUCTIONS LIMITED",
+        "CANFINHOME-EQ.NS": "CANFIN HOMES INR10", "CANTABIL-EQ.NS": "CANTABIL RETAIL INDIA LIMITED", "CAPLIPOINT-EQ.NS": "CAPLIN POINT LABOR INR2",
+        "CAPLIPOINT.NS": "CAPLIN POINT LABOR INR2", "CARBORUNIV-EQ.NS": "CARBORUNDUM UNIVERSAL LIMITED", "CARERATING-EQ.NS": "CREDIT ANALYSIS AND RESEARCH LI",
+        "CASTEXTECH-BE.NS": "CASTEX TECHNOLOGIES LTD.", "CASTEXTECH-EQ.NS": "CASTEX TECHNOLOGIE INR2", "CASTROLIND-EQ.NS": "CASTROL INDIA INR5",
+        "CCHHL-EQ.NS": "COUNTRY CLUB HOSPI INR2", "CEBBCO-EQ.NS": "COMMERCIAL ENGINEERS & BODY BUI", "CELEBRITY-EQ.NS": "CELEBRITY FASHIONS INR10",
+        "CELESTIAL-EQ.NS": "CELESTIAL BIOLABS LIMITED", "CENTEXT-EQ.NS": "CENTURY EXTRUSIONS LIMITED", "CENTRALBK-EQ.NS": "CENTRAL BANK OF INDIA",
+        "CENTUM-EQ.NS": "CENTUM ELECTRONICS INR10", "CERA-EQ.NS": "CERA SANITARYWARE LIMITED", "CEREBRAINT-EQ.NS": "CEREBRA INTEGRATED INR10",
+        "CGCL-EQ.NS": "CAPRI GLOBAL CAPIT INR2", "CHEMFALKAL-EQ.NS": "CHEMFAB ALKALIS LIMITED", "CHOLAFIN-EQ.NS": "CHOLAMANDALAM INVESTMENT AND FI",
+        "CHROMATIC-EQ.NS": "CHROMATIC INDIA LIMITED", "CIGNITITEC-EQ.NS": "CIGNITI TECHNOLOGI INR10", "CIGNITITEC.NS": "CIGNITI TECHNOLOGI INR10",
+        "CIMMCO.NS": "Cimmco Limited", "CIPLA-EQ.NS": "CIPLA LIMITED", "CLASSIC-BE.NS": "CLASSIC DIAMONDS (I) LTD",
+        "CLASSIC-BZ.NS": "CLASSIC DIAMONDS (I) LTD", "CLASSIC-EQ.NS": "CLASSIC DIAMONDS (INDIA) LIMITE", "CLASSIC.NS": "Classic Diamonds (India)",
+        "CLUTCHAUTO-BE.NS": "CLUTCH AUTO LTD", "CLUTCHAUTO-BZ.NS": "CLUTCH AUTO LTD", "CLUTCHAUTO-EQ.NS": "CLUTCH AUTO INR10",
+        "CLUTCHAUTO.NS": "Clutch Auto Ltd.", "CMAHENDRA-BZ.NS": "C.MAHENDRA EXPORTS LTD", "CMAHENDRA.NS": "C. Mahendra Exports Limited",
+        "CMC.NS": "CMC Limited", "CNOVAPETRO-BE.NS": "CIL NOVA PETROCHEM INR10", "CNOVAPETRO-EQ.NS": "CIL NOVA PETROCHEM INR10",
+        "COFFEEDAY-EQ.NS": "COFFEE DAY ENTERPR INR10", "COMPUSOFT-EQ.NS": "COMPUCOM SOFTWARE LIMITED", "CONSOFINVT-EQ.NS": "CONSOLIDATED FINVE INR10",
+        "CORDSCABLE-EQ.NS": "CORDS CABLE INDUST INR10", "COREEDUTEC-BZ.NS": "CORE EDUCATION & TECH LTD", "COREEDUTEC-EQ.NS": "CORE EDUCATION & TECHNOLOGIES L",
+        "COREEDUTEC.NS": "CORE Education and Technologies Limited", "COROMANDEL-EQ.NS": "COROMANDEL INTERNATIONAL LIMITE", "CPSEETF-EQ.NS": "RELIANCE NIPPON LI CPSE ETF*",
+        "CPSEETF.NS": "Goldman Sachs CPSE ETF", "CREATIVEYE-EQ.NS": "CREATIVE EYE LTD INR10", "CREST-EQ.NS": "CREST VENTURES INR10",
+        "CRESTANI-BZ.NS": "CREST COMM NPP251099DEPO", "CRMFGETF-EQ.NS": "CANARA ROBECO MF GOLD ETF", "CRMFGETF.NS": "Canara Robeco Gold ETF",
+        "CROMPGREAV.NS": "CG Power and Industrial Solutions Limited", "CTE-BE.NS": "CAMBRIDGE TECH ENT INR10", "CTE-EQ.NS": "CAMBRIDGE TECHNOLOGY ENTERPRISE",
+        "CUBEXTUB-BE.NS": "CUBEXTUBINGS-ROLLSETT", "CUBEXTUB-EQ.NS": "CUBEX TUBINGS INR10", "CUMMINSIND-EQ.NS": "CUMMINS INDIA INR2",
+        "CURATECH-EQ.NS": "CURA TECHNOLOGIES INR10", "CYBERMEDIA-EQ.NS": "CYBER MEDIA (INDIA INR10", "CYBERTECH-EQ.NS": "CYBERTECH SYSTEMS AND SOFTWARE",
+        "CYIENT-EQ.NS": "CYIENT LIMITED INR5", "DALMIASUG-EQ.NS": "DALMIA BHARAT SUGAR AND INDUSTR", "DATAMATICS-EQ.NS": "DATAMATICS GLOBAL INR5",
+        "DBCORP-IL.NS": "D B CORP LTD INR10", "DCBBANK-EQ.NS": "DCB BANK LIMITED INR10", "DCMSHRIRAM-EQ.NS": "DCM SHRIRARM LTD INR2",
+        "DECOLIGHT-BE.NS": "DECOLIGHT CERAMICS INR10", "DECOLIGHT.NS": "Decolight Ceramics Ltd.", "DEEPAKFERT-EQ.NS": "DEEPAK FERTILIZERS AND PETROCHE",
+        "DEEPAKNTR.NS": "DEEPAK NITRITE INR2", "DELTACORP-EQ.NS": "DELTA CORP LIMITED", "DELTAMAGNT-EQ.NS": "DELTA MAGNETS LTD INR10",
+        "DENABANK-EQ.NS": "DENA BANK", "DENORA-EQ.NS": "DE NORA INDIA INR10", "DHARSUGAR-EQ.NS": "DHARANI SUGARS & CHEMICALS LIMI",
+        "DICIND-EQ.NS": "DIC INDIA LIMITED", "DIGJAM.NS": "Digjam Limited", "DOLPHINOFF-EQ.NS": "DOLPHIN OFFSHORE ENTERPRISES (I",
+        "DONEAR-EQ.NS": "DONEAR INDUSTRIES INR2", "DPL-EQ.NS": "DHUNSERI PETROCHEM INR10(DEMAT", "DPSCLTD-EQ.NS": "DPSC LIMITED",
+        "DQE-EQ.NS": "DQ ENTERTAINMENT (INTERNATIONAL", "DRDATSONS-EQ.NS": "DR.DATSONS LABS LT INR10", "DRDATSONS.NS": "Dr.Datsons Labs Limited",
+        "DREDGECORP-EQ.NS": "DREDGING CORPORATION OF INDIA L", "DRREDDY-EQ.NS": "DR. REDDY'S LABORATORIES LIMITE", "DSKULKARNI-EQ.NS": "D.S. KULKARNI DEVE INR10",
+        "DSSL-EQ.NS": "DYNACONS SYS SOLUT INR10", "DTIL-BE.NS": "Dhunseri Tea & Ind. Ltd.", "DTIL-EQ.NS": "DHUNSERI TEA & IND INR10",
+        "DTIL.NS": "DHUNSERI TEA & IND INR10", "DUNCANSLTD-BE.NS": "DUNCANS INDUSTRIES INR10", "DUNCANSLTD-EQ.NS": "DUNCANS INDUSTRIES INR10",
+        "DUNCANSLTD.NS": "Duncans Industries Limited", "DWARKESH-BE.NS": "DWARIKESH SUGAR IN INR10", "DWARKESH-EQ.NS": "DWARIKESH SUGAR INDUSTRIES LIMI",
+        "DWSFMP66RG-MF.NS": "DEUTSCHE ASSET MGM DWS FMP SR 6", "DWSHYD13GP-MF.NS": "DEUTSCHE ASSET MGM DWS HYBRID F", "DWSMIDRD-MF.NS": "DEUTSCHE MUTUAL FU MID CAP 1 RE",
+        "DYNAMATECH-EQ.NS": "DYNAMATIC TECHNOLO INR10", "DYNATECH-BE.NS": "DYNACONS TECHNOLOG INR1", "DYNATECH-EQ.NS": "DUCON INFRATECHNOL INR1",
+        "DYNATECH.NS": "Ducon Infratechnolgies Limited", "EASTSILK-EQ.NS": "EASTERN SILK IND INR2", "EASUNREYRL-EQ.NS": "EASUN REYROLLE LTD INR2",
+        "EBANK.NS": "Edelweiss ETF - Nifty Bank", "ECEIND-EQ.NS": "ECE INDUSTRIES LIMITED", "ECLERX-EQ.NS": "ECLERX SERVICES LIMITED",
+        "EDELWEISS-EQ.NS": "EDELWEISS FINANCIAL SERVICES LI", "EIDPARRY-EQ.NS": "EID PARRY INDIA LIMITED", "EIMCOELECO-BE.NS": "EIMCO ELECON(I)LTD",
+        "EIMCOELECO-EQ.NS": "EIMCO ELECON INDIA INR10 (100%", "EKC-EQ.NS": "EVEREST KANTO CYLINDER LIMITED", "ELAND-EQ.NS": "E-LAND APPAREL LTD INR10",
+        "ELDERPHARM-BE.NS": "ELDER PHARM INR10(DEMAT)", "ELDERPHARM-BZ.NS": "ELDER PHARM INR10(DEMAT)", "ELDERPHARM-EQ.NS": "ELDER PHARMA LTD.",
+        "ELDERPHARM.NS": "Elder Pharmaceuticals Limited", "ELECON-EQ.NS": "ELECON ENGINEERING INR2 (POST S", "ELECTHERM-EQ.NS": "ELECTROTHERM (INDI INR10",
+        "ELFORGE-BE.NS": "ELFORGE-BE.NS", "ELGIRUBCO-EQ.NS": "ELGI RUBBER COMPANY LIMITED", "ELITE-IT.NS": "Elite Conductors Limited",
+        "EMAMIINFRA-EQ.NS": "EMAMI INFRASTRUCTU INR2", "EMCO-EQ.NS": "EMCO LIMITED", "EMKAY-EQ.NS": "EMKAY GLOBAL FIN INR10",
+        "EMKAYTOOLS-SM.NS": "EMKAY TAPS AND CUT INR10", "ENERGYDEV-BE.NS": "ENERGY DEV CO LTD INR10(DEMAT)", "ENGINERSIN-EQ.NS": "ENGINEERS INDIA LIMITED",
+        "ENTEGRA-BE.NS": "ENTEGRA INFRASTRUC INR10", "ENTEGRA-EQ.NS": "ENTEGRA INFRASTRUC INR10", "ENTEGRA.NS": "Entegra Limited",
+        "EON-EQ.NS": "EON ELECTRIC LTD INR5", "ERAINFRA-BE.NS": "ERAINFRA-BE.NS", "ERAINFRA-BZ.NS": "ERA INFRA ENGINEER INR2(DEMAT)",
+        "ERAINFRA.NS": "Era Infra Engineering Limited", "ESL-EQ.NS": "ELECTROSTEEL STEELS LIMITED", "ESSAROIL.NS": "Essar Oil Ltd.",
+        "ESSARPORT.NS": "ESSAR PORTS LIMITED", "ESSARSHPNG-EQ.NS": "ESSAR SHIPPING POR INR10", "ESSELPACK.NS": "Essel Propack Limited",
+        "ESTER-EQ.NS": "ESTER INDUSTRIES LIMITED", "EUROCERA-BE.NS": "EUROCERA-BE.NS", "EUROMULTI-BE.NS": "EURO MULTIVISION L INR10",
+        "EUROMULTI-EQ.NS": "EURO MULTIVISION L INR10", "EUROTEXIND-EQ.NS": "EUROTEX INDUSTRIES INR10", "EVERONN-EQ.NS": "EVERONN EDUCATION LIMITED",
+        "EVERONN.NS": "Everonn Education Limited", "EXCEL-EQ.NS": "EXCEL REALTY N INF INR10", "EXCELINFO.NS": "Excel Realty N Infra Limited",
+        "EXIDEIND-EQ.NS": "EXIDE INDUSTRIES LIMITED", "FACT-EQ.NS": "FERTILIZERS AND CHEMICALS TRAVA", "FAGBEARING-EQ.NS": "FAG BEARINGS INDIA LIMITED",
+        "FAGBEARING.NS": "Schaeffler India Limited", "FARMAXIND-BE.NS": "FARMAX INDIA LTD INR1", "FCEL-EQ.NS": "FUTURE CONSUMER EN INR6",
+        "FCEL.NS": "Future Consumer Limited", "FCL-EQ.NS": "FINEOTEX CHEMICAL INR2", "FCL.NS": "Fineotex Chemical Limited",
+        "FCSSOFT-EQ.NS": "FCS SOFTWARE SOLUT INR1", "FDC-EQ.NS": "FDC LIMITED", "FEDDERLOYD.NS": "Fedders Electric and Engineering Limited",
+        "FEDERALBNK-EQ.NS": "THE FEDERAL BANK LIMITED", "FIEMIND-EQ.NS": "FIEM INDUSTRIES LIMITED", "FINANTECH-EQ.NS": "FINANCIAL TECHNOLOGIES (INDIA)",
+        "FINCABLES-EQ.NS": "FINOLEX CABLES LIMITED", "FINPIPE.NS": "Finolex Industries Limited", "FIRSTLEASE-BZ.NS": "FIRST LEASING CO OF INDIA",
+        "FLFL-EQ.NS": "FUTURE LIFESTYLE F INR2", "FMNL-EQ.NS": "FUTURE MKT NETWORK INR10", "FORTIS-EQ.NS": "FORTIS HEALTHCARE LIMITED",
+        "FOURTHDIM-SM.NS": "FOURTH DIMENSION S INR10", "FRL-EQ.NS": "FUTURE ENTERPRISES INR2", "FRL.NS": "Future Enterprises Limited",
+        "FRLDVR-EQ.NS": "FUTURE ENTERPRISES INR2 'B' (BO", "FRLDVR.NS": "FUTURE ENTERPRISES INR2 'B' (BO", "GAEL-EQ.NS": "GUJARAT AMBUJA EXPORTS LIMITED",
+        "GAIL-EQ.NS": "GAIL (INDIA) LIMITED", "GAL-EQ.NS": "GYSCOAL ALLOYS LIMITED", "GALLANTT-EQ.NS": "GALLANTT METAL LIMITED",
+        "GALLISPAT-EQ.NS": "GALLANTT ISPAT LIMITED", "GAMMNINFRA-EQ.NS": "GAMMON INFRASTRUCT INR2", "GANECOS-EQ.NS": "GANESHA ECOSPHERE INR10",
+        "GANESHHOUC-EQ.NS": "GANESH HOUSING CP INR10(DEMAT)", "GANGOTRI-BE.NS": "GANGOTRI TEXTILE INR5(POST SUBD", "GANGOTRI-EQ.NS": "GANGOTRI TEXTILE INR5(POST SUBD",
+        "GARDENSIL.NS": "Garden Silks Mills Ltd.", "GARWALLROP-EQ.NS": "GARWARE WALL ROPES INR10", "GEECEE-EQ.NS": "GEECEE VENTURES LIMITED",
+        "GEMINI-EQ.NS": "GEMINI COMM LTD INR1", "GENUSPAPER-BE.NS": "Genus P&B Limited", "GENUSPAPER-EQ.NS": "GENUS PAPER AND BO INR10",
+        "GENUSPOWER-EQ.NS": "GENUS POWER INFRA INR1", "GEOJITBNPP-EQ.NS": "GEOJIT BNP PARIBAS INR1", "GEOJITBNPP.NS": "Geojit Financial Services Limited",
+        "GEOMETRIC-EQ.NS": "GEOMETRIC LIMITED", "GEOMETRIC.NS": "Geometric Limited", "GHCL-EQ.NS": "GHCL LIMITED",
+        "GICHSGFIN-EQ.NS": "GIC HOUSING FINANCE LIMITED", "GILLANDERS-EQ.NS": "GILLANDERS ARBUTHN INR10", "GILLETTE-EQ.NS": "GILLETTE INDIA LIMITED",
+        "GINNIFILA-EQ.NS": "GINNI FILAMENTS LIMITED", "GIRRESORTS-EQ.NS": "GIR NATUREVIEW RES INR10", "GIRRESORTS-IT.NS": "GIR Natureview Resort Ltd",
+        "GISOLUTION-BE.NS": "GI ENGINEERING SOLUTIONS LTD IN", "GISOLUTION-EQ.NS": "GI ENGINEERING SOL INR10", "GITANJALI-EQ.NS": "GITANJALI GEMS LIMITED",
+        "GKWLIMITED-EQ.NS": "GKW LIMITED INR10", "GLENMARK-EQ.NS": "GLENMARK PHARMACEUTICALS LIMITE", "GLFL-EQ.NS": "GUJARAT LEASE INR10",
+        "GLOBALVECT-BE.NS": "GLOBAL VECTRA HELI INR10", "GLOBALVECT-EQ.NS": "GLOBAL VECTRA HELI INR10", "GLODYNE-BE.NS": "GLODYNE-BE.NS",
+        "GLODYNE-BZ.NS": "GLODYNE TECHNOSERVE LTD.", "GLODYNE.NS": "Glodyne Technoserve Limited", "GMRINFRA-EQ.NS": "GMR INFRASTRUCTURE LIMITED",
+        "GOACARBON-EQ.NS": "GOA CARBON LIMITED", "GOCLCORP-EQ.NS": "GOCL CORPORATION L INR2", "GOCLCORP.NS": "GOCL CORPORATION L INR2",
+        "GODREJCP-EQ.NS": "GODREJ CONSUMER PRODUCTS LIMITE", "GODREJCP.NS": "Godrej Consumer Products Limited", "GODREJIND.NS": "Godrej Industries Limited",
+        "GOENKA-BZ.NS": "GOENKA DIAMOND&JEWELS LTD", "GOKUL-BE.NS": "GOKUL REFOILS & SO INR2", "GOKUL-EQ.NS": "GOKUL REFOILS AND SOLVENT LIMIT",
+        "GOLDBEES-EQ.NS": "GOLDMAN SACHS GOLD GOLD EXCH TR", "GOLDBEES.NS": "Goldman Sachs Gold BeES ETF", "GOLDENTOBC-EQ.NS": "GOLDEN TOBACCO LTD INR10 (DEMAT",
+        "GOLDIAM-EQ.NS": "GOLDIAM INTERNATIONAL LIMITED", "GOLDINFRA-EQ.NS": "GOLDSTONE INFRATECH LIMITED", "GOLDSHARE.NS": "UTI Gold ETF",
+        "GOLDTECH-EQ.NS": "GOLDSTONE TECHNOLOGIES LT", "GOODLUCK-EQ.NS": "GOODLUCK INDIA LTD INR2", "GPIL-EQ.NS": "GODAWARI POWER AND ISPAT LIMITE",
+        "GRASIM-EQ.NS": "GRASIM INDUSTRIES LIMITED", "GRASIM-IL.NS": "GRASIM INDUSTRIES INR2", "GRAVITA-EQ.NS": "GRAVITA INDIA LIMITED",
+        "GREAVESCOT-EQ.NS": "GREAVES COTTON LIMITED", "GREENFIRE-EQ.NS": "GREEN FIRE AGRI CO INR1", "GREENLAM-BE.NS": "Greenlam Industries Ltd.",
+        "GREENLAM-EQ.NS": "GREENLAM INDUSTRIE INR5", "GREENLAM.NS": "GREENLAM INDUSTRIE INR5", "GREENPOWER-EQ.NS": "ORIENT GREEN POWER INR10",
+        "GRPLTD-EQ.NS": "GRP LTD INR10 (DEMAT)", "GSCLCEMENT-EQ.NS": "GUJARAT SIDHEE CEM INR10 (NEW)", "GSFC-IL.NS": "GUJARAT STATE FER INR2(POST SUB",
+        "GSS-BE.NS": "GSS INFOTECH LTD INR10", "GTL-EQ.NS": "GTL LIMITED", "GTNIND.NS": "GTN Industries Limited",
+        "GTNTEX-EQ.NS": "GTN TEXTILES INR10", "GUJGASLTD-BE.NS": "Gujarat Gas Limited", "GUJGASLTD-EQ.NS": "GUJARAT GAS LIMITE INR10 NEW",
+        "GUJGASLTD.NS": "GUJARAT GAS LIMITE INR10 NEW", "GUJNREDVR-EQ.NS": "GUJARAT NRE COKE LIMITED", "GUJNREDVR.NS": "Gujarat NRE Coke Ltd.",
+        "GUJSTATFIN-BT.NS": "GUJARAT STATE FINANCIAL CORPORA", "GULFCORP-EQ.NS": "GULFCORP-EQ.NS", "GULFOILLUB-EQ.NS": "GULF OIL LUBRICANT INR2",
+        "GULFPETRO-EQ.NS": "GP PETROLEUMS LTD INR5", "GVKPIL-EQ.NS": "GVK POWER & INFRASTRUCTURE LIMI", "H37027ARG4-MF.NS": "HDFC ASSET MANAGEM FMP 370D AUG",
+        "H37131JDG2-MF.NS": "HDFC ASSET MANAGEM FMP 371D JUN", "HARITASEAT-EQ.NS": "HARITA SEATING SYSTEMS LIMITED", "HATHWAY-IL.NS": "HATHWAY CABLE & DA INR2",
+        "HATSUN-EQ.NS": "HATSUN AGRO PRODUC INR1", "HAVELLS-EQ.NS": "HAVELLS INDIA LIMITED", "HBSTOCK-EQ.NS": "HB STOCKHOLDINGS INR10",
+        "HCIL-EQ.NS": "HIMADRI CHEMICALS AND INDUSTRIE", "HCIL.NS": "Himadri Speciality Chemical Limited", "HCL-INSYS-EQ.NS": "HCL INFOSYSTEMS INR2",
+        "HCPO36MORG-MF.NS": "HDFC MUTUAL FUND SR I-36M OCT 2", "HCPO36MSRG-MF.NS": "HDFC MUTUAL FUND CAP PRO 36M RE", "HDFC-EQ.NS": "HOUSING DEVELOPMENT FINANCE COR",
+        "HDFCBANK-IL.NS": "HDFC BANK INR2", "HDFCMFGETF.NS": "HDFC Gold ETF", "HDFCNIFETF-EQ.NS": "HDFC MUTUAL FUND NIFTY ETF",
+        "HDFCNIFETF.NS": "HDFC Nifty ETF", "HDFCSENETF-EQ.NS": "HDFC MUTUAL FUND SENSEX ETF", "HDFCSENETF.NS": "HDFC Sensex ETF",
+        "HDIL-EQ.NS": "HOUSING DEVELOPMENT AND INFRAST", "HECINFRA-IT.NS": "HEC Infra Projects Ltd", "HECPROJECT-SM.NS": "HEC INFRA PROJECTS INR10",
+        "HEIDELBERG-EQ.NS": "HEIDELBERGCEMENT INDIA LIMITED", "HELIOSMATH-BE.NS": "HELIOS & MATHINFTECH LTD.", "HELIOSMATH-BZ.NS": "HELIOS & MATHINFTECH LTD.",
+        "HELIOSMATH-EQ.NS": "HELIOS AND MATHESON INFORMATION", "HELIOSMATH.NS": "helios and matheson information technology limited", "HERCULES-EQ.NS": "HERCULES HOISTS LIMITED",
+        "HERITGFOOD-EQ.NS": "HERITAGE FOODS LTD INR10", "HESTERBIO-EQ.NS": "HESTER BIOSCIENCES INR10", "HEXATRADEX-EQ.NS": "HEXA TRADEX LTD INR2",
+        "HEXAWARE-EQ.NS": "HEXAWARE TECHNOLOGIES LIMITED", "HGS-EQ.NS": "HINDUJA GLOBAL SOLUTIONS LIMITE", "HIKAL-EQ.NS": "HIKAL LIMITED",
+        "HINDCOPPER-EQ.NS": "HINDUSTAN COPPER LIMITED", "HINDMOTORS-EQ.NS": "HINDUSTAN MOTORS INR5", "HINDPETRO-EQ.NS": "HINDUSTAN PETROLEUM CORPORATION",
+        "HINDPETRO.NS": "Hindustan Petroleum Corporation Limited", "HINDSYNTEX-EQ.NS": "HIND SYNTEX INR10", "HINDUNILVR-EQ.NS": "HINDUSTAN UNILEVER INR1",
+        "HINDZINC-EQ.NS": "HINDUSTAN ZINC LIMITED", "HITACHIHOM-EQ.NS": "HITACHI HOME AND LIFE SOLUTIONS", "HITACHIHOM.NS": "Johnson Controls - Hitachi Air Conditioning India Limited",
+        "HITECH-SM.NS": "HI TECH PIPES LTD INR10", "HITECHPLAS.NS": "Hitech Corporation Limited", "HMVL-EQ.NS": "HINDUSTAN MEDIA VENTURES LIMITE",
+        "HNGSNGBEES-EQ.NS": "RELIANCE NIPPON LI RELIANCE ETF", "HNGSNGBEES.NS": "Goldman Sachs Hang Seng BeES ETF", "HOCL-EQ.NS": "HINDUSTAN ORGANIC CHEMICALS LIM",
+        "HOTELRUGBY-EQ.NS": "HOTEL RUGBY LTD INR10", "HRGESSRD1-MF.NS": "HDFC ASSET MANAGEM SR 1-FEB 201", "HRGESSRG1-MF.NS": "HDFC ASSET MANAGEM SR 1-FEB 201",
+        "HRGESSRG2-MF.NS": "HDFC MUTUAL FUND HDFC-RAJ GANDH", "HSIL-EQ.NS": "HSIL LIMITED", "HUSYS.NS": "Husys Consulting Limited",
+        "IBULHSGFIN-EQ.NS": "INDIABULLS HOUSING INR2", "IBVENTURES-EQ.NS": "INDIABULLS VENTURE INR2", "IBWSL-EQ.NS": "INDIABULLS WHOLESALE SERVICES L",
+        "IBWSL.NS": "SORIL Holdings and Ventures Limited", "ICICIBANK-EQ.NS": "ICICI BANK LIMITED", "ICNX100-EQ.NS": "ICICI PRUDENTIAL A ICICI PRUDEN",
+        "ICNX100.NS": "ICICI Prudential Nifty100 ETF", "ICSA-EQ.NS": "ICSA (INDIA) LIMITED", "IDBI-EQ.NS": "IDBI BANK LIMITED",
+        "IDBIGOLD-EQ.NS": "IDBI MUTUAL FUND IDBI GOLD ETF", "IDBIGOLD.NS": "IDBI Gold ETF", "IDEA-EQ.NS": "IDEA CELLULAR LIMITED",
+        "IDFC-IL.NS": "IDFC LIMITED INR10", "IDFCBANK-BE.NS": "IDFC Bank Limited", "IDFCBANK-EQ.NS": "IDFC BANK LTD INR10",
+        "IDR1ADP-MF.NS": "IDBI ASSET MGMT SR I PLAN A-DIV", "IDR1AGD-MF.NS": "IDBI ASSET MGMT SR I PLAN A-GRO", "IFCI-EQ.NS": "IFCI LIMITED",
+        "IGOLD-EQ.NS": "ICICI PRUDENTIAL A GOLD EXCHANG", "IGOLD.NS": "ICICI Prudential GOLD ETF", "IGPL-EQ.NS": "IG PETROCHEMICALS LIMITED",
+        "IIFL-EQ.NS": "IIFL HOLDINGS LTD INR2", "IITL-EQ.NS": "INDUSTRIAL INVESTMENT TRUST LIM", "IL&FSTRAN.NS": "IL&FS Transportation Networks Limited",
+        "IMFA-EQ.NS": "INDIAN METALS & FERRO ALLOYS LI", "INDBANK-EQ.NS": "INDBANK MERCHANT BANKING SERVIC", "INDIGO-EQ.NS": "INTERGLOBE AVIATIO INR10",
+        "INDORAMA-EQ.NS": "INDO RAMA SYNTHETICS (INDIA) LI", "INDOTECH-EQ.NS": "INDO TECH TRANSFORMERS LIMITED", "INDOTHAI-EQ.NS": "INDO THAI SECURITIES LIMITED",
+        "INDOWIND-BE.NS": "INDOWIND ENERGY INR10", "INDRAMEDCO-EQ.NS": "INDRAPRASTHA MEDICAL CORPORATIO", "INDSWFTLAB-EQ.NS": "IND-SWIFT LABORATORIES LIMITED",
+        "INDSWFTLTD-BE.NS": "IND-SWIFT LIMITED", "INDSWFTLTD-EQ.NS": "IND SWIFT LTD INR2", "INDTERRAIN-EQ.NS": "INDIAN TERRAIN FAS INR2",
+        "INDUSFILA-BE.NS": "INDUS FILA LIMITED", "INDUSFILA-BZ.NS": "INDUS FILA LIMITED", "INDUSFILA.NS": "Indus Fila Limited",
+        "INDUSINDBK-EQ.NS": "INDUSIND BANK INR10", "INDUSINDBK-IL.NS": "INDUSIND BANK INR10", "INFOBEANS-IT.NS": "InfoBeans Tech Ltd",
+        "INFOMEDIA-EQ.NS": "INFOMEDIA PRESS LI INR10", "INFRABEES.NS": "RELIANCE NIPPON LI RELIANCE ETF", "INFRATEL-EQ.NS": "BHARTI INFRATEL LIMITED",
+        "INIFTY-EQ.NS": "ICICI PRUDENTIAL A NIFTY", "INIFTY.NS": "ICICI Prudential Nifty ETF", "INNOIND-BZ.NS": "INNOVENTIVE IND LTD",
+        "INNOIND.NS": "Innoventive Industries Limited", "INOXLEISUR-EQ.NS": "INOX LEISURE LIMITED", "INOXWIND-EQ.NS": "INOX INDIA LIMITED INR10",
+        "INSECTICI.NS": "Insecticides (India) Limited", "INSECTICID-EQ.NS": "INSECTICIDES (INDIA) LIMITED", "INTEGRA-BE.NS": "INTEGRA GARMENTS A INR3",
+        "INTEGRA-EQ.NS": "INTEGRA GARMENTS A INR3", "INTELLECT-EQ.NS": "INTELLECT DESIGN A INR5", "INVENTURE-EQ.NS": "INVENTURE GROWTH & SECURITIES L",
+        "IOLCP-EQ.NS": "IOL CHEMICALS AND PHARMACEUTICA", "IPAPPM-EQ.NS": "INTERNATIONAL PAPE INR10", "IPCALAB-EQ.NS": "IPCA LABORATORIES LIMITED",
+        "IPCALAB-IL.NS": "IPCA LABORATORIES INR2", "IPGETF.NS": "ICICI Prudential GOLD ETF", "IPRU-8484-MF.NS": "ICICIPRAMC - IPRU-8484",
+        "IPRU2262-MF.NS": "ICICI PRUDENTIAL A EQUITY SAVIN", "IPRU2317-MF.NS": "ICICI PRUDENTIAL A 73 830D J RE", "IPRU2580-MF.NS": "ICICI PRUDENTIAL A CAP PRO ORIE",
+        "ISENSEX-EQ.NS": "ICICI PRUDENTIAL A ICICI PRUDEN", "ISENSEX.NS": "ICICI PRUDENTIAL A ICICI PRUDEN", "ISFT-BE.NS": "ISFT-BE.NS",
+        "ISMTLTD-EQ.NS": "ISMT LTD INR5", "ITC-EQ.NS": "ITC LIMITED", "IVC-EQ.NS": "IL&FS INVESTMENT MANAGERS LIMIT",
+        "IVRCLINFRA-EQ.NS": "IVRCL LIMITED", "IZMO-EQ.NS": "IZMO LIMITED INR10", "J&KBANK-EQ.NS": "THE JAMMU & KASHMIR BANK LIMITE",
+        "JAGSNPHARM-EQ.NS": "JAGSONPAL PHARMACE INR5", "JAIBALAJI-EQ.NS": "JAI BALAJI INDUSTRIES LIMITED", "JAICORPLTD-EQ.NS": "JAI CORP LIMITED",
+        "JAIHINDPRO-EQ.NS": "JAIHIND PROJECTS LIMITED", "JAINSTUDIO-BE.NS": "JAIN STUDIOS LTD", "JAINSTUDIO-EQ.NS": "JAIN STUDIOS INR10",
+        "JAMNAAUTO-EQ.NS": "JAMNA AUTO INDUSTRIES LIMITED", "JAYAGROGN-EQ.NS": "JAYANT AGRO ORGANICS LIMITED", "JAYNECOIND-EQ.NS": "JAYASWAL NECO IND INR10",
+        "JAYSREETEA-EQ.NS": "JAYSHREE TEA INR5", "JAYSREETEA.NS": "JAYSHREE TEA INR5", "JBCHEPHARM-EQ.NS": "JB CHEMICALS & PHARMACEUTICALS",
+        "JBMA-EQ.NS": "JBM AUTO LTD INR5", "JCTEL-EQ.NS": "JCT ELECTRONICS INR1.00", "JCTEL.NS": "JCT Electronics Limited",
+        "JENSONICOL-EQ.NS": "JENSON & NICHOLSON INR2", "JEYPORE.NS": "Jeypore Sugar Company Ltd.", "JHS-BZ.NS": "JHS SVEND. LAB. LTD",
+        "JHS-EQ.NS": "JHS SVEND. LAB. LTD", "JIKIND-BE.NS": "JIK INDUSTRIES INR10", "JINDALPOLY-EQ.NS": "JINDAL POLY FILMS LIMITED",
+        "JINDALSAW-EQ.NS": "JINDAL SAW LTD INR2(DEMAT)", "JINDALSTEL-EQ.NS": "JINDAL STEEL & PWR INR1.00", "JINDCOT-EQ.NS": "JINDAL COTEX LIMITED",
+        "JISLJALEQS-EQ.NS": "JAIN IRRIGATION INR2", "JKCEMENT-EQ.NS": "JK CEMENT LIMITED", "JKPAPER-EQ.NS": "JK PAPER LIMITED",
+        "JKTYRE.NS": "JK Tyre & Industries Limited", "JMA-EQ.NS": "JULLUNDUR MOTOR AG INR10", "JMFINANCIL-EQ.NS": "JM FINANCIAL INR1",
+        "JMTAUTOLTD-EQ.NS": "JMT AUTO LIMITED", "JPOLYINVST-EQ.NS": "JINDAL POLY INV & INR10", "JSL-BE.NS": "JINDAL STAINLESS INR2",
+        "JSWHL-EQ.NS": "JSW HOLDINGS LIMIT INR10", "JSWSTEEL-P1.NS": "JSW STEEL LTD INR10 10% CUM RED", "JSWSTEEL-P2.NS": "JSW STEEL LTD 0.01% PRF 15/03/1",
+        "JSWSTEEL.NS": "JSW Steel Limited", "JUMBO-BZ.NS": "JUMBO-BZ.NS", "JUNIORBEES-EQ.NS": "NIFTY JR BENCHMARK ETF",
+        "JUNIORBEES.NS": "Goldman Sachs Junior BeES ETF", "JUSTDIAL-EQ.NS": "JUST DIAL LTD INR10", "JUSTDIAL.NS": "Just Dial Limited",
+        "JYOTISTRUC-EQ.NS": "JYOTI STRUCTURES INR2", "KABRAEXTRU-EQ.NS": "KABRA EXTRUSIONTEC INR5.00", "KALINDEE-EQ.NS": "KALINDEE RAIL NIRMAN (ENGINEERS",
+        "KALINDEE.NS": "Kalindee Rail Nirman (Engineers) Limited", "KALYANIFRG-BE.NS": "KALYANI FORGE INR10", "KALYANIFRG-EQ.NS": "KALYANI FORGE INR10",
+        "KAMATHOTEL-EQ.NS": "KAMAT HOTELS (I) LIMITED", "KANANIIND-EQ.NS": "KANANI INDUSTRIES LIMITED", "KANSAINER-EQ.NS": "KANSAI NEROLAC PAINTS LIMITED",
+        "KAUSHALYA-EQ.NS": "KAUSHALYA INFRASTRUCTURE DEVELO", "KAVVERITEL-EQ.NS": "KAVVERI TELECOM PR INR10", "KAYA-BE.NS": "Kaya Limited",
+        "KAYA-EQ.NS": "KAYA LIMITED INR10", "KBIL.NS": "Kirloskar Brothers Investments Ltd.", "KEC-EQ.NS": "KEC INTERNATIONAL INR2",
+        "KECL-EQ.NS": "KIRLOSKAR ELECTRIC COMPANY LIMI", "KEMROCK-EQ.NS": "KEMROCK INDUSTRIES INR10", "KERNEX-BE.NS": "KERNEX MICROSYSTEM INR10",
+        "KESARENT-EQ.NS": "KESAR ENTERPRISES LIMITED", "KESARENT.NS": "Kesar Enterprises Limited", "KESORAMIND-BE.NS": "KESORAM INDUSTRIES INR10",
+        "KESORAMIND-BZ.NS": "KESORAM INDUSTRIES LTD", "KESORAMIND-EQ.NS": "KESORAM INDUSTRIES LIMITED", "KEYCORPSER-BE.NS": "KEYNOTECORPORATE",
+        "KEYCORPSER-EQ.NS": "KEYNOTE CORPORATE SERVICES LIMI", "KFA-BZ.NS": "KINGFISHER AIRLINES LTD", "KHAITANELE-EQ.NS": "KHAITAN ELECTRICAL INR10",
+        "KHAITANLTD-BE.NS": "KHAITAN (INDIA) LTD. INR10", "KHAITANLTD-EQ.NS": "KHAITAN (INDIA)LTD INR10", "KHANDSE-EQ.NS": "KHANDWALA SEC LTD INR10",
+        "KICL-EQ.NS": "KALYANI INVESTMENT COMPANY LIMI", "KIL.NS": "Kamdhenu Limited", "KILITCH-EQ.NS": "KILITCH DRUGS (INDIA) LIMITED",
+        "KIRLOSBROS-EQ.NS": "KIRLOSKAR BROTHERS INR2", "KIRLOSENG-EQ.NS": "KIRLOSKAR OIL ENGINES LIMITED", "KIRLOSIND-EQ.NS": "KIRLOSKAR INDUSTRIES LIMITED",
+        "KITEX-EQ.NS": "KITEX GARMENTS LIMITED", "KITPLYIND-BZ.NS": "KITPLY INDUSTRIES LTD", "KMSUGAR-BE.NS": "KM SUGAR MILLS LTD INR2",
+        "KMSUGAR-EQ.NS": "KM SUGAR MILLS LTD INR2", "KOHINOOR-EQ.NS": "KOHINOOR FOODS LIMITED", "KOLTEPATIL-EQ.NS": "KOLTE - PATIL DEVELOPERS LIMITE",
+        "KOPDRUGS-BZ.NS": "KDL BIOTECH LIMITED", "KOTAKBANK-IL.NS": "KOTAK MAHINDRA BAN INR5", "KOTAKBKETF-EQ.NS": "KOTAK MAHINDRA MF BANKING DIV P",
+        "KOTAKBKETF.NS": "Kotak Banking ETF", "KOTAKGOLD.NS": "Kotak Gold ETF", "KOTAKNIFTY-EQ.NS": "KOTAK MAHINDRA ASS KOTAK NIFTY",
+        "KOTAKNIFTY.NS": "Kotak Nifty ETF", "KOTAKNV20-EQ.NS": "KOTAK MAHINDRA ASS KOTAK NV 20", "KOTAKNV20.NS": "Kotak NV 20 ETF",
+        "KOTAKPSUBK.NS": "Kotak PSU Bank ETF", "KOTHARIPET-EQ.NS": "KOTHARI PETROCHEM INR10", "KOVAI.NS": "Kovai Medical Center & Hospital Ltd.",
+        "KPRMILL-EQ.NS": "K.P.R. MILL LIMITED", "KRIDHANINF-EQ.NS": "KRIDHAN INFRA LIMI INR2", "KRIDHANINF.NS": "KRIDHAN INFRA LIMI INR2",
+        "KRISHNAENG-BE.NS": "KRISHNAENGGWORKS", "KRISHNAENG-BZ.NS": "KRISHNAENGGWORKS", "KRISHNAENG-EQ.NS": "KRISHNA ENGINEERING WORKS LTD.",
+        "KRISHNAENG.NS": "KRISHNA ENGINEERING WORKS LTD.", "KSCL-EQ.NS": "KAVERI SEED COMPANY LIMITED", "KSCL-IL.NS": "KAVERI SEED COMPAN INR2",
+        "KSE-BE.NS": "KSE-BE.NS", "KSERASERA-BE.NS": "KSS LTD INR1", "KSK-EQ.NS": "KSK ENERGY VENTURES LIMITED",
+        "KSL-EQ.NS": "KALYANI STEELS LIMITED", "KSOILS.NS": "KS Oils Ltd.", "KTIL-EQ.NS": "KESAR TERMINALS & INFRASTRUCTUR",
+        "KTKNV20ETF-EQ.NS": "KOTAKMAMC - KTKNV20ETF", "KWALITY-EQ.NS": "KWALITY LIMITED", "L&TFH-EQ.NS": "L&T FINANCE HOLDINGS LIMITED",
+        "LAKSHMIEFL-EQ.NS": "LAKSHMI ENERGY & F INR2", "LAKSHMIEFL.NS": "LAKSHMI ENERGY & F INR2", "LAKSHMIFIN-BE.NS": "LAKSHMIFIN-BE.NS",
+        "LALPATHLAB-EQ.NS": "DR LAL PATHLABS LT INR10", "LAMBODHARA-EQ.NS": "LAMBODHARA TEXTILE INR5", "LAXMIMACH-EQ.NS": "LAKSHMI MACHINE WORKS LIMITED",
+        "LCCINFOTEC-BE.NS": "LCC INFOTECH INR2", "LCCINFOTEC-EQ.NS": "LCC INFOTECH INR2", "LFIC-BE.NS": "Lakshmi Fin Ind Corp Ltd",
+        "LFIC-EQ.NS": "LAKSHMI FINANCE & INR10", "LGBFORGE-EQ.NS": "LGB FORGE LIMITED", "LICHSGFIN-EQ.NS": "LIC HOUSING FINANCE LIMITED",
+        "LICNETFGSC-EQ.NS": "LIC MUTUAL FUND G-SEC LONG TERM", "LICNETFGSC.NS": "LIC MUTUAL FUND G-SEC LONG TERM", "LICNETFN50.NS": "LIC MUTUAL FUND ETF- NIFTY 50-",
+        "LICNFENGP-EQ.NS": "LICNAMC - LICNFENGP", "LICNFENGP.NS": "LIC MF ETF Nifty 50", "LICNMFET-EQ.NS": "LICNAMC - LICNMFET",
+        "LINCOLN-EQ.NS": "LINCOLN PHARMA LTD INR10", "LINCOLN.NS": "LINCOLN PHARMA LTD INR10", "LINCPEN-EQ.NS": "LINC PEN & PLASTIC INR10",
+        "LINCPEN.NS": "LINC PEN & PLASTIC INR10", "LINDEINDIA-EQ.NS": "LINDE INDIA LTD INR10", "LIQUIDBEES.NS": "Goldman Sachs Liquid BeES ETF",
+        "LLOYDELENG.NS": "LEEL Electricals Limited", "LLOYDFIN.NS": "LLOYDS FINANCE INR10", "LOTUSEYE-EQ.NS": "LOTUS EYE CARE HOSPITAL LIMITED",
+        "LOTUSEYE.NS": "Lotus Eye Hospital and Institute Limited", "LOVABLE-EQ.NS": "LOVABLE LINGERIE LIMITED", "LPDC-EQ.NS": "LANDMARK PROP DEV INR1",
+        "LT-EQ.NS": "LARSEN & TOUBRO LIMITED", "LTMFXTG-MF.NS": "L&T MUTUAL FUND FMP GRWT OPT 03", "LUMAXIND-EQ.NS": "LUMAX INDUSTRIES LIMITED",
+        "LUMAXTECH-EQ.NS": "LUMAX AUTO TECHNOLOGIES LIMITED", "LUPIN-IL.NS": "LUPIN LTD INR2", "LUXIND-EQ.NS": "LUX INDUSTRIES LTD INR2",
+        "LYCOS-EQ.NS": "LYCOS INTERNET LTD INR2", "LYKALABS-EQ.NS": "LYKA LABS LIMITED", "LYPSAGEMS-EQ.NS": "LYPSA GEMS & JEWEL INR10",
+        "M100-EQ.NS": "MOST SHARES M100 ETF", "M100.NS": "Motilal Oswal MOSt Shares Midcap 100 ETF", "M50-EQ.NS": "MOTILAL OSWAL FINA GROWTH UNITS",
+        "M50.NS": "Motilal Oswal MOSt Shares M50 ETF", "MADRASFERT-EQ.NS": "MADRAS FERTILIZERS INR10(DEMAT)", "MAGMA-EQ.NS": "MAGMA FINCORP LIMITED",
+        "MAGNUM-EQ.NS": "MAGNUM VENTURES LT INR10", "MAHINDCIE-EQ.NS": "MAHINDRA CIE AUTO INR10", "MAHLIFE-EQ.NS": "MAHINDRA LIFESPACE DEVELOPERS L",
+        "MAJESCO-BE.NS": "Majesco Limited", "MAJESCO-EQ.NS": "MAJESCO LIMITED INR5", "MAJESCO.NS": "MAJESCO LIMITED INR5",
+        "MALUPAPER-EQ.NS": "MALU PAPER MILLS LIMITED", "MALWACOTT-BE.NS": "MALWA COTTON SPG. MILLS L", "MANAKALUCO-BE.NS": "Manak Aluminium Co. Ltd.",
+        "MANAKALUCO-EQ.NS": "MANAKSIA ALUMINIUM INR1", "MANAKALUCO.NS": "MANAKSIA ALUMINIUM INR1", "MANAKCOAT-BE.NS": "Man Coat Metal & Ind Ltd",
+        "MANAKCOAT-EQ.NS": "MANAKSIA COATED ME INR1", "MANAKCOAT.NS": "MANAKSIA COATED ME INR1", "MANAKINDST-BE.NS": "Manaksia Industries Ltd",
+        "MANAKINDST-EQ.NS": "MANAKSIA INDUSTRIE INR1", "MANAKINDST.NS": "MANAKSIA INDUSTRIE INR1", "MANAKSTEEL-BE.NS": "Manaksia Steels Ltd",
+        "MANAKSTEEL-EQ.NS": "MANAKSIA STEELS LT INR1", "MANAKSTEEL.NS": "MANAKSIA STEELS LT INR1", "MANALIPETC-EQ.NS": "MANALI PETROCHEMS INR5",
+        "MANAPPURAM-EQ.NS": "MANAPPURAM FINANCE LIMITED", "MANGALAM-EQ.NS": "MANGALAM DRUGS & O INR10", "MANGCHEFER-EQ.NS": "MANGALORE CHEMICALS & FERTILIZE",
+        "MANGTIMBER-EQ.NS": "MANGALAM TIMBER INR10", "MANINDS-EQ.NS": "MAN INDUSTRIES (INDIA) LIMITED", "MANPASAND-EQ.NS": "MANPASAND BEVERAGE INR10",
+        "MARALOVER-EQ.NS": "MARAL OVERSEAS LIMITED", "MARKSANS.NS": "Marksans Pharma Limited", "MARUTI-IL.NS": "MARUTI SUZUKI IND INR5",
+        "MASTEK-BE.NS": "MASTEK - DEPO SETT", "MAX.NS": "Max Financial Services Limited", "MAXWELL-EQ.NS": "MAXWELL INDUSTRIES INR2",
+        "MAXWELL.NS": "VIP Clothing Limited", "MBLINFRA-EQ.NS": "MBL INFRASTRUCTURES LIMITED", "MC6RD-MF.NS": "SUNDARAM ASSET MAN SELECT MICRO",
+        "MCDHOLDING-EQ.NS": "MCDOWELL HOLDINGS LIMITED", "MCDOWELL-N-EQ.NS": "UNITED SPIRITS INR10", "MCDOWELL-N.NS": "UNITED SPIRITS INR10",
+        "MCLEODRUSS-EQ.NS": "MCLEOD RUSSEL INDIA LIMITED", "MCX-IL.NS": "MULTI COMMODITY EX INR10", "MEGASOFT-EQ.NS": "MEGASOFT LIMITED",
+        "MEGH-EQ.NS": "MEGHMANI ORGANICS LIMITED", "MELSTAR-BE.NS": "MELSTAR INFORMATION TECH", "MELSTAR-EQ.NS": "MELSTAR INFORMATIO INR10",
+        "MENONBE-EQ.NS": "MENON BEARINGS LTD INR1", "MEP-EQ.NS": "MEP INFRASTRUCTURE INR10", "MERCATOR-EQ.NS": "MERCATOR LIMITED",
+        "MERCK-EQ.NS": "MERCK LIMITED", "METALFORGE-EQ.NS": "METALYST FORGINGS INR10", "METKORE-EQ.NS": "METKORE ALLOYS & INDUSTRIES LIM",
+        "MHRIL-EQ.NS": "MAHINDRA HOLIDAYS & RESORTS IND", "MICROSEC-EQ.NS": "MICROSEC FINANCIAL SERVICES LIM", "MICROSEC.NS": "Sastasundar Ventures Limited",
+        "MINDACORP-EQ.NS": "MINDA CORP LTD INR2", "MINDAIND-EQ.NS": "MINDA INDUSTRIES LIMITED", "MINDAIND.NS": "Minda Industries Limited",
+        "MIRCELECTR-EQ.NS": "MIRC ELECTRONICS INR1", "MIRZAINT-EQ.NS": "MIRZA INTERNATIONAL LIMITED", "MITCON-SM.NS": "MITCON CONSU & ENG INR10",
+        "MMFL-EQ.NS": "MM FORGINGS LIMITED", "MMNL-EQ.NS": "MIG MEDIA NEURONS INR10", "MMNL-IT.NS": "MIG Media Neurons Limited",
+        "MMNL.NS": "Mig Media Neurons Limited", "MOHITIND-EQ.NS": "MOHIT INDUSTRIES INR10", "MOLDTKPAC-EQ.NS": "MOLD-TEK PACKAGING INR5",
+        "MOLDTKPAC.NS": "Mold-Tek Packaging Limited", "MOMAI-SM.NS": "MOMAI APPARELS LTD INR10", "MONSANTO-EQ.NS": "MONSANTO INDIA LIMITED",
+        "MONTECARLO-EQ.NS": "MONTE CARLO FASHIO INR10", "MORARJEE-EQ.NS": "MORARJEE TEXTILES INR7", "MOREPENLAB-EQ.NS": "MOREPEN LABORATORI INR2",
+        "MOSERBAER-EQ.NS": "MOSER-BAER (I) LIMITED", "MOTHERSUMI-EQ.NS": "MOTHERSON SUMI SYS INR1", "MOTILALOFS-EQ.NS": "MOTILAL OSWAL FINA INR1",
+        "MOTOGENFIN-BE.NS": "MOTOR & GENERAL FINANCE L", "MOTOGENFIN-EQ.NS": "MOTOR & GEN FINANC INR10", "MPSLTD-EQ.NS": "MPS LTD INR10",
+        "MRF-EQ.NS": "MRF LIMITED", "MRO-TEK-EQ.NS": "MRO-TEK REALTY LTD INR5", "MRPL-EQ.NS": "MANGALORE REFINERY AND PETROCHE",
+        "MTEDUCARE-EQ.NS": "MT EDUCARE LIMITED", "MUKANDLTD-EQ.NS": "MUKAND LIMITED", "MUKANDLTD-P1.NS": "MUKAND 0.01 % CUM RED PRF INR10",
+        "MUKTAARTS-EQ.NS": "MUKTA ARTS LIMITED", "MURLIIND-EQ.NS": "MURLI INDUSTRIES INR2", "MURLIIND.NS": "Murli Industries Ltd.",
+        "MUTHOOTCAP-EQ.NS": "MUTHOOT CAPITAL SE INR10", "MUTHOOTCAP.NS": "MUTHOOT CAPITAL SE INR10", "MVL-EQ.NS": "MVL LTD INR1",
+        "MYSOREBANK.NS": "State Bank of Mysore", "N100.NS": "Motilal Oswal MOSt Shares NASDAQ 100 ETF", "NAGAROIL-EQ.NS": "NAGARJUNA OIL REFI INR1",
+        "NAGREEKCAP-EQ.NS": "NAGREEKA CAPITAL & INR5", "NAGREEKCAP.NS": "NAGREEKA CAPITAL & INR5", "NAGREEKEXP-EQ.NS": "NAGREEKA EXPORTS INR5",
+        "NAHARINDUS-EQ.NS": "NAHAR IND ENTERPRI INR10", "NAHARPOLY-EQ.NS": "NAHAR POLY FILMS LIMITED", "NAKODA-EQ.NS": "NAKODA LTD INR5",
+        "NATCOPHARM-EQ.NS": "NATCO PHARMA LTD INR2", "NATHBIOGEN-BE.NS": "Nath Bio-Genes (I) Ltd", "NATHBIOGEN-EQ.NS": "NATH BIO-GENES (IN INR10",
+        "NATNLSTEEL-BE.NS": "NATIONAL STEEL & AGRO IND", "NATNLSTEEL-EQ.NS": "NATIONAL STEEL & A INR10", "NAUKRI-EQ.NS": "INFO EDGE INR10",
+        "NAVINFLUOR-EQ.NS": "NAVIN FLUORINE INT INR2", "NAVKARCORP-EQ.NS": "NAVKAR CORPORATION INR10", "NAVNETEDUL-EQ.NS": "NAVNEET EDUCATION INR2",
+        "NCLIND-EQ.NS": "NCL INDUSTRIES LIMITED", "NCOPPER-BE.NS": "NISSAN COPPER LTD INR10", "NCOPPER-BZ.NS": "NISSAN COPPER LIMITED",
+        "NCOPPER.NS": "Nissan Copper Limited", "NDL-EQ.NS": "NANDAN DENIM LTD INR10", "NECLIFE-EQ.NS": "NECTAR LIFESCIENCES LIMITED",
+        "NELCAST-EQ.NS": "NELCAST LIMITED", "NELCO-EQ.NS": "NELCO LIMITED", "NEOCORP-BE.NS": "NEOCORP-BE.NS",
+        "NEPCMICON-BE.NS": "NEPC INDIA LTD", "NESCO-EQ.NS": "NESCO LIMITED", "NESTLEIND-EQ.NS": "NESTLE INDIA LIMITED",
+        "NEULANDLAB-EQ.NS": "NEULAND LABORATORIES LIMITED", "NEXTMEDIA-EQ.NS": "NEXT MEDIAWORKS LT INR10", "NEYVELILIG.NS": "Neyveli Lignite Corporation Limited",
+        "NGCT-BE.NS": "NORTHGATE COM TECH INR10", "NGCT-EQ.NS": "NORTHGATE COM TECH INR10", "NGCT.NS": "Spacenet Enterprises India Limited",
+        "NH-EQ.NS": "NARAYANA HRUDAYALA INR10", "NIBL-BE.NS": "NRB INDUSTRIAL BEA INR2", "NIBL-EQ.NS": "NRB INDUSTRIAL BEA INR2",
+        "NICCO-BE.NS": "NICCO CORPN INR2", "NICCO-EQ.NS": "NICCO CORPN INR2", "NIFTYBEES-EQ.NS": "NIFTY BMARK EXCH. TRD FND",
+        "NIFTYBEES.NS": "Goldman Sachs Nifty BeES ETF", "NIFTYEES-EQ.NS": "EDELWEISS MUTUAL F EDELWEISS ET", "NIFTYEES.NS": "Edelweiss ETF - Nifty 50",
+        "NIITLTD-EQ.NS": "NIIT LIMITED", "NILAINFRA-EQ.NS": "NILA INFRASTRUCTUR INR1", "NILAINFRA.NS": "NILA INFRASTRUCTUR INR1",
+        "NILKAMAL-EQ.NS": "NILKAMAL LIMITED", "NIRVIKARA-BE.NS": "Nirvikara Paper Mills Ltd", "NIRVIKARA-EQ.NS": "NIRVIKARA PAPER MI INR10",
+        "NIRVIKARA.NS": "Balkrishna Paper Mills Limited", "NITCO-EQ.NS": "NITCO LIMITED", "NITESHEST-EQ.NS": "NITESH ESTATES LIMITED",
+        "NITINFIRE-EQ.NS": "NITIN FIRE PROTECTION INDUSTRIE", "NITINSPIN-EQ.NS": "NITIN SPINNERS LIMITED", "NOCIL-EQ.NS": "NOCIL LIMITED",
+        "NOESISIND-EQ.NS": "NOESIS INDUSTRIES INR10", "NOIDATOLL-EQ.NS": "NOIDA TOLL BRIDGE COMPANY LIMIT", "NORBTEAEXP-BE.NS": "NORBEN TEA &EXPORTS LTD",
+        "NRBBEARING-EQ.NS": "NRB BEARING LIMITED", "NRC-BZ.NS": "NRC LIMITED", "OCCL.NS": "ORIENTAL CARB & CH INR10",
+        "OFSS-EQ.NS": "ORACLE FINANCIAL SERVICES SOFTW", "OISL-EQ.NS": "OCL IRON AND STEEL LIMITED", "OMAXE-EQ.NS": "OMAXE LIMITED",
+        "OMKARCHEM-EQ.NS": "OMKAR SPECIALITY CHEMICALS LIMI", "OMMETALS-EQ.NS": "OM METALS INFRAPROJECTS LIMITED", "ONELIFECAP-EQ.NS": "ONELIFE CAPITAL ADVISORS LIMITE",
+        "ONGC-EQ.NS": "OIL & NATURAL GAS CORPORATION L", "ONMOBILE-EQ.NS": "ONMOBILE GLOBAL LIMITED", "OPAL-SM.NS": "OPAL LUXURY TIME P INR10",
+        "OPTOCIRCUI-EQ.NS": "OPTO CIRCUITS (INDIA) LIMITED", "ORBTEXP-EQ.NS": "ORBIT EXPORTS LTD INR10", "ORCHIDCHEM-EQ.NS": "ORCHID CHEMICALS & PHARMACEUTIC",
+        "ORCHIDPHAR-EQ.NS": "ORCHID PHARMA LTD INR10", "ORICONENT-EQ.NS": "ORICON ENTERPRISES INR2", "ORICONENT.NS": "ORICON ENTERPRISES INR2",
+        "ORIENTABRA-EQ.NS": "ORIENT ABRASIVES INR1 (POST SUB", "ORIENTALTL-BE.NS": "ORIENTAL TRIMEX LTD INR10", "ORIENTALTL-EQ.NS": "ORIENTAL TRIMEX INR10",
+        "ORIENTBANK-EQ.NS": "ORIENTAL BK OF COM INR10", "ORIENTBELL-EQ.NS": "ORIENT BELL LIMITED", "ORIENTCEM-EQ.NS": "ORIENT CEMENT LTD INR1",
+        "ORIENTHOT-EQ.NS": "ORIENTAL HOTELS LIMITED", "ORIENTLTD-EQ.NS": "ORIENT PRESS LTD INR10", "ORIENTPPR-EQ.NS": "ORIENT PAPER & INDUSTRIES LIMIT",
+        "ORIENTREF-EQ.NS": "ORIENT REFRACTORIES LIMITED", "ORTEL-EQ.NS": "ORTEL COMMUNICATIO INR10", "ORTINLABSS-BE.NS": "Ortin Laboratories Ltd",
+        "ORTINLABSS-EQ.NS": "ORTIN LABORATORIES INR10", "ORTINLABSS.NS": "ORTIN LABORATORIES INR10", "PAEL-EQ.NS": "PREMIER AUTO ELECT INR10",
+        "PALRED-EQ.NS": "PALRED-EQ.NS", "PALREDTECH-BE.NS": "Palred Technologies Ltd", "PALREDTECH-EQ.NS": "PALRED TECHNOLOGIE INR10",
+        "PALREDTECH.NS": "PALRED TECHNOLOGIE INR10", "PANAMAPET-EQ.NS": "PANAMA PETROCHEM LIMITED", "PANASONIC.NS": "Panasonic Appliances India Company Limited",
+        "PANCHSHEE.NS": "PANCHSHEE.NS", "PANCHSHEEL-EQ.NS": "Panchsheel Organics Ltd", "PANORAMUNI-EQ.NS": "PANORAMIC UNIVERSL INR5",
+        "PARABDRUGS-EQ.NS": "PARABOLIC DRUGS INR10(DEMAT)", "PARACABLES-EQ.NS": "PARAMOUNT COMMUNIC INR2", "PARAL-BZ.NS": "PAREKH ALUM. LTD",
+        "PARAPRINT-BE.NS": "PARAMOUNT PRINTPACK LTD", "PARASPETRO-BE.NS": "PARAS PETROFILS LTD.", "PARASPETRO-EQ.NS": "PARAS PETROFILS LT INR1",
+        "PARRYSUGAR-EQ.NS": "PARRYS SUGAR INDUS INR10", "PARSVNATH.NS": "Parsvnath Developers Limited", "PATSPINLTD-EQ.NS": "PATSPIN INDIA INR10",
+        "PCJEWELLER-EQ.NS": "PC JEWELLER LIMITE INR10", "PDPL.NS": "Parenteral Drugs (India) Limited", "PDSMFL-EQ.NS": "PDS MULTINATIONAL INR10",
+        "PDUMJEIND-EQ.NS": "PUDUMJEE INDUSTRIE INR2", "PDUMJEPULP-EQ.NS": "PUDUMJEE PULP & PA INR2.00", "PEARLPOLY-EQ.NS": "PEARL POLYMERS LIMITED",
+        "PENINLAND-EQ.NS": "PENINSULA LAND LIMITED", "PENPEBS-BE.NS": "Pennar Eng Bldg Sys Ltd", "PENPEBS-BL.NS": "PENNAR ENGINEERED INR10",
+        "PENPEBS-BT.NS": "PENNAR ENGINEERED INR10", "PENPEBS-EQ.NS": "PENNAR ENGINEERED INR10", "PENPEBS-IL.NS": "PENNAR ENGINEERED INR10",
+        "PENPEBS-IQ.NS": "PENNAR ENGINEERED INR10", "PENPEBS-RL.NS": "PENNAR ENGINEERED INR10", "PEPL.NS": "PEARL ENG POL INR10(POST RECON)",
+        "PERFECT-SM.NS": "PERFECT INFRAENGIN INR10", "PERIATEA-BE.NS": "PERIATEA-BE.NS", "PERIATEA.NS": "Peria Karamalai Tea & Produce Co. Ltd.",
+        "PETRONET-EQ.NS": "PETRONET LNG LIMITED", "PETRONET-IL.NS": "PETRONET LNG INR10", "PFC-EQ.NS": "POWER FINANCE CORPORATION LIMIT",
+        "PFOCUS-EQ.NS": "PRIME FOCUS LIMITED", "PFRL-EQ.NS": "ADITYA BIRLA FASH INR10", "PFRL.NS": "Aditya Birla Fashion and Retail Limited",
+        "PGEL-EQ.NS": "PG ELECTROPLAST LIMITED", "PHILIPCARB-EQ.NS": "PHILLIPS CARBON BLACK LIMITED", "PHOENIXLL-EQ.NS": "PHOENIX LAMPS LTD INR10(DEMAT)",
+        "PHOENIXLTD-EQ.NS": "PHOENIX MILLS INR2", "PIDILITIND-EQ.NS": "PIDILITE INDUSTRIE INR1(POST SU", "PILANIINVS-EQ.NS": "PILANI INVESTMENT INR10.00",
+        "PILIND-EQ.NS": "PILIND-EQ.NS", "PILIND.NS": "PIL Italica Lifestyle Limited", "PILITA-EQ.NS": "PIL ITALICA LIFEST INR1",
+        "PIONDIST-EQ.NS": "PIONEER DISTILLERI INR10", "PIONEEREMB-EQ.NS": "PIONEER EMBROID LT INR10", "PIPAVAVDOC.NS": "RELIANCE DEFENCE AND ENGINEERIN",
+        "PIRPHYTO-EQ.NS": "PIRAMAL PHYTOCARE INR10", "PKTEA-BE.NS": "The P K Tea Prod Co Ltd", "PKTEA-EQ.NS": "PERIA KARAMALAI TE INR10",
+        "PLETHICO-BE.NS": "PLETHICO PHARMA INR10", "PLETHICO-BZ.NS": "PLETHICO PHARMACE LIMITED", "PLETHICO.NS": "Plethico Pharmaceuticals Limited",
+        "PNB-EQ.NS": "PUNJAB NATL BANK INR2", "PNB-IL.NS": "PUNJAB NATL BANK INR2", "PNC-EQ.NS": "PRITISH NANDY COMM INR10",
+        "PNCINFRA-EQ.NS": "PNC INFRATECH LTD INR2", "PNEUMATIC-BE.NS": "Pneumatic Holdings Ltd", "PNEUMATIC-EQ.NS": "PNEUMATIC HOLDINGS INR10",
+        "PNEUMATIC.NS": "Pneumatic Holdings Limited", "POLYMED-EQ.NS": "POLY MEDICURE LIMITED", "POLYPLEX-EQ.NS": "POLYPLEX CORPORATION LIMITED",
+        "PONNIERODE-EQ.NS": "PONNI SUGARS ERODE INR10.00", "POWERGRID-EQ.NS": "POWER GRID CORPORATION OF INDIA", "POWERGRID-IL.NS": "POWER GRID CORP INR10",
+        "POWERMECH-EQ.NS": "POWER MECH PROJECT INR10", "PRABHAT-EQ.NS": "PRABHAT DAIRY LTD INR10", "PRADIP-EQ.NS": "PRADIP OVERSEAS LT INR10",
+        "PRAKASH-EQ.NS": "PRAKASH INDUSTRIES LIMITED", "PRAKASHCON-EQ.NS": "PRAKASH CONSTROWEL INR1", "PRAKASHSTL-EQ.NS": "PRAKASH STEELAGE LIMITED",
+        "PRATIBHA-EQ.NS": "PRATIBHA INDUSTRIES LIMITED", "PRECOT-EQ.NS": "PRECOT MERIDIAN LIMITED", "PREMIERPOL-BE.NS": "PREMIER POLYFILM L INR5",
+        "PREMIERPOL-EQ.NS": "PREMIER POLYFILM L INR5", "PRESSMN-EQ.NS": "PRESSMAN ADVERTISI INR2", "PRESTIGE-IL.NS": "PRESTIGE ESTATES PROJECTS LIMIT",
+        "PRICOL-EQ.NS": "PRICOL LIMITED", "PRICOL.NS": "Pricol Limited prior to merger with Pricol Pune Limited", "PRITHVI-BZ.NS": "PRITHVI INFO. SOLN. LTD.",
+        "PRITHVISO.NS": "Prithvi Softech Limited", "PRITHVISOF-EQ.NS": "PRITHVI SOFTECH LTD INR10", "PROZONINTU-EQ.NS": "PROZONE INTU PROPE INR2",
+        "PSB-EQ.NS": "PUNJAB & SIND BANK", "PSL-BE.NS": "PSL LIMITED", "PSL-EQ.NS": "PSL LIMITED",
+        "PSUBNKBEES-EQ.NS": "GOLDMAN SACHS PS PSU BANK BENCH", "PSUBNKBEES.NS": "Goldman Sachs PSU Bank BeES ETF", "PURVA-EQ.NS": "PURAVANKARA PROJECTS LIMITED",
+        "QGOLDHALF.NS": "Quantum Gold ETF", "QNIFTY.NS": "Quantum Index ETF", "QUICKHEAL.NS": "Quick Heal Technologies Limited",
+        "QUINTEGRA-EQ.NS": "QUINTEGRA SOLUTIONS LTD.", "RADAAN-BE.NS": "RADAAN MEDIAWORKS (I) LTD", "RADICO-EQ.NS": "RADICO KHAITAN LIMITED",
+        "RADICO.NS": "Radico Khaitan Limited", "RAIN-EQ.NS": "RAIN INDUSTRIES LT INR2", "RAINBOWPAP-EQ.NS": "RAINBOW PAPERS LIMITED",
+        "RAIREKMOH-EQ.NS": "RAI SAHEB REKHCHAN INR10", "RAJESHEXPO-EQ.NS": "RAJESH EXPORTS INR1", "RAJOIL-BE.NS": "RAJ OIL MILLS LTD INR10",
+        "RAJPALAYA.NS": "Rajapalayam Mills Ltd.", "RAJSREESUG-EQ.NS": "RAJSHREE SUG &CHEM INR10", "RAJTV-EQ.NS": "RAJ TEL NETWORK INR5",
+        "RAMASTEEL-BE.NS": "Rama Steel Tubes Limited", "RAMASTEEL-EQ.NS": "RAMA STEEL TUBES INR5", "RAMCOCEM-EQ.NS": "RAMCO CEMENTS(THE) INR1",
+        "RAMCOCEM.NS": "The Ramco Cements Limited", "RAMKY-EQ.NS": "RAMKY INFRASTRUCTURE LIMITED", "RAMSARUP-BE.NS": "RAMSARUP INDUSTRIE INR10",
+        "RANBAXY.NS": "Ranbaxy Laboratories Ltd.", "RANKLIN.NS": "Ranklin Solutions Ltd.", "RASOYPR-EQ.NS": "RASOYA PROTEINS LI INR1",
+        "RBL-EQ.NS": "RANE BRAKE LINING LIMITED", "RD366D38RG-MF.NS": "SBI MUTUAL FUND DEBT 366D 38 RE", "RDAFTIIIDG-MF.NS": "RELIANCE MUTUAL FD DUAL ADVANTA",
+        "RDAFTIIPAG-MF.NS": "RELIANCE CAPITAL A RELIANCE DA", "REDINGTON-EQ.NS": "REDINGTON (INDIA) LIMITED", "REFEX-EQ.NS": "REFEX INDUSTRIES L INR10",
+        "REGENCERAM-BE.NS": "REGENCYCERAMICS-LTD", "REGENCERAM-EQ.NS": "REGENCY CERAMICS INR10", "REIAGROLTD-BE.NS": "REI AGRO LTD INR1",
+        "REIAGROLTD-EQ.NS": "REI AGRO LTD INR1", "RELAXO-EQ.NS": "RELAXO FOOTWEARS LIMITED", "RELBANK.NS": "R* Shares Banking ETF",
+        "RELCNX100-EQ.NS": "RELIANCE MUTUAL FD RELIANCE ETF", "RELCNX100.NS": "R* Shares CNX 100 ETF", "RELCONS-EQ.NS": "RELIANCE MUTUAL FD RELIANCE ETF",
+        "RELCONS.NS": "R*Shares Consumption ETF", "RELDIVOPP-EQ.NS": "RELIANCE MUTUAL FD RELIANCE ETF", "RELDIVOPP.NS": "R*Shares Dividend Opportunities ETF",
+        "RELGOLD-EQ.NS": "RELIANCE CAPITAL A R SHARES GOL", "RELGOLD.NS": "R* Shares Gold ETF", "RELGRNIFTY-EQ.NS": "RELIGARE MUTUAL FD NIFFTY ETF",
+        "RELGRNIFTY.NS": "Invesco India Nifty ETF", "RELIGAREGO-EQ.NS": "INVESCO MUTUAL FUND", "RELIGAREGO.NS": "Invesco India Gold ETF",
+        "RELNIFTY-EQ.NS": "RELIANCE MUTUAL FD R NIFTY DIVI", "RELNIFTY.NS": "R* Shares Nifty ETF", "RELNV20-EQ.NS": "RELIANCE NIPPON LI RELIANCE ETF",
+        "RELNV20.NS": "R*Shares NV20 ETF", "REMSONSIN.NS": "Remsons Industries Limited", "RENUKA-EQ.NS": "SHREE RENUKA SUGARS LIMITED",
+        "REPCOHOME-EQ.NS": "REPCO HOME FINANCE INR10", "REPRO-EQ.NS": "REPRO INDIA LIMITED", "REVATHI-EQ.NS": "REVATHI EQUIPMENT INR10",
+        "RFXXII29GR-MF.NS": "RELIANCE CAPITAL A FHF XXI SER", "RIIL-EQ.NS": "RELIANCE INDUSTRIAL INFRASTRUCT", "RKDL-EQ.NS": "RAVI KUMAR DISTILLERIES LIMITED",
+        "RMCL-EQ.NS": "RADHA MADHAV CORP INR10", "RMMIL-EQ.NS": "RESURGERE MINES & MINERALS LIMI", "ROHITFERRO-EQ.NS": "ROHIT FERRO-TECH INR10",
+        "RPGLIFE-EQ.NS": "RPG LIFE SCIENCES LIMITED", "RSDFSA27GR-MF.NS": "SBIAMC - RSDFSA27GR", "RSYSTEMS.NS": "R Systems International Limited",
+        "RTNINFRA-EQ.NS": "RATTANINDIA INFRAS INR2", "RTNPOWER-EQ.NS": "RATTANINDIA POWER INR10", "RUCHINFRA-BE.NS": "RUCHI INFRASTRUCTURE LTD",
+        "RUPA-EQ.NS": "RUPA & COMPANY LIMITED", "SABERORGA.NS": "SABERO ORGANICS GUJRAT", "SABTN-EQ.NS": "SRI ADHIKARI BROTHERS TELEVISIO",
+        "SADBHIN-EQ.NS": "SADBHAV INFRA PROJ INR10", "SAGCEM-EQ.NS": "SAGAR CEMENTS LIMITED", "SAGCEM.NS": "Sagar Cements Limited",
+        "SAHPETRO.NS": "GP Petroleums Limited", "SAKHTISUG-EQ.NS": "SAKTHI SUGARS LIMITED", "SAKSOFT-EQ.NS": "SAKSOFT LIMITED",
+        "SALONACOT-EQ.NS": "SALONA COTSPIN INR10", "SALORAINTL-EQ.NS": "SALORA INTL INR10", "SALZERELEC-EQ.NS": "SALZER ELECTRONICS INR10",
+        "SALZERELEC.NS": "SALZER ELECTRONICS INR10", "SAMBANDAM.NS": "Sambandam Spinning Mills Ltd.", "SAMBHAAV-BE.NS": "SAMBHAAV-BE.NS",
+        "SAMBHAAV-EQ.NS": "SAMBHAAV MEDIA LTD INR1", "SAMINDUS-EQ.NS": "SAM Industries Limited", "SAMINDUS.NS": "Sam Industries Ltd",
+        "SAMTEL-BE.NS": "SAMTEL COLOR LTD", "SAMTEL-EQ.NS": "SAMTEL COLOUR INR10", "SANCO-SM.NS": "SANCO IND LIMITED INR10",
+        "SANGAMIND-EQ.NS": "SANGAM (INDIA) LIMITED", "SANGHIIND-BE.NS": "SANGHIINDUS ROLL SETT", "SANGHVIMOV-EQ.NS": "SANGHVI MOVERS INR2.00",
+        "SANOFI.NS": "Sanofi India Limited", "SARTHAKIND-EQ.NS": "Sarthak Industries Ltd", "SATHAISPAT-EQ.NS": "SATHAVAHANA ISPAT LIMITED",
+        "SATIN-.NS": "SATIN CREDIT CARE NETWORK LTD S", "SATIN-BE.NS": "Satin Credit Net Ltd", "SATIN-BL.NS": "SATIN CREDIT CARE INR10",
+        "SATIN-BT.NS": "SATIN CREDIT CARE INR10", "SATIN-EQ.NS": "SATIN CREDIT CARE INR10", "SATIN-IL.NS": "SATIN CREDIT CARE INR10",
+        "SATIN-IQ.NS": "SATIN CREDIT CARE INR10", "SATIN-RL.NS": "SATIN CREDIT CARE INR10", "SAVERA.NS": "Savera Industries Limited",
+        "SAYAJIHOT.NS": "SAYAJIHOT.NS", "SAYAJIHOTL-BE.NS": "SAYAJIHOTL-BE.NS", "SB&TINTL.NS": "SB & T INTL LTD INR10",
+        "SBBJ.NS": "State Bank of Bikaner & Jaipur", "SBT.NS": "State Bank of Travancore", "SC2RD-MF.NS": "SUNDARAM MUTUAL FU SEL SMALL CA",
+        "SC3RG-MF.NS": "SUNDARAM ASSET MAN SELECT SMALL", "SCHNEIDER-EQ.NS": "SCHNEIDER ELECTRIC INFRASTRUCTU", "SDAFIIIGR-MF.NS": "SBI MUTUAL FUND SBI DUAL ADVANT",
+        "SDBL-EQ.NS": "SOM DISTIL & BREW INR10", "SEAMECLTD-EQ.NS": "SEAMEC LIMITED", "SELMCL-EQ.NS": "SEL MANUFACTURING COMPANY LIMIT",
+        "SEPOWER-EQ.NS": "S.E. POWER LIMITED", "SERVALL-EQ.NS": "SERVALAKSHMI PAPER INR10", "SETFBANK-EQ.NS": "SBIAMC - SETFBANK",
+        "SETFGOLD-EQ.NS": "SBI MUTUAL FUND SBI-ETF GOLD", "SETFGOLD.NS": "SBI MUTUAL FUND SBI-ETF GOLD", "SETFNIF50-EQ.NS": "SBI MUTUAL FUND SBI-ETF NIFTY 5",
+        "SETFNIF50.NS": "SBI MUTUAL FUND SBI-ETF NIFTY 5", "SETFNIFBK-EQ.NS": "SBI MUTUAL FUND SBI-ETF NIFTY B", "SETFNIFBK.NS": "SBI MUTUAL FUND SBI-ETF NIFTY B",
+        "SETFNIFJR-EQ.NS": "SBIAMC - SETFNIFJR", "SETFNIFTY-EQ.NS": "SBIAMC - SETFNIFTY", "SETFNN50-EQ.NS": "SBI MUTUAL FUND SBI-ETF NIFTY N",
+        "SETFNN50.NS": "SBI MUTUAL FUND SBI-ETF NIFTY N", "SEZAL-BE.NS": "SEZAL GLASS INR10", "SEZAL-EQ.NS": "SEZAL GLASS INR10",
+        "SFCL-BE.NS": "SFCL-BE.NS", "SFCL-EQ.NS": "STAR FERRO AND CEM INR1", "SGFL-BE.NS": "SHREE GANESH FORG INR10",
+        "SGFL-EQ.NS": "SHREE GANESH FORG INR10", "SGL-BE.NS": "STL GLOBAL LTD INR10", "SGL-EQ.NS": "STL GLOBAL LTD INR10",
+        "SHAHALLOYS-BE.NS": "SHAH ALLOYS INR10", "SHAHALLOYS-EQ.NS": "SHAH ALLOYS INR10", "SHAIVAL-SM.NS": "SHAIVAL REALITY LT INR10",
+        "SHALPAINTS-EQ.NS": "SHALIMAR PAINTS LIMITED", "SHANTIGEAR-EQ.NS": "SHANTHI GEARS INR1", "SHARDACROP-EQ.NS": "SHARDA CROPCHEM INR10",
+        "SHARDAMOTR-EQ.NS": "SHARDA MOTOR INDUS INR10", "SHARDAMOTR.NS": "SHARDA MOTOR INDUS INR10", "SHARIABEES-EQ.NS": "BENCHMARK MUTUAL SHARIAH BENCHM",
+        "SHARIABEES.NS": "Goldman Sachs Shariah BeES ETF", "SHASUNPHAR-EQ.NS": "SHASUN PHARMACEUTICALS LIMITED", "SHEMAROO-EQ.NS": "SHEMAROO ENTERTAIN INR10",
+        "SHIRPUR-G-EQ.NS": "SHIRPUR GOLD REFINERY LIMITED", "SHIV-VANI-EQ.NS": "SHIV-VANI-EQ.NS", "SHIV-VANI.NS": "SVOGL Oil Gas and Energy Limited",
+        "SHK-EQ.NS": "S H KELKAR AND COM INR10", "SHLAKSHMI-BE.NS": "SHRI LAKSHMI COTSYN LTD", "SHLAKSHMI-BZ.NS": "SHRI LAKSHMI COTSYN LTD",
+        "SHLAKSHMI-EQ.NS": "SHRI LAKSHMI COTSYN LTD.", "SHLAKSHMI.NS": "Shri Lakshmi Cotsyn Limited", "SHOPERSTOP-EQ.NS": "SHOPPERS STOP INR5",
+        "SHREEPUSHK-BE.NS": "Shre Push Chem & Fert Ltd", "SHREEPUSHK-EQ.NS": "SHREE PUSHKAR CHEM INR10", "SHREERAMA-EQ.NS": "SHREE RAMA MULTI INR5",
+        "SHREYANIND-EQ.NS": "SHREYANS INDUSTRIES LIMITED", "SHREYAS-BE.NS": "SHREYAS-BE.NS", "SHRIASTER-EQ.NS": "SHRI ASTER SILICAT INR10",
+        "SHRIRAMCIT-EQ.NS": "SHRIRAM CITY UNION FINANCE LIMI", "SHRIRAMEPC-EQ.NS": "SHRIRAM EPC LIMITED", "SHYAMCENT-BE.NS": "Shyam Century Ferrous Ltd",
+        "SHYAMCENT-EQ.NS": "SHYAM CENTURY FERR INR1", "SHYAMCENT.NS": "SHYAM CENTURY FERR INR1", "SIGNET-EQ.NS": "SIGNET INDUSTRIES INR1",
+        "SIGNET.NS": "SIGNET INDUSTRIES INR1", "SIIL-SM.NS": "SUPREME (INDIA) IM INR10", "SIL-EQ.NS": "STANDARD INDS INR5",
+        "SIMBHSUGAR-EQ.NS": "SIMBHAOLI SUGARS LIMITED", "SIMPLEXCA.NS": "SIMPLEX CASTINGS LTD.", "SIMPLEXINF-EQ.NS": "SIMPLEX INFRASTRUC INR2",
+        "SIRPAPER-BZ.NS": "SIRPUR PAPER MILLS LTD", "SIRPAPER.NS": "Sirpur Paper Mills Ltd.", "SITASHREE-BE.NS": "SITA SHREE FOOD PR INR10",
+        "SITASHREE-EQ.NS": "SITA SHREE FOOD PRODUCTS LIMITE", "SITICABLE.NS": "SITI Networks Limited", "SIYSIL-EQ.NS": "SIYARAM SILK MILLS LIMITED",
+        "SKFINDIA-EQ.NS": "SKF INDIA LIMITED", "SKIL-BE.NS": "SKIL INFRASTRUCTURE LTD.", "SKIL-EQ.NS": "SKIL INFRASTRUCTUR INR10",
+        "SKIPPER-EQ.NS": "SKIPPER LTD INR1", "SKMEGGPROD-EQ.NS": "SKM EGG PRODUCTS INR10", "SKSMICRO.NS": "Bharat Financial Inclusion Limited",
+        "SKUMARSYN.NS": "S. Kumars Nationwide Ltd.", "SKUMARSYNF-BZ.NS": "S KUMARS NATIONWIDE LTD", "SMCSRIIIRD-MF.NS": "SUNDARAM MUTUAL FU MICROCAP III",
+        "SMCSRVIRD-MF.NS": "SUNDARAM ASSET MAN MICRO CAP VI", "SMCSRVIRG-MF.NS": "SUNDARAM ASSET MAN MICRO CAP VI", "SMCSRVRD-MF.NS": "SUNDARAM ASSET MAN MICRO CAP V",
+        "SMCSRVRG-MF.NS": "SUNDARAM ASSET MAN MICRO CAP V", "SMMITCON.NS": "SMMITCON.NS", "SMMOMAI.NS": "SMMOMAI.NS",
+        "SMOPAL.NS": "SMOPAL.NS", "SMPL-EQ.NS": "SPLENDID METAL PRO INR10", "SMSANCO.NS": "SMSANCO.NS",
+        "SMSIIL.NS": "SMSIIL.NS", "SMSPHARMA-EQ.NS": "SMS PHARMACEUTICALS LIMITED", "SMTHEJO.NS": "SMTHEJO.NS",
+        "SMVETO.NS": "SMVETO.NS", "SNOWMAN-EQ.NS": "SNOWMAN LOGISTICS INR10", "SOBHA-EQ.NS": "SOBHA LIMITED",
+        "SOFTTECHGR-BE.NS": "SOFTTECHGRNPP070100", "SOFTTECHGR-EQ.NS": "SOFTWARE TECH GP INR10", "SOLARINDS.NS": "Solar Industries India Limited",
+        "SOMANYCERA-EQ.NS": "SOMANY CERAMICS LD INR2", "SOMATEX-BE.NS": "SOMA TEXTILE INUSTRIES LT", "SOMATEX-EQ.NS": "SOMA TEXTILE & IND INR10",
+        "SONATSOFTW-EQ.NS": "SONATA SOFTWARE INR1", "SONATSOFTW.NS": "Sonata Software Limited", "SOTL-EQ.NS": "SAVITA OIL TECHNOLOGIES LIMITED",
+        "SOUISPAT.NS": "SOUTHERN ISPAT & ENGY LTD INR10", "SPECTACLE-BE.NS": "SPEC VENTURES LTD INR1", "SPECTACLE-EQ.NS": "SPEC VENTURES LTD INR1",
+        "SPECTACLE.NS": "Spectacle Ventures Limited", "SPHEREGSL-EQ.NS": "SPHERE GLOBAL SERV INR10", "SPIC-EQ.NS": "SOUTHERN PETROCHEMICALS INDUSTR",
+        "SPICEMOBI-EQ.NS": "SPICE MOBILITY LTD INR3", "SPLIL-EQ.NS": "SPL INDUSTRIES LTD INR10", "SPYL-BE.NS": "SHEKHAWATI POLY INR1",
+        "SQSBFSI-EQ.NS": "SQS INDIA BFSI LTD INR10", "SREEL-EQ.NS": "SREELEATHERS LTD INR10", "SRGINFOTEC-BE.NS": "SRGINFOTECH (INDIA) LTD.",
+        "SRGINFOTEC-EQ.NS": "PAN INDIA CORP INR10", "SRGINFOTEC.NS": "PAN INDIA CORP INR10", "SRHHYPOLTD-EQ.NS": "SREE RAYALASEEMA H INR10",
+        "SRICHAMUN.NS": "SRICHAMUN.NS", "SRICHAMUND-EQ.NS": "Chamundeswari Sug Ltd", "SRIPIPES-EQ.NS": "SRIKALAHASTHI PIPE INR10",
+        "SRTRANSFI.NS": "Shriram Transport Finance Co. Ltd.", "SRTRANSFIN-EQ.NS": "SHRIRAM TRANSPORT INR10", "SSLT-EQ.NS": "SSLT-EQ.NS",
+        "SSLT.NS": "Vedanta Limited", "STAN-DR.NS": "STANDARD CHART PLC IDR EACH REP", "STAR-IL.NS": "STRIDES SHASUN LTD INR10",
+        "STCINDIA-EQ.NS": "THE STATE TRADING CORPORATION O", "STEL-BE.NS": "STEL HOLDINGS LTD INR10", "STEL-EQ.NS": "STEL HOLDINGS LIMITED",
+        "STERLINBIO-EQ.NS": "STERLING BIOTECH INR1", "STERTOOLS-EQ.NS": "STERLING TOOLS LIMITED", "STINDIA-BE.NS": "STI INDIA LTD",
+        "STINDIA-EQ.NS": "STI INDIA INR10", "STOREONE-EQ.NS": "STORE ONE RETAIL INR10", "STOREONE.NS": "SORIL Infra Resources Limited",
+        "STRTECH-EQ.NS": "STERLITE TECHNOLOGIES LIMITED", "STYABS.NS": "INEOS STYROLUTION INR10", "SUBEX-EQ.NS": "SUBEX LIMITED",
+        "SUDAR-BE.NS": "SUDAR INDUSTRIES L INR10", "SUJANATWR-EQ.NS": "NEUEON TOWERS LTD", "SUJANATWR.NS": "Neueon Towers Limited",
+        "SUMEETINDS-EQ.NS": "SUMEET INDUSTRIES INR10", "SUNDARAM-BE.NS": "SUNDARAM-BE.NS", "SUNDARMFIN-EQ.NS": "SUNDARAM FINANCE LIMITED",
+        "SUNDRMBRAK-EQ.NS": "SUNDARAM BRAKE LININGS LIMITED", "SUNILHITEC-EQ.NS": "SUNIL HITECH ENGIN INR1", "SUNPHARMA-EQ.NS": "SUN PHARMACEUTICALS INDUSTRIES",
+        "SUPER.NS": "Super Sales India Ltd.", "SUPERHOUSE-EQ.NS": "SUPERHOUSE LTD INR10", "SUPERSPIN-EQ.NS": "SUPER SPINNING INR1",
+        "SUPRAJIT-EQ.NS": "SUPRAJIT ENGINEERING LIMITED", "SUPREMEIND-EQ.NS": "SUPREME INDUSTRIES INR2", "SUPREMETEX-BE.NS": "SUPREME TEX MART INR5",
+        "SUPREMETEX-EQ.NS": "SUPREME TEX MART INR5", "SURANAIND-BE.NS": "SURANA INDUSTRIES INR10", "SURANASOL-EQ.NS": "SURANA SOLAR LTD INR5",
+        "SURYAJYOTI-EQ.NS": "SURYAJYOTI SPG MIL INR10", "SURYAPHARM-BZ.NS": "SURYA PHARMACEUTICAL LTD.", "SUTLEJTEX-EQ.NS": "SUTLEJ TEXTILES AND INDUSTRIES",
+        "SVOGL-EQ.NS": "SVOGL OIL GAS AND INR10", "SYMPHONY-EQ.NS": "SYMPHONY LIMITED", "SYNCOM-EQ.NS": "SYNCOM HEALTHCARE LIMITED",
+        "SYNDIBANK-EQ.NS": "SYNDICATE BANK", "SYNGENE-EQ.NS": "SYNGENE INTERNATIO INR10", "SYNGENE.NS": "Syngene International Limited",
+        "TALBROAUTO-EQ.NS": "TALBROS AUTO INR10", "TANLA-EQ.NS": "TANLA SOLUTIONS LIMITED", "TANTIACON.NS": "Tantia Constructions Limited",
+        "TANTIACONS-EQ.NS": "TANTIA CONSTRUCTIONS LIMITED", "TATAINVEST-EQ.NS": "TATA INVESTMENT CORPORATION LIM", "TATAMETALI-EQ.NS": "TATA METALIKS LIMITED",
+        "TATASPONGE-EQ.NS": "TATA SPONGE IRON INR10", "TATASTEEL-EQ.NS": "TATA STEEL LIMITED", "TCIDEVELOP-EQ.NS": "TCI DEVELOPERS LTD INR10",
+        "TCIFINANCE-EQ.NS": "TCI FINANCE LTD INR10", "TCPLTD-BE.NS": "TCPLTD-BE.NS", "TCPLTD.NS": "TCP Limited",
+        "TECHIN-BE.NS": "TECHINDIA NIRMAN LIMITED", "TECHIN-EQ.NS": "TECHINDIA NIRMAN L INR10", "TECHNO-EQ.NS": "TECHNO ELECTRIC & ENGINEERING C",
+        "TECHNOFAB-EQ.NS": "TECHNOFAB ENGINEERING LIMITED", "TECPRO-BE.NS": "TECPRO SYSTEMS LTD INR10", "TECPRO-BZ.NS": "TECPRO SYSTEMS LTD",
+        "TECPRO-EQ.NS": "TECPRO SYSTEMS LIMITED", "TECPRO.NS": "Tecpro Systems Limited", "TELEDATAI.NS": "TELEDATAI.NS",
+        "TEXMOPIPES-EQ.NS": "TEXMO PIPES & PROD INR10", "TFL-EQ.NS": "TRANSWARRANTY FINA INR10", "TGBHOTELS-EQ.NS": "TGB BANQUETS AND H INR10(DEMAT)",
+        "THANGAMAYL-EQ.NS": "THANGAMAYIL JEWELL INR10", "THEJO-SM.NS": "THEJO ENGINEERING INR10", "THEMISMED-BE.NS": "THEMIS MEDICARE LT INR10",
+        "THEMISMED-EQ.NS": "THEMIS MEDICARE LT INR10", "THERMAX-EQ.NS": "THERMAX LIMITED", "THOMASCOOK-EQ.NS": "THOMAS COOK (INDIA) LIMITED",
+        "THOMASCOTT-BE.NS": "THOMAS SCOTT (INDI INR10", "THOMASCOTT-EQ.NS": "THOMAS SCOTT (INDI INR10", "TIIL-EQ.NS": "TECHNOCRAFT INDUSTRIES (INDIA)",
+        "TIJARIA-BE.NS": "TIJARIA POLYPIPES LTD INR10", "TIL-EQ.NS": "TIL LIMITED", "TIMBOR-BE.NS": "TIMBOR HOME LTD INR10",
+        "TIMBOR-BZ.NS": "TIMBOR HOME LIMITED", "TIMBOR.NS": "Timbor Home Limited", "TIMESGTY-EQ.NS": "TIMES GUARANTY LIMITED",
+        "TIMKEN-EQ.NS": "TIMKEN INDIA LIMITED", "TINPLATE-EQ.NS": "THE TINPLATE COMPANY OF INDIA L", "TIPSINDLTD-EQ.NS": "TIPS INDUSTRIES LIMITED",
+        "TITAN-IL.NS": "TITAN COMPANY LIMITED", "TNPL-EQ.NS": "TAMIL NADU NEWSPRINT & PAPERS L", "TNTELE-EQ.NS": "TAMILNADU TELECOMM INR10",
+        "TODAYS-BE.NS": "TODAY'S WRITING PRODUCTS", "TODAYS-EQ.NS": "TODAYS WRITING INS INR10", "TOKYOPLAST-EQ.NS": "TOKYO PLAST INTL INR10",
+        "TORNTPHARM-EQ.NS": "TORRENT PHARMACEUTICALS LIMITED", "TPLPLASTEH-EQ.NS": "TPL PLASTECH LTD. INR10", "TPLPLASTEH.NS": "TPL PLASTECH LTD. INR10",
+        "TRICOM-BE.NS": "TRICOM INDIA LTD INR2", "TRIGYN-EQ.NS": "TRIGYN TECHNOLOGIE INR10", "TTKHLTCARE-EQ.NS": "TTK HEALTHCARE INR10",
+        "TTKHLTCARE.NS": "TTK HEALTHCARE INR10", "TTL-EQ.NS": "TT LTD INR10", "TTML-EQ.NS": "TATA TELESERVICES (MAHARASHTRA)",
+        "TULIP-BZ.NS": "TULIP TELECOM LIMITED", "TVSELECT-EQ.NS": "TVS ELECTRONICS LIMITED", "TVTODAY-EQ.NS": "TV TODAY NETWORK LIMITED",
+        "UBENGG-BZ.NS": "UB ENGINEERING LTD", "UBHOLDINGS-EQ.NS": "UNITED BREWERIES (HOLDINGS) LIM", "UFLEX-EQ.NS": "UFLEX LIMITED",
+        "UFO-EQ.NS": "UFO MOVIEZ INDIA INR10", "UFTFGR12PX-MF.NS": "UTI MUTUAL FUND FTI XII-X 1096D", "UGARSUGAR-BE.NS": "UGAR SUGAR WORKS INR1",
+        "UJAAS-EQ.NS": "UJAAS ENERGY LTD INR1", "UMANGDAIRY-EQ.NS": "UMANG DAIRIES INR5", "UMANGDAIRY.NS": "UMANG DAIRIES INR5",
+        "UMESLTD-EQ.NS": "USHA MARTIN EDU INR1", "UNIENTER.NS": "Uniphos Enterprises Ltd.", "UNIPLY-EQ.NS": "UNIPLY INDUSTRIES INR10",
+        "UNITECH-EQ.NS": "UNITECH LIMITED", "UNITEDTEA-EQ.NS": "UNITED NILGIRI TEA INR10", "UNITY-EQ.NS": "UNITY INFRAPROJECTS LIMITED",
+        "UNIVCABLES-BE.NS": "UNIVCABLES NPP130599 DEPO", "UNIVCABLES-EQ.NS": "UNIVERSAL CABLES INR10", "UPL-EQ.NS": "UPL LIMITED INR2",
+        "URRAP19P10-MF.NS": "UTI ASSET MANAGEME FTI XIX X 10", "UTCPOSRGR1-MF.NS": "UTI MUTUAL FUND CAP PRO OR IV-I", "UTIFEFRGR1-MF.NS": "UTI MUTUAL FUND FEF-S-I-1100D R",
+        "UTIFEFRGR2-MF.NS": "UTI ASSET MANAGEME FOCUS EQTY I", "UTINIFTETF-EQ.NS": "UTI MUTUAL FUND UTI NIFTY ETF", "UTINIFTETF.NS": "UTI Nifty ETF",
+        "UTISENSETF-EQ.NS": "UTI MUTUAL FUND UTI- SENSEX ETF", "UTISENSETF.NS": "UTI Sensex ETF", "UTRGESSDDP-MF.NS": "UTI MUTUAL FUND RGSS DIRECT DIV",
+        "UTRGESSRGR-MF.NS": "UTI MUTUAL FUND RGSS RET GROWTH", "UTTAMSUGAR-EQ.NS": "UTTAM SUGAR MILLS INR10", "UTTAMSUGAR.NS": "Uttam Sugar Mills Limited",
+        "UTTAMVALUE-EQ.NS": "UTTAM VALUE STEELS INR1", "V2RETAIL-BE.NS": "V2 RETAIL LTD INR10", "VAIBHAVGBL-EQ.NS": "VAIBHAV GLOBAL LTD INR10",
+        "VAKRANGEE-EQ.NS": "VAKRANGEE LTD INR1", "VALECHAENG-EQ.NS": "VALECHA ENGINEERIN INR10", "VALUEIND-EQ.NS": "VALUE INDUSTRIES LIMITED",
+        "VARDHACRLC-EQ.NS": "VARDHMAN ACRYLICS INR10", "VARDMNPOLY-EQ.NS": "VARDHMAN POLYTEX INR10", "VARUN-BZ.NS": "VARUN INDUS. LTD.",
+        "VARUNSHIP-BZ.NS": "VARUN SHIPPING INR10", "VARUNSHIP.NS": "Varun Shipping Co. Ltd.", "VASCONEQ-EQ.NS": "VASCON ENGINEERS LIMITED",
+        "VASWANI-BE.NS": "VASWANI INDUSTRIES LTD INR10", "VEDL-EQ.NS": "VEDANTA LIMITED INR1", "VENKEYS.NS": "Venky's (India) Limited",
+        "VENUSREM-EQ.NS": "VENUS REMEDIES LIMITED", "VETO-SM.NS": "VETO SWITCHGEARS A INR10", "VIDEOIND-EQ.NS": "VIDEOCON INDUSTRIES LIMITED",
+        "VIDHIDYE.NS": "Vidhi Specialty Food Ingredients Limited", "VIJAYABANK-EQ.NS": "VIJAYA BANK INR10", "VIKASECO-EQ.NS": "VIKAS ECOTECH LIMI INR1",
+        "VIKASGLOB.NS": "Vikas EcoTech Limited", "VIKASHMET.NS": "VIKASHMET.NS", "VIMALOIL-EQ.NS": "VIMAL OIL & FOOD INR10",
+        "VIMTALABS-EQ.NS": "VIMTA LABS LIMITED", "VINATIORGA-EQ.NS": "VINATI ORGANICS INR2", "VINDHYATEL-EQ.NS": "VINDHYA TELELINKS LIMITED",
+        "VINYLINDIA-EQ.NS": "VINYL CHEMICALS(IN INR1", "VIPULLTD.NS": "VIPUL LTD INR1", "VISESHINFO-BE.NS": "VISESH INFO NPP231299 DEP",
+        "VISESHINFO-EQ.NS": "VISESH INFOTECNICS INR1", "VISHNU-EQ.NS": "VISHNU CHEMICALS L INR10", "VISUINTL-BE.NS": "VISU INTERNATIONAL INR10",
+        "VISUINTL-EQ.NS": "VISU INTERNATIONAL INR10", "VIVIDHA-EQ.NS": "VISAGAR POLYTEX INR1", "VIVIMEDLAB-EQ.NS": "VIVIMED LABS LIMITED",
+        "VKSPL-EQ.NS": "VKS PROJECTS LTD INR1", "VLSFINANCE-EQ.NS": "VLS FIN LTD INDIA INR10", "VMART-EQ.NS": "V-MART RETAIL LTD INR10",
+        "VMART-IL.NS": "V-MART RETAIL LIMITED", "VOLTAMP-EQ.NS": "VOLTAMP TRANSFORMERS LIMITED", "VRLLOG-EQ.NS": "VRL LOGISTICS LTD INR10",
+        "VSSL-EQ.NS": "VARDHMAN SPECIAL STEELS LIMITED", "VSTTILLERS-EQ.NS": "VST TILLERS TRACT INR10", "VTL-EQ.NS": "VARDHMAN TEXTILES LIMITED",
+        "VTMLTD.NS": "VTM Limted", "VTXIND-BE.NS": "VTXIND-BE.NS", "VTXIND.NS": "VTXIND.NS",
+        "WABCOINDIA-EQ.NS": "WABCO INDIA LIMITED", "WALCHANNAG-EQ.NS": "WALCHANDNAGAR INDUSTRIES LIMITE", "WANBURY-BE.NS": "WANBURY LTD INR10",
+        "WB3RG-MF.NS": "SUNDARMAMC - WB3RG", "WEALTH-SM.NS": "WEALTH FIRST PORTF INR10", "WEBELSOLAR-EQ.NS": "WEBSOL ENERGY SYST INR10",
+        "WEIZMANIND-EQ.NS": "WEIZMANN INR10", "WELENT-EQ.NS": "WELSPUN ENTERPRISE INR10", "WELPROJ.NS": "WELSPUN ENTERPRISE INR10",
+        "WELSYNTEX-EQ.NS": "WELSPUN SYNTEX", "WELSYNTEX.NS": "WELSPUN SYNTEX", "WHIRLPOOL-EQ.NS": "WHIRLPOOL OF INDIA LIMITED",
+        "WILLAMAGOR-EQ.NS": "WILLIAMSON MAGOR & COMPANY LIMI", "WINDMACHIN-EQ.NS": "WINDSOR MACHINES INR2", "WINSOME-BE.NS": "WINSOME YARNS LTD INR10",
+        "WOCKPHARMA-EQ.NS": "WOCKHARDT INR5", "WONDERLA-EQ.NS": "WONDERLA HOLIDAYS INR10", "WSI.NS": "WS Industries (India)",
+        "WSTCSTPAPR-EQ.NS": "WEST COAST PAPER M INR2.00", "XCHANGING-EQ.NS": "XCHANGING SOLUTIONS LIMITED", "YESBANK-EQ.NS": "YES BANK LIMITED",
+        "ZANDUREALT-EQ.NS": "ZANDU REALTY LIMITED", "ZEEL-P1.NS": "ZEE ENTERTAIN ENT 6% CUM RED NO", "ZEELEARN-EQ.NS": "ZEE LEARN LIMITED",
+        "ZENITHBIR-EQ.NS": "ZENITH BIRLA(INDIA INR10", "ZENITHCOMP.NS": "Zenith Computers Limited", "ZENITHEXPO-EQ.NS": "ZENITH EXPORTS LTD INR10",
+        "ZENSARTEC.NS": "Zensar Technologies Limited", "ZENTEC-BE.NS": "Zen Technologies Limited", "ZENTEC-EQ.NS": "ZEN TECHNOLOGIES INR1",
+        "ZICOM-EQ.NS": "ZICOM ELECTRONIC SECURITY SYSTE", "ZODIACLOTH-EQ.NS": "ZODIAC CLOTHING COMPANY LIMITED", "ZYDUSWELL-EQ.NS": "ZYDUS WELLNESS LIMITED"
+    },
+
+    "Waste Management": {
+        "GANECOS.NS": "Ganesha Ecosphere Limited", "WABAG.NS": "VA Tech Wabag Limited"
+    },
+
+    "Wireless Communications": {
+        "BHARTIARTL.NS": "Bharti Airtel Limited", "IDEA.NS": "Idea Cellular Limited", "INFRATEL.NS": "Bharti Infratel Limited",
+        "MTNL.NS": "Mahanagar Telephone Nigam Limited", "NUTEK.NS": "Nu Tek India Limited", "ONMOBILE.NS": "OnMobile Global Limited",
+        "RCOM.NS": "Reliance Communications Limited", "TATACOMM.NS": "Tata Communications Limited", "TTML.NS": "Tata Teleservices (Maharashtra) Limited"
     }
 }
+
 
 # ============================================================================
 # INDUSTRY BENCHMARKS - CONSOLIDATED
