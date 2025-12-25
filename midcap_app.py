@@ -554,10 +554,6 @@ INDIAN_STOCKS = {
         "TCI.NS": "Transport Corporation of India Limited",
     },
 
-    "Air Services, Other": {
-        "GLOBALVECT.NS": "Global Vectra Helicorp Limited",
-        "GVKPIL.NS": "GVK Power & Infrastructure Limited",
-    },
 
     "Aluminum": {
         "CENTEXT.NS": "Century Extrusions Limited",
