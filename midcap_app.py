@@ -504,8 +504,11 @@ if not check_password():
 # Combined: NIFTY 500 + MIDCAP + SMALLCAP
 # Total Categories: 50+ sector-wise classifications
 # ============================================================================
+# Comprehensive Indian Stocks Database
+# Total Stocks: 8,827
+# Generated: December 25, 2025
 
-INDIAN_STOCKS_COMPREHENSIVE = {
+INDIAN_STOCKS = {
     "Advertising Agencies": {
         "PRESSMN.NS": "Pressman Advertising Limited",
     },
@@ -9183,8 +9186,13 @@ INDIAN_STOCKS_COMPREHENSIVE = {
     },
 
 }
+
+def get_categories():
+    """Get list of all available stock categories"""
+    return list(INDIAN_STOCKS.keys())
+
 # ============================================================================
-# INDUSTRY BENCHMARKS - CONSOLIDATED
+# INDUSTRY BENCHMARKS
 # ============================================================================
 
 INDUSTRY_BENCHMARKS = {
@@ -9203,7 +9211,7 @@ INDUSTRY_BENCHMARKS = {
     'Default': {'pe': 20, 'ev_ebitda': 12}
 }
 
-# Midcap specific benchmarks (slightly higher multiples)
+# Midcap specific benchmarks
 MIDCAP_BENCHMARKS = {
     'Technology': {'pe': 28, 'ev_ebitda': 16},
     'Financial Services': {'pe': 20, 'ev_ebitda': 14},
@@ -9217,7 +9225,7 @@ MIDCAP_BENCHMARKS = {
     'Default': {'pe': 22, 'ev_ebitda': 14}
 }
 
-# Smallcap specific benchmarks (higher growth expectations)
+# Smallcap specific benchmarks
 SMALLCAP_BENCHMARKS = {
     'Technology': {'pe': 30, 'ev_ebitda': 18},
     'Financial Services': {'pe': 18, 'ev_ebitda': 12},
@@ -9230,6 +9238,7 @@ SMALLCAP_BENCHMARKS = {
     'Real Estate': {'pe': 30, 'ev_ebitda': 22},
     'Default': {'pe': 24, 'ev_ebitda': 16}
 }
+
 # ============================================================================
 # UTILITY FUNCTIONS
 # ============================================================================
