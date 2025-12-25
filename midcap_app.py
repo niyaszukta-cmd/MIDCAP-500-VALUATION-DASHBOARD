@@ -513,15 +513,8 @@ INDIAN_STOCKS = {
         "PRESSMN.NS": "Pressman Advertising Limited",
     },
 
-    "Aerospace/Defense - Major Diversified": {
-        "ABGSHIP.NS": "ABG Shipyard Limited",
-        "BEL.NS": "Bharat Electronics Limited",
-        "BHARATIDIL.NS": "Bharati Defence And Infrastructure Limited",
-        "RDEL.NS": "Reliance Defence and Engineering Limited",
-    },
 
     "Agricultural Chemicals": {
-        "AGRITECH.NS": "Agri-Tech (India) Ltd",
         "ARIES.NS": "Aries Agro Limited",
         "BAYERCROP.NS": "Bayer CropScience Limited",
         "BHARATRAS.NS": "Bharat Rasayan Limited",
