@@ -9767,7 +9767,7 @@ def create_pdf_report(company, ticker, sector, vals):
 st.markdown('''
 <div class="main-header">
     <h1>STOCK VALUATION PRO</h1>
-    <p>📊 2800+Stocks | Professional Multi-Factor Analysis | Real-Time Data</p>
+    <p>📊 7000+Stocks | Professional Multi-Factor Analysis | Real-Time Data</p>
 </div>
 ''', unsafe_allow_html=True)
 
