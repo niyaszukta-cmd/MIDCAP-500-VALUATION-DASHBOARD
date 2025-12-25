@@ -509,11 +509,7 @@ if not check_password():
 # Generated: December 25, 2025
 
 INDIAN_STOCKS = {
-    "Advertising Agencies": {
-        "PRESSMN.NS": "Pressman Advertising Limited",
-    },
-
-
+   
     "Agricultural Chemicals": {
         "ARIES.NS": "Aries Agro Limited",
         "BAYERCROP.NS": "Bayer CropScience Limited",
