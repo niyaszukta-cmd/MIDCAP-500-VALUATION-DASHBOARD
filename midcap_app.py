@@ -503,7 +503,7 @@ def check_password():
     def password_entered():
         username = st.session_state["username"].strip().lower()
         password = st.session_state["password"]
-        users = {"demo": "nytddemo", "premium": "engulfinggreens", "niyas": "buffett123"}
+        users = {"demo": "nytddemo", "premium": "bullrun@2026", "niyas": "buffett123"}
         if username in users and password == users[username]:
             st.session_state["password_correct"] = True
             st.session_state["authenticated_user"] = username
@@ -525,7 +525,7 @@ def check_password():
             st.text_input("👤 Username", key="username", placeholder="Enter username")
             st.text_input("🔒 Password", type="password", key="password", placeholder="Enter password")
             st.button("🚀 Login", on_click=password_entered, use_container_width=True, type="primary")
-            st.info("💡 Demo Access: demo/demo123")
+            
         return False
     elif not st.session_state["password_correct"]:
         st.error("❌ Incorrect credentials. Please try again.")
