@@ -1,5 +1,6 @@
 import streamlit as st
 import yfinance as yf
+import market_cache as mcache
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -568,7 +569,7 @@ INDIAN_STOCKS = {
         "ABGSHIP.NS": "ABG Shipyard Limited",
         "BEL.NS": "Bharat Electronics Limited",
         "BHARATIDIL.NS": "Bharati Defence And Infrastructure Limited",
-        "RDEL.NS": "Reliance Defence and Engineering Limited"
+        "RDEL.NS": "Reliance Defence and Engineering Limited",
         "COCHINSHIP.BO": "COCHIN SHIPYARD LTD."
     },
 
@@ -678,11 +679,9 @@ INDIAN_STOCKS = {
         "TCI.NS": "Transport Corporation of India Limited"
     },
 
-    }
 
 }
 
-(ADD THE REST OF LISTS BELOW)
 
 # ============================================================================
 # COMPREHENSIVE INDUSTRY-SPECIFIC BENCHMARKS SYSTEM
@@ -1027,11 +1026,20 @@ def fetch_stock_data(ticker):
             return None, "Rate limit reached"
         return None, str(e)[:100]
 
-def get_stock_fundamentals(ticker):
-    """Get key fundamental metrics for a stock with enhanced sector analysis"""
-    info, error = fetch_stock_data(ticker)
-    
-    if error or not info:
+def get_stock_fundamentals(ticker, cached=None):
+    """Key fundamentals for one stock.
+
+    `cached` is a dict the caller already pulled from the shared cache in one
+    batch. When it holds this ticker nothing is fetched, which is what keeps a
+    90-stock screen from becoming 90 Yahoo calls. Only the single-stock view
+    falls through to a live request.
+    """
+    info = (cached or {}).get(ticker)
+    if info is None:
+        info, error = fetch_stock_data(ticker)
+        if error or not info:
+            return None
+    if not info:
         return None
     
     try:
@@ -1265,7 +1273,15 @@ def run_industry_screener(industry, strategy_type="undervalued", max_results=50)
     stocks = get_stocks_by_category(industry)
     if not stocks:
         return pd.DataFrame()
-    
+
+    # One batched read for the entire category, from the shared cache.
+    # allow_live=False is deliberate: a screen must never queue up a Yahoo
+    # call per stock, because every visitor shares one outbound IP and that
+    # is what triggers the 429s. The refresh job keeps this data current.
+    cached, cache_report = mcache.get_quotes(list(stocks.keys()),
+                                             allow_live=False)
+    st.session_state["_cache_report"] = cache_report
+
     results = []
     
     # Progress tracking
@@ -1277,10 +1293,10 @@ def run_industry_screener(industry, strategy_type="undervalued", max_results=50)
         # Update progress
         progress = (i + 1) / total_stocks
         progress_bar.progress(progress)
-        status_text.text(f"Processing {ticker} ({i + 1}/{total_stocks})")
+        status_text.text(f"Scoring {ticker} ({i + 1}/{total_stocks})")
         
         # Get fundamentals
-        fundamentals = get_stock_fundamentals(ticker)
+        fundamentals = get_stock_fundamentals(ticker, cached=cached)
         if not fundamentals or not fundamentals['price']:
             continue
         
