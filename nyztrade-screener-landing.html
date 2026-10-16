@@ -1,0 +1,229 @@
+<!--
+  NYZTrade Screener — landing page
+  ============================================================================
+  Paste into a WordPress "Custom HTML" block, or commit as a standalone page.
+
+  ONE THING TO EDIT: the links marked EDIT below. There is no JavaScript in
+  this file on purpose, so there is nothing for WordPress to mangle.
+
+  The worked numbers are a made-up company. Do not swap in a real one: a named
+  stock beside a fair value reads as a recommendation, which needs SEBI
+  registration.
+  ============================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+
+<style>
+/* Self-contained: its own background and text colours, so the block looks
+   right whatever theme the surrounding site uses. Same tokens as the
+   valuation tool, so the two products read as one family. */
+.nyzs{
+  --s1:#FFFFFF; --s2:#FAF8FF; --s3:#F4F1FE;
+  --bd:#E4DEF7; --bd2:#D3C9F0;
+  --ink:#1B1033; --ink2:#4A3D6B; --ink3:#6B5E8A;
+  --brand:#6D28D9; --brand2:#8B5CF6; --brandink:#4C1D95;
+  --gain:#0F7A52; --gainfill:#A7F3D0; --loss:#B4233A;
+
+  box-sizing:border-box;
+  font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-size:17px; line-height:1.55; color:var(--ink);
+  background:var(--s1); border:1px solid var(--bd); border-radius:22px;
+  max-width:1120px; margin:28px auto; padding:0; overflow:hidden;
+  box-shadow:0 24px 60px -40px rgba(76,29,149,.5);
+  -webkit-font-smoothing:antialiased;
+}
+.nyzs *{box-sizing:border-box;}
+.nyzs p{margin:0;}
+.nyzs .edge{height:5px;background:linear-gradient(90deg,var(--brand),var(--brand2));}
+
+/* ---------- masthead ---------- */
+.nyzs .top{padding:34px 32px 0;}
+@media (max-width:560px){.nyzs .top{padding:26px 20px 0;}}
+.nyzs .brandrow{display:flex;align-items:center;gap:11px;margin-bottom:22px;}
+.nyzs .mk{width:44px;height:44px;border-radius:13px;background:var(--s3);
+  border:1.5px solid var(--brand);display:flex;align-items:center;
+  justify-content:center;flex:none;color:var(--brand);}
+.nyzs .mk svg{width:25px;height:25px;}
+.nyzs .bn{font-weight:700;font-size:1.02rem;line-height:1.2;}
+.nyzs .bs{font-size:.85rem;color:var(--ink3);}
+
+.nyzs h1{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:2.3rem;
+  line-height:1.08;letter-spacing:-.025em;margin:0 0 12px;max-width:19ch;}
+@media (max-width:560px){.nyzs h1{font-size:1.8rem;}}
+.nyzs .lede{font-size:1.06rem;color:var(--ink2);max-width:54ch;}
+
+/* ---------- the three jobs ---------- */
+.nyzs .jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+  padding:30px 32px 0;}
+@media (max-width:860px){.nyzs .jobs{grid-template-columns:minmax(0,1fr);}}
+@media (max-width:560px){.nyzs .jobs{padding:24px 20px 0;}}
+.nyzs .job{background:var(--s2);border:1px solid var(--bd);border-radius:16px;
+  padding:19px 20px;}
+.nyzs .job h2{font-size:1.05rem;margin:0 0 6px;font-weight:700;}
+.nyzs .job p{font-size:.95rem;color:var(--ink2);}
+.nyzs .job .ic{width:34px;height:34px;border-radius:10px;background:var(--s1);
+  border:1px solid var(--bd2);display:flex;align-items:center;
+  justify-content:center;margin-bottom:12px;color:var(--brand);}
+.nyzs .job .ic svg{width:19px;height:19px;}
+
+/* ---------- the result strip: what a screen actually returns ---------- */
+.nyzs .sheetwrap{padding:30px 32px 0;}
+@media (max-width:560px){.nyzs .sheetwrap{padding:24px 20px 0;}}
+.nyzs .sheetlab{font-size:.88rem;color:var(--ink3);margin-bottom:11px;}
+.nyzs .sheet{border:1px solid var(--bd);border-radius:16px;overflow:hidden;}
+.nyzs table{width:100%;border-collapse:collapse;font-size:.93rem;
+  font-variant-numeric:tabular-nums;}
+.nyzs th{background:var(--s2);text-align:left;font-weight:600;color:var(--ink3);
+  font-size:.85rem;padding:11px 14px;border-bottom:1px solid var(--bd);
+  white-space:nowrap;}
+.nyzs td{padding:11px 14px;border-bottom:1px solid var(--bd);white-space:nowrap;}
+.nyzs tbody tr:last-child td{border-bottom:none;}
+.nyzs .r{text-align:right;}
+.nyzs .up{color:var(--gain);font-weight:700;}
+.nyzs .muted{color:var(--ink3);}
+/* the formula column is the wordy one; let it go on narrow screens */
+@media (max-width:680px){.nyzs .drop{display:none;}}
+.nyzs .freshness{display:flex;align-items:center;gap:8px;padding:11px 14px;
+  background:var(--s2);font-size:.86rem;color:var(--ink3);}
+.nyzs .dot{width:8px;height:8px;border-radius:50%;background:var(--gain);flex:none;}
+
+/* ---------- call to action ---------- */
+.nyzs .cta{padding:30px 32px 32px;}
+@media (max-width:560px){.nyzs .cta{padding:24px 20px 26px;}}
+.nyzs .acts{display:flex;gap:11px;flex-wrap:wrap;align-items:center;}
+.nyzs a.go{display:inline-flex;align-items:center;justify-content:center;
+  background:var(--brand);color:#fff;text-decoration:none;border-radius:12px;
+  padding:15px 26px;font-weight:700;font-size:1.02rem;
+  box-shadow:0 14px 30px -14px rgba(109,40,217,.75);
+  transition:transform .12s ease,box-shadow .12s ease;}
+.nyzs a.go:hover{transform:translateY(-1px);
+  box-shadow:0 18px 36px -14px rgba(109,40,217,.85);}
+.nyzs a.go:active{transform:translateY(0);}
+.nyzs a.alt{display:inline-flex;align-items:center;color:var(--brandink);
+  text-decoration:none;font-weight:600;font-size:.98rem;padding:15px 6px;
+  border-bottom:1px solid transparent;}
+.nyzs a.alt:hover{border-bottom-color:var(--bd2);}
+.nyzs a:focus-visible{outline:3px solid var(--brand2);outline-offset:3px;
+  border-radius:12px;}
+.nyzs .terms{font-size:.9rem;color:var(--ink3);margin-top:15px;}
+.nyzs .terms b{color:var(--ink2);font-weight:600;}
+
+.nyzs .foot{padding:17px 32px 22px;border-top:1px solid var(--bd);
+  font-size:.83rem;color:var(--ink3);line-height:1.62;}
+@media (max-width:560px){.nyzs .foot{padding:15px 20px 20px;}}
+</style>
+
+<div class="nyzs">
+  <div class="edge"></div>
+
+  <div class="top">
+    <div class="brandrow">
+      <div class="mk">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M13 34V14l12 13.5V14" stroke="currentColor" stroke-width="3.8"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+          <rect x="30" y="20" width="4" height="14" rx="1.6" fill="currentColor" opacity=".78"></rect>
+          <rect x="36.5" y="25" width="4" height="9" rx="1.6" fill="currentColor" opacity=".5"></rect>
+        </svg>
+      </div>
+      <div>
+        <div class="bn">NYZTrade Screener</div>
+        <div class="bs">Valuation and breakouts, in one place</div>
+      </div>
+    </div>
+
+    <h1>Find the stocks worth a second look</h1>
+    <p class="lede">Screen an entire industry against benchmark multiples, catch
+      intraday breakouts on the 1-hour and 15-minute charts, then value any name
+      that interests you. The arithmetic is shown at every step.</p>
+  </div>
+
+  <div class="jobs">
+    <div class="job">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>
+        </svg>
+      </div>
+      <h2>Industry screener</h2>
+      <p>Rank a whole industry by how far it sits from its own benchmark
+        multiples, with momentum and trend filters layered on top.</p>
+    </div>
+    <div class="job">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M13 2L4 14h6l-1 8 9-12h-6z"></path>
+        </svg>
+      </div>
+      <h2>Breakout screener</h2>
+      <p>Opening range, Donchian channels, session VWAP and relative volume on
+        the 1-hour and 15-minute timeframes.</p>
+    </div>
+    <div class="job">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 17l6-6 4 4 7-7"></path><path d="M14 8h6v6"></path>
+        </svg>
+      </div>
+      <h2>Single-stock valuation</h2>
+      <p>Five methods side by side on one name, with a downloadable report when
+        you want to keep the working.</p>
+    </div>
+  </div>
+
+  <div class="sheetwrap">
+    <p class="sheetlab">What a screen hands back:</p>
+    <div class="sheet">
+      <table>
+        <thead>
+          <tr>
+            <th>Stock</th>
+            <th class="r">Price</th>
+            <th class="r">Fair value</th>
+            <th class="r">Upside</th>
+            <th class="r drop">P/E</th>
+            <th class="r drop">vs 52w high</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Example Agri Ltd</td><td class="r">₹248.10</td>
+              <td class="r">₹362.40</td><td class="r up">+46.1%</td>
+              <td class="r drop">11.4x</td><td class="r drop muted">−3.2%</td></tr>
+          <tr><td>Example Chem Ltd</td><td class="r">₹1,104.00</td>
+              <td class="r">₹1,488.00</td><td class="r up">+34.8%</td>
+              <td class="r drop">14.9x</td><td class="r drop muted">−1.1%</td></tr>
+          <tr><td>Example Logistics</td><td class="r">₹92.75</td>
+              <td class="r">₹118.90</td><td class="r up">+28.2%</td>
+              <td class="r drop">9.8x</td><td class="r drop muted">−8.6%</td></tr>
+        </tbody>
+      </table>
+      <div class="freshness">
+        <span class="dot"></span>
+        <span>Prices and fundamentals refreshed this morning. Screens read from
+          that snapshot, so they return straight away.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="acts">
+      <!-- EDIT: your app link -->
+      <a class="go" href="#REPLACE-WITH-YOUR-APP-URL">Open the screener</a>
+      <!-- EDIT: same link, or a pricing page -->
+      <a class="alt" href="#REPLACE-WITH-YOUR-APP-URL">See what you get</a>
+    </div>
+    <p class="terms">Runs in your browser on phone or laptop, with
+      <b>nothing to install</b>.</p>
+  </div>
+
+  <p class="foot"><b>Educational tool.</b> It does arithmetic on published
+    figures and does not verify them. The stocks in the table above are made up,
+    for illustration. Output is not investment advice, not a recommendation and
+    not a price target. NYZTrade is not a SEBI-registered investment adviser.
+    Verify every figure against the company's filings.</p>
+</div>
