@@ -3,8 +3,13 @@
   ============================================================================
   Paste into a WordPress "Custom HTML" block, or commit as a standalone page.
 
-  ONE THING TO EDIT: the links marked EDIT below. There is no JavaScript in
-  this file on purpose, so there is nothing for WordPress to mangle.
+  ONE THING TO EDIT: the links marked EDIT below. There is still no JavaScript
+  in this file, so there is nothing for WordPress to mangle. The dark mode
+  toggle is a hidden checkbox and a :has() rule, not a script.
+
+  Because it is pure CSS the choice is not remembered between page loads. That
+  is the trade for having nothing that can break; on a landing page people see
+  once, it is the right way round.
 
   The worked numbers are a made-up company. Do not swap in a real one: a named
   stock beside a fair value reads as a recommendation, which needs SEBI
@@ -34,6 +39,18 @@
   box-shadow:0 24px 60px -40px rgba(76,29,149,.5);
   -webkit-font-smoothing:antialiased;
 }
+/* Dark set. :has() lets a checkbox inside the card repaint the whole card,
+   with no script anywhere. Browsers without :has() (pre-2023) simply stay
+   light, which is a fine thing to degrade to. */
+.nyzs:has(.nyzsw:checked){
+  --s1:#1B1333; --s2:#211841; --s3:#281D4C;
+  --bd:#3A2E63; --bd2:#4C3F80;
+  --ink:#F4F1FD; --ink2:#D2C8EC; --ink3:#AEA1D4;
+  --brand:#7C3AED; --brand2:#A78BFA; --brandink:#C4B5FD;
+  --gain:#34D399; --gainfill:#14532D; --loss:#FB7185;
+  box-shadow:0 24px 60px -40px rgba(0,0,0,.8);
+}
+
 .nyzs *{box-sizing:border-box;}
 .nyzs p{margin:0;}
 .nyzs .edge{height:5px;background:linear-gradient(90deg,var(--brand),var(--brand2));}
@@ -48,6 +65,34 @@
 .nyzs .mk svg{width:25px;height:25px;}
 .nyzs .bn{font-weight:700;font-size:1.02rem;line-height:1.2;}
 .nyzs .bs{font-size:.85rem;color:var(--ink3);}
+
+/* ---------- theme toggle: a checkbox dressed as a switch ---------- */
+.nyzs .nyzsw{position:absolute;opacity:0;width:1px;height:1px;
+  margin:0;pointer-events:none;}
+.nyzs .swlab{margin-left:auto;display:inline-flex;align-items:center;gap:9px;
+  cursor:pointer;border:1px solid var(--bd2);background:var(--s2);
+  border-radius:999px;padding:7px 13px 7px 9px;font-size:.88rem;
+  color:var(--ink2);font-weight:600;user-select:none;
+  transition:border-color .18s,background .18s;}
+.nyzs .swlab:hover{border-color:var(--brand2);}
+/* the track */
+.nyzs .swtrack{position:relative;width:34px;height:19px;border-radius:999px;
+  background:var(--bd2);flex:none;transition:background .22s;}
+.nyzs .swtrack::after{content:"";position:absolute;top:2px;left:2px;
+  width:15px;height:15px;border-radius:50%;background:var(--s1);
+  transition:transform .22s cubic-bezier(.2,.8,.3,1);}
+.nyzs:has(.nyzsw:checked) .swtrack{background:var(--brand);}
+.nyzs:has(.nyzsw:checked) .swtrack::after{transform:translateX(15px);}
+/* the words swap, so the control says what it will do */
+.nyzs .swon{display:none;}
+.nyzs:has(.nyzsw:checked) .swon{display:inline;}
+.nyzs:has(.nyzsw:checked) .swoff{display:none;}
+/* keyboard users must see focus, since the real input is hidden */
+.nyzs .nyzsw:focus-visible + .swlab{outline:3px solid var(--brand2);
+  outline-offset:3px;}
+@media (prefers-reduced-motion:reduce){
+  .nyzs .swtrack, .nyzs .swtrack::after{transition:none;}
+}
 
 .nyzs h1{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:2.3rem;
   line-height:1.08;letter-spacing:-.025em;margin:0 0 12px;max-width:19ch;}
@@ -117,6 +162,7 @@
 
 <div class="nyzs">
   <div class="edge"></div>
+  <input type="checkbox" id="nyzsDark" class="nyzsw" aria-label="Dark mode">
 
   <div class="top">
     <div class="brandrow">
@@ -132,6 +178,12 @@
         <div class="bn">NYZTrade Screener</div>
         <div class="bs">Valuation and breakouts, in one place</div>
       </div>
+
+      <label for="nyzsDark" class="swlab">
+        <span class="swtrack"></span>
+        <span class="swoff">Dark</span>
+        <span class="swon">Light</span>
+      </label>
     </div>
 
     <h1>Find the stocks worth a second look</h1>
