@@ -249,7 +249,7 @@ def fetch_prices(tickers, period="1y"):
 # the entry point the app uses
 # ---------------------------------------------------------------------------
 def get_quotes(tickers, max_age=DEFAULT_MAX_AGE, allow_live=False,
-               live_budget=8):
+               live_budget=8, on_progress=None):
     """Return {ticker: payload} plus a small report on where it came from.
 
     allow_live=False is the right setting for a screener: it reads cache only,
@@ -303,8 +303,8 @@ def get_quotes(tickers, max_age=DEFAULT_MAX_AGE, allow_live=False,
 
     # layer 3, only when the caller allows it
     if pending and allow_live:
-        fresh = {}
-        for t in pending[:live_budget]:
+        fresh, todo = {}, pending[:live_budget]
+        for i, t in enumerate(todo):
             payload = _fetch_one(t)
             if payload:
                 fresh[t] = payload
@@ -312,6 +312,13 @@ def get_quotes(tickers, max_age=DEFAULT_MAX_AGE, allow_live=False,
                 report["live"] += 1
                 with _mem_lock:
                     _mem[t] = (payload, time.time())
+            if on_progress:
+                on_progress(i + 1, len(todo), t)
+            # Write as we go. A screen that is interrupted half way still
+            # leaves the cache warmer than it found it.
+            if len(fresh) >= 10:
+                _db_write(fresh)
+                fresh = {}
         if fresh:
             _db_write(fresh)
 
