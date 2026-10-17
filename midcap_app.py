@@ -34,467 +34,227 @@ st.set_page_config(
 # ============================================================================.
 st.markdown("""
 <style>
-    /* Mobile-first responsive design */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    
-    .stApp {
-        font-family: 'Inter', sans-serif;
-    }
-    
-    /* Main Container Styling */
-    .main-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 1.5rem 1rem;
-        border-radius: 12px;
-        margin: 0.5rem 0 1rem 0;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
-    }
-    
-    .main-header h1 {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-    }
-    
-    .main-header h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.3rem;
-        font-weight: 500;
-        opacity: 0.9;
-    }
-    
-    .main-header p {
-        font-size: 0.9rem;
-        margin: 0;
-        opacity: 0.8;
-    }
-    
-    .auth-container {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 15px;
-        padding: 2rem 1rem;
-        text-align: center;
-        color: white;
-        margin: 1rem 0;
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-    }
-    
-    .stats-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 0.75rem;
-        margin: 1rem 0;
-        padding: 0 0.5rem;
-    }
-    
-    .stat-card {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        color: white;
-        padding: 1rem 0.5rem;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    .stat-card h3 {
-        font-size: 1.5rem;
-        margin: 0 0 0.25rem 0;
-        font-weight: 600;
-    }
-    
-    .stat-card p {
-        font-size: 0.8rem;
-        margin: 0;
-        opacity: 0.9;
-    }
-    
-    .highlight-box {
-        background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.1));
-        border: 2px solid rgba(34, 197, 94, 0.3);
-        border-radius: 12px;
-        padding: 1rem;
-        margin: 1rem 0;
-    }
-    
-    .success-message {
-        background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15));
-        border: 1px solid rgba(34, 197, 94, 0.3);
-        color: #059669;
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 1rem 0;
-    }
-    
-    .metric-card {
-        background: linear-gradient(135deg, #1e1b4b, #312e81);
-        border-radius: 12px;
-        padding: 1rem;
-        text-align: center;
-        margin: 0.5rem 0;
-        border: 1px solid rgba(124, 58, 237, 0.3);
-        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.15);
-        min-height: 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .metric-value {
-        font-size: 1.4rem;
-        font-weight: bold;
-        color: #a78bfa;
-        margin: 0.3rem 0;
-        line-height: 1.2;
-    }
-    
-    .metric-label {
-        font-size: 0.75rem;
-        color: #c4b5fd;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        line-height: 1.3;
-    }
-    
-    .company-header {
-        background: linear-gradient(135deg, #1e1b4b, #312e81);
-        border-radius: 15px;
-        padding: 1.5rem 1rem;
-        margin: 1rem 0;
-        border: 1px solid rgba(167, 139, 250, 0.3);
-        box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
-    }
-    
-    .company-title {
-        font-size: 1.8rem;
-        color: #e2e8f0;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-        line-height: 1.3;
-    }
-    
-    .company-info {
-        color: #a78bfa;
-        font-size: 0.9rem;
-        margin: 0.15rem 0;
-        line-height: 1.4;
-    }
-    
-    .fair-value-card {
-        background: linear-gradient(135deg, #059669, #10b981);
-        border-radius: 15px;
-        padding: 1.5rem 1rem;
-        color: white;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-        margin: 1rem 0;
-    }
-    
-    .fair-value-title {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        opacity: 0.9;
-    }
-    
-    .fair-value-amount {
-        font-size: 2.2rem;
-        font-weight: bold;
-        margin: 1rem 0;
-        line-height: 1.2;
-    }
-    
-    .fair-value-details {
-        font-size: 0.9rem;
-        opacity: 0.8;
-        line-height: 1.4;
-    }
-    
-    .section-header {
-        font-size: 1.3rem;
-        color: #a78bfa;
-        margin: 1.5rem 0 1rem 0;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid rgba(167, 139, 250, 0.3);
-        font-weight: 600;
-    }
-    
-    .recommendation-card {
-        border-radius: 12px;
-        padding: 1.2rem 1rem;
-        text-align: center;
-        margin: 1rem 0;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .rec-strong-buy {
-        background: linear-gradient(135deg, #059669, #10b981);
-        color: white;
-    }
-    
-    .rec-buy {
-        background: linear-gradient(135deg, #0891b2, #06b6d4);
-        color: white;
-    }
-    
-    .rec-hold {
-        background: linear-gradient(135deg, #ca8a04, #eab308);
-        color: white;
-    }
-    
-    .rec-avoid {
-        background: linear-gradient(135deg, #dc2626, #ef4444);
-        color: white;
-    }
-    
-    .valuation-box {
-        background: rgba(30, 27, 75, 0.6);
-        border: 1px solid rgba(167, 139, 250, 0.3);
-        border-radius: 12px;
-        padding: 1.2rem;
-        margin: 1rem 0;
-    }
-    
-    .valuation-method {
-        color: #a78bfa;
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-    }
-    
-    .valuation-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0.4rem 0;
-        padding: 0.4rem;
-        border-radius: 6px;
-        background: rgba(167, 139, 250, 0.05);
-        font-size: 0.9rem;
-    }
-    
-    .valuation-label {
-        color: #c4b5fd;
-        font-weight: 500;
-    }
-    
-    .valuation-value {
-        color: #e2e8f0;
-        font-weight: 600;
-    }
-    
-    .welcome-section {
-        background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(167, 139, 250, 0.1));
-        border-radius: 15px;
-        padding: 2rem 1rem;
-        text-align: center;
-        margin: 2rem 0;
-        border: 1px solid rgba(124, 58, 237, 0.2);
-    }
-    
-    .welcome-title {
-        font-size: 2rem;
-        color: #a78bfa;
-        margin-bottom: 1rem;
-        font-weight: 700;
-        line-height: 1.3;
-    }
-    
-    .welcome-subtitle {
-        font-size: 1.1rem;
-        color: #c4b5fd;
-        margin-bottom: 1.5rem;
-        line-height: 1.4;
-    }
-    
-    .feature-list {
-        text-align: left;
-        max-width: 600px;
-        margin: 0 auto;
-        color: #e2e8f0;
-    }
-    
-    .feature-list li {
-        margin: 0.4rem 0;
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-    
-    /* 52-week range styling */
-    .range-container {
-        background: rgba(30, 27, 75, 0.6);
-        border-radius: 12px;
-        padding: 1.2rem;
-        margin: 1rem 0;
-        border: 1px solid rgba(167, 139, 250, 0.3);
-    }
-    
-    .range-labels {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-        font-size: 0.85rem;
-        color: #a78bfa;
-    }
-    
-    .range-bar {
-        width: 100%;
-        height: 18px;
-        background: linear-gradient(90deg, #dc2626 0%, #eab308 50%, #059669 100%);
-        border-radius: 9px;
-        position: relative;
-        margin: 1rem 0;
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    .range-indicator {
-        position: absolute;
-        top: -3px;
-        width: 4px;
-        height: 24px;
-        background: #e2e8f0;
-        border-radius: 2px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    }
-    
-    .range-info {
-        text-align: center;
-        margin-top: 1rem;
-        color: #e2e8f0;
-        font-weight: 600;
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-    
-    /* Footer styling */
-    .footer {
-        background: linear-gradient(135deg, #1e1b4b, #312e81);
-        color: #c4b5fd;
-        text-align: center;
-        padding: 1.5rem 1rem;
-        border-radius: 12px;
-        margin-top: 2rem;
-        border: 1px solid rgba(167, 139, 250, 0.2);
-    }
-    
-    .disclaimer {
-        font-size: 0.85rem;
-        color: #94a3b8;
-        margin-top: 1rem;
-        font-style: italic;
-        line-height: 1.4;
-    }
-    
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-        .main-header {
-            padding: 1rem 0.5rem;
-            margin: 0.25rem 0 0.75rem 0;
-        }
-        
-        .main-header h1 {
-            font-size: 1.5rem;
-        }
-        
-        .main-header h3 {
-            font-size: 1rem;
-        }
-        
-        .main-header p {
-            font-size: 0.8rem;
-        }
-        
-        .stats-container {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            padding: 0 0.25rem;
-        }
-        
-        .stat-card {
-            padding: 0.75rem 0.5rem;
-        }
-        
-        .stat-card h3 {
-            font-size: 1.2rem;
-        }
-        
-        .company-title {
-            font-size: 1.4rem;
-        }
-        
-        .fair-value-amount {
-            font-size: 1.8rem;
-        }
-        
-        .welcome-title {
-            font-size: 1.6rem;
-        }
-        
-        .metric-card {
-            padding: 0.75rem;
-            min-height: 85px;
-        }
-        
-        .metric-value {
-            font-size: 1.2rem;
-        }
-        
-        .metric-label {
-            font-size: 0.7rem;
-        }
-        
-        .valuation-row {
-            font-size: 0.8rem;
-            padding: 0.3rem;
-        }
-        
-        .section-header {
-            font-size: 1.1rem;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .stats-container {
-            grid-template-columns: 1fr;
-        }
-        
-        .main-header h1 {
-            font-size: 1.3rem;
-        }
-        
-        .company-title {
-            font-size: 1.2rem;
-        }
-        
-        .fair-value-amount {
-            font-size: 1.6rem;
-        }
-        
-        .metric-value {
-            font-size: 1rem;
-        }
-    }
-    
-    /* Ensure proper contrast and visibility */
-    .stSelectbox > div > div {
-        background-color: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    }
-    
-    .stButton > button {
-        border-radius: 8px !important;
-        border: none !important;
-        font-weight: 500 !important;
-    }
-    
-    /* Fix potential black screen issues */
-    .stApp > div {
-        background: transparent !important;
-    }
-    
-    .main > div {
-        background: transparent !important;
-    }
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
+
+/* ===========================================================================
+   NYZTrade screener — one palette, shared with the valuation tool and the
+   landing page, so the products read as one family.
+
+   Every class name here matches the markup that was already in the app, so
+   nothing had to be rewritten to adopt it. Colours come from tokens rather
+   than being repeated, which is what makes the dark set a short block at the
+   bottom instead of a second stylesheet.
+   =========================================================================== */
+:root{
+  --s1:#FFFFFF; --s2:#FAF8FF; --s3:#F4F1FE;
+  --bd:#E4DEF7; --bd2:#D3C9F0;
+  --ink:#1B1033; --ink2:#4A3D6B; --ink3:#6B5E8A;
+  --brand:#6D28D9; --brand2:#8B5CF6; --brandink:#4C1D95; --onbrand:#FFFFFF;
+  --gain:#0F7A52; --gainbg:#E7F7F0; --loss:#B4233A; --lossbg:#FDECEF;
+  --warn:#9A5B06; --warnbg:#FDF4E3;
+  --shadow:rgba(76,29,149,.42); --glow:rgba(109,40,217,.5);
+}
+
+/* Streamlit's own chrome, quietened */
+#MainMenu, footer, header [data-testid="stStatusWidget"]{visibility:hidden;}
+[data-testid="stDecoration"]{display:none !important;}
+
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"],
+[data-testid="stHeader"], body{background:var(--s1) !important;}
+[data-testid="stSidebarContent"]{background:var(--s2) !important;
+  border-right:1px solid var(--bd);}
+
+/* Font on text elements only. Streamlit draws its icons as ligature text in
+   spans, so a blanket span rule turns the arrows into words like
+   "keyboard_arrow_right". */
+.stApp, .stApp p, .stApp label, .stApp li{
+  font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--ink);
+}
+.stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6{
+  color:var(--ink) !important;
+  font-family:'DM Sans',system-ui,sans-serif;
+}
+.stApp [data-testid="stCaptionContainer"],
+.stApp [data-testid="stCaptionContainer"] *{color:var(--ink3) !important;}
+/* Figures only line up column-wise with tabular numerals, and this is a page
+   of figures meant to be compared. */
+[data-testid="stMetricValue"], [data-testid="stDataFrame"],
+.metric-value, .stat-card, .valuation-value, .fair-value-amount,
+table{font-variant-numeric:tabular-nums;}
+
+[data-testid="stMainBlockContainer"], .block-container{
+  padding-top:2rem !important; max-width:1240px !important;
+}
+
+/* ---------- masthead ---------- */
+.main-header{
+  background:linear-gradient(135deg,var(--brand),var(--brand2));
+  border-radius:20px; padding:30px 28px; margin-bottom:22px; color:#fff;
+  box-shadow:0 18px 44px -24px var(--glow);
+}
+.main-header h1{
+  font-family:'Fraunces',Georgia,serif !important; font-weight:700;
+  font-size:2.05rem; line-height:1.1; letter-spacing:-.02em;
+  margin:0 0 6px; color:#fff !important;
+}
+.main-header h3{color:#fff !important; font-size:1.05rem; font-weight:600;
+  margin:0 0 4px; opacity:.96;}
+.main-header p{color:#fff; opacity:.9; margin:0; font-size:.96rem;}
+
+/* ---------- the four counters ----------
+   These were four saturated pink gradients competing with each other and
+   with the header. Numbers are the content; the tile should be quiet. */
+.stats-container{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px; margin-bottom:26px;}
+@media (max-width:900px){.stats-container{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.stat-card{
+  background:var(--s2); border:1px solid var(--bd); border-radius:14px;
+  padding:16px 18px; text-align:left; color:var(--ink);
+  display:flex; flex-direction:column; justify-content:space-between; gap:4px;
+}
+.stat-card h3, .stat-card .metric-value, .stat-card b{
+  font-size:1.6rem !important; font-weight:700 !important;
+  color:var(--brandink) !important; line-height:1.1; margin:0 !important;
+}
+.stat-card p, .stat-card .metric-label, .stat-card span{
+  font-size:.88rem; color:var(--ink3) !important; font-weight:500; margin:0;
+}
+
+/* ---------- section headings ---------- */
+.section-header{
+  font-size:1.2rem; font-weight:700; color:var(--ink);
+  margin:26px 0 12px; padding-bottom:9px; border-bottom:1px solid var(--bd);
+}
+
+/* ---------- cards ---------- */
+.metric-card, .valuation-box, .highlight-box, .company-header,
+.auth-container, .welcome-section, .fair-value-card, .recommendation-card{
+  background:var(--s1); border:1px solid var(--bd); border-radius:16px;
+  padding:20px; color:var(--ink);
+}
+.metric-card{background:var(--s2);}
+.metric-value{font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1.15;}
+.metric-label{font-size:.9rem;color:var(--ink3);margin-top:3px;}
+
+.company-title{font-family:'Fraunces',Georgia,serif;font-weight:700;
+  font-size:1.6rem;color:var(--ink);letter-spacing:-.02em;}
+.company-info{color:var(--ink3);font-size:.95rem;}
+
+/* The fair value is the answer on the page, so it gets the one piece of
+   emphasis and everything round it stays calm. */
+.fair-value-card{background:var(--s3);border-color:var(--bd2);}
+.fair-value-title{font-size:.95rem;color:var(--ink3);margin-bottom:2px;}
+.fair-value-amount{font-family:'Fraunces',Georgia,serif;font-weight:700;
+  font-size:2.8rem;line-height:1.02;letter-spacing:-.025em;color:var(--ink);}
+.fair-value-details{font-size:.95rem;color:var(--ink2);margin-top:4px;}
+
+.highlight-box{border-left:3px solid var(--brand2);background:var(--s2);
+  border-radius:0 12px 12px 0;}
+.success-message{background:var(--gainbg);border:1px solid var(--gain);
+  color:var(--gain);border-radius:12px;padding:13px 16px;font-weight:600;}
+
+/* ---------- valuation rows ---------- */
+.valuation-row{display:flex;justify-content:space-between;align-items:baseline;
+  gap:14px;padding:11px 0;border-bottom:1px solid var(--bd);}
+.valuation-row:last-child{border-bottom:none;}
+.valuation-method{color:var(--ink2);font-size:.95rem;}
+.valuation-label{color:var(--ink3);font-size:.88rem;}
+.valuation-value{color:var(--ink);font-weight:700;white-space:nowrap;}
+
+/* ---------- 52-week range ---------- */
+.range-container{margin:14px 0;}
+.range-bar{position:relative;height:10px;border-radius:999px;
+  background:linear-gradient(90deg,var(--lossbg),var(--s3),var(--gainbg));
+  border:1px solid var(--bd);}
+.range-indicator{position:absolute;top:50%;width:3px;height:22px;
+  background:var(--brand);border-radius:2px;transform:translate(-50%,-50%);}
+.range-labels{display:flex;justify-content:space-between;font-size:.82rem;
+  color:var(--ink3);margin-top:8px;}
+.range-info{font-size:.9rem;color:var(--ink2);}
+
+/* ---------- welcome / auth ---------- */
+.welcome-title{font-family:'Fraunces',Georgia,serif;font-weight:700;
+  font-size:2rem;color:var(--ink);letter-spacing:-.02em;}
+.welcome-subtitle{color:var(--ink2);font-size:1.02rem;}
+.feature-list{color:var(--ink2);font-size:.97rem;line-height:1.9;}
+
+/* ---------- buttons ----------
+   Colours are pinned rather than left to the theme: without this Streamlit
+   falls back to its default red and the product looks like someone else's. */
+[data-testid^="stBaseButton-primary"]{
+  border-radius:11px !important; padding:12px 18px !important;
+  font-weight:700 !important; border:none !important;
+  box-shadow:0 10px 26px -12px var(--glow) !important;
+}
+[data-testid^="stBaseButton-primary"],
+[data-testid^="stBaseButton-primary"] *{color:var(--onbrand) !important;}
+[data-testid^="stBaseButton-primary"]{background:var(--brand) !important;}
+[data-testid^="stBaseButton-primary"]:hover{filter:brightness(1.08);}
+[data-testid^="stBaseButton-secondary"]{
+  border-radius:11px !important;font-weight:600 !important;
+  background:var(--s1) !important;border:1px solid var(--bd2) !important;}
+[data-testid^="stBaseButton-secondary"],
+[data-testid^="stBaseButton-secondary"] *{color:var(--brandink) !important;}
+
+/* ---------- inputs ---------- */
+[data-testid="stTextInputRootElement"], [data-testid="stNumberInputContainer"]{
+  border-radius:10px !important;border:1px solid var(--bd) !important;
+  background:var(--s2) !important;}
+[data-testid="stTextInputRootElement"]:focus-within,
+[data-testid="stNumberInputContainer"]:focus-within{
+  border-color:var(--brand) !important;
+  box-shadow:0 0 0 3px var(--glow) !important;}
+.stTextInput label,.stNumberInput label,.stSelectbox label,.stSlider label{
+  font-size:.93rem !important;font-weight:500 !important;color:var(--ink2) !important;}
+/* Selects are painted by Streamlit from the theme, not by the rules above,
+   so the control is targeted structurally. The only other handle is a hashed
+   class that changes between releases. */
+[data-testid="stSelectbox"] div[role="group"]{
+  border-radius:10px !important;border-color:var(--bd) !important;
+  background:var(--s2) !important;}
+[data-testid="stSelectbox"] div[role="group"] *{color:var(--ink) !important;}
+[role="listbox"]{background:var(--s1) !important;border:1px solid var(--bd) !important;}
+[role="option"]{color:var(--ink) !important;background:var(--s1) !important;}
+[role="option"]:hover{background:var(--s3) !important;}
+
+/* ---------- expanders, alerts, tables ---------- */
+/* Streamlit paints expander headers with a TRANSLUCENT grey, which goes black
+   over a dark backdrop. Opaque, so nothing can show through. */
+[data-testid="stExpander"]{border:1px solid var(--bd) !important;
+  border-radius:12px !important;background:var(--s1) !important;}
+[data-testid="stExpander"] summary{background:var(--s2) !important;
+  color:var(--ink2) !important;border-radius:12px !important;}
+[data-testid="stAlert"]{border-radius:12px !important;}
+[data-testid="stDataFrame"]{border:1px solid var(--bd) !important;
+  border-radius:12px !important;}
+
+/* The toggle and slider keep Streamlit's default red unless pinned, which
+   left two red controls on an otherwise purple page. */
+[data-testid="stCheckbox"] [data-baseweb="checkbox"] div[aria-checked="true"],
+[data-testid="stCheckbox"] span[aria-checked="true"]{
+  background-color:var(--brand) !important;
+}
+/* The slider fill is a bare div with a hashed class that changes between
+   Streamlit releases, so there is no selector worth writing. config.toml's
+   primaryColor reaches it, which is why that file is not optional. */
+[data-testid="stSlider"] [data-testid="stThumbValue"]{color:var(--brandink) !important;}
+
+.disclaimer, .footer{font-size:.85rem;color:var(--ink3);line-height:1.65;
+  border-top:1px solid var(--bd);padding-top:16px;margin-top:28px;}
+
+/* ===========================================================================
+   Dark. Only the tokens change; every rule above follows automatically.
+   =========================================================================== */
+.nyzdark{
+  --s1:#130D22; --s2:#1B1333; --s3:#211841;
+  --bd:#3A2E63; --bd2:#4C3F80;
+  --ink:#F4F1FD; --ink2:#D2C8EC; --ink3:#AEA1D4;
+  --brand:#7C3AED; --brand2:#A78BFA; --brandink:#C4B5FD; --onbrand:#FFFFFF;
+  --gain:#34D399; --gainbg:#14532D; --loss:#FB7185; --lossbg:#4C1D24;
+  --warn:#FBBF24; --warnbg:#3F2D07;
+  --shadow:rgba(0,0,0,.65); --glow:rgba(124,58,237,.5);
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -540,19 +300,16 @@ if not check_password():
 # ============================================================================
 # COMPREHENSIVE INDIAN STOCKS DATABASE
 # ============================================================================
-"""
-Indian Stocks Database
-Generated from stocks_universe_categorized_enhanced.csv
-Total Categories: 117
-Total Stocks: 8984
-"""
-
-"""
-Indian Stocks Database
-Generated from stocks_universe_categorized_enhanced.csv
-Total Categories: 117
-Total Stocks: 8984
-"""
+# Indian stocks database, generated from
+# stocks_universe_categorized_enhanced.csv.
+#
+# These were two bare string literals. Streamlit's "magic" renders any
+# top-level expression, so both were being printed at the top of the page.
+# Comments are not expressions, so they stay out of the UI.
+#
+# The counts they carried (117 categories, 8984 stocks) describe the full CSV,
+# not what is loaded below. TOTAL_CATEGORIES and TOTAL_STOCKS are computed from
+# the real dictionary, so the header always shows the truth.
 
 INDIAN_STOCKS = {
     "Advertising Agencies": {
@@ -1275,11 +1032,41 @@ def run_industry_screener(industry, strategy_type="undervalued", max_results=50)
         return pd.DataFrame()
 
     # One batched read for the entire category, from the shared cache.
-    # allow_live=False is deliberate: a screen must never queue up a Yahoo
-    # call per stock, because every visitor shares one outbound IP and that
-    # is what triggers the 429s. The refresh job keeps this data current.
-    cached, cache_report = mcache.get_quotes(list(stocks.keys()),
-                                             allow_live=False)
+    # Cache first: a screen must not queue up a Yahoo call per stock, because
+    # every visitor shares one outbound IP and that is what triggers the 429s.
+    symbols = list(stocks.keys())
+    cached, cache_report = mcache.get_quotes(symbols, allow_live=False)
+
+    # Cold cache. Rather than report "no stocks found", which looks like the
+    # filter was strict when really there was nothing to filter, fetch it once
+    # here and write it to the shared cache so nobody pays this again.
+    covered = len(cached)
+    if covered < len(symbols) * 0.5:
+        if not mcache.configured():
+            st.warning(
+                "**No shared cache configured.** Add `supabase_url` and "
+                "`supabase_service_key` to Secrets, then run `refresh_cache.py`. "
+                "Loading this screen directly from Yahoo instead, which is slow "
+                "and can hit their rate limit.")
+        else:
+            st.info(
+                f"**First run for this industry.** {len(symbols) - covered} of "
+                f"{len(symbols)} stocks are not cached yet, so they are being "
+                "fetched once now and saved. The next screen will be instant. "
+                "Run `refresh_cache.py` on a schedule to keep it that way.")
+        warm_bar = st.progress(0.0)
+        warm_txt = st.empty()
+
+        def _warm(done, total, ticker):
+            warm_bar.progress(done / max(1, total))
+            warm_txt.text(f"Fetching {ticker} ({done}/{total})")
+
+        cached, cache_report = mcache.get_quotes(
+            symbols, allow_live=True, live_budget=len(symbols),
+            on_progress=_warm)
+        warm_bar.empty()
+        warm_txt.empty()
+
     st.session_state["_cache_report"] = cache_report
 
     results = []
@@ -2294,6 +2081,19 @@ def create_pdf_report(company, ticker, sector, vals):
     buffer.seek(0)
     return buffer
 
+# Dark tokens, kept as a string so the toggle can inject them onto :root.
+# They are the same values as the .nyzdark block in the stylesheet above.
+NYZ_DARK_TOKENS = """
+  --s1:#130D22; --s2:#1B1333; --s3:#211841;
+  --bd:#3A2E63; --bd2:#4C3F80;
+  --ink:#F4F1FD; --ink2:#D2C8EC; --ink3:#AEA1D4;
+  --brand:#7C3AED; --brand2:#A78BFA; --brandink:#C4B5FD; --onbrand:#FFFFFF;
+  --gain:#34D399; --gainbg:#14532D; --loss:#FB7185; --lossbg:#4C1D24;
+  --warn:#FBBF24; --warnbg:#3F2D07;
+  --shadow:rgba(0,0,0,.65); --glow:rgba(124,58,237,.5);
+"""
+
+
 # ============================================================================
 # MAIN APPLICATION
 # ============================================================================
@@ -2356,7 +2156,15 @@ def main():
     ''', unsafe_allow_html=True)
     
     # Sidebar
+    # Dark mode. Streamlit will not run a script to add a class, so the dark
+    # tokens are re-declared onto :root instead. Same effect, no JavaScript.
+    if st.session_state.get("nyz_dark_app"):
+        st.markdown("<style>:root{" + NYZ_DARK_TOKENS + "}</style>",
+                    unsafe_allow_html=True)
+
     with st.sidebar:
+        st.toggle("Dark mode", key="nyz_dark_app")
+        st.divider()
         st.markdown("### 🔐 Account")
         st.markdown(f"**User:** {st.session_state.get('authenticated_user', 'Guest').title()}")
         
