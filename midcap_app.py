@@ -3,9 +3,27 @@ import yfinance as yf
 import market_cache as mcache
 
 # These two files are uploaded by hand, so one can end up newer than the
-# other. Check rather than crash: the old failure was a TypeError naming a
-# keyword argument, which tells you nothing about what to do.
+# other, or an upload can land truncated. Check at import rather than failing
+# deep inside a screen, where Streamlit redacts the message and the traceback
+# names a function instead of the file that is wrong.
 _NEEDS_CACHE_VERSION = 2
+_CACHE_NEEDS = ("get_quotes", "refresh", "configured", "age_text")
+_CACHE_MISSING = [n for n in _CACHE_NEEDS if not hasattr(mcache, n)]
+
+if _CACHE_MISSING:
+    st.error(
+        "### market_cache.py on this app is not the right file\n\n"
+        "It imported, but these are missing: **"
+        + ", ".join(_CACHE_MISSING) + "**\n\n"
+        "The correct file is about **390 lines** and defines `get_quotes`, "
+        "`refresh`, `configured`, `fetch_prices` and `age_text`.\n\n"
+        "**To check:** open `market_cache.py` on GitHub. If it is short, "
+        "empty, or has different contents, the upload did not take. Replace "
+        "it and reboot the app."
+    )
+    st.caption(f"Loaded from: {getattr(mcache, '__file__', 'unknown')}")
+    st.stop()
+
 _CACHE_OK = getattr(mcache, "VERSION", 1) >= _NEEDS_CACHE_VERSION
 import pandas as pd
 import numpy as np
