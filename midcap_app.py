@@ -1,6 +1,12 @@
 import streamlit as st
 import yfinance as yf
 import market_cache as mcache
+
+# These two files are uploaded by hand, so one can end up newer than the
+# other. Check rather than crash: the old failure was a TypeError naming a
+# keyword argument, which tells you nothing about what to do.
+_NEEDS_CACHE_VERSION = 2
+_CACHE_OK = getattr(mcache, "VERSION", 1) >= _NEEDS_CACHE_VERSION
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -1054,18 +1060,28 @@ def run_industry_screener(industry, strategy_type="undervalued", max_results=50)
                 f"{len(symbols)} stocks are not cached yet, so they are being "
                 "fetched once now and saved. The next screen will be instant. "
                 "Run `refresh_cache.py` on a schedule to keep it that way.")
-        warm_bar = st.progress(0.0)
-        warm_txt = st.empty()
+        warm_kwargs = {}
+        warm_bar = warm_txt = None
+        if _CACHE_OK:
+            warm_bar = st.progress(0.0)
+            warm_txt = st.empty()
 
-        def _warm(done, total, ticker):
-            warm_bar.progress(done / max(1, total))
-            warm_txt.text(f"Fetching {ticker} ({done}/{total})")
+            def _warm(done, total, ticker):
+                warm_bar.progress(done / max(1, total))
+                warm_txt.text(f"Fetching {ticker} ({done}/{total})")
+
+            warm_kwargs["on_progress"] = _warm
+        else:
+            st.warning(
+                "**market_cache.py is older than this app.** Loading without a "
+                "progress bar. Upload the matching market_cache.py to GitHub "
+                "and reboot the app.")
 
         cached, cache_report = mcache.get_quotes(
-            symbols, allow_live=True, live_budget=len(symbols),
-            on_progress=_warm)
-        warm_bar.empty()
-        warm_txt.empty()
+            symbols, allow_live=True, live_budget=len(symbols), **warm_kwargs)
+        if warm_bar is not None:
+            warm_bar.empty()
+            warm_txt.empty()
 
     st.session_state["_cache_report"] = cache_report
 
